@@ -7,7 +7,46 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    currentTab: 0,//当前选中编剧或剧本
+    imgUrls: [
+      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+    ],
+    autoplay: false,
+    interval: 5000,
+    duration: 1000,
+    toView: 'yellow',
+    scrollLeft: 0,
+    //滚动的数组
+    scrolls: [
+      {
+        name: '黄色',
+        tag: 'yellow',
+      },
+      {
+        name: '绿色',
+        tag: 'green',
+      },
+      {
+        name: '红色',
+        tag: 'red',
+      },
+      {
+        name: '黄色',
+        tag: 'yellow',
+      },
+      {
+        name: '绿色',
+        tag: 'green',
+      },
+      {
+        name: '红色',
+        tag: 'red',
+      },
+    ],
+
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +55,7 @@ Page({
     })
   },
   onLoad: function () {
+    app.editTabBar();
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -49,6 +89,46 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  //滑动切换
+  swiperTab: function (e) {
+    console.log(e.detail.current)
+    var that = this;
+    that.setData({
+      currentTab: e.detail.current
+    });
+  },
+  //点击切换
+  clickTab: function (e) {
+    var that = this;
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current
+      })
+    }
+  },
+  //轮播
+  changeIndicatorDots(e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay(e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange(e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange(e) {
+    this.setData({
+      duration: e.detail.value
     })
   }
 })

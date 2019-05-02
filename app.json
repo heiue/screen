@@ -1,6 +1,10 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/project/project",
+    "pages/friend/friend",
+    "pages/pay/pay",
+    "pages/my/my",
     "pages/logs/logs"
   ],
   "window":{

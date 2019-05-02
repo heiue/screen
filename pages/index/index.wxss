@@ -1,4 +1,7 @@
 /**index.wxss**/
+.container{
+  height:100%;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -18,4 +21,171 @@
 
 .usermotto {
   margin-top: 200px;
+}
+.index-title{
+  position: fixed;
+  top:0;
+  padding-top:65rpx;
+  width: 100%;
+  z-index: 10;
+  height:100rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.index-title image{
+  width: 108rpx;
+  height:23rpx;
+  display: block;
+  margin:0 auto;
+  position: absolute;
+  z-index: 11;
+  left:50%;
+  transform: translateX(-50%)
+}
+.index-swiper-tab{
+  padding-top:89rpx;
+  height:100%;
+  position: absolute;
+  width: 100%;
+}
+.swiper-tab{
+    width: 100%;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    display: flex;
+    flex-flow: row;
+    position: fixed;
+    top:88rpx;
+    background: #fff;
+    z-index: 2;
+    justify-content: space-around;
+    padding:0 200rpx;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom:20rpx;
+}
+.swiper-tab-item{
+    color:#434343;
+    font-size: 20rpx;
+}
+.active{
+    color:#ffe147;
+    border-bottom: 6rpx solid #ffe147;
+    font-size: 24rpx;
+}
+.search{
+  position: absolute;
+  right:20rpx;
+  top:50%;
+  transform: translateY(-50%);
+  display: block;
+  padding:0 10rpx;
+  background: none;
+  opacity: 1;
+}
+.search image{
+  width: 31rpx;
+  height:30rpx;
+}
+.index-swiper{
+  height:208rpx;
+  padding:0 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.index-swiper swiper{width: 100%;height:100%;border-radius: 20rpx;overflow: hidden;}
+swiper image{height:100%;width: 100%;}
+
+/* 求职广告 */
+.index-notice{
+  width: 100%;
+  height:119rpx;
+  position: relative;
+  padding:0 20rpx;
+  padding-bottom: 20rpx;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.index-notice image{width: 100%;height:100%;}
+.index-notice-text{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top:0;
+  left:0;
+  text-align: center;
+  font-size: 18rpx;
+  color:#807124;
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+  justify-content: space-around;
+  padding-bottom:20rpx;
+  box-sizing: border-box;
+}
+.index-notice-title{
+  font-size: 24rpx;
+  color:#383110;
+}
+
+
+/* 签约编剧 */
+.index-screen-writer{
+background: #fff;
+padding:20rpx;
+margin-bottom: 20rpx;
+}
+.screen-writer-title{font-size: 24rpx;color:#373737;border-left:2px solid #ffe147;padding-left: 25rpx;}
+.screen-writer-list{
+display: flex;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+font-size: 18rpx;
+color:#373737;
+margin-top:40rpx;
+}
+.screen-writer-head{
+  width: 80rpx;
+  height:80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom:15rpx;
+}
+.screen-writer-head image{width: 100%;height:100%;}
+
+/* 大家都在看 */
+.index-look{
+  padding:20rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.index-look-content{
+  margin-top:40rpx;
+}
+
+.scroll-x {
+  display: flex;
+  flex-direction: row; 
+  padding:20rpx 0;
+  overflow: visible;
+}
+.scroll-y {
+  display: flex;
+  flex-direction: column; 
+}
+.index-look-list{
+  margin-right: 20rpx;
+}
+.index-look-item{
+  box-shadow: 8rpx 10rpx 20rpx 1rpx rgba(0,0,0,.1);
+  display: flex;
+  align-items: center;
+  width: 500rpx;
+  height: 165rpx;
+  background: green;
+  border-radius: 20rpx;
 }

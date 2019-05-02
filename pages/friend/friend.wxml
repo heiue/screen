@@ -1,0 +1,4 @@
+<!--pages/friend/friend.wxml-->
+<text>pages/friend/friend.wxml</text>
+<import src="../../tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />
