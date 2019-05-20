@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="project-nav">
+    <view class="nav-list"></view>
+    <view class="get-more"></view>
+  </view>
+  <view class="project-header">
+    <view class="header-img">
+      <image src="../../images/project_img_banner.png"></image>
+    </view>
+  </view>
+  <view class="project-show">
+    <view class="show-header">
+      <view class="show-title">
+        <view class="show-header-text">项目展示</view>
+        <view class="get-more" bindtap='showTitle'>
+          <image class="" src="{{moreTitleShow? '../../images/project_icon_right.png':'../../images/project_icon_down.png'}}"></image>
+        </view>
+      </view>
+      <view class="more-title" animation="{{animationData}}" >
+        <view class="more-title-list">
+          <view class="more-title-item" wx:for="{{moreTitle}}" wx:key="index">{{item}}</view>
+          <view class="search">
+            <image src="../../images/project_icon_search.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="project-item" wx:for="{{project}}" wx:key="index">
+      <view class="item-img-show">
+        <view class="item-video"></view>
+        <view class="item-cover">
+          <image src="../../images/timg2.jpg"></image>
+        </view>
+        <view class="item-introduce">
+          <view class="introduce">
+            <view class="introduce-item">
+              <text>发布：</text>
+              <text>影视公司</text>
+            </view>
+            <view class="introduce-item">
+              <text>类型：</text>
+              <text>影视公司</text>
+            </view>
+            <view class="introduce-item">
+              <text>类型：</text>
+              <text>影视公司</text>
+            </view>
+            <view class="introduce-item">
+              <image src="../../images/time.png"></image>
+              <text>2018·09·22</text>
+            </view>
+          </view>
+        </view>
+        <view class="item-play-btn">
+          <image class="play-btn" src="../../images/project_img_play.png"></image>
+        </view>
+      </view>
+      <view class="item-subhead">
+        <view class="subhead-left">
+          <image class="subhead-icon" src="../../images/icon-ding.png"></image>
+          <image class="subhead-icon" src="../../images/icon-jing.png"></image>
+          <text class="item-name">十世金蝉子</text>
+          <text class="item-financing">融资：300万</text>
+        </view>
+        <view class="subhead-right">
+          <view class="item-see-num">
+            <image src="see-icon" src="../../images/project_icon_see.png"></image>
+            <text>1920</text>
+          </view>
+          <view class="item-see-num">
+            <image src="like-icon" src="../../images/project_icon_like.png"></image>
+            <text>1920</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

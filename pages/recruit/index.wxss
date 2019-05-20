@@ -1,0 +1,95 @@
+page{
+  background-color: #fff
+}
+.container{
+  padding-top: 200rpx;
+  background-color: #ffe459;
+}
+.cont{
+  position: relative;
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+  background-color: #fff;
+  padding-top: 170rpx;
+}
+.banner{
+  position: absolute;
+  top: -170rpx;
+  left: 20rpx;
+  width: 710rpx;
+  height: 340rpx;
+  border-radius: 10rpx;
+  /* background-color: #ccc; */
+}
+.banner image{
+  width: 100%;
+  height: 100%;
+}
+.recruit-list{
+  padding: 30rpx 50rpx;
+}
+.recruit-item{
+  min-height: 230rpx;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(207, 209, 228, 0.3);
+  padding: 30rpx;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+.title{
+  margin-bottom: 15rpx;
+  font-family: MicrosoftYaHei;
+	font-size: 30rpx;
+	letter-spacing: 2rpx;
+	color: #3e3e3e;
+}
+.subheader{
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub-left{
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	letter-spacing: 2rpx;
+	color: #3e3e3e;
+}
+.sub-right{
+  font-family: MicrosoftYaHei;
+	font-size: 36rpx;
+	letter-spacing: 3rpx;
+	color: #47abf6;
+}
+.label-list{
+  margin-bottom: 16rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.label{
+  height: 32rpx;
+  padding: 0 20rpx;
+  line-height: 32rpx;
+  border-radius: 3rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: MicrosoftYaHei;
+	font-size: 18rpx;
+	letter-spacing: 1rpx;
+  color: #a7a7a7;
+  margin-right: 20rpx;
+}
+.intro-title{
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	letter-spacing: 2rpx;
+	color: #a7a7a7;
+}
+.intro-cont{
+  font-family: MicrosoftYaHei;
+	font-size: 18rpx;
+	letter-spacing: 2rpx;
+  color: #a7a7a7;
+  
+}

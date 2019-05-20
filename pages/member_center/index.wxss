@@ -1,0 +1,154 @@
+page{
+  height: 100%;
+}
+.container{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center
+}
+.cont{
+  width: 100%;
+}
+.header{
+  width: 100%;
+  height: 347rpx;
+  position: relative;
+  margin-bottom: 25rpx;
+}
+.header-bg{
+  width: 100%;
+  height: 347rpx;
+}
+.title{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 145rpx 0 0 73rpx;
+}
+.emblem{
+  width: 176rpx;
+  height: 82rpx;
+  position: absolute;
+  right: 0;
+  top: 110rpx;
+}
+.emblem image{
+  width: 100%;
+  height: 100%;
+}
+.head{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.head-portrait{
+  width: 155rpx;
+  height: 155rpx;
+  border-radius: 155rpx;
+  overflow: hidden;
+  margin-right: 17rpx;
+}
+.head-portrait image{
+  width: 100%;
+  height: 100%;
+}
+.name{
+  font-family: MicrosoftYaHei;
+	font-size: 30rpx;
+	color: #434343;
+}
+.subheader-cont{
+  width: 100%;
+  height: 156rpx;
+  position: relative;
+  padding:0 28rpx;
+}
+.subheader-bg{
+  width: 100%;
+  height: 100%;
+}
+.subheader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subheader text:nth-of-type(1){
+  font-family: AdobeHeitiStd-Regular;
+	font-size: 23rpx;
+	line-height: 48rpx;
+	color: #ffffff;
+}
+.subheader text:nth-of-type(2){
+  font-family: AdobeHeitiStd-Regular;
+	font-size: 38rpx;
+  color: #ffffff;
+}
+.subheader-btn{
+  width: 141rpx;
+  height: 39rpx;
+  margin-top: 10rpx;
+}
+.subheader-btn image{
+  width: 100%;
+  height: 100%;
+}
+.center-list{
+  padding: 0 58rpx;
+}
+.center-list .center-item:not(:last-child){
+  border-bottom: 1px solid #ddd;
+}
+.center-item{
+  height: 122rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 36rpx;
+}
+.item-left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.item-left image{
+  width: 43rpx;
+  height: 43rpx;
+  margin-right: 19rpx;
+}
+.item-left text{
+  font-family: AdobeHeitiStd-Regular;
+	font-size: 32rpx;
+	line-height: 48rpx;
+	color: #282828;
+}
+.item-right{
+  font-family: AdobeHeitiStd-Regular;
+	font-size: 25rpx;
+	line-height: 48rpx;
+	color: #999999;
+}
+.open-btn{
+  width: 100%;
+  padding: 0 75rpx 100rpx;
+}
+.btn{
+  width: 100%;
+  height: 90rpx;
+  border-radius: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #ffe147;
+  font-family: MicrosoftYaHei;
+	font-size: 30rpx;
+	color: #ffffff;
+}

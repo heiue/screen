@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="header">
+    <view class="title">
+      <view class="name">编剧</view>
+      <view class="pay">15k-30k</view>
+    </view>
+    <view class="label-list">
+      <view class="label">
+        <image src="../../images/recruit_details/recruit_details_icon_location.png"></image>
+        <view class="label-name">北京·大望路</view>
+      </view>
+      <view class="label">
+        <image src="../../images/recruit_details/recruit_details_icon_education.png"></image>
+        <view class="label-name">本科</view>
+      </view>
+      <view class="label">
+        <image src="../../images/recruit_details/recruit_details_icon_experience.png"></image>
+        <view class="label-name">1-3年</view>
+      </view>
+    </view>
+  </view>
+  <view class="referral">
+    <view class="referral-title">公司简介</view>
+    <view class="referral-details">卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技</view>
+  </view>
+  <view class="referral">
+    <view class="referral-title">公司简介</view>
+    <view class="referral-details">卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技卡死了金风科技快捷科技趣闻快捷空间可累计达科技</view>
+  </view>
+  <view class="submit-resume">
+    投递简历
+  </view>
+</view>

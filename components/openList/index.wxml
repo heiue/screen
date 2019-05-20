@@ -1,0 +1,15 @@
+<view class="open-class-item">
+    <view class="image">
+        <image src="{{openList.coverUrl}}"></image>
+        <view class="time" wx:if="{{!openList.isLive}}">{{openList.arrangement}}</view>
+        <view class="live" wx:if="{{openList.isLive}}">
+            <image src=""></image>
+            <text class="img-text">直播中</text>        
+        </view>
+    </view>
+    <view class="title">{{openList.name}}</view>
+    <view class="subhead">
+        <text>{{openList.masterSubject.name}}</text>
+        <text> {{openList.studentCount}} 人已报名</text>
+    </view>
+</view>

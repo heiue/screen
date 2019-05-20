@@ -1,50 +1,58 @@
 /**app.wxss**/
  
- page{
-   min-height: 100%;
-   background: #f1f2fb;
- }
+page{
+  min-height: 100%;
+  background: #f1f2fb;
+}
 
 .tab-bar{
-  padding:0 20rpx;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-around;
+ padding:0 20rpx;
+ box-sizing: border-box;
+ display: flex;
+ justify-content: space-around;
 }
 .menu-item {
-  width: 80rpx;
-  float: left;
-  text-align: center;
-  box-sizing: border-box;
-  font-size:18rpx;
-  padding:15rpx 0;
+ width: 80rpx;
+ float: left;
+ text-align: center;
+ box-sizing: border-box;
+ font-size:18rpx;
+ padding:15rpx 0;
 }
 .menu-item2{
-  border-right:none;
+ border-right:none;
 }
- 
+
 .img {
-  width: 42rpx;
-  height: 40rpx;
-  display: block;
-  margin: auto;
-  margin-bottom: 10rpx;
+ width: 42rpx;
+ height: 40rpx;
+ display: block;
+ margin: auto;
+ margin-bottom: 10rpx;
 }
 .menu-item:nth-of-type(2) .img{
-  width: 29rpx;
+ width: 29rpx;
 }
 .menu-item:nth-of-type(5) .img{
-  height: 38rpx;
+ height: 38rpx;
 }
- 
+
 .clear {
-  clear: both;
+ clear: both;
 }
- 
+
 .tab-bar {
-  background-color:#fff;
-  opacity: .8;
-  position: fixed;
-  width: 100%;
-  /* padding: 0px 2%; */
+ background-color:#fff;
+ opacity: .8;
+ position: fixed;
+ width: 100%;
+ /* padding: 0px 2%; */
+}
+
+page{
+  min-height: 100%;
+  background-color: #f2f4f5
+}
+view{
+  box-sizing: border-box
 }

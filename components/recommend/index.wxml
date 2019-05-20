@@ -1,0 +1,22 @@
+<view class="recommend">
+    <view class="item-img">
+      <image src="{{recommend.coverUrl}}"></image>
+    </view>
+    <view class="item-writer">
+      <view class="item-title">
+        <text wx:if="{{!recommend.masterSubject.name}}" class="hint">多课联报</text>
+        <text class="title">{{recommend.name}}</text>
+      </view>
+      <view class="item-subhead">
+        <view class="item-type">
+          <text wx:if="{{recommend.masterSubject.name}}">{{recommend.masterSubject.name}}</text>
+          <text wx:if="{{recommend.masterSubject.name}}">|</text>
+          <text>{{recommend.arrangement}}</text>
+        </view>
+        <view class="num">
+          <text class="number">{{recommend.studentCount}}人报名</text>
+          <text class="price">￥{{recommend.price/100}}元</text>
+        </view>
+      </view>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="line"></view>
+  <view class="about-list">
+    <view class="about-item" bindtap="callPhone">
+      <view class="phone">010-100220000</view>
+      <image src="../../images/aboutus_icon_phone.png"></image>
+    </view>
+    <view class="about-item">
+      <view class="web">WWW.SDNASJDNJ.COM</view>
+      <image src="../../images/aboutus_icon_web.png"></image>
+    </view>
+  </view>
+  <view class="qr-code">
+    <image src="../../images/aboutus_img_code.png" class="code"></image>
+    <view class="qr-text">扫码关注官方微信公众号</view>
+  </view>
+</view>

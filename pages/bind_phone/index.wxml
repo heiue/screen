@@ -1,0 +1,26 @@
+<view class="container">
+  <image class="bg" src="../../images/bind_phone/bindphone_img_bg.png"></image>
+  <view class="cont">
+    <view class="logo">
+      <view class="logo-img">
+        <image src="../../images/bind_phone/bindphone_img_logo.png"></image>
+      </view>
+      <view class="logo-text">剧本超市</view>
+    </view>
+    <view class="form-cont">
+      <view class="form-item">
+        <image src="../../images/bind_phone/bindphone_icon_user.png"></image>
+        <input type="text" placeholder="请输入手机号" />
+      </view>
+      <view class="form-item">
+        <image src="../../images/bind_phone/bindphone_icon_password.png"></image>
+        <input type="text" placeholder="请输入密码" />
+      </view>
+      <view class="form-item">
+        <image src="../../images/bind_phone/bindphone_icon_token.png"></image>
+        <input type="text" placeholder="填写正确验证码" />
+      </view>
+    </view>
+    <view class="submit">绑定</view>
+  </view>
+</view>

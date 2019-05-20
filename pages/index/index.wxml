@@ -12,14 +12,14 @@
   </view> -->
 
 <view class='index-title'>
-  <image src='../image/index-title.png'></image>
+  <image src='../../images/index/index-title.png'></image>
 </view>
 
 <view class="swiper-tab">
   <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">我要编剧</view>
   <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">我要剧本</view>
   <navigator class='search'>
-    <image src='../image/search.png'></image>
+    <image src='../../images/index/search.png'></image>
   </navigator>
 </view>
 <swiper class='index-swiper-tab' current="{{currentTab}}" duration="300" bindchange="swiperTab">
@@ -38,7 +38,7 @@
     <!-- 轮播 -->
     <!-- 求职广告 -->
     <view class='index-notice'>
-      <image src='../image/index-notice-bg.png'></image>
+      <image src='../../images/index/index-notice-bg.png'></image>
       <view class='index-notice-text'>
         <view class='index-notice-title'>任务广场</view>
         <text class='index-notice-con'>编剧求职哪家强，剧本超市帮您忙！</text>
@@ -51,7 +51,7 @@
       <view class='screen-writer-list'>
         <view class='screen-writer-item' wx:for="{{4}}">
           <view class='screen-writer-head'>
-            <image src='../image/index.png'></image>
+            <image src='../../images/index/index.png'></image>
           </view>
           <view class='screen-writer-name'>施瓦辛格</view>
         </view>

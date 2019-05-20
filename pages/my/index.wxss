@@ -1,0 +1,177 @@
+page{
+  background-color: #f1f2fb
+}
+.container{
+  border-top: 1px solid #efefef;
+}
+.userinfo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:40rpx 40rpx 20rpx;
+  height: 160rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.user{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user-header{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.user-header image{
+  width: 100%;
+  height: 100%;
+}
+.name-cont{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.name{
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  color: #3e3e3e;
+}
+.user-label{
+  font-size: 18rpx;
+  color: #7f7f7f
+}
+.my-card{
+  width: 196rpx;
+  height: 64rpx;
+  border-radius: 64rpx;
+  background-color: #ffe147;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my-card text{
+  font-size: 24rpx;
+  color: #3e3e3e;
+  margin-right: 10rpx;
+}
+.hint-icon{
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 8rpx;
+  background-color: #ff0000;
+  transform: translateY(-8rpx)
+}
+.my-nav{
+  padding: 20rpx 0;
+  height: 292rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.nav-item{
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.my-nav .nav-item:not(:last-child){
+  border-right: 1px solid #e4e4e4
+}
+.nav-item image{
+  width: 58rpx;
+  height: 47rpx;
+  margin-bottom:22rpx; 
+}
+.nav-item-name{
+  font-size: 24rpx;
+  color: #3e3e3e;
+}
+.new-hint{
+  position: absolute;
+  top: 60rpx;
+  right: 46rpx;
+  width: 56rpx;
+  height: 20rpx;
+  line-height: 20rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 14rpx;
+}
+.my-message{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.message-left{
+  display: flex;
+  align-items: center;
+}
+.message-left image{
+  width: 54rpx;
+  height: 54rpx;
+  margin-right: 20rpx;
+}
+.message-left text{
+  font-size: 24rpx;
+  color: #3b3b3b
+}
+.message-right{
+  padding: 0 12rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 30rpx;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 18rpx;
+}
+.my-list{
+  background-color: #fff;
+  padding: 0 40rpx;
+}
+.my-item{
+  height: 114rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-item-left{
+  display: flex;
+  align-items: center
+}
+.my-item-left image{
+  width: 54rpx;
+  height: 54rpx;
+  margin-right: 20rpx;
+}
+.my-item-left text{
+  font-size: 24rpx;
+  color: #3b3b3b;
+}
+.my-item-right{
+  padding: 10rpx 0 10rpx 20rpx;
+}
+.my-item-right image{
+  width: 12rpx;
+  height: 20rpx;
+}
+.my-right-text{
+  color: #555;
+  font-size: 20rpx;
+}
+.my-list .my-item:not(:last-child) {
+  border-bottom: 1px solid #f1f2fb
+}

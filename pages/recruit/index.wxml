@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="cont">
+    <view class="banner">
+      <image src="../../images/recruit_img_banner.png"></image>
+    </view>
+    <view class="recruit-list">
+      <view class="recruit-item" wx:for="{{list}}" bind:tap="goDetails">
+        <view class="title">监制、编剧</view>
+        <view class="subheader">
+          <view class="sub-left">剧本超市</view>
+          <view class="sub-right">15K-30K</view>
+        </view>
+        <view class="label-list">
+          <view class="label">大望路</view>
+          <view class="label">大望路</view>
+          <view class="label">大望路</view>
+        </view>
+        <view class="intro">
+          <text class="intro-title">简介：</text><text class="intro-cont">奥术大师打卡时间大立科技前两位快乐区间为理科交流区玩家了加起来</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
