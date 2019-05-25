@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    imgUrl: 'https://smxiaochengxu.oss-cn-beijing.aliyuncs.com/'
   }
 })

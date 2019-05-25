@@ -67,12 +67,12 @@
             <view wx:for-items="{{scrolls}}" wx:key="name"  class="index-look-list">
               <view class="index-look-item">
                 <view class='look-item-text'>
-                  <view>当前热门</view>
-                  <view>热门名称</view>
-                  <view>热门内容</view>
+                  <view class="look-item-hint">当前热门</view>
+                  <view class="look-item-name">名侦探柯南编剧里夫斯</view>
+                  <view class="look-item-sub">迷上了柯南一集杀几个日本人助助兴。</view>
                 </view>
                 <view class='look-item-img'>
-                  <image src=''></image>
+                  <image src='../../images/index/img_header.png'></image>
                 </view>
               </view>
             </view>

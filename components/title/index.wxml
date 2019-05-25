@@ -1,0 +1,4 @@
+<view class="first-title">
+  <view class='title-back' wx:if="{{isFirst}}"> {{isFirst}} </view>
+  <text class="{{!isFirst?'':'title-middle'}}">{{title}}</text>
+</view>

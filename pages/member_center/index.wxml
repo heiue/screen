@@ -34,7 +34,7 @@
       </view>
       <view class="center-item">
         <view class="item-left">
-          <image src="../../images/member_icon_service.png" /> 
+          <image src="../../images/member_icon_service.png" />
           <text>联系客服</text>
         </view>
         <view class="item-right">VIP专属客服24小时在线</view>
@@ -42,6 +42,27 @@
     </view>
   </view>
   <view class="open-btn">
-    <view class="btn">立即开通</view>
+    <view class="btn" bind:tap="showPopup">立即开通</view>
+  </view>`
+  <view class="popup" wx:if="{{popupShow}}">
+    <view class="mask" bind:tap="closePopup"></view>
+    <view class="popup-cont" animation="{{animationData}}">
+      <view class="popup-header">
+        <view class="popup-title">选择购买时长</view>
+        <view class="popup-subheader">一个月会员=31天</view>
+      </view>
+      <view class="card-list">
+        <view wx:for="{{cardList}}" wx:key="index"
+          class="card {{cardActive == index? 'active': ''}}" 
+          bind:tap="cardChage" 
+          data-index="{{index}}"
+          >
+          <view class="card-name">一个月</view>
+          <view class="card-piece">100元</view>
+          <view class="card-text">100元/一个月</view>
+        </view>
+      </view>
+      <view class="pay-btn">立即开通</view>
+    </view>
   </view>
 </view>

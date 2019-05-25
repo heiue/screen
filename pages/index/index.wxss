@@ -181,11 +181,54 @@ margin-top:40rpx;
   margin-right: 20rpx;
 }
 .index-look-item{
-  box-shadow: 8rpx 10rpx 20rpx 1rpx rgba(0,0,0,.1);
+  box-shadow: 0px 0px 25rpx 0px 
+		rgba(116, 116, 116, 0.25);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 500rpx;
   height: 165rpx;
-  background: green;
-  border-radius: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+.look-item-hint{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 110rpx;
+  height: 40rpx;
+  border-radius: 6rpx;
+  background-color: #f78761;
+  text-align: center;
+  line-height: 40rpx;
+  font-family: MicrosoftYaHeiLight;
+	font-size: 16rpx;
+	letter-spacing: 1rpx;
+	color: #ffffff;
+}
+.look-item-img{
+  width: 171rpx;
+  height: 100%;
+}
+.look-item-text{
+  padding-left: 20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.look-item-name{
+  font-family: MicrosoftYaHei;
+	font-size: 18rpx;
+	letter-spacing: 1rpx;
+  color: #373737;
+  margin-bottom: 20rpx;
+}
+.look-item-sub{
+  font-family: MicrosoftYaHeiLight;
+	font-size: 16rpx;
+	letter-spacing: 1rpx;
+	color: #373737;
 }

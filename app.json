@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/favorite/index",
     "pages/recruit_details/index",
@@ -9,20 +10,22 @@
     "pages/member_center/index",
     "pages/project/index",
     "pages/my/index",
-    "pages/about_us/index"
+    "pages/about_us/index",
+    "pages/pay_know_detail/index",
+    "pages/pay_knowledge/index"
     
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "",
-    "navigationBarTextStyle": "black",
-    "navigationStyle":"custom"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#333",
     "selectedColor": "#ffe147",
     "list": [
+      
       {
         "pagePath": "pages/index/index",
         "iconPath": "images/navbar/index.png",
@@ -42,7 +45,7 @@
         "text": "人脉圈"
       },
       {
-        "pagePath": "pages/project/index",
+        "pagePath": "pages/pay_knowledge/index",
         "iconPath": "images/navbar/pay.png",
         "selectedIconPath": "images/navbar/pay-on.png",
         "text": "知识付费"

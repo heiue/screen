@@ -152,3 +152,94 @@ page{
 	font-size: 30rpx;
 	color: #ffffff;
 }
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+.mask{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0,0.6)
+}
+.popup-cont{
+  position: absolute;
+  left: 0;
+  bottom: -1000rpx;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+}
+.popup-header{
+  height: 136rpx;
+  padding:0 30rpx 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.popup-title{
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #383838;
+  margin-bottom: 20rpx;
+}
+.popup-subheader{
+  font-family: MicrosoftYaHei;
+	font-size: 18rpx;
+	color: #717171;
+}
+.card-list{
+  padding: 0 79rpx 36rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.card{
+  width: 281rpx;
+	height: 180rpx;
+	border-radius: 10rpx;
+  /* border: solid 2rpx #ffe147; */
+  border: solid 2rpx #e1e1e1;
+  margin-bottom: 23rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f6fb;
+}
+.active{
+  border: solid 2rpx #ffe147;
+}
+.card-name{
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	line-height: 48rpx;
+	color: #363636;
+}
+.card-piece{
+  font-weight: bold;
+	font-size: 36rpx;
+	line-height: 48rpx;
+	color: #ffe147;
+}
+.card-text{
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	line-height: 48rpx;
+	color: #969696;
+}
+.pay-btn{
+  width: 100%;
+  height: 100rpx;
+  background-color: #ffe147;
+  text-align: center;
+  line-height: 100rpx;
+  font-family: MicrosoftYaHei;
+	font-size: 30rpx;
+	color: #353535;
+}

@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="header">
+    <image src="{{imgUrl}}pay_knowledge/img_list_placeholder.png" class="header-bg"></image>
+    <view class="header-play">
+      <image src="{{imgUrl}}pay_know_detail/icon_play.png"></image>
+    </view>
+  </view>
+  <view class="detail-header">
+    <text>变形金刚五编剧浅谈编务 </text>
+    <text>剧本时代下的产物 </text>
+  </view>
+  <view class="detail-cont">
+    林木的手机响了，他看了看新收到的短信，上面写着，尊敬的中-国银行客户，您本月按揭还款3426.21元......林木塞了一口面包，打开手机的记账本，房贷，份子，礼品，父母，股票等项目格外醒目，林木把整个的面包塞到嘴里，瘫坐在公交车座位上。林木的手机响了，他看了看新收到的短信，上面写着，尊敬的中-国银行客户，您本月按揭还款3426.21元......林木塞了一口面包，打开手机的记账本，房贷，份子，礼品，父母，股票等项目格外醒目，林木把整个的面包塞到嘴里，瘫坐在公交车座位上。林木的手机响了，他看了看新收到的短信，上面写着，尊敬的中-国银行客户，您本月按揭还款3426.21元......林木塞了一口面包，打开手机的记账本，房贷，份子，礼品，父母，股票等项目格外醒目，林木把整个的面包塞到嘴里，瘫坐在公交车座位上。
+  </view>
+  <view class="getVip" bind:tap="getVip">开通VIP阅读完整</view>
+</view>

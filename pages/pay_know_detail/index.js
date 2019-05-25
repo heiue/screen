@@ -1,14 +1,12 @@
-// pages/member_center/index.js
+// pages/pay_know_detail/index.js
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    popupShow: false,
-    cardActive: 0,
-    cardList: [1, 1, 1, 1],
-    animationData: {}
+    imgUrl: app.globalData.imgUrl
   },
 
   /**
@@ -17,39 +15,9 @@ Page({
   onLoad: function (options) {
 
   },
-  closePopup() {
-    const animation = wx.createAnimation({
-      duration: 200
-    })
-    this.animation = animation
-    animation.bottom('-1000rpx').step()
-    this.setData({
-      animationData: animation.export(),
-    })
-    let that = this
-    setTimeout(() => {
-      that.setData({
-        popupShow: false
-      })
-    },200)
-    
-  },
-  showPopup() {
-    this.setData({
-      popupShow: true
-    })
-    const animation = wx.createAnimation({
-      duration: 1000
-    })
-    this.animation = animation
-    animation.bottom('0').step()
-    this.setData({
-      animationData: animation.export()
-    })
-  },
-  cardChage(e) {
-    this.setData({
-      cardActive: e.currentTarget.dataset.index
+  getVip() {
+    wx.navigateTo({
+      url: '/pages/member_center/index'
     })
   },
   /**

@@ -83,5 +83,8 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onTabItemTap(item){
+    console.log(item)
   }
 })
