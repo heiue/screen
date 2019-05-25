@@ -88,6 +88,4 @@
   </swiper-item>
 </swiper>
 
-<import src="../../tabbar.wxml" />
-<template is="tabBar" data="{{tabBar}}" />
 <!-- </view> -->

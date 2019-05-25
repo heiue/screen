@@ -1,8 +1,5 @@
 <view class="container">
-  <view class="project-nav">
-    <view class="nav-list"></view>
-    <view class="get-more"></view>
-  </view>
+  <title title="项目" isFirst="{{false}}"></title>
   <view class="project-header">
     <view class="header-img">
       <image src="../../images/project_img_banner.png"></image>

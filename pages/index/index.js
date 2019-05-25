@@ -55,7 +55,6 @@ Page({
     })
   },
   onLoad: function () {
-    app.editTabBar();
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
