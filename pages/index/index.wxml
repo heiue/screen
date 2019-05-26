@@ -22,7 +22,7 @@
     <image src='../../images/index/search.png'></image>
   </navigator>
 </view>
-<swiper class='index-swiper-tab' current="{{currentTab}}" duration="300" bindchange="swiperTab">
+<swiper class='index-swiper-tab' current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:{{swiperHeight}}px'>
   <!-- 我要编剧 -->
   <swiper-item>
     <!-- 轮播 -->
@@ -81,6 +81,19 @@
       </view>
     </view>
     <!-- 大家都在看 -->
+    <view class='index-water'>
+      <view class='screen-writer-title'>签约编剧</view>
+      <view class='fall-container'>
+        <block wx:for="{{list}}" wx:key="{{item.id}}">
+          <!--瀑布流内容卡片-->
+          <view class='fall-item'>
+            <image src='{{item.img}}' mode="widthFix"></image>
+            <view>{{item.name}}</view>
+            <view>代表作：{{item.masterpiece}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
   </swiper-item>
   <!-- 我要剧本 -->
   <swiper-item>

@@ -46,7 +46,20 @@ Page({
         tag: 'red',
       },
     ],
-
+    list:[{
+      img:"http://api.gojbcs.com/images/index/index.png",
+      name:"施瓦辛格",
+      masterpiece:"《hollo》"
+    },{
+        img: "http://api.gojbcs.com/images/index/index.png",
+        name: "施瓦辛格",
+        masterpiece: "《hi》"
+      }, {
+        img: "http://api.gojbcs.com/images/index/index.png",
+        name: "施瓦辛格",
+        masterpiece: "《nice》"
+      }],
+      swiperHeight:380,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -55,6 +68,7 @@ Page({
     })
   },
   onLoad: function () {
+    this.setSwiperHeight();
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -129,5 +143,12 @@ Page({
     this.setData({
       duration: e.detail.value
     })
+  },
+  setSwiperHeight:function() {
+    console.log(this.data.list.length)
+    this.setData({
+      swiperHeight: 380 + Math.ceil(this.data.list.length/2)*200
+    })
+    console.log(this.data.swiperHeight)
   }
 })

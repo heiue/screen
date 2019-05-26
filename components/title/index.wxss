@@ -1,4 +1,4 @@
-/* components/footer/index.wxss */
+/* components/title/index.wxss */
 .first-title{
   position: relative;
 }

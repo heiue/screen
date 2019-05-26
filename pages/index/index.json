@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "waterFallView":"../../components/waterFallsFlow/index"
+  },
   "enablePullDownRefresh": true
 }

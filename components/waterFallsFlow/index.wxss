@@ -1,0 +1,14 @@
+/* components/waterFalsFlow/index.wxss */
+.fall-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding:0 10rpx;
+  flex-flow: row;
+  flex-wrap:wrap;
+}
+.fall-item{
+  width: 50%;
+  padding:10px;
+  box-sizing: border-box;
+}

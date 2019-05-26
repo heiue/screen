@@ -1,0 +1,9 @@
+<view class='fall-container'>
+    <block wx:for="{{listData}}" wx:key="{{item.id}}">
+      <!--瀑布流内容卡片-->
+      <view class='fall-item'>
+        <image src='{{item.img}}' mode="widthFix"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+</view>
