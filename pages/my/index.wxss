@@ -3,6 +3,7 @@ page{
 }
 .container{
   border-top: 1px solid #efefef;
+  padding-top: 140rpx;
 }
 .userinfo{
   display: flex;

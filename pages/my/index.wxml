@@ -9,7 +9,7 @@
         <view class="user-label">标签：制片 · 编剧</view>
       </view>
     </view>
-    <view class="my-card">
+    <view class="my-card" bind:tap="goMyCard">
       <text>我的名片</text>
       <view class="hint-icon"></view>
     </view>

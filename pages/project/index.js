@@ -19,7 +19,11 @@ Page({
   onLoad: function (options) {
 
   },
-
+  goDetail: function () {
+    wx.navigateTo({
+      url: '/pages/project_detail/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

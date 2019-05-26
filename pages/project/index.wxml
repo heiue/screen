@@ -48,7 +48,7 @@
             </view>
           </view>
         </view>
-        <view class="item-play-btn">
+        <view class="item-play-btn" bind:tap="goDetail">
           <image class="play-btn" src="../../images/project_img_play.png"></image>
         </view>
       </view>

@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="header">
+    <view class="header-bg"></view>
+    <view class="header-card">
+      <view class="header-cont">
+        <view class="title">
+          <view class="name">九妹</view>
+          <view class="title-icon">
+            <image src="../../images/my_card/icon_sex.png" class=""></image>
+            <image src="../../images/my_card/icon_vip.png" class=""></image>
+          </view>
+          <view class="title-text">百度百科</view>
+        </view>
+        <view class="intro">
+          <view>行业：</view>
+          <view>策划</view>
+        </view>
+        <view class="intro">
+          <view>行业：</view>
+          <view>策划</view>
+        </view>
+        <view class="intro">
+          <view>行业：</view>
+          <view>策划</view>
+        </view>
+      </view>
+      <view class="header-portrait">
+        <image src="../../images/my_card/img_header.png" class=""></image>
+      </view>
+    </view>
+  </view>
+  <view class="form">
+    <view class="wechat">
+      <view class="wechat-icon"></view>
+      <view class="wechat-cont">
+        <view class="label">微信：</view>
+        <view class="text">王小二</view>
+      </view>
+    </view>
+    <view class="wechat">
+      <view class="email-icon"></view>
+      <view class="wechat-cont">
+        <view class="label">邮箱：</view>
+        <view class="text">asdasdasdasd</view>
+      </view>
+    </view>
+    <view class="my-intro">
+      <view class="my-intro-title">
+        <view class="intro-title-icon"></view>
+        <view class="my-intro-name">我的简介</view>
+      </view>
+      <view class="my-intro-cont">站酷首席设计师、花瓣签约设计师、佳能签约设计师站酷首席设计师、花瓣签约设计师、佳能签约设计师。</view>
+    </view>
+    <view class="my-photo">
+      <view class="my-intro-title">
+        <view class="photo-title-icon"></view>
+        <view class="my-intro-name">我的相册</view>
+      </view>
+      <view class="photo-list">
+        <view class="operation">
+          <image class="upload" src="../../images/my_card/icon_add.png"></image>
+          <view class="operation-btn">
+            <view class="edit-btn">编辑名片</view>
+            <view class="share">分享名片</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
