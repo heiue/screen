@@ -1,4 +1,7 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="个人中心" isFirst="{{false}}"></title>
+  </view>
   <view class="userinfo">
     <view class="user">
       <view class="user-header">

@@ -1,8 +1,10 @@
 page{
   background-color: #fff;
 }
+.title-top{
+  padding: 0 20rpx;
+}
 .container{
-  padding-top: 140rpx;
   background-color: #fff;
 }
 /* .meta{

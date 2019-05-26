@@ -1,4 +1,4 @@
 <view class="first-title">
-  <view class='title-back' wx:if="{{isFirst}}"> {{isFirst}} </view>
+  <view class='title-back' wx:if="{{isFirst}}" bindtap='goBack'> {{isFirst}} </view>
   <text class="{{!isFirst?'':'title-middle'}}">{{title}}</text>
 </view>

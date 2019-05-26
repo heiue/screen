@@ -1,8 +1,10 @@
 page{
   background-color: #fff
 }
-.container{
-  padding-top: 140rpx;
+
+.title-top{
+  padding: 0 20rpx;
+  background: #fff;
 }
 .header{
   width: 100%;

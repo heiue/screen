@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/my/index",
+    "pages/pay_knowledge/index",
+    "pages/project/index",
     "pages/index/index",
     "pages/favorite/index",
     "pages/recruit_details/index",
@@ -7,11 +10,8 @@
     "pages/bind_phone/index",
     "pages/recruit/index",
     "pages/member_center/index",
-    "pages/project/index",
-    "pages/my/index",
     "pages/about_us/index",
     "pages/pay_know_detail/index",
-    "pages/pay_knowledge/index",
     "pages/project_detail/index",
     "pages/my_card/index"
   ],

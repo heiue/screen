@@ -6,6 +6,10 @@
   align-items: center;
   background-color: #fff;
 }
+.title-top{
+  padding: 0 20rpx;
+  background: #fff;
+}
 .nav{
   height: 56rpx;
   display: flex;

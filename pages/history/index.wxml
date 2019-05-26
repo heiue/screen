@@ -1,4 +1,7 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="查看历史" isFirst="{{true}}"></title>
+  </view>
   <view class="history-item">
     <view class="header">
       <image src="../../images/history/history_img_header.png"></image>

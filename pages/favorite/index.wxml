@@ -1,4 +1,7 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="我的收藏" isFirst="{{true}}"></title>
+  </view>
   <view class="favorite-header">
     <view class="nav">
       <view class="nav-item {{activeIdex == 0?'active':''}}">人脉</view>

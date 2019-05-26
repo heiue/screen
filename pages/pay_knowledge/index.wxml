@@ -1,5 +1,7 @@
 <view class="container">
-  <!-- <view class="meta"></view> -->
+  <view class='title-top'>
+    <title title="知识付费" isFirst="{{false}}"></title>
+  </view>
   <view class="header">
     <image src="{{imgUrl}}pay_knowledge/img_headerbg.png"></image>
   </view>

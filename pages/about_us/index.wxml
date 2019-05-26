@@ -1,4 +1,7 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="关于我们" isFirst="{{true}}"></title>
+  </view>
   <view class="line"></view>
   <view class="about-list">
     <view class="about-item" bindtap="callPhone">
