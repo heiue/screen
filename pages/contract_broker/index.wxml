@@ -1,0 +1,30 @@
+<view class="container">
+  <image src="../../images/contract_broker/img_bg.png" class="container-bg"></image>
+  <view class="cont">
+    <view class="line"></view>
+    <view class="header">
+      <view class="header-photo">
+        <image src="../../images/history/history_img_header.png"></image>
+      </view>
+      <view class="name">东风不破</view>
+    </view>
+    <view class="intro">
+      <text>个人简介：</text>
+      <text>占位我是很厉害的占位我是很厉害的占位我是很厉害的占占位我是很厉害的占位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的占位我是很厉害的占位我是很厉害的占位我是很厉害的占占位我是很厉害的占位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的位我是很厉害的</text>
+    </view>
+    <view class="contact">
+      <view class="contact-item">
+        <view class="contact-text">14999999999</view>
+        <image class="contact-icon" src="../../images/contract_broker/icon_phone.png"></image>
+      </view>
+      <view class="contact-item">
+        <view class="contact-text">14999999999</view>
+        <image class="contact-icon" src="../../images/contract_broker/icon_wechat.png"></image>
+      </view>
+      <view class="contact-item">
+        <view class="contact-text">14999999999</view>
+        <image class="contact-icon" src="../../images/contract_broker/icon_email.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -20,7 +20,7 @@
       <view class="nav-item-name">我的收藏</view>
       <view class="new-hint">NEW</view>
     </view>
-    <view class="nav-item">
+    <view class="nav-item" bind:tap="goMember">
       <image src="../../images/my_icon_member.png"></image>
       <view class="nav-item-name">剧本超市会员</view>
       <view class="new-hint">NEW</view>
@@ -31,7 +31,7 @@
       <view class="new-hint">NEW</view>
     </view>
   </view>
-  <view class="my-message">
+  <view class="my-message" bind:tap="goMyMessage">
     <view class="message-left">
       <image src="../../images/my_icon_message.png"></image>
       <text>我的消息</text>
@@ -41,7 +41,7 @@
     </view>
   </view>
   <view class="my-list">
-    <view class="my-item">
+    <view class="my-item" bindtap='goExcon'>
       <view class="my-item-left">
         <image src="../../images/my_icon_adviser.png"></image>
         <text>专属经纪顾问</text>
@@ -50,7 +50,7 @@
         123123123123
       </view>
     </view>
-    <view class="my-item">
+    <view class="my-item" bindtap='goBindphone'>
       <view class="my-item-left">
         <image src="../../images/my_icon_setup.png"></image>
         <text>设置</text>

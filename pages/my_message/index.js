@@ -1,4 +1,4 @@
-// pages/my/index.js
+// pages/my_message/index.js
 Page({
 
   /**
@@ -14,26 +14,7 @@ Page({
   onLoad: function (options) {
 
   },
-  goMyCard: function () {
-    wx.navigateTo({
-      url: '/pages/my_card/index'
-    })
-  },
-  goMyMessage: function () {
-    wx.navigateTo({
-      url: '/pages/my_message/index'
-    })
-  },
-  goMember: function () {
-    wx.navigateTo({
-      url: '/pages/member_center/index'
-    })
-  },
-  goExcon: function() {
-    wx.navigateTo({
-      url: '/pages/exclusive_consultant/index'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -47,21 +28,7 @@ Page({
   onShow: function () {
 
   },
-  gohistory() {
-    wx.navigateTo({
-      url: '/pages/history/index'
-    })
-  },
-  goFavorite() {
-    wx.navigateTo({
-      url: '/pages/favorite/index'
-    })
-  },
-  goBindphone: function() {
-    wx.navigateTo({
-      url: '/pages/bind_phone/index'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

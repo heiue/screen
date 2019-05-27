@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="line"></view>
+  <view class="contact">
+    <view class="contact-item">
+      <view class="contact-text">14999999999</view>
+      <image class="contact-icon" src="../../images/contract_broker/icon_phone.png"></image>
+    </view>
+    <view class="contact-item">
+      <view class="contact-text">14999999999</view>
+      <image class="contact-icon" src="../../images/contract_broker/icon_wechat.png"></image>
+    </view>
+  </view>
+  <view class="hint">
+    <view class="hint-text">HI！我是您的专属顾问，这是我的联系方式</view>
+    <view class="hint-text">您有需要，随时联系我哦。</view>
+  </view>
+</view>

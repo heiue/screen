@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="history-item">
+    <view class="item-left">
+      <view class="header">
+        <image src="../../images/history/history_img_header.png"></image>
+      </view>
+      <view class="history-cont">
+        <view class="name">张三</view>
+        <view class="intro">编剧编剧编剧</view>
+      </view>
+    </view>
+    <view class="number">1</view>
+  </view>
+  <view class="history-item">
+    <view class="item-left">
+      <view class="header">
+        <image src="../../images/history/history_img_header.png"></image>
+      </view>
+      <view class="history-cont">
+        <view class="name">张三</view>
+        <view class="intro">编剧编剧编剧</view>
+      </view>
+    </view>
+    <view class="number">1</view>
+  </view>
+  <view class="history-item">
+    <view class="item-left">
+      <view class="header">
+        <image src="../../images/history/history_img_header.png"></image>
+      </view>
+      <view class="history-cont">
+        <view class="name">张三</view>
+        <view class="intro">编剧编剧编剧</view>
+      </view>
+    </view>
+    <view class="number">1</view>
+  </view>
+</view>

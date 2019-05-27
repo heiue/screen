@@ -13,7 +13,11 @@
     "pages/pay_know_detail/index",
     "pages/pay_knowledge/index",
     "pages/project_detail/index",
-    "pages/my_card/index"
+    "pages/my_card/index",
+    "pages/my_message/index",
+    "pages/contract_broker/index",
+    "pages/exclusive_consultant/index",
+    "pages/search/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
