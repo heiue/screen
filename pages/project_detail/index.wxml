@@ -1,4 +1,7 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="项目详情" isFirst="{{true}}"></title>
+  </view>
   <view class="header">
     <image src="../../images/project_detail/img_header_bg.png" class="header-bg"></image>
     <view class="play">
