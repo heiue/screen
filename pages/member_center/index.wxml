@@ -1,40 +1,43 @@
 <view class="container">
+	<view class='title-top'>
+	  <title title="" isFirst="{{true}}"></title>
+	</view>
   <view class="cont">
     <view class="header">
-      <image class="header-bg" src="../../images/member_img_header.png"></image>
+      <image class="header-bg" src="http://api.gojbcs.com/images/member_img_header.png"></image>
       <view class="title">
         <view class="head">
           <view class="head-portrait">
-            <image src="../../images/header.jpg"></image>
+            <image src="http://api.gojbcs.com/images/header.jpg"></image>
           </view>
           <view class="name">我的网名叫什么</view>
         </view>
         <view class="emblem">
-          <image src="../../images/member_img_emblem.png"></image>
+          <image src="http://api.gojbcs.com/images/member_img_emblem.png"></image>
         </view>
       </view>
     </view>
     <view class="subheader-cont">
-      <image src="../../images/member_img_subheader.png" class="subheader-bg" />
+      <image src="http://api.gojbcs.com/images/member_img_subheader.png" class="subheader-bg" />
       <view class="subheader">
         <text>尊享8项专属权益    新加某某特权</text>
         <text>尊享VIP等你来购</text>
         <view class="subheader-btn">
-          <image src="../../images/member_img_button.png" />
+          <image src="http://api.gojbcs.com/images/member_img_button.png" />
         </view>
       </view>
     </view>
     <view class="center-list">
       <view class="center-item">
         <view class="item-left">
-          <image src="../../images/member_icon_ticket.png" />
+          <image src="http://api.gojbcs.com/images/member_icon_ticket.png" />
           <text>付费知识</text>
         </view>
         <view class="item-right">免费阅读</view>
       </view>
       <view class="center-item">
         <view class="item-left">
-          <image src="../../images/member_icon_service.png" />
+          <image src="http://api.gojbcs.com/images/member_icon_service.png" />
           <text>联系客服</text>
         </view>
         <view class="item-right">VIP专属客服24小时在线</view>

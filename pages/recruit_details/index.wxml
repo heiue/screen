@@ -6,15 +6,15 @@
     </view>
     <view class="label-list">
       <view class="label">
-        <image src="../../images/recruit_details/recruit_details_icon_location.png"></image>
+        <image src="http://api.gojbcs.com/images/recruit_details/recruit_details_icon_location.png"></image>
         <view class="label-name">北京·大望路</view>
       </view>
       <view class="label">
-        <image src="../../images/recruit_details/recruit_details_icon_education.png"></image>
+        <image src="http://api.gojbcs.com/images/recruit_details/recruit_details_icon_education.png"></image>
         <view class="label-name">本科</view>
       </view>
       <view class="label">
-        <image src="../../images/recruit_details/recruit_details_icon_experience.png"></image>
+        <image src="http://api.gojbcs.com/images/recruit_details/recruit_details_icon_experience.png"></image>
         <view class="label-name">1-3年</view>
       </view>
     </view>

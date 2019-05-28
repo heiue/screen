@@ -12,14 +12,14 @@
   </view> -->
 
 <view class='index-title'>
-  <image src='../../images/index/index-title.png'></image>
+  <image src='http://api.gojbcs.com/images/index/index-title.png'></image>
 </view>
 
 <view class="swiper-tab">
   <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">我要编剧</view>
   <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">我要剧本</view>
-  <navigator class='search'>
-    <image src='../../images/index/search.png'></image>
+  <navigator class='search' url="/pages/search/index">
+    <image src='http://api.gojbcs.com/images/index/search.png'></image>
   </navigator>
 </view>
 <swiper class='index-swiper-tab' current="{{currentTab}}" duration="300" bindchange="swiperTab" style='height:{{swiperHeight}}px'>
@@ -37,8 +37,8 @@
     </view>
     <!-- 轮播 -->
     <!-- 求职广告 -->
-    <view class='index-notice'>
-      <image src='../../images/index/index-notice-bg.png'></image>
+    <view class='index-notice' bind:tap="goRecruit">
+      <image src='http://api.gojbcs.com/images/index/index-notice-bg.png'></image>
       <view class='index-notice-text'>
         <view class='index-notice-title'>任务广场</view>
         <text class='index-notice-con'>编剧求职哪家强，剧本超市帮您忙！</text>
@@ -50,8 +50,8 @@
       <view class='screen-writer-title'>签约编剧</view>
       <view class='screen-writer-list'>
         <view class='screen-writer-item' wx:for="{{4}}">
-          <view class='screen-writer-head'>
-            <image src='../../images/index/index.png'></image>
+          <view class='screen-writer-head' bind:tap="goDetail">
+            <image src='http://api.gojbcs.com/images/index/img_header.png'></image>
           </view>
           <view class='screen-writer-name'>施瓦辛格</view>
         </view>
@@ -72,7 +72,7 @@
                   <view class="look-item-sub">迷上了柯南一集杀几个日本人助助兴。</view>
                 </view>
                 <view class='look-item-img'>
-                  <image src='../../images/index/img_header.png'></image>
+                  <image src='http://api.gojbcs.com/images/index/img_header.png'></image>
                 </view>
               </view>
             </view>
@@ -82,11 +82,11 @@
     </view>
     <!-- 大家都在看 -->
     <view class='index-water'>
-      <view class='screen-writer-title'>签约编剧</view>
+      <view class='screen-writer-title'>推荐编剧</view>
       <view class='fall-container'>
         <block wx:for="{{list}}" wx:key="{{item.id}}">
           <!--瀑布流内容卡片-->
-          <view class='fall-item'>
+          <view class='fall-item' bind:tap="goDetail">
             <image src='{{item.img}}' mode="widthFix"></image>
             <view>{{item.name}}</view>
             <view>代表作：{{item.masterpiece}}</view>

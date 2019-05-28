@@ -5,7 +5,7 @@
   <view class="userinfo">
     <view class="user">
       <view class="user-header">
-        <image src="../../images/header.jpg"></image>
+        <image src="http://api.gojbcs.com/images/header.jpg"></image>
       </view>
       <view class="name-cont">
         <view class="name">免贵姓张名无敌</view>
@@ -19,24 +19,24 @@
   </view>
   <view class="my-nav">
     <view class="nav-item" bind:tap="goFavorite">
-      <image src="../../images/my_icon_collection.png"></image>
+      <image src="http://api.gojbcs.com/images/my_icon_collection.png"></image>
       <view class="nav-item-name">我的收藏</view>
       <view class="new-hint">NEW</view>
     </view>
     <view class="nav-item" bind:tap="goMember">
-      <image src="../../images/my_icon_member.png"></image>
+      <image src="http://api.gojbcs.com/images/my_icon_member.png"></image>
       <view class="nav-item-name">剧本超市会员</view>
       <view class="new-hint">NEW</view>
     </view>
     <view class="nav-item" bind:tap="gohistory">
-      <image src="../../images/my_icon_history.png"></image>
+      <image src="http://api.gojbcs.com/images/my_icon_history.png"></image>
       <view class="nav-item-name">查看历史</view>
       <view class="new-hint">NEW</view>
     </view>
   </view>
   <view class="my-message" bind:tap="goMyMessage">
     <view class="message-left">
-      <image src="../../images/my_icon_message.png"></image>
+      <image src="http://api.gojbcs.com/images/my_icon_message.png"></image>
       <text>我的消息</text>
     </view>
     <view class="message-right">
@@ -46,7 +46,7 @@
   <view class="my-list">
     <view class="my-item" bindtap='goExcon'>
       <view class="my-item-left">
-        <image src="../../images/my_icon_adviser.png"></image>
+        <image src="http://api.gojbcs.com/images/my_icon_adviser.png"></image>
         <text>专属经纪顾问</text>
       </view>
       <view class="my-right-text">
@@ -55,20 +55,20 @@
     </view>
     <view class="my-item" bindtap='goBindphone'>
       <view class="my-item-left">
-        <image src="../../images/my_icon_setup.png"></image>
+        <image src="http://api.gojbcs.com/images/my_icon_setup.png"></image>
         <text>设置</text>
       </view>
       <view class="my-item-right">
-        <image src="../../images/icon-right-arrow.png"></image>
+        <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
       </view>
     </view>
     <navigator class="my-item" url="/pages/about_us/index" hover-class="none">
       <view class="my-item-left">
-        <image src="../../images/my_icon_about.png"></image>
+        <image src="http://api.gojbcs.com/images/my_icon_about.png"></image>
         <text>关于</text>
       </view>
       <view class="my-item-right">
-        <image src="../../images/icon-right-arrow.png"></image>
+        <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
       </view>
     </navigator>
   </view>

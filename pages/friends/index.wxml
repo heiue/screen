@@ -1,0 +1,7 @@
+<!--pages/friends/index.wxml-->
+<view class="container">
+	<view class='title-top'>
+	  <title title="人脉圈" isFirst="{{false}}"></title>
+	</view>
+	
+</view>

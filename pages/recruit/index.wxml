@@ -1,7 +1,7 @@
 <view class="container">
   <view class="cont">
     <view class="banner">
-      <image src="../../images/recruit_img_banner.png"></image>
+      <image src="http://api.gojbcs.com/images/recruit_img_banner.png"></image>
     </view>
     <view class="recruit-list">
       <view class="recruit-item" wx:for="{{list}}" bind:tap="goDetails">

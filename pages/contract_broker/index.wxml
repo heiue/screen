@@ -1,10 +1,10 @@
 <view class="container">
-  <image src="../../images/contract_broker/img_bg.png" class="container-bg"></image>
+  <image src="http://api.gojbcs.com/images/contract_broker/img_bg.png" class="container-bg"></image>
   <view class="cont">
     <view class="line"></view>
     <view class="header">
       <view class="header-photo">
-        <image src="../../images/history/history_img_header.png"></image>
+        <image src="http://api.gojbcs.com/images/history/history_img_header.png"></image>
       </view>
       <view class="name">东风不破</view>
     </view>
@@ -15,15 +15,15 @@
     <view class="contact">
       <view class="contact-item">
         <view class="contact-text">14999999999</view>
-        <image class="contact-icon" src="../../images/contract_broker/icon_phone.png"></image>
+        <image class="contact-icon" src="http://api.gojbcs.com/images/contract_broker/icon_phone.png"></image>
       </view>
       <view class="contact-item">
         <view class="contact-text">14999999999</view>
-        <image class="contact-icon" src="../../images/contract_broker/icon_wechat.png"></image>
+        <image class="contact-icon" src="http://api.gojbcs.com/images/contract_broker/icon_wechat.png"></image>
       </view>
       <view class="contact-item">
         <view class="contact-text">14999999999</view>
-        <image class="contact-icon" src="../../images/contract_broker/icon_email.png"></image>
+        <image class="contact-icon" src="http://api.gojbcs.com/images/contract_broker/icon_email.png"></image>
       </view>
     </view>
   </view>

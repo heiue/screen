@@ -1,0 +1,5 @@
+/* pages/friends/index.wxss */
+.title-top{
+  padding: 0 20rpx;
+  background: #fff;
+}

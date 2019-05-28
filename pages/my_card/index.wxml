@@ -9,8 +9,8 @@
         <view class="title">
           <view class="name">九妹</view>
           <view class="title-icon">
-            <image src="../../images/my_card/icon_sex.png" class=""></image>
-            <image src="../../images/my_card/icon_vip.png" class=""></image>
+            <image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+            <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
           </view>
           <view class="title-text">百度百科</view>
         </view>
@@ -28,7 +28,7 @@
         </view>
       </view>
       <view class="header-portrait">
-        <image src="../../images/my_card/img_header.png" class=""></image>
+        <image src="http://api.gojbcs.com/images/my_card/img_header.png" class=""></image>
       </view>
     </view>
   </view>
@@ -61,7 +61,7 @@
       </view>
       <view class="photo-list">
         <view class="operation">
-          <image class="upload" src="../../images/my_card/icon_add.png"></image>
+          <image class="upload" src="http://api.gojbcs.com/images/my_card/icon_add.png"></image>
           <view class="operation-btn">
             <view class="edit-btn">编辑名片</view>
             <view class="share">分享名片</view>

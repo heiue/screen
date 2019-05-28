@@ -4,6 +4,7 @@
     "pages/pay_knowledge/index",
     "pages/project/index",
     "pages/index/index",
+		"pages/friends/index",
     "pages/favorite/index",
     "pages/recruit_details/index",
     "pages/history/index",
@@ -43,7 +44,7 @@
         "text": "项目"
       },
       {
-        "pagePath": "pages/my/index",
+        "pagePath": "pages/friends/index",
         "iconPath": "images/navbar/friend.png",
         "selectedIconPath": "images/navbar/friend-on.png",
         "text": "人脉圈"

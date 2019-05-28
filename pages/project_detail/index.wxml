@@ -3,9 +3,9 @@
     <title title="项目详情" isFirst="{{true}}"></title>
   </view>
   <view class="header">
-    <image src="../../images/project_detail/img_header_bg.png" class="header-bg"></image>
+    <image src="http://api.gojbcs.com/images/project_detail/img_header_bg.png" class="header-bg"></image>
     <view class="play">
-      <image src="../../images/project_detail/project_img_play.png" class="play-btn"></image>
+      <image src="http://api.gojbcs.com/images/project_detail/project_img_play.png" class="play-btn"></image>
     </view>
   </view>
   <view class="intro">
@@ -29,7 +29,7 @@
   <view class="describe">
     <view class="describe-title">项目描述</view>
     <view class="describe-img">
-      <image src="../../images/project_detail/img_header_bg.png" class="describe-bg"></image>
+      <image src="http://api.gojbcs.com/images/project_detail/img_header_bg.png" class="describe-bg"></image>
     </view>
     <view class="describe-text">描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。</view>
   </view>

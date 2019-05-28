@@ -1,9 +1,12 @@
 page{
   background-color: #fff
 }
-.container{
-  padding: 140rpx 20rpx 0;
+
+.title-top{
+  padding: 0 20rpx;
+  background: #fff;
 }
+
 .search{
   width: 100%;
   height: 58rpx;

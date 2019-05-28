@@ -47,15 +47,15 @@ Page({
       },
     ],
     list:[{
-      img:"http://api.gojbcs.com/images/index/index.png",
+      img:"http://api.gojbcs.com/images/header.jpg",
       name:"施瓦辛格",
       masterpiece:"《hollo》"
     },{
-        img: "http://api.gojbcs.com/images/index/index.png",
+        img: "http://api.gojbcs.com/images/header.jpg",
         name: "施瓦辛格",
         masterpiece: "《hi》"
       }, {
-        img: "http://api.gojbcs.com/images/index/index.png",
+        img: "http://api.gojbcs.com/images/header.jpg",
         name: "施瓦辛格",
         masterpiece: "《nice》"
       }],
@@ -149,6 +149,15 @@ Page({
     this.setData({
       swiperHeight: 380 + Math.ceil(this.data.list.length/2)*200
     })
-    console.log(this.data.swiperHeight)
-  }
+  },
+	goDetail:function() {
+		wx.navigateTo({
+		  url: '/pages/my_card/index'
+		})
+	},
+	goRecruit:function() {
+		wx.navigateTo({
+		  url: '/pages/recruit/index'
+		})
+	}
 })
