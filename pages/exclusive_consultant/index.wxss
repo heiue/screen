@@ -2,7 +2,7 @@ page{
   background-color: #FFF;
 }
 .container{
-  padding-top: 140rpx;
+  /* padding-top: 140rpx; */
 }
 .line{
   width: 100%;

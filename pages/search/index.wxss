@@ -1,9 +1,10 @@
 page{
   background-color: #fff
 }
-
-.title-top{
+.container{
   padding: 0 20rpx;
+}
+.title-top{
   background: #fff;
 }
 

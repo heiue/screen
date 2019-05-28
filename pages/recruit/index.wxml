@@ -1,4 +1,7 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="任务广场" isFirst="{{true}}"></title>
+  </view>
   <view class="cont">
     <view class="banner">
       <image src="http://api.gojbcs.com/images/recruit_img_banner.png"></image>

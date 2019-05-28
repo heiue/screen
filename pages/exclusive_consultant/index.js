@@ -28,7 +28,11 @@ Page({
   onShow: function () {
 
   },
-
+  callPhone: function () {
+    wx.makePhoneCall({
+      phoneNumber: '4001397918' //仅为示例，并非真实的电话号码
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

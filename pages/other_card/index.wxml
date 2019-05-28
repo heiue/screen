@@ -1,0 +1,68 @@
+<!--pages/other_card/index.wxml-->
+
+<view class="container">
+  <view class='title-top'>
+    <title title="我的名片" isFirst="{{true}}"></title>
+  </view>
+  <view class='header-link'>
+    <view class='header-link-head'>
+      <image src='http://api.gojbcs.com/images/my_card/img_header.png'></image>
+    </view>
+    <view class='header-link-name'>
+      <view>九妹</view>
+      <view>剧本超市</view>
+    </view>
+    <view class='header-link-num'>立即联系</view>
+  </view>
+  <view class="header">
+    <view class="header-bg"></view>
+    <view class="header-card">
+      <view class="header-cont">
+        <view class="title">
+          <view class="name">九妹</view>
+          <view class="title-icon">
+            <image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+            <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
+          </view>
+          <view class="title-text">百度百科</view>
+        </view>
+        <view class="intro">
+          <view>行业：</view>
+          <view>策划</view>
+        </view>
+        <view class="intro">
+          <view>行业：</view>
+          <view>策划</view>
+        </view>
+        <view class="intro">
+          <view>行业：</view>
+          <view>策划</view>
+        </view>
+      </view>
+      <view class='header-right'>
+        <view class="header-portrait">
+          <image src="http://api.gojbcs.com/images/my_card/img_header.png" class=""></image>
+        </view>
+        <view class='header-follow'>
+          <image src='http://api.gojbcs.com/images/my_icon_collection.png'></image>
+          <text>关注</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="form">
+    <view class="wechat">
+      <view class="wechat-cont">
+        <view class="label">简介：</view>
+        <view class="text">这是一位非常非常有才的人</view>
+      </view>
+    </view>
+    <view class="wechat">
+      <view class="wechat-cont">
+        <view class="label">邮箱：</view>
+        <view class="text">asdasdasdasd</view>
+      </view>
+    </view>
+    
+  </view>
+</view>

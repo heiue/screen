@@ -1,4 +1,6 @@
 <view class="first-title">
-  <view class='title-back' wx:if="{{isFirst}}" bindtap='goBack'> {{isFirst}} </view>
+  <view class='title-back' wx:if="{{isFirst}}" bindtap='goBack'> 
+    <image src='../../images/title-back.png'></image>
+  </view>
   <text class="{{!isFirst?'':'title-middle'}}">{{title}}</text>
 </view>

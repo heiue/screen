@@ -1,4 +1,7 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="编剧详情" isFirst="{{true}}"></title>
+  </view>
   <view class="header">
     <view class="title">
       <view class="name">编剧</view>

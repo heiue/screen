@@ -152,7 +152,7 @@ Page({
   },
 	goDetail:function() {
 		wx.navigateTo({
-		  url: '/pages/my_card/index'
+		  url: '/pages/other_card/index'
 		})
 	},
 	goRecruit:function() {

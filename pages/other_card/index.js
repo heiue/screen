@@ -1,13 +1,11 @@
-// pages/search/index.js
-
-let app = getApp()
+// pages/other_card/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrl: app.globalData.imgUrl//图片路径前缀
+
   },
 
   /**

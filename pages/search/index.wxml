@@ -3,7 +3,7 @@
 	  <title title="" isFirst="{{true}}"></title>
 	</view>
   <view class="search">
-    <image class="search-icon" src="http://api.gojbcs.com/images/project_icon_search.png"></image>
+    <image class="search-icon" src="{{imgUrl}}/project_icon_search.png"></image>
     <input type="text" class="search-input" placeholder="请输入搜索内容" />
   </view>
   <view class="search-history">

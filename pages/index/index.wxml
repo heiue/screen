@@ -65,7 +65,7 @@
         <scroll-view scroll-x="true" >
           <view class="scroll-x">
             <view wx:for-items="{{scrolls}}" wx:key="name"  class="index-look-list">
-              <view class="index-look-item">
+              <navigator class="index-look-item" url="/pages/watching-detail/index">
                 <view class='look-item-text'>
                   <view class="look-item-hint">当前热门</view>
                   <view class="look-item-name">名侦探柯南编剧里夫斯</view>
@@ -74,7 +74,7 @@
                 <view class='look-item-img'>
                   <image src='http://api.gojbcs.com/images/index/img_header.png'></image>
                 </view>
-              </view>
+              </navigator>
             </view>
           </view>
         </scroll-view>

@@ -1,4 +1,7 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="" isFirst="{{true}}"></title>
+  </view>
   <image class="bg" src="http://api.gojbcs.com/images/bind_phone/bindphone_img_bg.png"></image>
   <view class="cont">
     <view class="logo">

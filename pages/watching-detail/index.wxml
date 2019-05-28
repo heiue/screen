@@ -1,0 +1,21 @@
+<view class="container">
+  <view class='title-top'>
+    <title title="大家都在看" isFirst="{{true}}"></title>
+  </view>
+  <view class="banner">
+    <image class="banner-img" src="{{imgUrl}}/pay_knowledge/img_list_placeholder.png"></image>
+  </view>
+  <view class="cont">
+    <view class="header">
+      <view class="name">你都买过哪些让你感觉后悔的东西?</view>
+      <view class="like">
+        <image class="like-icon" src="{{imgUrl}}/my_icon_collection.png"></image>
+      </view>
+    </view>
+    <view class="watching-num">168人阅读</view>
+    <view class='watch-text'>
+      <text>黄景瑜，1992年11月30日出生于辽宁省丹东市，中国内地影视男演员、模特。2016年，因主演网络剧《上瘾》而步入演艺圈；同年，出演黑色幽默电影《枪炮腰花》。2018年，凭借现代化海军题材电影《红海行动》提名第34届大众电影百花奖最佳新人，同年，黄景瑜还因爱情奇幻剧《结爱·千岁大人的初恋》获得第24届华鼎奖当代题材电视剧最佳男演员。2019年，主演励志喜剧片《飞驰人生》</text>
+      <image src='{{imgUrl}}/pay_knowledge/img_list_placeholder.png'></image>
+    </view>
+  </view>
+</view>

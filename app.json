@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/my/index",
     "pages/pay_knowledge/index",
     "pages/project/index",
-    "pages/index/index",
 		"pages/friends/index",
     "pages/favorite/index",
     "pages/recruit_details/index",
@@ -15,9 +15,11 @@
     "pages/pay_know_detail/index",
     "pages/project_detail/index",
     "pages/my_card/index",
+    "pages/other_card/index",
     "pages/my_message/index",
     "pages/contract_broker/index",
     "pages/exclusive_consultant/index",
+    "pages/watching-detail/index",
     "pages/search/index"
   ],
   "window": {

@@ -3,9 +3,9 @@
     <title title="查看历史" isFirst="{{true}}"></title>
   </view>
   <view class="header">
-    <image src="{{imgUrl}}pay_knowledge/img_list_placeholder.png" class="header-bg"></image>
+    <image src="{{imgUrl}}/pay_knowledge/img_list_placeholder.png" class="header-bg"></image>
     <view class="header-play">
-      <image src="{{imgUrl}}pay_know_detail/icon_play.png"></image>
+      <image src="{{imgUrl}}/pay_know_detail/icon_play.png"></image>
     </view>
   </view>
   <view class="detail-header">

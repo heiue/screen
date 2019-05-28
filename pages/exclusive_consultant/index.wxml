@@ -1,7 +1,10 @@
 <view class="container">
+  <view class='title-top'>
+    <title title="专属经纪顾问" isFirst="{{true}}"></title>
+  </view>
   <view class="line"></view>
   <view class="contact">
-    <view class="contact-item">
+    <view class="contact-item" bindtap="callPhone">
       <view class="contact-text">14999999999</view>
       <image class="contact-icon" src="http://api.gojbcs.com/images/contract_broker/icon_phone.png"></image>
     </view>

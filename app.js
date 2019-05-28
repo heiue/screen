@@ -35,6 +35,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    imgUrl: 'https://smxiaochengxu.oss-cn-beijing.aliyuncs.com/'
+    imgUrl: 'http://api.gojbcs.com/images'
   }
 })
