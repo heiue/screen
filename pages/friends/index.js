@@ -1,11 +1,15 @@
 // pages/friends/index.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgUrl: app.globalData.imgUrl,
+    friendsIndex:0,
+    moreTitleShow: true,
+    animationData: {},
   },
 
   /**
@@ -20,6 +24,25 @@ Page({
    */
   onReady: function () {
 
+  },
+  showMenu: function () {
+    this.setData({
+      moreTitleShow: !this.data.moreTitleShow
+    })
+    const animation = wx.createAnimation({
+      duration: 200
+    })
+    this.animation = animation
+    if (this.data.moreTitleShow) {
+      console.log(0)
+      animation.left('-100%').step()
+    } else {
+      console.log(2)
+      animation.left('0').step()
+    }
+    this.setData({
+      animationData: animation.export()
+    })
   },
 
   /**

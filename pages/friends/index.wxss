@@ -1,5 +1,259 @@
 /* pages/friends/index.wxss */
+.container{
+  background: #fff;
+}
 .title-top{
   padding: 0 20rpx;
   background: #fff;
+}
+.friends-menu{
+  padding:0 20rpx;
+  position: relative;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+  overflow: visible;
+}
+.friends-menu-btn{
+  position: absolute;
+  top:50%;
+  left:20rpx;
+  transform: translateY(-50%)
+}
+.friends-menu-search{
+  position: absolute;
+  top:50%;
+  right:20rpx;
+  transform: translateY(-50%)
+}
+.friends-menu-tap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.friends-menu-tap view{
+  margin:0 20rpx;
+  padding-bottom:30rpx;
+}
+.friends-menu-tap view.on{
+  color:#ffe147;
+  border-bottom: 1px solid #ffe147;
+}
+.header{
+  width: 100%;
+  height: 410rpx;
+  /* background-color: #ffe459; */
+  /* padding-top: 200rpx; */
+  position: relative;
+}
+.header-bg{
+  width: 100%;
+  height: 210rpx;
+  background-color: #fff;
+  border-radius: 15rpx 15rpx 0 0
+}
+.header-card{
+  position: absolute;
+  top: 50rpx;
+  left: 20rpx;
+  right: 20rpx;
+  height: 340rpx;
+  background-color: #ffffff;
+	box-shadow: 0px 0px 24rpx 0px 
+		rgba(68, 68, 68, 0.15);
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx 0 40rpx;
+}
+.header-cont{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title{
+  display: flex;
+  margin-bottom: 36rpx;
+  align-items:flex-end;
+}
+.name{
+  font-family: MicrosoftYaHei;
+	font-size: 48rpx;
+	letter-spacing: 5rpx;
+	color: #2e2e2e;
+}
+.title-icon{
+  padding: 5rpx 10rpx 7rpx;
+  height: 48rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.title-icon image{
+  width: 16rpx;
+  height: 16rpx;
+  /* background-color: seagreen */
+}
+.title-text{
+  font-family: MicrosoftYaHei;
+  font-size: 20rpx;
+	letter-spacing: 2rpx;
+  color: #5b5b5b;
+  padding-bottom: 4rpx;
+}
+.header-portrait{
+  width: 238rpx;
+  height: 238rpx;
+  border-radius: 238rpx;
+  overflow: hidden;
+}
+.header-portrait image{
+  width: 100%;
+  height: 100%;
+}
+.intro{
+  margin-bottom: 36rpx;
+  display: flex;
+  align-items: flex-end
+}
+.intro view:nth-of-type(1){
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	letter-spacing: 2rpx;
+	color: #4f4f4f;
+}
+.intro view:nth-of-type(2){
+  font-family: MicrosoftYaHei;
+	font-size: 20rpx;
+	letter-spacing: 2rpx;
+	color: #4f4f4f;
+}
+.form{
+  padding: 0 20rpx;
+}
+.wechat{
+  width: 100%;
+  height: 82rpx;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  align-items: center;
+}
+.wechat-icon{
+  width: 21rpx;
+  height: 21rpx;
+  border: 3rpx solid #8f44ec;
+  margin-right: 16rpx;
+  border-radius: 21rpx;
+}
+.wechat-cont{
+  display: flex;
+  align-items: center
+}
+.label, .text{
+  font-family: MicrosoftYaHei;
+	font-size: 20rpx;
+	letter-spacing: 2rpx;
+	color: #616161;
+}
+.email-icon{
+  width: 21rpx;
+  height: 21rpx;
+  border: 3rpx solid #eb6100;
+  margin-right: 16rpx;
+  border-radius: 21rpx;
+}
+.my-intro{
+  padding: 34rpx 0 30rpx;
+  border-bottom: 1px solid #e1e1e1;
+}
+.friends-list{
+  padding: 20rpx;
+}
+.friends-item{
+  width: 100%;
+  padding:25rpx 40rpx;
+	box-shadow: 0px 0px 24rpx 0px 
+		rgba(68, 68, 68, 0.15);
+    overflow: hidden;
+    border-radius: 10rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+}
+.friends-item-img{
+  width: 20rpx;
+  height:20rpx;
+  background: #ffe147;
+  border-radius: 50%;
+  float: left;
+}
+.friends-item-img image{
+  width: 100%;
+  height:100%;
+}
+.friends-item-text{
+  font-size: 24rpx;
+  float: left;
+  margin-left: 15rpx;
+}
+.friends-item-name{
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+.friends-item-job{
+  margin-bottom: 15rpx;
+}
+.friends-item-head{
+  width: 100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:50%;
+  right:40rpx;
+  transform: translateY(-50%)
+}
+.friends-item-head image{
+  width: 100%;
+  height:100%;
+}
+.friends-menu-list{
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top:0;
+  left:-100%;
+  background: rgba(0,0,0,.2)
+}
+.friends-menu-list-container{
+  background: #fff;
+  width: 500rpx;
+  height:100%;
+  overflow: scroll;
+  padding-top:200rpx;
+  box-sizing: border-box;
+}
+.friends-menu-title{
+  font-size:30rpx;
+  color:#373737;
+  border-left:2px solid #ffe147;
+  padding-left: 25rpx;
+  margin-left: 20rpx;
+
+}
+.friends-menu-item{
+  font-size: 26rpx;
+  padding:0 25rpx;
+  box-sizing: border-box;
+}
+.friends-menu-item text{
+  margin:20rpx 0;
+  width: 150rpx;
+  display: inline-block;
+}
+.friends-menu-close{
+  float: right;
+  margin-right: 20rpx;
 }
