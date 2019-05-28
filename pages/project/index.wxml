@@ -1,5 +1,12 @@
 <view class="container">
   <title title="项目" isFirst="{{false}}"></title>
+  <view>
+    <scroll-view scroll-x="true" >
+      <view class="scroll-x">
+        <view wx:for-items="{{moreTitle}}" wx:key="name"  class="project-classify-item" >{{item}}</view>
+      </view>
+    </scroll-view>
+  </view>
   <view class="project-header">
     <view class="header-img">
       <image src="http://api.gojbcs.com/images/project_img_banner.png"></image>

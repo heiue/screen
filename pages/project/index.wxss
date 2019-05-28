@@ -4,6 +4,15 @@ page{
 .container{
   padding: 0 20rpx 30rpx;
 }
+.scroll-x {
+  display: flex;
+  flex-direction: row; 
+  padding:20rpx 0;
+  overflow: visible;
+}
+.project-classify-item{
+  width: 200rpx
+}
 .project-nav{
   position: fixed;
   z-index: 99;

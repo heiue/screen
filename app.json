@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/project/index",
     "pages/friends/index",
     "pages/index/index",
     "pages/my/index",
     "pages/pay_knowledge/index",
-    "pages/project/index",
     "pages/favorite/index",
     "pages/recruit_details/index",
     "pages/history/index",

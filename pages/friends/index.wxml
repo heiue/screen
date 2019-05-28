@@ -44,7 +44,7 @@
     </view>
   </view>
   <view class='friends-list'>
-    <view class='friends-item' wx:for="{{4}}">
+    <navigator url="/pages/my_card/index" class='friends-item' wx:for="{{4}}">
       <view class="friends-item-img">
         <image src=''></image>
       </view>
@@ -60,7 +60,7 @@
       <view class='friends-item-head'>
         <image src='{{imgUrl}}/my_card/img_header.png'></image>
       </view>
-    </view>
+    </navigator>
   </view>
 </view>
 <view class='friends-menu-list' animation="{{animationData}}">

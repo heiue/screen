@@ -174,14 +174,16 @@
   padding: 20rpx;
 }
 .friends-item{
+  display: block;
   width: 100%;
   padding:25rpx 40rpx;
 	box-shadow: 0px 0px 24rpx 0px 
 		rgba(68, 68, 68, 0.15);
-    overflow: hidden;
-    border-radius: 10rpx;
-    margin-bottom: 20rpx;
-    position: relative;
+  overflow: hidden;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  box-sizing: border-box;
 }
 .friends-item-img{
   width: 20rpx;
