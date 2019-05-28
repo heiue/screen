@@ -10,8 +10,12 @@ page{
   padding:20rpx 0;
   overflow: visible;
 }
-.project-classify-item{
-  width: 200rpx
+.nav-item{
+  width: 184rpx;
+  text-align: center;
+  padding: 0 32rpx;
+  font-size: 24rpx;
+  color:  #3e3e3e;
 }
 .project-nav{
   position: fixed;
