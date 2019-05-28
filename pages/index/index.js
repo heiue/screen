@@ -145,10 +145,19 @@ Page({
     })
   },
   setSwiperHeight:function() {
-    console.log(this.data.list.length)
-    this.setData({
-      swiperHeight: 380 + Math.ceil(this.data.list.length/2)*200
-    })
+    var that = this;
+    // console.log(this.data.list.length)
+    wx.createSelectorQuery().selectAll('.fall-item').boundingClientRect(function (rect) {
+      console.log(rect[0].height)
+      var h = rect[0].height
+    }).exec()
+    wx.createSelectorQuery().selectAll('.index-swiper-tab').boundingClientRect(function (rect) {
+      console.log(rect[0].height)
+      that.setData({
+        swiperHeight: rect[0].height + Math.ceil(that.data.list.length / 2) * 200
+      })
+    }).exec()
+    
   },
 	goDetail:function() {
 		wx.navigateTo({

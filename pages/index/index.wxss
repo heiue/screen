@@ -164,7 +164,7 @@ margin-top:40rpx;
   background: #fff;
 }
 .index-look-content{
-  margin-top:40rpx;
+  margin-top:20rpx;
 }
 
 .scroll-x {
@@ -242,7 +242,7 @@ margin-top:40rpx;
   justify-content: space-between;
   flex-flow: row;
   flex-wrap:wrap;
-  margin-top:40rpx;
+  margin-top:20rpx;
 }
 .fall-item{
   width: 50%;
