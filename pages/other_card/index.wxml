@@ -5,13 +5,25 @@
     <title title="我的名片" isFirst="{{true}}"></title>
   </view>
   <view class='header-link'>
-    <view class='header-link-head'>
+    <view class='header-link-left'>
+      <view class='header-photo'>
+        <image src='http://api.gojbcs.com/images/index/img_header.png'></image>
+      </view>
+      <view class='header-name'>
+        <view class='header-name-title'>
+          <view class='name-text'>张三李四王五</view>
+          <image src='../../images/icon_auth.png'></image>
+        </view>
+        <view class='header-intro'>剧本超市</view>
+      </view>
+    </view>
+    <!-- <view class='header-link-head'>
       <image src='http://api.gojbcs.com/images/my_card/img_header.png'></image>
     </view>
     <view class='header-link-name'>
       <view>九妹</view>
       <view>剧本超市</view>
-    </view>
+    </view> -->
     <view class='header-link-num'>立即联系</view>
   </view>
   <view class="header">
@@ -50,19 +62,52 @@
       </view>
     </view>
   </view>
-  <view class="form">
-    <view class="wechat">
-      <view class="wechat-cont">
-        <view class="label">简介：</view>
-        <view class="text">这是一位非常非常有才的人</view>
+  <view class='intro-cont'>
+    <view class='introduce'>
+      <view>简介：</view>
+      <view>剧本超市签约编剧剧本超市签</view>
+    </view>
+    <view class='watch'>
+      <view class='watch-num'>
+        <view class='number'>666人查看</view>
+        <view class='watch-header'>
+          <image src='http://api.gojbcs.com/images/index/img_header.png'></image>      
+        </view>
+        <view class='watch-header'>
+          <image src='http://api.gojbcs.com/images/index/img_header.png'></image>      
+        </view>
+        <view class='watch-header'>
+          <image src='http://api.gojbcs.com/images/index/img_header.png'></image>      
+        </view>
+        <view class='watch-header-more watch-header'>
+          <image src='http://api.gojbcs.com/images/index/img_header.png'></image>
+          <view class='watch-header-mask'>···</view>
+        </view>
+      </view>
+      <view class='contact'>
+        立即联系
+        <view class='contact-hint'></view>
       </view>
     </view>
-    <view class="wechat">
-      <view class="wechat-cont">
-        <view class="label">邮箱：</view>
-        <view class="text">asdasdasdasd</view>
+  </view>
+  <view class='history-cont'>
+    <view class='history-item'>
+      <view class='item-title'>
+        <image src='../../images/icon_history.png' class='icon-history'></image>
+        <view class='item-name'>《hello,树先生》</view>
+      </view>
+      <view class='item-show'>
+        <image src='../../images/watching_detail/img_banner.png'></image>
       </view>
     </view>
-    
+    <view class='history-item'>
+      <view class='item-title'>
+        <image src='../../images/icon_history.png' class='icon-history'></image>
+        <view class='item-name'>《hello,树先生》</view>
+      </view>
+      <view class='item-show'>
+        <image src='../../images/watching_detail/img_banner.png'></image>
+      </view>
+    </view>
   </view>
 </view>

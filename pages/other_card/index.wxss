@@ -8,9 +8,65 @@
 }
 .header-link{
   background: #47abf6;
-  padding:25rpx 40rpx;
+  padding: 0 40rpx;
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.header-link-head{
+.header-link-left{
+  display: flex;
+  align-items: center;
+}
+.header-photo{
+  width: 100rpx;
+	height: 100rpx;
+	border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.header-photo image{
+  width: 100%;
+  height: 100%;
+}
+.header-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-name-title{
+  font-size: 24rpx;
+	color: #ffffff;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.name-text{
+  margin-right: 20rpx
+}
+.header-name-title image{
+  width: 24rpx;
+  height: 24rpx;
+}
+.header-intro{
+  font-size: 18rpx;
+	color: #ffffff;
+}
+.header-link-num{
+  width: 168rpx;
+  height: 55rpx;
+  border-radius: 55rpx;
+  line-height: 55rpx;
+  border: 1px solid #fff;
+  background-color: #65b8f6;
+  font-size: 24rpx;
+  text-align: center;
+	letter-spacing: 2rpx;
+	color: #ffffff;
+}
+/* .header-link-head{
   width: 100rpx;
   height:100rpx;
   border-radius: 10rpx;
@@ -38,10 +94,10 @@
   border:1px solid #e0f1fd;
   color:#fff;
   border-radius: 40rpx;
-}
+} */
 .header{
   width: 100%;
-  height: 410rpx;
+  height: 402rpx;
   /* background-color: #ffe459; */
   /* padding-top: 200rpx; */
   position: relative;
@@ -57,7 +113,7 @@
   top: 20rpx;
   left: 20rpx;
   right: 20rpx;
-  height: 340rpx;
+  height: 382rpx;
   background-color: #ecf6fe;
 	box-shadow: 0px 0px 24rpx 0px 
 		rgba(68, 68, 68, 0.15);
@@ -256,4 +312,124 @@
 	font-size: 20rpx;
 	letter-spacing: 2rpx;
 	color: #4f4f4f;
+}
+.intro-cont{
+  width: 100%;
+  height: 170rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20rpx;
+}
+.introduce{
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 30rpx;
+}
+.introduce view:nth-of-type(1){
+  font-size: 24rpx;
+  color: #373737;
+}
+.introduce view:nth-of-type(2){
+  font-size: 18rpx;
+  color: #757575;
+}
+.watch{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact{
+  position: relative;
+  width: 140rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 50rpx;
+  background-color: #47abf6;
+  font-size: 24rpx;
+  color:#fff;
+
+}
+.contact-hint{
+  position: absolute;
+  top:6rpx;
+  right: 12rpx;
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 6rpx;
+  background-color: #ffe147;
+}
+.watch-num{
+  display: flex;
+  align-items: center;
+}
+.number{
+  font-size: 24rpx;
+  color: #8e8e8e;
+  margin-right: 10rpx;
+}
+.watch-header{
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 8rpx;
+  margin: 0 10rpx;
+  overflow: hidden;
+}
+.watch-header image{
+  width: 100%;
+  height: 100%;
+}
+.watch-header-more{
+  position: relative;
+}
+.watch-header-mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  line-height: 52rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+.history-cont{
+  padding: 32rpx 20rpx 40rpx 42rpx;
+  background-color: #f1f2fb
+}
+.item-title{
+  display: flex;
+  align-items: center;
+}
+.icon-history{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+}
+.item-name{
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	letter-spacing: 2rpx;
+	color: #474747;
+}
+.item-show{
+  padding:20rpx 0 20rpx 32rpx;
+  position: relative;
+}
+.item-show::after{
+  display: block;
+  width: 1px;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 11rpx;
+  background-color: #bbd7ff;
+  opacity: 0.4;
+}
+.item-show image{
+  width: 644rpx;
+  height: 261rpx;
+  border-radius: 10rpx;
 }
