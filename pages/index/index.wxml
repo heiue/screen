@@ -87,9 +87,9 @@
         <block wx:for="{{list}}" wx:key="{{item.id}}">
           <!--瀑布流内容卡片-->
           <view class='fall-item' bind:tap="goDetail">
-            <image src='{{item.img}}' mode="widthFix"></image>
-            <view>{{item.name}}</view>
-            <view>代表作：{{item.masterpiece}}</view>
+            <!-- <image src='{{item.img}}' mode="widthFix"></image> -->
+            <view>{{item.name}} {{item.rating_name}}</view>
+            <view>代表作：{{item.residence}}</view>
           </view>
         </block>
       </view>

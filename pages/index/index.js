@@ -1,4 +1,5 @@
 //index.js
+const api = require('../../http.js');
 //获取应用实例
 const app = getApp()
 
@@ -68,6 +69,7 @@ Page({
     })
   },
   onLoad: function () {
+    var that = this;
     this.setSwiperHeight();
     if (app.globalData.userInfo) {
       this.setData({
@@ -95,6 +97,12 @@ Page({
         }
       })
     }
+    api.get('/screenwriter/list',function(res) {
+      console.log(res)
+      that.setData({
+        list:res.data.data
+      })
+    }, true)
   },
   getUserInfo: function(e) {
     console.log(e)

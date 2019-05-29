@@ -10,20 +10,21 @@ Page({
     friendsIndex:0,
     moreTitleShow: true,
     animationData: {},
+		host: app.globalData.host
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+		
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+		
   },
   showMenu: function () {
     this.setData({
@@ -44,12 +45,18 @@ Page({
       animationData: animation.export()
     })
   },
+	changeFriendsTap:function(e) {
+		// console.log(e.currentTarget.dataset.index)
+		this.setData({
+			friendsIndex: e.currentTarget.dataset.index
+		})
+	},
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+	
   },
 
   /**
