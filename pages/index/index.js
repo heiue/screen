@@ -70,6 +70,7 @@ Page({
   },
   onLoad: function () {
     var that = this;
+    this.getWriterList();
     this.setSwiperHeight();
     if (app.globalData.userInfo) {
       this.setData({
@@ -97,19 +98,17 @@ Page({
         }
       })
     }
-    api.get('/screenwriter/list',function(res) {
-      // console.log(res)
+    
+  },
+  getWriterList: function() {
+    var that = this;
+    api.get('/screenwriter/list?position=0', function (res) {
+      console.log(res.data)
       that.setData({
-        list:res.data.data
+        list: res.data.data
       })
     }, true)
   },
-  // getUserInfo: function(e) {
-  //   this.setData({
-  //     userInfo: e.detail.userInfo,
-  //     hasUserInfo: true
-  //   })
-  // },
   //滑动切换
   swiperTab: function (e) {
     console.log(e.detail.current)

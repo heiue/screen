@@ -12,11 +12,11 @@
             <image wx:if="{{userInfo.gender == 1}}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
             <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
           </view>
-          <view class="title-text">百度百科</view>
+          <view class="title-text">{{userCompany}}</view>
         </view>
         <view class="intro">
           <view>行业：</view>
-          <view>策划</view>
+          <input class='intro-phone' placeholder='请输入从事的行业' bindblur='submitUserInfo' data-val="industry" value='{{userIndustry}}'></input>
         </view>
         <view class="intro">
           <view>地址：</view>
@@ -39,6 +39,15 @@
         <view class="label">微信：</view>
         <view class="text">
           <input class='intro-phone' placeholder='请输入微信号'></input>
+        </view>
+      </view>
+    </view>
+    <view class="wechat">
+      <view class="wechat-icon"></view>
+      <view class="wechat-cont">
+        <view class="label">公司：</view>
+        <view class="text">
+          <input class='intro-phone' placeholder='请输入公司名称'></input>
         </view>
       </view>
     </view>

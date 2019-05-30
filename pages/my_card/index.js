@@ -8,16 +8,38 @@ Page({
    */
   data: {
     userInfo: JSON.parse(app.globalData.userInfo),
-    userPhone:''
+    cardInfo:[],//名片内可修改的用户信息
+    userIndustry:'',
+    userPhone:'',
+    userWechat:'',
+    userCompany: '',
+    usereMail:'',
+    userIntro: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getUserInfo();
   },
 
+  getUserInfo() {
+    api.post('/user/getusercard',{
+      uid: wx.getStorageSync('user_id')
+    },function(res){
+      console.log(res)
+    })
+  },
+
+  submitUserInfo(e){
+    console.log(e.currentTarget.dataset.val)
+    api.post('/user/updateuser',{
+
+    },function(res){
+      console.log(res)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

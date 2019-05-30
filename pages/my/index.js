@@ -15,7 +15,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.data.userInfo)
+    this.getUserId();
+  },
+  //获取用户id
+  getUserId() {
+    api.post('/user/getuserinfo',{
+      token: wx.getStorageSync('token')
+    },function(res) {
+      wx.setStorageSync('user_id', res.data.data.userinfo.id);
+    })
   },
   goMyCard: function () {
     wx.navigateTo({

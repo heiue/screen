@@ -1,4 +1,6 @@
 // pages/project/index.js
+let app = getApp();
+const api = require('../../http.js');
 Page({
 
   /**
@@ -7,7 +9,7 @@ Page({
   data: {
     nav: ['全部', '网剧', '电视剧', '院线', '网络大电影', '动漫', 'IP项目', '舞台剧', '网台互动', '影视资源'],
     navActive: 0,
-    project: [1, 1, 1, 1, 1],
+    project: [],
     moreTitleShow: true,
     animationData: {},
     moreTitle: ['古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类']
@@ -17,7 +19,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getProjectList();
+  },
+  getProjectList() {
+    var that = this;
+    api.get('/project/list',function(res){
+      that.setData({
+        project:res.data.data
+      })
+    },false)
   },
   goDetail: function () {
     wx.navigateTo({
