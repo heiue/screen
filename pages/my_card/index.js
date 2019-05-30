@@ -1,18 +1,21 @@
 // pages/my_card/index.js
+let app = getApp();
+const api = require('../../http.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo: JSON.parse(app.globalData.userInfo),
+    userPhone:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**

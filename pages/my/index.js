@@ -1,18 +1,21 @@
-// pages/my/index.js
+// pages/my/index.
+let app = getApp();
+const api = require('../../http.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo: JSON.parse(app.globalData.userInfo)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(this.data.userInfo)
   },
   goMyCard: function () {
     wx.navigateTo({

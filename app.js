@@ -37,7 +37,7 @@ App({
     return !!wx.getStorageSync('user_info');
   },
   globalData: {
-    userInfo: null,
+    userInfo: wx.getStorageSync('user_info') || null,
     imgUrl: 'http://api.gojbcs.com/images'
   }
 })

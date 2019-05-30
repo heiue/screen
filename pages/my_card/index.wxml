@@ -7,9 +7,9 @@
     <view class="header-card">
       <view class="header-cont">
         <view class="title">
-          <view class="name">九妹</view>
+          <view class="name">{{userInfo.nickName}}</view>
           <view class="title-icon">
-            <image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+            <image wx:if="{{userInfo.gender == 1}}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
             <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
           </view>
           <view class="title-text">百度百科</view>
@@ -19,16 +19,16 @@
           <view>策划</view>
         </view>
         <view class="intro">
-          <view>行业：</view>
-          <view>策划</view>
+          <view>地址：</view>
+          <view>{{userInfo.province}}{{userInfo.city}}</view>
         </view>
         <view class="intro">
-          <view>行业：</view>
-          <view>策划</view>
+          <view>联系电话：</view>
+          <input class='intro-phone' placeholder='请输入手机号'></input>
         </view>
       </view>
       <view class="header-portrait">
-        <image src="http://api.gojbcs.com/images/my_card/img_header.png" class=""></image>
+        <image src="{{userInfo.avatarUrl}}" class=""></image>
       </view>
     </view>
   </view>
@@ -37,14 +37,18 @@
       <view class="wechat-icon"></view>
       <view class="wechat-cont">
         <view class="label">微信：</view>
-        <view class="text">王小二</view>
+        <view class="text">
+          <input class='intro-phone' placeholder='请输入微信号'></input>
+        </view>
       </view>
     </view>
     <view class="wechat">
       <view class="email-icon"></view>
       <view class="wechat-cont">
         <view class="label">邮箱：</view>
-        <view class="text">asdasdasdasd</view>
+        <view class="text">
+          <input class='intro-phone' placeholder='请输入邮箱'></input>
+        </view>
       </view>
     </view>
     <view class="my-intro">
@@ -52,7 +56,9 @@
         <view class="intro-title-icon"></view>
         <view class="my-intro-name">我的简介</view>
       </view>
-      <view class="my-intro-cont">站酷首席设计师、花瓣签约设计师、佳能签约设计师站酷首席设计师、花瓣签约设计师、佳能签约设计师。</view>
+      <view class="my-intro-cont">
+        <textarea placeholder='请编辑自己的简介'></textarea>
+      </view>
     </view>
     <view class="my-photo">
       <view class="my-intro-title">

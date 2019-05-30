@@ -5,11 +5,11 @@
   <view class="userinfo">
     <view class="user">
       <view class="user-header">
-        <image src="http://api.gojbcs.com/images/header.jpg"></image>
+        <image src="{{userInfo.avatarUrl}}"></image>
       </view>
       <view class="name-cont">
-        <view class="name">免贵姓张名无敌</view>
-        <view class="user-label">标签：制片 · 编剧</view>
+        <view class="name">{{userInfo.nickName}}</view>
+        <view class="user-label">标签：制片</view>
       </view>
     </view>
     <view class="my-card" bind:tap="goMyCard">

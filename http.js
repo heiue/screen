@@ -34,9 +34,7 @@ function _get_(url, callback, check_login) {
       callback(res)
     },
     fail: (err) => {
-      wx.redirectTo({
-        url: '../register/index'　　// 
-      })
+      
     }
   })
 }

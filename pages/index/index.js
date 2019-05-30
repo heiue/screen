@@ -98,20 +98,18 @@ Page({
       })
     }
     api.get('/screenwriter/list',function(res) {
-      console.log(res)
+      // console.log(res)
       that.setData({
         list:res.data.data
       })
-    }, false)
+    }, true)
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
+  // getUserInfo: function(e) {
+  //   this.setData({
+  //     userInfo: e.detail.userInfo,
+  //     hasUserInfo: true
+  //   })
+  // },
   //滑动切换
   swiperTab: function (e) {
     console.log(e.detail.current)

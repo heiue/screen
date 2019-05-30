@@ -92,6 +92,13 @@ page{
 	letter-spacing: 2rpx;
 	color: #4f4f4f;
 }
+.intro-phone{
+  font-size: 20rpx;
+  font-family: MicrosoftYaHei;
+  letter-spacing:2rpx;
+  color:#4f4f4f;
+  margin-bottom: -10rpx;
+}
 .intro view:nth-of-type(2){
   font-family: MicrosoftYaHei;
 	font-size: 20rpx;

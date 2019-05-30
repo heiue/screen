@@ -1,4 +1,4 @@
-let App = getApp();
+let app = getApp();
 const api = require('../../http.js');
 
 Page({
@@ -37,11 +37,13 @@ Page({
           }
           , function (result) {
             // 记录token user_id
-            wx.setStorageSync('token', result.data.token);
-            wx.setStorageSync('user_id', result.data.user_id);
+            wx.setStorageSync('user_info', e.detail.rawData);
+            wx.setStorageSync('token', result.data.data.token);
+            wx.setStorageSync('user_id', result.data.data.user_id);
             // 跳转回原页面
             // _this.navigateBack();
           });
+
       }
     });
   },
