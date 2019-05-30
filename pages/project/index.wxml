@@ -57,7 +57,7 @@
             </view>
           </view>
         </view>
-        <view class="item-play-btn" bind:tap="goDetail">
+        <view class="item-play-btn" bind:tap="goDetail" data-id="{{item.id}}">
           <image class="play-btn" src="http://api.gojbcs.com/images/project_img_play.png"></image>
         </view>
       </view>

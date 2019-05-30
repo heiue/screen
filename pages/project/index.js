@@ -29,9 +29,10 @@ Page({
       })
     },false)
   },
-  goDetail: function () {
+  goDetail: function (e) {
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '/pages/project_detail/index'
+      url: '/pages/project_detail/index?projectId='+e.currentTarget.dataset.id
     })
   },
   /**

@@ -8,7 +8,22 @@ Page({
    */
   data: {
     userInfo: JSON.parse(app.globalData.userInfo),
-    cardInfo:[],//名片内可修改的用户信息
+    cardInfo:{
+      uid: wx.getStorageSync('user_id'),
+      cardid:'',
+      card:{
+        name:'',
+        company:'',
+        position:'',
+      },
+      info: {
+        mobile: "",
+        wechat: "",
+        email: "",
+        address: "",
+        intro: ""
+      }
+    },//名片内可修改的用户信息
     userIndustry:'',
     userPhone:'',
     userWechat:'',
@@ -26,16 +41,21 @@ Page({
 
   getUserInfo() {
     api.post('/user/getusercard',{
-      uid: wx.getStorageSync('user_id')
+      uid: this.data.uid
     },function(res){
       console.log(res)
     })
   },
 
   submitUserInfo(e){
-    console.log(e.currentTarget.dataset.val)
+    var that = this;
+    if (e.currentTarget.dataset.val == 'industry') {
+      this.data.cardInfo.card.position = e.detail.value
+    }
+    console.log(that.data.cardInfo)
+    var cartdInf = that.data.cardInfo
     api.post('/user/updateuser',{
-
+      cartdInf
     },function(res){
       console.log(res)
     })

@@ -41,11 +41,11 @@
     <view class='index-screen-writer'>
       <view class='screen-writer-title'>签约编剧</view>
       <view class='screen-writer-list'>
-        <view class='screen-writer-item' wx:for="{{4}}">
+        <view class='screen-writer-item' wx:for="{{signList}}" wx:key="{{item.id}}">
           <view class='screen-writer-head' bind:tap="goDetail">
-            <image src='http://api.gojbcs.com/images/index/img_header.png'></image>
+            <image src='http://api.gojbcs.com{{item.avatar}}'></image>
           </view>
-          <view class='screen-writer-name'>施瓦辛格</view>
+          <view class='screen-writer-name'>{{item.rating_name}}</view>
         </view>
       </view>
     </view>

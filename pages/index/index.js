@@ -47,20 +47,9 @@ Page({
         tag: 'red',
       },
     ],
-    list:[{
-      img:"http://api.gojbcs.com/images/header.jpg",
-      name:"施瓦辛格",
-      masterpiece:"《hollo》"
-    },{
-        img: "http://api.gojbcs.com/images/header.jpg",
-        name: "施瓦辛格",
-        masterpiece: "《hi》"
-      }, {
-        img: "http://api.gojbcs.com/images/header.jpg",
-        name: "施瓦辛格",
-        masterpiece: "《nice》"
-      }],
-      swiperHeight:380,
+    list:[],//推荐编剧
+    swiperHeight:380,
+    signList:[],//签约编剧
   },
   //事件处理函数
   bindViewTap: function() {
@@ -71,7 +60,7 @@ Page({
   onLoad: function () {
     var that = this;
     this.getWriterList();
-    this.setSwiperHeight();
+    this.getsignList();
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -106,6 +95,15 @@ Page({
       console.log(res.data)
       that.setData({
         list: res.data.data
+      })
+    }, true)
+  },
+  getsignList: function () {
+    var that = this;
+    api.get('/screenwriter/list?position=1', function (res) {
+      console.log(res.data)
+      that.setData({
+        signList: res.data.data
       })
     }, true)
   },

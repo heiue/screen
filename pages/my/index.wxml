@@ -34,7 +34,7 @@
       <view class="new-hint">NEW</view>
     </view>
   </view>
-  <view class="my-message" bind:tap="goMyMessage">
+  <!-- <view class="my-message" bind:tap="goMyMessage">
     <view class="message-left">
       <image src="http://api.gojbcs.com/images/my_icon_message.png"></image>
       <text>我的消息</text>
@@ -42,7 +42,7 @@
     <view class="message-right">
       66
     </view>
-  </view>
+  </view> -->
   <view class="my-list">
     <view class="my-item" bindtap='goExcon'>
       <view class="my-item-left">
