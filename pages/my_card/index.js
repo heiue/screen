@@ -54,8 +54,8 @@ Page({
     }
     console.log(that.data.cardInfo)
     var cardData = that.data.cardData
-    api.post('/user/updateuser',{
-      cardData
+    api.post('/user/updateusercard',{
+      cardData 
     },function(res){
       console.log(res)
     })
