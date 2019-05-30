@@ -1,85 +1,122 @@
-<!--pages/friends/index.wxml-->
+<!-- pages/friends/index.wxml -->
 <view class="container">
-	<view class='title-top'>
-	  <title title="人脉圈" isFirst="{{false}}"></title>
-	</view>
-	<view class="friends-menu">
-    <view class='friends-menu-btn' bind:tap="showMenu">
-      菜单
-    </view>
-    <view class='friends-menu-tap'>
-      <view class='{{friendsIndex==0?"on":""}}' bindtap="changeFriendsTap" data-index="0">人脉</view>
-      <view class='{{friendsIndex==1?"on":""}}' bindtap="changeFriendsTap" data-index="1">帮推</view>
-    </view>
-    <navigator url="/pages/search/index" class='friends-menu-search'>搜索</navigator>
-  </view>
-	<view wx:if="{{friendsIndex == 0}}" class="friends-content">
-		<view class="header">
-			<view class="header-bg"></view>
-			<view class="header-card">
-				<view class="header-cont">
-					<view class="title">
-						<view class="name">九妹</view>
-						<view class="title-icon">
-							<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
-							<image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
+		<view class='title-top'>
+				<title title="人脉圈" isFirst="{{false}}"></title>
+		</view>
+		<view class="friends-menu">
+				<view class='friends-menu-btn' bind:tap="showMenu">
+					<image class="" src="../../images/icon_menu.png"></image>
+				</view>
+				<view class='friends-menu-tap'>
+						<view class='{{friendsIndex==0?"on":""}}' bindtap="changeFriendsTap" data-index="0">人脉</view>
+						<view class='{{friendsIndex==1?"on":""}}' bindtap="changeFriendsTap" data-index="1">帮推</view>
+				</view>
+				<navigator url="/pages/search/index" class='friends-menu-search'>
+					<image src="http://api.gojbcs.com/images/project_icon_search.png"></image>
+				</navigator>
+		</view>
+		<view wx:if="{{friendsIndex == 0}}" class="friends-content">
+				<view class="header">
+						<view class="header-bg"></view>
+						<view class="header-card">
+								<view class="header-cont">
+										<view class="title">
+												<view class="name">九妹</view>
+												<view class="title-icon">
+														<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+														<image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
+												</view>
+												<view class="title-text">百度百科</view>
+										</view>
+										<view class="intro">
+												<view>行业：</view>
+												<view>策划</view>
+										</view>
+										<view class="intro">
+												<view>行业：</view>
+												<view>策划</view>
+										</view>
+										<view class="intro">
+												<view>行业：</view>
+												<view>策划</view>
+										</view>
+								</view>
+								<view class="header-portrait">
+										<image src="http://api.gojbcs.com/images/my_card/img_header.png" class=""></image>
+								</view>
 						</view>
-						<view class="title-text">百度百科</view>
-					</view>
-					<view class="intro">
-						<view>行业：</view>
-						<view>策划</view>
-					</view>
-					<view class="intro">
-						<view>行业：</view>
-						<view>策划</view>
-					</view>
-					<view class="intro">
-						<view>行业：</view>
-						<view>策划</view>
-					</view>
 				</view>
-				<view class="header-portrait">
-					<image src="http://api.gojbcs.com/images/my_card/img_header.png" class=""></image>
+				<view class='friends-list'>
+						<navigator url="/pages/my_card/index" class='friends-item' wx:for="{{4}}">
+								<view class="friends-item-img">
+										<image src=''></image>
+								</view>
+								<view class='friends-item-text'>
+										<view class='friends-item-job'>
+												<text class='friends-item-name'>黄景瑜</text>
+												<text>演员 歌手</text>
+										</view>
+										<view>中国护鲸队</view>
+								</view>
+								<view class='friends-item-head'>
+										<image src='{{imgUrl}}/my_card/img_header.png'></image>
+								</view>
+						</navigator>
 				</view>
-			</view>
 		</view>
-		<view class='friends-list'>
-			<navigator url="/pages/my_card/index" class='friends-item' wx:for="{{4}}">
-				<view class="friends-item-img">
-					<image src=''></image>
+		<view class='friends-menu-list' animation="{{animationData}}">
+			<view class="mask" bindtap='showMenu'></view>
+				<view class='friends-menu-list-container'>
+						<view class='friends-menu-title'>
+								人脉分类
+								<view class="friends-menu-close" bindtap='showMenu'>
+									<image src='http://api.gojbcs.com/images/project_icon_down.png'></image>
+								</view>
+						</view>
+						<view class='friends-menu-item' wx:for="{{17}}">
+								<text>全部</text>
+								<text>编剧</text>
+								<text>音响师</text>
+								<text>艺术指导</text>
+								<text>出品人</text>
+								<text>拍摄场地</text>
+						</view>
 				</view>
-				<view class='friends-item-text'>
-					<view class='friends-item-job'>
-						<text class='friends-item-name'>黄景瑜</text>
-						<text>演员 歌手</text>
-					</view>
-					<view>
-						中国护鲸队
-					</view>
-				</view>
-				<view class='friends-item-head'>
-					<image src='{{imgUrl}}/my_card/img_header.png'></image>
-				</view>
-			</navigator>
 		</view>
-	</view>
-	<view class='friends-menu-list' animation="{{animationData}}">
-		<view class='friends-menu-list-container'>
-			<view class='friends-menu-title'>人脉分类
-				<text class="friends-menu-close" bindtap='showMenu'>收起</text>
-			</view>
-			<view class='friends-menu-item' wx:for="{{17}}">
-				<text>全部</text>
-				<text>编剧</text>
-				<text>音响师</text>
-				<text>艺术指导</text>
-				<text>出品人</text>
-				<text>拍摄场地</text>
-			</view>
+		<view wx:if="{{friendsIndex == 1}}" class="friends-content help-push-container">
+				<view class="help-push-header">
+						<image class="help-push-headerbg" src="http://api.gojbcs.com/images/pay_knowledge/img_list_placeholder.png"></image>
+						<view class="help-push-card">
+								<view class="card-header">
+										<image class="push-header-photo" src="http://api.gojbcs.com/images/index/img_header.png"></image>
+								</view>
+								<view class="push-card-cont">
+										<view class="push-card-title">
+												<view class="push-card-name">九妹</view>
+												<view class="push-card-icon">
+														<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+														<image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
+												</view>
+												<view class="push-cardtext">百度百科</view>
+										</view>
+										<view class="push-cardintro">
+												<view>行业：</view>
+												<view>策划</view>
+										</view>
+										<view class="push-cardintro">
+												<view>行业：</view>
+												<view>策划</view>
+										</view>
+								</view>
+								<view class="push-card-right">
+									<image class="in-batch-icon" src="../../images/batch"></image>
+									<view class="in-batch-text">换一批</view>
+								</view>
+						</view>
+
+				</view>
+				<view class="share-btn">
+					<button open-type='share' hover-class="none" class="share-friends">分享给朋友</button>
+				</view>
 		</view>
-	</view>
-	<view wx:if="{{friendsIndex == 1}}" class="friends-content">
-		
-	</view>
 </view>

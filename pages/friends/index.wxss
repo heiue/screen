@@ -1,4 +1,7 @@
 /* pages/friends/index.wxss */
+page{
+  background-color: #fff;
+}
 .container{
   background: #fff;
 }
@@ -18,13 +21,25 @@
   position: absolute;
   top:50%;
   left:20rpx;
+  width: 26rpx;
+  height: 26rpx;
   transform: translateY(-50%)
+}
+.friends-menu-btn image{
+  width: 100%;
+  height: 100%;
 }
 .friends-menu-search{
   position: absolute;
   top:50%;
   right:20rpx;
+  width: 31rpx;
+  height: 30rpx;
   transform: translateY(-50%)
+}
+.friends-menu-search image{
+  width: 100%;
+  height: 100%;
 }
 .friends-menu-tap{
   width: 100%;
@@ -227,23 +242,43 @@
   position: fixed;
   top:0;
   left:-100%;
-  background: rgba(0,0,0,.2)
+  background: rgba(0,0,0,0)
+}
+.mask{
+  width: 100%;
+  height: 100%;
 }
 .friends-menu-list-container{
+  position: absolute;
+  top: 0;
+  left: 0;
   background: #fff;
   width: 500rpx;
   height:100%;
   overflow: scroll;
   padding-top:200rpx;
   box-sizing: border-box;
+  box-shadow: 0px 0px 24rpx 0px 
+		rgba(68, 68, 68, 0.15);
 }
 .friends-menu-title{
+  position: relative;
   font-size:30rpx;
   color:#373737;
-  border-left:2px solid #ffe147;
-  padding-left: 25rpx;
+  /* border-left:2px solid #ffe147; */
+  padding:0 0 50rpx 25rpx;
   margin-left: 20rpx;
 
+}
+.friends-menu-title::after{
+  display: block;
+  content: "";
+  width: 4rpx;
+  height: 40rpx;
+  position: absolute;
+  background-color: #ffe147;
+  top: 0;
+  left: 0;
 }
 .friends-menu-item{
   font-size: 26rpx;
@@ -258,7 +293,145 @@
 .friends-menu-close{
   float: right;
   margin-right: 20rpx;
+  width: 22rpx;
+  height: 13rpx;
+}
+.friends-menu-close image{
+  width: 100%;
+  height: 100%;
 }
 .friends-content{
 	margin-top:20px;
+}
+.help-push-container{
+  padding: 0 20rpx;
+}
+.help-push-header{
+  width: 100%;
+  height: 900rpx;
+  box-shadow: 0px 0px 24rpx 0px 
+		rgba(68, 68, 68, 0.15);
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+.help-push-headerbg{
+  width: 100%;
+  height: 100%;
+}
+.help-push-card{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150rpx;
+  border-radius: 10rpx;
+  padding-left:160rpx;
+  background-color: #fff;
+  display: flex;
+}
+.card-header{
+  position: absolute;
+  top:-54rpx;
+  left: 34rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  overflow: hidden ;
+  background-color: #8f44ec;
+}
+.push-header-photo{
+  width: 100%;
+  height: 100%;
+}
+
+
+.push-card-cont{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.push-card-title{
+  display: flex;
+  align-items:flex-end;
+}
+.push-card-name{
+  font-family: MicrosoftYaHei;
+	font-size: 48rpx;
+	letter-spacing: 5rpx;
+	color: #2e2e2e;
+}
+.push-card-icon{
+  padding: 5rpx 10rpx 7rpx;
+  height: 48rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.push-card-icon image{
+  width: 16rpx;
+  height: 16rpx;
+  /* background-color: seagreen */
+}
+.push-cardtext{
+  font-family: MicrosoftYaHei;
+  font-size: 20rpx;
+	letter-spacing: 2rpx;
+  color: #5b5b5b;
+  padding-bottom: 4rpx;
+}
+.push-cardintro{
+  /* margin-bottom: 36rpx; */
+  display: flex;
+  align-items: flex-end
+}
+.push-cardintro view:nth-of-type(1){
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	letter-spacing: 2rpx;
+	color: #4f4f4f;
+}
+.push-cardintro view:nth-of-type(2){
+  font-family: MicrosoftYaHei;
+	font-size: 20rpx;
+	letter-spacing: 2rpx;
+	color: #4f4f4f;
+}
+.push-card-right{
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  height: 60rpx;
+}
+.in-batch-icon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
+  background-color: #8f44ec
+}
+.in-batch-text{
+  font-family: MicrosoftYaHei;
+	font-size: 20rpx;
+	letter-spacing: 2rpx;
+	color: #ffe147;
+}
+.share-btn{
+  padding-top:30rpx;
+}
+.share-friends{
+  width: 420rpx;
+  height: 54rpx;
+  border-radius: 54rpx;
+  margin:0 auto;
+  text-align: center;
+  line-height: 54rpx;
+  font-family: MicrosoftYaHei;
+	font-size: 20rpx;
+	letter-spacing: 2rpx;
+  color: #4f4f4f;
+  border: none;
+  background-color: #ffe459;
+  outline: none
 }
