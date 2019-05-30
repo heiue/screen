@@ -44,16 +44,16 @@
   <view class="foot">
     <view class="nav">
       <view class="nav-item">
-        <image src=""></image>
+        <image src="{{imgUrl}}/navbar/index.png"></image>
         <text>首页</text>
       </view>
       <view class="nav-item">
         <image src=""></image>
-        <text>首页</text>
+        <text>分享</text>
       </view>
       <view class="nav-item">
-        <image src=""></image>
-        <text>首页</text>
+        <image src="{{imgUrl}}/my_icon_collection.png"></image>
+        <text>关注</text>
       </view>
     </view>
     <view class="chat">

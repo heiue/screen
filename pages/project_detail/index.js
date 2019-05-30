@@ -8,7 +8,8 @@ Page({
    */
   data: {
     projectId:'',//项目id
-    projectDetail:[]
+    projectDetail: [],
+    imgUrl: app.globalData.imgUrl,
   },
 
   /**

@@ -8,7 +8,7 @@ Page({
    */
   data: {
     userInfo: JSON.parse(app.globalData.userInfo),
-    cardInfo:{
+    cardData:{
       uid: wx.getStorageSync('user_id'),
       cardid:'',
       card:{
@@ -50,12 +50,12 @@ Page({
   submitUserInfo(e){
     var that = this;
     if (e.currentTarget.dataset.val == 'industry') {
-      this.data.cardInfo.card.position = e.detail.value
+      this.data.cardData.card.position = e.detail.value
     }
     console.log(that.data.cardInfo)
-    var cartdInf = that.data.cardInfo
+    var cardData = that.data.cardData
     api.post('/user/updateuser',{
-      cartdInf
+      cardData
     },function(res){
       console.log(res)
     })
