@@ -31,7 +31,7 @@
         </view>
       </view>
     </view>
-    <view class="project-item" wx:for="{{project.data}}" wx:key="index">
+    <view class="project-item" wx:for="{{project}}" wx:key="index">
       <view class="item-img-show">
         <view class="item-video"></view>
         <view class="item-cover">

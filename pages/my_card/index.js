@@ -40,9 +40,11 @@ Page({
   },
 
   getUserInfo() {
+    var that = this;
     api.post('/user/getusercard',{
       uid: this.data.cardData.uid
     },function(res){
+      // that.data.cardData.cardid = res
       console.log(res)
     })
   },

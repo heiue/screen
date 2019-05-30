@@ -196,7 +196,6 @@ page{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 20rpx;
 }
 .icon-phone{
   width: 20rpx;

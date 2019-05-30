@@ -59,7 +59,7 @@
       </view>
     </view>
     <view class="chat">
-      <image class="icon-phone"></image>
+      <image class="icon-phone" src='../../images/project-detail-phone.png'></image>
       <text>项目洽谈</text>
     </view>
   </view>
