@@ -1,46 +1,31 @@
 /**index.wxss**/
+page{
+  width: 100%;
+  height: 100%;
+}
 .container{
   height:100%;
+  
+  width: 100%;
 }
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.header{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
 }
 .index-title{
-  position: fixed;
-  top:0;
-  padding-top:65rpx;
+  padding-top:71rpx;
   width: 100%;
-  z-index: 10;
-  height:100rpx;
-  background: #fff;
-  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 .index-title image{
   width: 108rpx;
   height:23rpx;
   display: block;
-  margin:0 auto;
-  position: absolute;
-  z-index: 11;
-  left:50%;
-  transform: translateX(-50%)
 }
 .index-swiper-tab{
   padding-top:89rpx;
@@ -55,14 +40,8 @@
     line-height: 88rpx;
     display: flex;
     flex-flow: row;
-    position: fixed;
-    top:88rpx;
-    background: #fff;
-    z-index: 2;
     justify-content: space-around;
     padding:0 200rpx;
-    box-sizing: border-box;
-    position: relative;
     padding-bottom:20rpx;
 }
 .swiper-tab-item{
@@ -88,20 +67,24 @@
   width: 31rpx;
   height:30rpx;
 }
+.scriptwriter{
+  /* padding-top: 186rpx; */
+}
 .index-swiper{
-  height:208rpx;
-  padding:0 20rpx;
-  padding-bottom: 20rpx;
+  height:416rpx;
+  padding:186rpx 20rpx 20rpx;
+  /* padding-top: 186rpx; */
+  /* padding-bottom: 20rpx; */
   box-sizing: border-box;
   background: #fff;
 }
-.index-swiper swiper{width: 100%;height:100%;border-radius: 20rpx;overflow: hidden;}
+.index-swiper swiper{width: 100%;height:100%;border-radius: 10rpx;overflow: hidden;}
 swiper image{height:100%;width: 100%;}
 
 /* 求职广告 */
 .index-notice{
   width: 100%;
-  height:119rpx;
+  height:120rpx;
   position: relative;
   padding:0 20rpx;
   padding-bottom: 20rpx;
@@ -127,10 +110,13 @@ swiper image{height:100%;width: 100%;}
   box-sizing: border-box;
 }
 .index-notice-title{
-  font-size: 24rpx;
+  font-size: 28rpx;
   color:#383110;
 }
-
+.index-notice-con{
+  font-size: 20rpx;
+  color: #807124;
+}
 
 /* 签约编剧 */
 .index-screen-writer{
@@ -212,6 +198,10 @@ margin-top:40rpx;
   width: 171rpx;
   height: 100%;
 }
+.look-item-img image{
+  width: 100%;
+  height: 100%;
+}
 .look-item-text{
   padding-left: 20rpx;
   flex: 1;
@@ -245,7 +235,35 @@ margin-top:40rpx;
   margin-top:20rpx;
 }
 .fall-item{
-  width: 50%;
+  width: calc(50% - 5rpx);
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 0px 0px 25rpx 0px 
+    rgba(116, 116, 116, 0.25);
+  
+}
+.fall-item image{
+  width: 100%;
+  border-radius: 10rpx;
+}
+.fall-item-text{
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fall-item-name{
+  font-size: 20rpx;
+  color: #373737;
+  padding-bottom: 20rpx;
+}
+.fall-item-work{
+  font-size: 20rpx;
+	color: #373737;
+}
+/* .fall-item{
+  width: calc(50% - 5rpx);
   padding:10rpx 0;
   padding-top:0;
   margin-bottom: 30rpx;
@@ -257,6 +275,9 @@ margin-top:40rpx;
   box-shadow: 0px 0px 25rpx 0px 
 		rgba(116, 116, 116, 0.25);
 }
+.fall-item image{
+  width: 100%;
+}
 .fall-item view{
   padding:0 20rpx;
-}
+} */
