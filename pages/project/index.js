@@ -27,10 +27,11 @@ Page({
       that.setData({
         project:res.data.data
       })
+      console.log(that.data.project)
     },false)
   },
   goDetail: function (e) {
-    console.log(e.currentTarget.dataset.id)
+    console.log(e)
     wx.navigateTo({
       url: '/pages/project_detail/index?projectId='+e.currentTarget.dataset.id
     })

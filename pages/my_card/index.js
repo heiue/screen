@@ -41,7 +41,7 @@ Page({
 
   getUserInfo() {
     api.post('/user/getusercard',{
-      uid: this.data.uid
+      uid: this.data.cardData.uid
     },function(res){
       console.log(res)
     })

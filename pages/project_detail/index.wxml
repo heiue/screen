@@ -47,9 +47,11 @@
         <image src="{{imgUrl}}/navbar/index.png"></image>
         <text>首页</text>
       </view>
-      <view class="nav-item">
-        <image src=""></image>
-        <text>分享</text>
+      <view class="nav-item" >
+        <button open-type='share' hover-class="none" class="share-friends">
+          <image src="../../images/project-detail-share.png"></image>
+          <text>分享</text>
+        </button>
       </view>
       <view class="nav-item">
         <image src="{{imgUrl}}/my_icon_collection.png"></image>
