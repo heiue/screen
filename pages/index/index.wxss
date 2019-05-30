@@ -248,6 +248,7 @@ margin-top:40rpx;
   width: 50%;
   padding:10rpx 0;
   padding-top:0;
+  margin-bottom: 30rpx;
   box-sizing: border-box;
   text-align: left;
   font-size: 16rpx;

@@ -41,7 +41,7 @@ Page({
             wx.setStorageSync('token', result.data.data.token);
             wx.setStorageSync('user_id', result.data.data.user_id);
             // 跳转回原页面
-            // _this.navigateBack();
+            _this.navigateBack();
           });
 
       }

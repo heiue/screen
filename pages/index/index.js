@@ -154,11 +154,11 @@ Page({
     var that = this;
     // console.log(this.data.list.length)
     wx.createSelectorQuery().selectAll('.fall-item').boundingClientRect(function (rect) {
-      console.log(rect[0].height)
+      // console.log(rect[0].height)
       var h = rect[0].height
     }).exec()
     wx.createSelectorQuery().selectAll('.index-swiper-tab').boundingClientRect(function (rect) {
-      console.log(rect[0].height)
+      // console.log(rect[0].height)
       that.setData({
         swiperHeight: rect[0].height + Math.ceil(that.data.list.length / 2) * 200
       })

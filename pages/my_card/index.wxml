@@ -67,7 +67,9 @@
       </view>
       <view class="photo-list">
         <view class="operation">
-          <image class="upload" src="http://api.gojbcs.com/images/my_card/icon_add.png"></image>
+          <view>
+            <image class="upload" src="http://api.gojbcs.com/images/my_card/icon_add.png"></image>
+          </view>
           <view class="operation-btn">
             <view class="edit-btn">编辑名片</view>
             <view class="share">分享名片</view>
