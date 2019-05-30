@@ -5,11 +5,11 @@
   <view class="line"></view>
   <view class="about-list">
     <view class="about-item" bindtap="callPhone">
-      <view class="phone">010-100220000</view>
+      <view class="phone">18888831235</view>
       <image src="http://api.gojbcs.com/images/aboutus_icon_phone.png"></image>
     </view>
     <view class="about-item">
-      <view class="web">WWW.SDNASJDNJ.COM</view>
+      <view class="web">hty1212121</view>
       <image src="http://api.gojbcs.com/images/aboutus_icon_web.png"></image>
     </view>
   </view>

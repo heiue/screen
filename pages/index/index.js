@@ -102,7 +102,7 @@ Page({
       that.setData({
         list:res.data.data
       })
-    }, true)
+    }, false)
   },
   getUserInfo: function(e) {
     console.log(e)

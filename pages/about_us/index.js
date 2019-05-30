@@ -30,7 +30,7 @@ Page({
   },
   callPhone: function () {
     wx.makePhoneCall({
-      phoneNumber: '4001397918' //仅为示例，并非真实的电话号码
+      phoneNumber: '18888831235' //仅为示例，并非真实的电话号码
     })
   },
   /**
