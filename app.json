@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/friends/index",
+   
     "pages/index/index",
     "pages/project_detail/index",
     "pages/my/index",
@@ -21,7 +21,8 @@
     "pages/contract_broker/index",
     "pages/exclusive_consultant/index",
     "pages/watching-detail/index",
-    "pages/search/index"
+    "pages/search/index",
+    "pages/friends/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

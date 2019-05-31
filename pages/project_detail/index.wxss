@@ -1,6 +1,9 @@
 page{
   background-color: #fff;
 }
+.container{
+  padding-bottom: 110rpx;
+}
 .header{
   width: 100%;
   height: 562rpx;

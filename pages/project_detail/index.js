@@ -30,7 +30,26 @@ Page({
       })
     },true)
   },
-
+  attention: function () {
+    let id = this.data.projectId,
+    uid = wx.getStorageSync('user_id');
+    api.post('/collection/save',{
+      rid: id,
+      rType: 2,
+      uid: uid
+    }, (res) => {
+      wx.showToast({
+        title: '关注成功',
+        icon: 'none',
+        duration:1000
+      })
+    })
+  },
+  goHome () {
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

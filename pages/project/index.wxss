@@ -144,7 +144,7 @@ page{
 }
 .introduce-item{
   font-family: MicrosoftYaHei;
-  font-size: 20rpx;
+  font-size: 24rpx;
   line-height: 40rpx;
   color: #fff;
   display: flex;
@@ -184,7 +184,7 @@ page{
 }
 .item-name,.item-financing{
   font-family: MicrosoftYaHei;
-  font-size: 20rpx;
+  font-size: 24rpx;
   color: #393939;
   margin-left: 20rpx;
 }
@@ -205,7 +205,7 @@ page{
   margin-right: 10rpx;
 }
 .item-see-num text{
-  font-size: 20rpx;
+  font-size: 24rpx;
   color: #393939;
  
 }
