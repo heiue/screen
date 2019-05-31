@@ -4,7 +4,7 @@
 				<title title="人脉圈" isFirst="{{false}}"></title>
 		</view>
 		<view class="friends-menu">
-				<view class='friends-menu-btn' bind:tap="showMenu">
+				<view class='friends-menu-btn' bind:tap="showMenu" wx-if="{{friendsIndex == 0}}">
 					<image class="" src="../../images/icon_menu.png"></image>
 				</view>
 				<view class='friends-menu-tap'>
@@ -60,7 +60,7 @@
 										<view>中国护鲸队</view>
 								</view>
 								<view class='friends-item-head'>
-										<image src='{{friendsList.top_pic}}'></image>
+										<image src='{{item.pic}}'></image>
 								</view>
 						</navigator>
 				</view>
@@ -75,7 +75,7 @@
 								</view>
 						</view>
 						<view class='friends-menu-item' >
-								<text wx:for="{{friendsClassList}}" wx:index="index">{{item.name}}</text>
+								<text wx:for="{{friendsClassList}}" wx:index="index" bindtap='searchFriendsList' data-id="{{item.id}}">{{item.name}}</text>
 						</view>
 				</view>
 		</view>
@@ -105,7 +105,7 @@
 										</view>
 								</view>
 								<view class="push-card-right">
-									<image class="in-batch-icon" src="../../images/batch"></image>
+									<image class="in-batch-icon" src="../../images/change-frineds.png"></image>
 									<view class="in-batch-text">换一批</view>
 								</view>
 						</view>

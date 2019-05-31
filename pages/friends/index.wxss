@@ -98,7 +98,7 @@ page{
 .name{
   font-family: MicrosoftYaHei;
 	font-size: 48rpx;
-  width: 260rpx;
+  max-width: 260rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -234,7 +234,8 @@ page{
   position: absolute;
   top:50%;
   right:40rpx;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
+  overflow: hidden;
 }
 .friends-item-head image{
   width: 100%;
@@ -414,7 +415,6 @@ page{
   width: 20rpx;
   height: 20rpx;
   margin-right: 10rpx;
-  background-color: #8f44ec
 }
 .in-batch-text{
   font-family: MicrosoftYaHei;

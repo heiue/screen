@@ -16,14 +16,16 @@ Page({
     animationData: {},
 		host: app.globalData.host,
     friendsList:[],
-    friendsClassList:[]
+    friendsClassList:[],
+    page:1,
+    industry_id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getFriendsList();
+    this.getFriendsList(this.data.page);
     this.getFriendsClassify();
     console.log(wx.getStorageSync('cardInfo'))
   },
@@ -33,15 +35,29 @@ Page({
       that.setData({
         friendsClassList: res.data.data
       })
-      console.log(that.data.friendsClassList)
+      // console.log(that.data.friendsClassList)
     }, false)
   },
-  getFriendsList(){
+  getFriendsList(page,industry_id,flag){
+    if (industry_id == undefined){
+      industry_id = ''
+    }
     var that = this;
-    api.get('/card/list',function(res){
-      that.setData({
-        friendsList: res.data.data.data
-      })
+    that.setData({
+      industry_id: industry_id
+    })
+    api.get('/card/list?page=' + page + '&limit=10' + '&industry_id=' + industry_id,function(res){
+      if(flag){
+        that.setData({
+          friendsList: that.data.friendsList.concat(res.data.data.data)
+        })
+      }else{
+        that.setData({
+          friendsList:res.data.data.data
+        })
+      }
+      console.log(that.data.friendsList)
+      
     },true)
   },
 
@@ -52,6 +68,11 @@ Page({
     
     
   },
+  searchFriendsList(e){
+    var that = this;
+    that.getFriendsList(1, e.currentTarget.dataset.id,false)
+    this.showMenu();
+  },
   showMenu: function () {
     this.setData({
       moreTitleShow: !this.data.moreTitleShow
@@ -61,10 +82,8 @@ Page({
     })
     this.animation = animation
     if (this.data.moreTitleShow) {
-      console.log(0)
       animation.left('-100%').step()
     } else {
-      console.log(2)
       animation.left('0').step()
     }
     this.setData({
@@ -108,14 +127,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.getFriendsList(1, this.data.industry_id)
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.getFriendsList(this.data.page++, this.data.industry_id)
   },
 
   /**
