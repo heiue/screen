@@ -49,15 +49,15 @@
 				</view>
 				<view class='friends-list'>
 						<navigator url="/pages/my_card/index?uid={{item.card_info.uid}}" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}'>
-								<view class="friends-item-img">
-										<image src=''></image>
+								<view class="friends-item-img" >
+										<image src='{{imgUrl}}/icon_auth.png' wx-if="{{item.card_user.is_vip == 'true'}}"></image>
 								</view>
 								<view class='friends-item-text'>
 										<view class='friends-item-job'>
 												<text class='friends-item-name'>{{item.name}}</text>
-												<text>演员 歌手</text>
+												<text wx-if="{{item.industry_name}}">{{item.industry_name}}</text>
 										</view>
-										<view>中国护鲸队</view>
+										<view wx-if="item.company">{{item.company}}</view>
 								</view>
 								<view class='friends-item-head'>
 										<image src='{{item.pic}}'></image>

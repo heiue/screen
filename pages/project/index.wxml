@@ -37,7 +37,7 @@
         <view class="item-cover">
           <image src="http://api.gojbcs.com/images/timg2.jpg"></image>
         </view>
-        <view class="item-introduce">
+        <view class="item-introduce" bind:tap="goDetail" data-id="{{item.id}}">
           <view class="introduce">
             <view class="introduce-item">
               <text>发布：</text>
@@ -57,9 +57,9 @@
             </view>
           </view>
         </view>
-        <view class="item-play-btn" bind:tap="goDetail" data-id="{{item.id}}">
+        <!-- <view class="item-play-btn" bind:tap="goDetail" data-id="{{item.id}}">
           <image class="play-btn" src="http://api.gojbcs.com/images/project_img_play.png"></image>
-        </view>
+        </view> -->
       </view>
       <view class="item-subhead">
         <view class="subhead-left">

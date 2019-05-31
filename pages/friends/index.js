@@ -134,7 +134,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getFriendsList(this.data.page++, this.data.industry_id)
+    this.getFriendsList(this.data.page++, this.data.industry_id,true)
   },
 
   /**

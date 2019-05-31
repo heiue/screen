@@ -205,9 +205,9 @@ page{
   box-sizing: border-box;
 }
 .friends-item-img{
-  width: 20rpx;
-  height:20rpx;
-  background: #ffe147;
+  width: 26rpx;
+  height:26rpx;
+  /* background: #ffe147; */
   border-radius: 50%;
   float: left;
 }
