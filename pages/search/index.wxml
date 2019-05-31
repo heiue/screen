@@ -4,7 +4,7 @@
 	</view>
   <view class="search">
     <image class="search-icon" src="{{imgUrl}}/project_icon_search.png"></image>
-    <input type="text" class="search-input" placeholder="请输入搜索内容" />
+    <input type="text" bindinput="searchInput" class="search-input" placeholder="请输入搜索内容" />
   </view>
   <view class="search-history">
     <view class="title">热门搜索</view>

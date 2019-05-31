@@ -56,8 +56,6 @@ page{
 .search{
   position: absolute;
   right:20rpx;
-  top:50%;
-  transform: translateY(-50%);
   display: block;
   padding:0 10rpx;
   background: none;
@@ -197,7 +195,7 @@ margin-top:40rpx;
   text-align: center;
   line-height: 40rpx;
   font-family: MicrosoftYaHeiLight;
-	font-size: 16rpx;
+	font-size: 20rpx;
 	letter-spacing: 1rpx;
 	color: #ffffff;
 }
@@ -218,16 +216,24 @@ margin-top:40rpx;
 }
 .look-item-name{
   font-family: MicrosoftYaHei;
-	font-size: 18rpx;
+	font-size: 22rpx;
 	letter-spacing: 1rpx;
   color: #373737;
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
+  width: 310rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .look-item-sub{
   font-family: MicrosoftYaHeiLight;
-	font-size: 16rpx;
+	font-size: 20rpx;
 	letter-spacing: 1rpx;
 	color: #373737;
+  width: 310rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .index-water{
   padding:20rpx;
@@ -261,12 +267,12 @@ margin-top:40rpx;
   justify-content: center;
 }
 .fall-item-name{
-  font-size: 20rpx;
+  font-size: 24rpx;
   color: #373737;
   padding-bottom: 20rpx;
 }
 .fall-item-work{
-  font-size: 20rpx;
+  font-size: 22rpx;
 	color: #373737;
 }
 /* .fall-item{

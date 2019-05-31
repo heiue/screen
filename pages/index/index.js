@@ -20,6 +20,7 @@ Page({
     duration: 1000,
     toView: 'yellow',
     scrollLeft: 0,
+    watchingList: [],
     //滚动的数组
     scrolls: [
       {
@@ -89,6 +90,9 @@ Page({
     }
     
   },
+  onShow:function() {
+    this.getWatchingList()
+  },
   getWriterList: function() {
     var that = this;
     api.get('/screenwriter/list?position=0&limit=100', function (res) {
@@ -104,6 +108,14 @@ Page({
       console.log(res.data)
       that.setData({
         signList: res.data.data
+      })
+    }, false)
+  },
+  getWatchingList() {
+    let _this = this
+    api.get(`/article/list?page=1&limit=6`,(res) => {
+      _this.setData({
+        watchingList: res.data.data.data
       })
     }, false)
   },

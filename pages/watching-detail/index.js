@@ -1,5 +1,6 @@
 // pages/watching-detail/index.js
 let app = getApp()
+const api = require('../../http.js');
 Page({
 
   /**
@@ -7,13 +8,18 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,//图片路径前缀
+    aId: "",
+    watching: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.aid)
+    this.setData({
+      aId: options.aid
+    })
   },
 
   /**
@@ -27,9 +33,32 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getWatchingDetail()
   },
-
+  getWatchingDetail() {
+    let aid = this.data.aId,
+    _this = this
+    api.get(`/article/detail?aid=${aid}`,(res) => {
+      _this.setData({
+        watching: res.data.data
+      })
+    })
+  },
+  attention: function () {
+    let id = this.data.watching.id,
+    uid = wx.getStorageSync('user_id');
+    api.post('/collection/save',{
+      rid: id,
+      rType: 2,
+      uid: uid
+    }, (res) => {
+      wx.showToast({
+        title: '关注成功',
+        icon: 'none',
+        duration:1000
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
