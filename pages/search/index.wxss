@@ -25,7 +25,7 @@ page{
 .search-input{
   flex: 1;
   font-family: MicrosoftYaHei;
-	font-size: 20rpx;
+	font-size: 24rpx;
 	letter-spacing: 2rpx;
 	color: #b6b6b6;
   /* height: 58rpx; */
@@ -33,7 +33,7 @@ page{
 .title{
   padding: 46rpx 0 44rpx;
   font-family: MicrosoftYaHei;
-	font-size: 24rpx;
+	font-size: 26rpx;
 	letter-spacing: 2rpx;
   color: #b6b6b6;
   text-align: center;
@@ -47,7 +47,42 @@ page{
   text-align: center;
   width: 25%;
   font-family: MicrosoftYaHeiLight;
-	font-size: 20rpx;
+	font-size: 24rpx;
 	letter-spacing: 2rpx;
 	color: #848ac1;
+}
+.search-list{
+  padding: 40rpx 20rpx;
+
+}
+.search-list-title{
+  line-height: 40rpx;
+  color: #b6b6b6;
+  font-size: 26rpx;
+  border-bottom: 1px solid #ccc
+}
+.search-project-item{
+  padding: 14rpx 0;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+.item-img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;    
+}
+.search-project-cont{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.search-item-title{
+  font-size: 26rpx;
+  color: #666;
+}
+.search-item-subheader{
+  font-size: 24rpx;
+  color: #999
 }
