@@ -7,12 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    nav: ['全部', '网剧', '电视剧', '院线', '网络大电影', '动漫', 'IP项目', '舞台剧', '网台互动', '影视资源'],
+    imgUrl: app.globalData.imgUrl,
+    imgUrlUp:'http://api.gojbcs.com',
+    nav: [],
     navActive: 0,
     project: [],
     moreTitleShow: true,
     animationData: {},
-    moreTitle: ['古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类','古装类']
+    moreTitle: []
   },
 
   /**
@@ -20,12 +22,22 @@ Page({
    */
   onLoad: function (options) {
     this.getProjectList();
+    this.getClassifyList();
   },
   getProjectList() {
     var that = this;
     api.get('/project/list',function(res){
       that.setData({
         project:res.data.data
+      })
+    },false)
+  },
+  getClassifyList() {
+    var that = this;
+    api.get('/project/class',function(res){
+      // console.log(res)
+      that.setData({
+        nav: res.data.data
       })
     },false)
   },

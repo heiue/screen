@@ -11,7 +11,7 @@ page{
   overflow: visible;
 }
 .nav-item{
-  width: 184rpx;
+  min-width: 80rpx;
   text-align: center;
   padding: 0 32rpx;
   font-size: 24rpx;

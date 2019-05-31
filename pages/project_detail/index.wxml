@@ -3,7 +3,7 @@
     <title title="项目详情" isFirst="{{true}}"></title>
   </view>
   <view class="header">
-    <image src="http://api.gojbcs.com/{{projectDetail.img[0].path}}" class="header-bg" ></image>
+    <image src="http://api.gojbcs.com/{{projectDetail.img[0].path}}" class="header-bg" mode="widthFix" ></image>
     <!-- <view class="play">
       <image src="http://api.gojbcs.com/images/project_detail/project_img_play.png" class="play-btn"></image>
     </view> -->

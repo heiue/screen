@@ -160,9 +160,9 @@ Page({
     })
   },
   
-	goDetail:function() {
+	goDetail:function(e) {
 		wx.navigateTo({
-		  url: '/pages/other_card/index'
+      url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name
 		})
 	},
 	goRecruit:function() {

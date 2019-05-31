@@ -42,10 +42,10 @@
       <view class='screen-writer-title'>签约编剧</view>
       <view class='screen-writer-list'>
         <view class='screen-writer-item' wx:for="{{signList}}" wx:key="{{item.id}}">
-          <view class='screen-writer-head' bind:tap="goDetail">
+          <view class='screen-writer-head' bind:tap="goDetail" data-name="{{item.name}}">
             <image src='http://api.gojbcs.com{{item.avatar}}'></image>
           </view>
-          <view class='screen-writer-name'>{{item.rating_name}}</view>
+          <view class='screen-writer-name'>{{item.name}}</view>
         </view>
       </view>
     </view>
@@ -78,7 +78,7 @@
       <view class='fall-container'>
         <block wx:for="{{list}}" wx:key="{{item.id}}">
           <!-- 瀑布流内容卡片 -->
-          <view class='fall-item' bind:tap="goDetail">
+          <view class='fall-item' bind:tap="goDetail"  data-name="{{item.name}}">
             <image src='http://api.gojbcs.com{{item.avatar}}' mode="widthFix"></image>
             <view class="fall-item-text">
               <view class="fall-item-name">{{item.name}} {{item.rating_name}}</view>
