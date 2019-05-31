@@ -39,7 +39,7 @@
 										</view>
 										<view class="intro">
 												<view>联系电话：</view>
-												<view>策划</view>
+												<!-- <view>{{userInfo.}}</view> -->
 										</view>
 								</view>
 								<view class="header-portrait">
@@ -74,13 +74,8 @@
 									<image src='http://api.gojbcs.com/images/project_icon_down.png'></image>
 								</view>
 						</view>
-						<view class='friends-menu-item' wx:for="{{17}}">
-								<text>全部</text>
-								<text>编剧</text>
-								<text>音响师</text>
-								<text>艺术指导</text>
-								<text>出品人</text>
-								<text>拍摄场地</text>
+						<view class='friends-menu-item' >
+								<text wx:for="{{friendsClassList}}" wx:index="index">{{item.name}}</text>
 						</view>
 				</view>
 		</view>

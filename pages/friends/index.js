@@ -9,12 +9,14 @@ Page({
    */
   data: {
     userInfo: JSON.parse(app.globalData.userInfo),
+    cardInfo: wx.getStorageSync('cardInfo'),
     imgUrl: app.globalData.imgUrl,
     friendsIndex:0,
     moreTitleShow: true,
     animationData: {},
 		host: app.globalData.host,
-    friendsList:[]
+    friendsList:[],
+    friendsClassList:[]
   },
 
   /**
@@ -22,6 +24,17 @@ Page({
    */
   onLoad: function (options) {
     this.getFriendsList();
+    this.getFriendsClassify();
+    console.log(wx.getStorageSync('cardInfo'))
+  },
+  getFriendsClassify() {
+    var that = this;
+    api.get('/card/class', function (res) {
+      that.setData({
+        friendsClassList: res.data.data
+      })
+      console.log(that.data.friendsClassList)
+    }, false)
   },
   getFriendsList(){
     var that = this;
@@ -29,7 +42,6 @@ Page({
       that.setData({
         friendsList: res.data.data.data
       })
-      console.log(that.data.friendsList)
     },true)
   },
 

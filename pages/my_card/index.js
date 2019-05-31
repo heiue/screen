@@ -17,6 +17,8 @@ Page({
         name:'',
         company:'',
         position:'',
+        industry_id: "3",
+        pic: ""
       },
       info: {
         mobile: "",
@@ -24,6 +26,10 @@ Page({
         email: "",
         address: "",
         intro: ""
+      },
+      images: {
+        0: "url",
+        1: "url"
       }
     },//名片内可修改的用户信息
     userIndustry:'',
@@ -33,6 +39,9 @@ Page({
     usereMail:'',
     userIntro: '',
     isOther: false,
+    isChange:false,
+    changeText:'',
+    showModel:false
   },
 
   /**
@@ -45,21 +54,35 @@ Page({
       this.setData({
         isOther: false
       })
+      return
     }else{
       this.setData({
         isOther: true
       })
     }
-    console.log(this.data.isOther)
+    
   },
 
   getUserInfo() {
     var that = this;
     api.post('/user/getusercard',{
       uid: that.data.uid
-    },function(res){
-      that.data.cardData.cardid = res.data.data.cardInfo.id
-      console.log(res)
+    }, function (res) {
+      console.log(that.data.isOther)
+      // console.log(res)
+      if (res.data.data.cardInfo){
+        wx.setStorageSync('cardInfo', res.data.data.cardInfo)
+        that.data.cardData.cardid = res.data.data.cardInfo.id
+        that.setData({
+          userIndustry: res.data.data.cardInfo.position,
+          // userPhone: res.data.data.cardInfo.position,
+          // userWechat: '',
+          userCompany: res.data.data.cardInfo.company,
+          // usereMail: '',
+          // userIntro: '',
+        }) 
+
+      }
       that.setData({
         otherInfo: res.data.data.cardInfo
       })
@@ -69,6 +92,15 @@ Page({
     if (e.currentTarget.dataset.val == 'industry') {
       this.data.cardData.card.position = e.detail.value
     }
+    if (e.currentTarget.dataset.val == 'phone') {
+      this.data.cardData.info.mobile = e.detail.value
+    }
+    if (e.currentTarget.dataset.val == 'company') {
+      this.data.cardData.card.company = e.detail.value
+    }
+    this.setData({
+      isChange: true
+    })
   },
   
   submitUserInfo(){
@@ -79,7 +111,18 @@ Page({
     api.post('/user/updateusercard',{
       cardData 
     },function(res){
-      console.log(res)
+      if (res.data.msg == 'Successful editing'){
+        that.setData({
+          changeText:'修改成功',
+          showModel:true
+        })
+        setTimeout(function(){
+          that.setData({
+            showModel: false,
+            isChange: false
+          })
+        },2000)
+      }
     })
   },
   /**

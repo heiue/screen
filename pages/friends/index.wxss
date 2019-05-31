@@ -287,7 +287,7 @@ page{
 }
 .friends-menu-item text{
   margin:20rpx 0;
-  width: 150rpx;
+  padding:0 20rpx;
   display: inline-block;
 }
 .friends-menu-close{
