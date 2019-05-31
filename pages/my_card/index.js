@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    otherInfo:[],
     userInfo: JSON.parse(app.globalData.userInfo),
+    uid:'',//url中的uid
     cardData:{
       uid: wx.getStorageSync('user_id'),
       cardid:'',
@@ -30,31 +32,50 @@ Page({
     userCompany: '',
     usereMail:'',
     userIntro: '',
+    isOther: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.data.uid = Number(options.uid);
     this.getUserInfo();
+    if (this.data.cardData.uid == this.data.uid){
+      this.setData({
+        isOther: false
+      })
+    }else{
+      this.setData({
+        isOther: true
+      })
+    }
+    console.log(this.data.userInfo)
+    console.log(this.data.cardData.uid)
   },
 
   getUserInfo() {
     var that = this;
     api.post('/user/getusercard',{
-      uid: this.data.cardData.uid
+      uid: that.data.uid
     },function(res){
       // that.data.cardData.cardid = res
       console.log(res)
+      that.setData({
+        otherInfo: res.data.data.cardInfo
+      })
     })
   },
-
-  submitUserInfo(e){
-    var that = this;
+  changePosition(e){
     if (e.currentTarget.dataset.val == 'industry') {
       this.data.cardData.card.position = e.detail.value
     }
-    console.log(that.data.cardInfo)
+  },
+  
+  submitUserInfo(){
+    var that = this;
+    
+    console.log(that.data.cardData)
     var cardData = that.data.cardData
     api.post('/user/updateusercard',{
       cardData 

@@ -1,4 +1,6 @@
 // pages/friends/index.js
+
+const api = require('../../http.js');
 let app = getApp();
 Page({
 
@@ -6,25 +8,37 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userInfo: JSON.parse(app.globalData.userInfo),
     imgUrl: app.globalData.imgUrl,
     friendsIndex:0,
     moreTitleShow: true,
     animationData: {},
-		host: app.globalData.host
+		host: app.globalData.host,
+    friendsList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-		
+    this.getFriendsList();
+  },
+  getFriendsList(){
+    var that = this;
+    api.get('/card/list',function(res){
+      that.setData({
+        friendsList: res.data.data.data
+      })
+      console.log(that.data.friendsList)
+    },true)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-		
+    
+    
   },
   showMenu: function () {
     this.setData({
@@ -56,7 +70,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-	
+    if (wx.getStorageSync('user_info')){
+      this.setData({
+        userInfo: JSON.parse(wx.getStorageSync('user_info'))
+      })
+    }
+    
   },
 
   /**

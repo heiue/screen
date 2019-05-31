@@ -7,21 +7,25 @@
     <view class="header-card">
       <view class="header-cont">
         <view class="title">
-          <view class="name">{{userInfo.nickName}}</view>
+          <view class="name" wx-if="{{!isOther}}">{{userInfo.nickName}}</view>
+          <view class="name" wx-else>{{otherInfo.name}}</view>
           <view class="title-icon">
-            <image wx:if="{{userInfo.gender == 1}}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
-            <image wx:if="{{userInfo.gender == 2}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
+            <image wx:if="{{userInfo.gender == 1 && !isOther}}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+            <image wx:if="{{userInfo.gender == 2 && !isOther}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
             <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
           </view>
-          <view class="title-text">{{userCompany}}</view>
+          <view class="title-text" wx-if="{{!isOther}}">{{userCompany}}</view>
+          <view class="title-text" wx-else>{{otherInfo.company}}</view>
         </view>
         <view class="intro">
           <view>行业：</view>
-          <input class='intro-phone' placeholder='请输入从事的行业' bindblur='submitUserInfo' data-val="industry" value='{{cardInfo.card.position}}'></input>
+          <input class='intro-phone' placeholder='请输入从事的行业' bindblur='changePosition' data-val="industry" value='{{cardInfo.card.position}}' wx-if="{{!isOther}}"></input>
+          <view wx-else>{{otherInfo.position}}</view>
         </view>
         <view class="intro">
           <view>地址：</view>
-          <view>{{userInfo.province}}{{userInfo.city}}</view>
+          <view wx-if="{{!isOther}}">{{userInfo.province}}{{userInfo.city}}</view>
+          <!-- <view wx-else>{{otherInfo.province}}</view> -->
         </view>
         <view class="intro">
           <view>联系电话：</view>
@@ -29,7 +33,8 @@
         </view>
       </view>
       <view class="header-portrait">
-        <image src="{{userInfo.avatarUrl}}" class=""></image>
+        <image src="{{userInfo.avatarUrl}}" class="" wx-if="{{!isOther}}"></image>
+        <image src="{{otherInfo.pic}}" class="" wx-else></image>
       </view>
     </view>
   </view>
@@ -70,6 +75,7 @@
         <textarea placeholder='请编辑自己的简介' value='{{cardInfo.info.intro}}'></textarea>
       </view>
     </view>
+    <view bindtap='submitUserInfo'>上传</view>
     <view class="my-photo">
       <view class="my-intro-title">
         <view class="photo-title-icon"></view>

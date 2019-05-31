@@ -27,7 +27,7 @@ Page({
   },
   goMyCard: function () {
     wx.navigateTo({
-      url: '/pages/my_card/index'
+      url: '/pages/my_card/index?uid=' + wx.getStorageSync('user_id')
     })
   },
   goMyMessage: function () {

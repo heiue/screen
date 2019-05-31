@@ -91,21 +91,21 @@ Page({
   },
   getWriterList: function() {
     var that = this;
-    api.get('/screenwriter/list?position=0', function (res) {
+    api.get('/screenwriter/list?position=0&limit=100', function (res) {
       console.log(res.data)
       that.setData({
         list: res.data.data
       })
-    }, true)
+    }, false)
   },
   getsignList: function () {
     var that = this;
-    api.get('/screenwriter/list?position=1', function (res) {
+    api.get('/screenwriter/list?position=1&limit=4', function (res) {
       console.log(res.data)
       that.setData({
         signList: res.data.data
       })
-    }, true)
+    }, false)
   },
   //滑动切换
   swiperTab: function (e) {
@@ -147,21 +147,7 @@ Page({
       duration: e.detail.value
     })
   },
-  setSwiperHeight:function() {
-    var that = this;
-    // console.log(this.data.list.length)
-    wx.createSelectorQuery().selectAll('.fall-item').boundingClientRect(function (rect) {
-      // console.log(rect[0].height)
-      var h = rect[0].height
-    }).exec()
-    wx.createSelectorQuery().selectAll('.index-swiper-tab').boundingClientRect(function (rect) {
-      // console.log(rect[0].height)
-      that.setData({
-        swiperHeight: rect[0].height + Math.ceil(that.data.list.length / 2) * 200
-      })
-    }).exec()
-    
-  },
+  
 	goDetail:function() {
 		wx.navigateTo({
 		  url: '/pages/other_card/index'

@@ -21,10 +21,11 @@
 						<view class="header-card">
 								<view class="header-cont">
 										<view class="title">
-												<view class="name">九妹</view>
+												<view class="name">{{userInfo.nickName}}</view>
 												<view class="title-icon">
-														<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
-														<image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
+														<image wx:if="{{userInfo.gender == 1}}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+                            <image wx:if="{{userInfo.gender == 2}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
+                            <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
 												</view>
 												<view class="title-text">百度百科</view>
 										</view>
@@ -33,33 +34,33 @@
 												<view>策划</view>
 										</view>
 										<view class="intro">
-												<view>行业：</view>
-												<view>策划</view>
+												<view>地址：</view>
+                        <view>{{userInfo.province}}{{userInfo.city}}</view>
 										</view>
 										<view class="intro">
-												<view>行业：</view>
+												<view>联系电话：</view>
 												<view>策划</view>
 										</view>
 								</view>
 								<view class="header-portrait">
-										<image src="http://api.gojbcs.com/images/my_card/img_header.png" class=""></image>
+										<image src="{{userInfo.avatarUrl}}" class=""></image>
 								</view>
 						</view>
 				</view>
 				<view class='friends-list'>
-						<navigator url="/pages/my_card/index" class='friends-item' wx:for="{{4}}">
+						<navigator url="/pages/my_card/index?uid={{item.card_info.uid}}" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}'>
 								<view class="friends-item-img">
 										<image src=''></image>
 								</view>
 								<view class='friends-item-text'>
 										<view class='friends-item-job'>
-												<text class='friends-item-name'>黄景瑜</text>
+												<text class='friends-item-name'>{{item.name}}</text>
 												<text>演员 歌手</text>
 										</view>
 										<view>中国护鲸队</view>
 								</view>
 								<view class='friends-item-head'>
-										<image src='{{imgUrl}}/my_card/img_header.png'></image>
+										<image src='{{friendsList.top_pic}}'></image>
 								</view>
 						</navigator>
 				</view>
