@@ -50,8 +50,7 @@ Page({
         isOther: true
       })
     }
-    console.log(this.data.userInfo)
-    console.log(this.data.cardData.uid)
+    console.log(this.data.isOther)
   },
 
   getUserInfo() {
@@ -59,7 +58,7 @@ Page({
     api.post('/user/getusercard',{
       uid: that.data.uid
     },function(res){
-      // that.data.cardData.cardid = res
+      that.data.cardData.cardid = res.data.data.cardInfo.id
       console.log(res)
       that.setData({
         otherInfo: res.data.data.cardInfo
