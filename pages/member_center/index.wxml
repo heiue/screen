@@ -10,7 +10,7 @@
           <view class="head-portrait">
             <image src="{{userInfo.avatarUrl}}"></image>
           </view>
-          <view class="name">我的网名叫什么</view>
+          <view class="name">{{userInfo.nickName}}</view>
         </view>
         <view class="emblem">
           <image src="http://api.gojbcs.com/images/member_img_emblem.png"></image>

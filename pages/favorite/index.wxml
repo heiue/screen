@@ -12,30 +12,7 @@
       <view class="search-hint">搜索我的关注</view>
     </navigator>
   </view>
-  <view class="favorite-item">
-    <view class="favorite">
-      <view class="header">
-        <image src="http://api.gojbcs.com/images/history/history_img_header.png"></image>
-      </view>
-      <view class="favorite-cont">
-        <view class="name">张三</view>
-        <view class="intro">编剧编剧编剧</view>
-      </view>
-    </view>
-    <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>
-  </view>
-  <view class="favorite-item">
-    <view class="favorite">
-      <view class="header">
-        <image src="http://api.gojbcs.com/images/history/history_img_header.png"></image>
-      </view>
-      <view class="favorite-cont">
-        <view class="name">张三</view>
-        <view class="intro">编剧编剧编剧</view>
-      </view>
-    </view>
-    <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>
-  </view>
+  
   <view class="favorite-item">
     <view class="favorite">
       <view class="header">

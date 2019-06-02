@@ -45,6 +45,20 @@ Page({
       price: that.data.cardList[that.data.cardActive].chargePrice
     },function(res){
       console.log(res)
+      wx.requestPayment({
+        timeStamp: res.data.timeStamp,
+        nonceStr: res.data.nonceStr,
+        package: 'prepay_id=' + res.data.prepay_id,
+        signType: 'MD5',
+        paySign: res.data.paySign,
+        success: function (res) {
+          console.log(res)
+          console.log('支付成功')
+        },
+        fail: function () {
+          App.showError('订单未支付');
+        },
+      })
     })
   },
   closePopup() {

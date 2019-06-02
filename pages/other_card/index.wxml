@@ -84,10 +84,6 @@
           <view class='watch-header-mask'>···</view>
         </view>
       </view>
-      <view class='contact'>
-        立即联系
-        <view class='contact-hint'></view>
-      </view>
     </view>
   </view>
   <view class='history-cont'>

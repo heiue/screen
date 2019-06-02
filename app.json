@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/member_center/index",
+    "pages/favorite/index",
     "pages/index/index",
     "pages/project_detail/index",
     "pages/my/index",
     "pages/project/index",
     "pages/login/index",
     "pages/pay_knowledge/index",
-    "pages/favorite/index",
     "pages/recruit_details/index",
     "pages/history/index",
     "pages/bind_phone/index",

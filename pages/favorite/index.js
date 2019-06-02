@@ -1,11 +1,16 @@
 // pages/favorite/index.js
+const api = require('../../http.js');
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    activeIdex: 0
+    activeIdex: 0,
+    favoritePoeList: [],
+    favoriteproList:[],
   },
 
   /**
@@ -14,7 +19,15 @@ Page({
   onLoad: function (options) {
 
   },
-
+  getFavorite() {
+    var that = this;
+    api.get('/collection/peolist?uid=' + wx.getStorageSync('user_id'),function(res){
+      console.log(res)
+      that.setData({
+        favoritePoeList: res.data.data.data
+      })
+    },true)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -26,7 +39,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getFavorite();
   },
 
   /**
