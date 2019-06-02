@@ -81,6 +81,15 @@ Page({
           usereMail: res.data.data.cardInfo.card_info.email,
           // userIntro: '',
         }) 
+        that.data.cardData.card.company = res.data.data.cardInfo.company
+        
+        that.data.cardData.card.position = res.data.data.position,
+          that.data.cardData.card.industry_id = res.data.data.industry_id,
+          that.data.cardData.info.mobile = res.data.data.cardInfo.mobile, 
+          that.data.cardData.info.wechat = res.data.data.cardInfo.wechat,
+          that.data.cardData.info.email = res.data.data.cardInfo.email,
+          that.data.cardData.info.intro = res.data.data.cardInfo.intro
+        console.log(that.data.cardData)
       }
       that.setData({
         otherInfo: res.data.data.cardInfo
