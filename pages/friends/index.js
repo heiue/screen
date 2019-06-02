@@ -49,11 +49,11 @@ Page({
     api.get('/card/list?page=' + page + '&limit=10' + '&industry_id=' + industry_id,function(res){
       if(flag){
         that.setData({
-          friendsList: that.data.friendsList.concat(res.data.data.data)
+          friendsList: that.data.friendsList.concat(res.data.data)
         })
       }else{
         that.setData({
-          friendsList:res.data.data.data
+          friendsList:res.data.data
         })
       }
       console.log(that.data.friendsList)

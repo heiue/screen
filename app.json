@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/member_center/index",
     "pages/favorite/index",
-    "pages/index/index",
     "pages/project_detail/index",
     "pages/my/index",
     "pages/project/index",

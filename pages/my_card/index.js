@@ -74,14 +74,13 @@ Page({
         wx.setStorageSync('cardInfo', res.data.data.cardInfo)
         that.data.cardData.cardid = res.data.data.cardInfo.id
         that.setData({
-          userIndustry: res.data.data.cardInfo.position,
-          // userPhone: res.data.data.cardInfo.position,
-          // userWechat: '',
+          userIndustry: res.data.data.cardInfo.industry_name,
+          userPhone: res.data.data.cardInfo.card_info.mobile,
+          userWechat: res.data.data.cardInfo.card_info.wechat,
           userCompany: res.data.data.cardInfo.company,
-          // usereMail: '',
+          usereMail: res.data.data.cardInfo.card_info.email,
           // userIntro: '',
         }) 
-
       }
       that.setData({
         otherInfo: res.data.data.cardInfo
@@ -95,12 +94,19 @@ Page({
     if (e.currentTarget.dataset.val == 'phone') {
       this.data.cardData.info.mobile = e.detail.value
     }
+    if (e.currentTarget.dataset.val == 'wechat') {
+      this.data.cardData.info.wechat = e.detail.value
+    }
     if (e.currentTarget.dataset.val == 'company') {
       this.data.cardData.card.company = e.detail.value
+    }
+    if (e.currentTarget.dataset.val == 'email') {
+      this.data.cardData.info.email = e.detail.value
     }
     this.setData({
       isChange: true
     })
+    this.submitUserInfo()
   },
   
   submitUserInfo(){
@@ -112,6 +118,7 @@ Page({
       cardData 
     },function(res){
       if (res.data.msg == 'Successful editing'){
+        that.getUserInfo();
         that.setData({
           changeText:'修改成功',
           showModel:true

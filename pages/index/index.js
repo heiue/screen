@@ -115,7 +115,7 @@ Page({
     let _this = this
     api.get(`/article/list?page=1&limit=6`,(res) => {
       _this.setData({
-        watchingList: res.data.data.data
+        watchingList: res.data.data
       })
     }, false)
   },

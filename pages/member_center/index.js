@@ -52,8 +52,7 @@ Page({
         signType: 'MD5',
         paySign: res.data.paySign,
         success: function (res) {
-          console.log(res)
-          console.log('支付成功')
+          wx.navigateBack();
         },
         fail: function () {
           App.showError('订单未支付');

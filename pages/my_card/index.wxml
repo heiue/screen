@@ -29,7 +29,7 @@
         </view>
         <view class="intro">
           <view>联系电话：</view>
-          <input class='intro-phone' placeholder='请输入手机号' value='{{cardInfo.info.mobile}}' bindblur='changePosition' data-val="phone" wx-if="{{!isOther}}"></input>
+          <input class='intro-phone' placeholder='请输入手机号' value='{{userPhone}}' bindblur='changePosition' data-val="phone" wx-if="{{!isOther}}"></input>
           <!-- <view wx-if="{{isOther}}">{{otherInfo.province}}</view> -->
         </view>
       </view>
@@ -45,7 +45,7 @@
       <view class="wechat-cont">
         <view class="label">微信：</view>
         <view class="text">
-          <input class='intro-phone' placeholder='请输入微信号' value='{{cardInfo.info.wechat}}' wx-if="{{!isOther}}"></input>
+          <input class='intro-phone' placeholder='请输入微信号' value='{{userWechat}}' bindblur='changePosition' data-val="wechat" wx-if="{{!isOther}}"></input>
         </view>
       </view>
     </view>
@@ -63,7 +63,7 @@
       <view class="wechat-cont">
         <view class="label">邮箱：</view>
         <view class="text">
-          <input class='intro-phone' placeholder='请输入邮箱' value='{{cardInfo.info.email}}' wx-if="{{!isOther}}"></input>
+          <input class='intro-phone' placeholder='请输入邮箱' value='{{usereMail}}' bindblur='changePosition' data-val="email" wx-if="{{!isOther}}"></input>
         </view>
       </view>
     </view>
@@ -76,8 +76,8 @@
         <textarea placeholder='请编辑自己的简介' value='{{cardInfo.info.intro}}' wx-if="{{!isOther}}"></textarea>
       </view>
     </view>
-    <view wx-if="{{!isOther}}" bindtap='submitUserInfo' class='up-user-info {{isChange?"on":""}}'>上传</view>
-    <!-- <view class="my-photo">
+    <view wx-if="{{!isOther}}" bindtap='submitUserInfo' class='up-user-info {{isChange?"on":""}}'>保存</view>
+    <view class="my-photo">
       <view class="my-intro-title">
         <view class="photo-title-icon"></view>
         <view class="my-intro-name">我的相册</view>
@@ -93,7 +93,7 @@
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
   </view>
   <text wx-if="{{showModel}}" class='profile-model'>{{changeText}}</text>
 </view>
