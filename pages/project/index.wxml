@@ -3,8 +3,8 @@
   <view>
     <scroll-view scroll-x="true" >
       <view class="scroll-x">
-        <view wx:for-items="{{nav}}" wx:key="name"  class="project-classify-item" >
-          <view class='nav-item'>{{item}}</view>
+        <view wx:for-items="{{nav}}" wx:key="name"  class="project-classify-item" bindtap='getSelectList' data-index="{{index}}">
+          <view class='nav-item {{currentIndex == index?"on":""}}'>{{item}}</view>
         </view>
       </view>
     </scroll-view>

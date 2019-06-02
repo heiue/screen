@@ -14,7 +14,8 @@ Page({
     project: [],
     moreTitleShow: true,
     animationData: {},
-    moreTitle: []
+    moreTitle: [],
+    currentIndex:0
   },
 
   /**
@@ -24,9 +25,12 @@ Page({
     this.getProjectList();
     this.getClassifyList();
   },
-  getProjectList() {
+  getProjectList(type) {
+    if (type == undefined){
+      type = ''
+    }
     var that = this;
-    api.get('/project/list',function(res){
+    api.get('/project/list?type=' + type,function(res){
       that.setData({
         project:res.data.data
       })
@@ -45,6 +49,15 @@ Page({
     wx.navigateTo({
       url: '/pages/project_detail/index?projectId='+e.currentTarget.dataset.id
     })
+  },
+
+  getSelectList(e) {
+    var that = this;
+    that.setData({
+      currentIndex: e.currentTarget.dataset.index
+    })
+    console.log(e.currentTarget.dataset.index)
+    that.getProjectList(e.currentTarget.dataset.index)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,13 +1,32 @@
 // pages/member_center/index.js
+const api = require('../../http.js');
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo: JSON.parse(app.globalData.userInfo),
     popupShow: false,
     cardActive: 0,
-    cardList: [1, 1, 1, 1],
+    cardList: [{
+      chargeName:'一个月',
+      chargePrice: 9.9
+    },
+    {
+      chargeName: '三个月',
+      chargePrice: 39
+    },
+    {
+      chargeName: '六个月',
+      chargePrice: 69
+    },
+    {
+      chargeName: '一年',
+      chargePrice: 99
+    }],
     animationData: {}
   },
 
@@ -16,6 +35,17 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  pay() {
+    var that = this;
+    console.log(that.data.cardActive)
+    api.post('/pay',{
+      token: wx.getStorageSync('token'),
+      rechargeType: Number(that.data.cardActive)+1,
+      price: that.data.cardList[that.data.cardActive].chargePrice
+    },function(res){
+      console.log(res)
+    })
   },
   closePopup() {
     const animation = wx.createAnimation({
