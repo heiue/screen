@@ -8,7 +8,7 @@ Page({
    */
   data: {
     otherInfo:[],
-    userInfo: JSON.parse(app.globalData.userInfo),
+    userInfo: [],
     uid:'',//url中的uid
     cardData:{
       uid: wx.getStorageSync('user_id'),
@@ -68,6 +68,9 @@ Page({
     api.post('/user/getusercard',{
       uid: that.data.uid
     }, function (res) {
+      that.setData({
+        userInfo: JSON.parse(wx.getStorageSync('user_info'))
+      })
       console.log(that.data.isOther)
       // console.log(res)
       if (res.data.data.cardInfo){
@@ -79,16 +82,15 @@ Page({
           userWechat: res.data.data.cardInfo.card_info.wechat,
           userCompany: res.data.data.cardInfo.company,
           usereMail: res.data.data.cardInfo.card_info.email,
-          // userIntro: '',
+          userIntro: res.data.data.cardInfo.card_info.intro,
         }) 
         that.data.cardData.card.company = res.data.data.cardInfo.company
-        
-        that.data.cardData.card.position = res.data.data.position,
+        that.data.cardData.card.position = res.data.data.cardInfo.position,
           that.data.cardData.card.industry_id = res.data.data.industry_id,
-          that.data.cardData.info.mobile = res.data.data.cardInfo.mobile, 
-          that.data.cardData.info.wechat = res.data.data.cardInfo.wechat,
-          that.data.cardData.info.email = res.data.data.cardInfo.email,
-          that.data.cardData.info.intro = res.data.data.cardInfo.intro
+          that.data.cardData.info.mobile = res.data.data.cardInfo.card_info.mobile, 
+          that.data.cardData.info.wechat = res.data.data.cardInfo.card_info.wechat,
+          that.data.cardData.info.email = res.data.data.cardInfo.card_info.email,
+          that.data.cardData.info.intro = res.data.data.cardInfo.card_info.intro
         console.log(that.data.cardData)
       }
       that.setData({
@@ -111,6 +113,9 @@ Page({
     }
     if (e.currentTarget.dataset.val == 'email') {
       this.data.cardData.info.email = e.detail.value
+    }
+    if (e.currentTarget.dataset.val == 'intro') {
+      this.data.cardData.info.intro = e.detail.value
     }
     this.setData({
       isChange: true
@@ -152,7 +157,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo: JSON.parse(wx.getStorageSync('user_info'))
+    })
+    console.log(this.data.userInfo)
   },
 
   /**

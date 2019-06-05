@@ -9,7 +9,7 @@
       </view>
       <view class="name-cont">
         <view class="name">{{userInfo.nickName}}</view>
-        <view class="user-label">标签：制片</view>
+        <view class="user-label" wx-if="{{cardInfo.industry_name}}">标签：{{cardInfo.industry_name}}</view>
       </view>
     </view>
     <view class="my-card" bind:tap="goMyCard">

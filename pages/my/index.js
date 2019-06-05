@@ -8,14 +8,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: JSON.parse(app.globalData.userInfo)
+    userInfo: '',
+    cardInfo: wx.getStorageSync('cardInfo') || ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getUserId();
+    console.log(this.data.cardInfo)
   },
   //获取用户id
   getUserId() {
@@ -56,7 +57,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(wx.getStorageSync('user_info'))
+    if (wx.getStorageSync('user_info')){
+      this.getUserId();
+      this.setData({
+        userInfo: JSON.parse(wx.getStorageSync('user_info'))
+      })
+    }else{
+      app.doLogin()
+    }
+   
   },
   gohistory() {
     wx.navigateTo({

@@ -162,7 +162,7 @@ Page({
   
 	goDetail:function(e) {
 		wx.navigateTo({
-      url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name
+      url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id
 		})
 	},
 	goRecruit:function() {

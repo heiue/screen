@@ -8,10 +8,10 @@
   <view class="banner-cont">
     <view class="banner-header">
       <view class="banner-header-name">精品讲座</view>
-      <view class="banner-header-more">
+      <!-- <view class="banner-header-more">
         <view class="more-text">更多</view>
         <image class="icom-more" src="{{imgUrl}}/pay_knowledge/icon_more.png" />
-      </view>
+      </view> -->
     </view>
     <view class="banner-title">
       <view class="banner-title-name">后现代剧本编辑缔造者讲座特辑</view>
