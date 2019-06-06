@@ -58,7 +58,7 @@
         <text>关注</text>
       </view>
     </view>
-    <view class="chat">
+    <view class="chat" bindtap="callPhone">
       <image class="icon-phone" src='../../images/project-detail-phone.png'></image>
       <text>项目洽谈</text>
     </view>

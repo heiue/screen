@@ -14,7 +14,7 @@
             <image wx:if="{{userInfo.gender == 2 && !isOther}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
             <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
           </view>
-          <view class="title-text" wx-if="{{!isOther}}">{{userCompany}}</view>
+          <view class="title-text" wx-if="{{!isOther && userCompany}}">{{userCompany}}</view>
           <view class="title-text" wx-if="{{isOther}}">{{otherInfo.company}}</view>
         </view>
         <view class="intro">

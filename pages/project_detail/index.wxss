@@ -209,7 +209,7 @@ page{
   font-family: MicrosoftYaHei;
 	font-size: 20rpx;
 	letter-spacing: 2rpx;
-	color: #333333;
+	color: #fff;
 }
 .share-friends{
   border:none;

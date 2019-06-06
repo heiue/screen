@@ -9,7 +9,8 @@ Page({
    */
   data: {
     userInfo: '',
-    cardInfo: wx.getStorageSync('cardInfo') || ''
+    cardInfo: wx.getStorageSync('cardInfo') || '',
+		phone:app.globalData.phone
   },
 
   /**

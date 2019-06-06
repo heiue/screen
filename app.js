@@ -38,6 +38,7 @@ App({
   },
   globalData: {
     userInfo: wx.getStorageSync('user_info') || null,
-    imgUrl: 'http://api.gojbcs.com/images'
+    imgUrl: 'http://api.gojbcs.com/images',
+		phone:'01056257208'
   }
 })

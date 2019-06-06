@@ -50,7 +50,7 @@
         <text>专属经纪顾问</text>
       </view>
       <view class="my-right-text">
-        18888831235
+        {{phone}}
       </view>
     </view>
     <view class="my-item" bindtap='goBindphone'>
