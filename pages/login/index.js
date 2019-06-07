@@ -41,11 +41,21 @@ Page({
             wx.setStorageSync('token', result.data.data.token);
             wx.setStorageSync('user_id', result.data.data.user_id);
             // 跳转回原页面
+            _this.getCardInfo();
             _this.navigateBack();
           });
 
       }
     });
+  },
+
+  // 获取名片信息
+  getCardInfo() {
+    api.post('/user/getusercard', {
+      uid: wx.getStorageSync('user_id')
+    },function(res){
+      console.log(res)
+    },true)
   },
 
   /**

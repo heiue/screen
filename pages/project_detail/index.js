@@ -51,11 +51,11 @@ Page({
       url: '/pages/index/index'
     })
   },
-  callPhone: function () {
-    wx.makePhoneCall({
-      phoneNumber: app.globalData.phone //仅为示例，并非真实的电话号码
-    })
-  },
+	callPhone: function () {
+	  wx.makePhoneCall({
+	    phoneNumber: app.globalData.phone
+	  })
+	},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

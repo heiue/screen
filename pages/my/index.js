@@ -8,8 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: JSON.parse(app.globalData.userInfo),
-    phone: app.globalData.phone
+    userInfo: '',
+    cardInfo: wx.getStorageSync('cardInfo') || '',
+		phone:app.globalData.phone
   },
 
   /**
@@ -59,12 +60,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getUserId();
-    if (wx.getStorageSync('user_info')) {
+    // console.log(wx.getStorageSync('user_info'))
+    if (wx.getStorageSync('user_info')){
+      this.getUserId();
       this.setData({
         userInfo: JSON.parse(wx.getStorageSync('user_info'))
       })
+    }else{
+      app.doLogin()
     }
+   
   },
   gohistory() {
     wx.navigateTo({
