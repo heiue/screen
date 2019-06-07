@@ -2,7 +2,7 @@
 
 <view class="container">
   <view class='title-top'>
-    <title title="{{title}}" isFirst="{{true}}"></title>
+    <title title="{{title}}" isFirst="{{false}}"></title>
   </view>
   <view class='header-link'>
     <view class='header-link-left'>

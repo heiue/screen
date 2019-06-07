@@ -10,6 +10,7 @@ Page({
     projectId:'',//项目id
     projectDetail: [],
     imgUrl: app.globalData.imgUrl,
+    phone: app.globalData.phone
   },
 
   /**
@@ -48,6 +49,11 @@ Page({
   goHome () {
     wx.switchTab({
       url: '/pages/index/index'
+    })
+  },
+  callPhone: function () {
+    wx.makePhoneCall({
+      phoneNumber: app.globalData.phone //仅为示例，并非真实的电话号码
     })
   },
   /**

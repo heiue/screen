@@ -5,7 +5,7 @@
   <view class="line"></view>
   <view class="contact">
     <view class="contact-item" bindtap="callPhone">
-      <view class="contact-text">18888831235</view>
+      <view class="contact-text">{{phone}}</view>
       <image class="contact-icon" src="http://api.gojbcs.com/images/contract_broker/icon_phone.png"></image>
     </view>
     <view class="contact-item">

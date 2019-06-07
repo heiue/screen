@@ -152,7 +152,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (wx.getStorageSync('user_info')) {
+      this.setData({
+        userInfo: JSON.parse(wx.getStorageSync('user_info'))
+      })
+    }
   },
 
   /**

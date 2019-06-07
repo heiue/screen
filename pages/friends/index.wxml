@@ -9,7 +9,7 @@
 				</view>
 				<view class='friends-menu-tap'>
 						<view class='{{friendsIndex==0?"on":""}}' bindtap="changeFriendsTap" data-index="0">人脉</view>
-						<view class='{{friendsIndex==1?"on":""}}' bindtap="changeFriendsTap" data-index="1">帮推</view>
+						<view class='{{friendsIndex==1?"on":""}}' bindtap="changeFriendsTap" data-index="1">分享</view>
 				</view>
 				<!-- <navigator url="/pages/search/index" class='friends-menu-search'>
 					<image src="http://api.gojbcs.com/images/project_icon_search.png"></image>

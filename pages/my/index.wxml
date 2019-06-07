@@ -50,10 +50,10 @@
         <text>专属经纪顾问</text>
       </view>
       <view class="my-right-text">
-        18888831235
+        {{phone}}
       </view>
     </view>
-    <view class="my-item" bindtap='goBindphone'>
+    <!-- <view class="my-item" bindtap='goBindphone'>
       <view class="my-item-left">
         <image src="http://api.gojbcs.com/images/my_icon_setup.png"></image>
         <text>设置</text>
@@ -61,7 +61,7 @@
       <view class="my-item-right">
         <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
       </view>
-    </view>
+    </view> -->
     <navigator class="my-item" url="/pages/about_us/index" hover-class="none">
       <view class="my-item-left">
         <image src="http://api.gojbcs.com/images/my_icon_about.png"></image>

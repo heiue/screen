@@ -1,18 +1,21 @@
 // pages/pay_knowledge/index.js
 let app = getApp()
+const api = require('../../http.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrl:app.globalData.imgUrl,
+    imgUrl: app.globalData.imgUrl,
+    imgurl: app.globalData.imgurl,
     bannerLength:5,
     active:1,
     banner:[1,1,1,1,1],
     autoplay: true,
     interval: 3000,
-    circular: true
+    circular: true,
+    eliteList:[]//精英养成记列表
   },
 
   /**
@@ -25,9 +28,10 @@ Page({
       active: e.detail.current + 1
     })
   },
-  goDetail() {
+  goDetail(e) {
+    // console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '/pages/pay_know_detail/index'
+      url: '/pages/pay_know_detail/index?id=' + e.currentTarget.dataset.id
     })
   },
   /**
@@ -41,7 +45,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getPayPlist();
+  },
 
+  getPayPlist() {
+    var that = this;
+    api.get('/knowledge/elite/list', function (res) {
+      that.setData({
+        eliteList:res.data.data
+      })
+      console.log(that.data.eliteList)
+    }, false)
   },
 
   /**

@@ -21,33 +21,6 @@ Page({
     toView: 'yellow',
     scrollLeft: 0,
     watchingList: [],
-    //滚动的数组
-    scrolls: [
-      {
-        name: '黄色',
-        tag: 'yellow',
-      },
-      {
-        name: '绿色',
-        tag: 'green',
-      },
-      {
-        name: '红色',
-        tag: 'red',
-      },
-      {
-        name: '黄色',
-        tag: 'yellow',
-      },
-      {
-        name: '绿色',
-        tag: 'green',
-      },
-      {
-        name: '红色',
-        tag: 'red',
-      },
-    ],
     list:[],//推荐编剧
     swiperHeight:380,
     signList:[],//签约编剧
@@ -95,21 +68,34 @@ Page({
   },
   getWriterList: function() {
     var that = this;
-    api.get('/screenwriter/list?position=0&limit=100', function (res) {
-      console.log(res.data)
-      that.setData({
-        list: res.data.data
-      })
-    }, false)
+    if(that.data.currentTab == 0){
+      api.get('/screenwriter/list?position=0&limit=100', function (res) {
+        console.log(res.data)
+        that.setData({
+          list: res.data.data
+        })
+      }, false)
+    }else{
+      api.get('/script/list?limit=100', function (res) {
+        console.log(res.data)
+        that.setData({
+          list: res.data.data
+        })
+      }, false)
+    }
+    
   },
   getsignList: function () {
     var that = this;
-    api.get('/screenwriter/list?position=1&limit=4', function (res) {
-      console.log(res.data)
-      that.setData({
-        signList: res.data.data
-      })
-    }, false)
+    if (that.data.currentTab == 0){
+      api.get('/screenwriter/list?position=1&limit=4', function (res) {
+        console.log(res.data)
+        that.setData({
+          signList: res.data.data
+        })
+      }, false)
+    }
+    
   },
   getWatchingList() {
     let _this = this
@@ -136,6 +122,7 @@ Page({
       that.setData({
         currentTab: e.target.dataset.current
       })
+      that.getWriterList();
     }
   },
   //轮播
@@ -161,9 +148,17 @@ Page({
   },
   
 	goDetail:function(e) {
-		wx.navigateTo({
-      url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name
-		})
+    var that = this;
+    if(that.data.currentTab == 0){
+      wx.navigateTo({
+        url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name
+      })
+    }
+		
 	},
 	goRecruit:function() {
 		wx.navigateTo({

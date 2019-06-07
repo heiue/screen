@@ -35,22 +35,13 @@
       <view class="section-subheader">影视圈最全面讲座</view>
       <view class="section-subheader">影视圈晋级必修之路，剧本超市带您深度挖掘</view>
     </view>
-    <view class="section">
-      <image src="{{imgUrl}}/pay_knowledge/img_list_placeholder.png"></image>
+    <view class="section" wx:for="{{eliteList}}" wx:key="index">
+      <image src="{{imgurl}}{{item.thumb}}"></image>
       <view class="section-text">
-        <view class="section-text-h">现代战争</view>
-        <view class="section-text-s">思维塑造者</view>
-        <view class="section-text-e">LOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUM</view>
-        <view class="section-btn" bind:tap="goDetail">了解详情</view>
-      </view>
-    </view>
-    <view class="section">
-      <image src="{{imgUrl}}/pay_knowledge/img_list_placeholder.png"></image>
-      <view class="section-text">
-        <view class="section-text-h">现代战争</view>
-        <view class="section-text-s">思维塑造者</view>
-        <view class="section-text-e">LOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUM</view>
-        <view class="section-btn" bind:tap="goDetail">了解详情</view>
+        <view class="section-text-h">{{item.keywords}}</view>
+        <view class="section-text-s">{{item.title}}</view>
+        <view class="section-text-e">{{item.description}}</view>
+        <view class="section-btn" bind:tap="goDetail" data-id="{{item.id}}">了解详情</view>
       </view>
     </view>
   </view>

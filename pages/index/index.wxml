@@ -50,6 +50,7 @@
       </view>
     </view>
     <!-- 签约编剧 -->
+
     <!-- 大家都在看 -->
     <view class='index-look'>
       <view class='screen-writer-title'>大家都在看</view>
@@ -73,7 +74,7 @@
       </view>
     </view>
     <!-- 大家都在看 -->
-    <view class='index-water'>
+    <view class='index-water' wx-if="{{currentTab==0}}">
       <view class='screen-writer-title'>推荐编剧</view>
       <view class='fall-container'>
         <block wx:for="{{list}}" wx:key="{{item.id}}">
@@ -83,6 +84,21 @@
             <view class="fall-item-text">
               <view class="fall-item-name">{{item.name}} {{item.rating_name}}</view>
               <view class="fall-item-work">代表作：{{item.residence}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='index-water' wx-if="{{currentTab==1}}">
+      <view class='screen-writer-title'>推荐剧本</view>
+      <view class='fall-container'>
+        <block wx:for="{{list}}" wx:key="{{item.id}}">
+          <!-- 瀑布流内容卡片 -->
+          <view class='fall-item' bind:tap="goDetail"  data-id="{{item.id}}">
+            <image src='http://api.gojbcs.com{{item.avatar}}' mode="widthFix"></image>
+            <view class="fall-item-text">
+              <view class="fall-item-name">{{item.scriptTitle}} </view>
+              <view class="fall-item-work">{{item.script_theme_name}}{{item.script_type_name}}</view>
             </view>
           </view>
         </block>
