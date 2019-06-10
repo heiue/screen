@@ -1,12 +1,14 @@
 // pages/my_card/index.js
 let app = getApp();
 const api = require('../../http.js');
+const firlHost = 'https://api.gojbcs.com';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    imgUrl: app.globalData.imgUrl,
     otherInfo:[],
     userInfo: [],
     uid:'',//url中的uid
@@ -17,8 +19,9 @@ Page({
         name:'',
         company:'',
         position:'',
-        industry_id: "3",
-        pic: ""
+        industry_id: "",
+        pic: "",
+        companyProfile: ''
       },
       info: {
         mobile: "",
@@ -36,6 +39,7 @@ Page({
     userPhone:'',
     userWechat:'',
     userCompany: '',
+    companyProfile:'',
     usereMail:'',
     userIntro: '',
     isOther: false,
@@ -83,11 +87,13 @@ Page({
           userIndustry: res.data.data.cardInfo.industry_name,
           userPhone: res.data.data.cardInfo.card_info.mobile,
           userWechat: res.data.data.cardInfo.card_info.wechat,
+          companyProfile: res.data.data.cardInfo.companyProfile,
           userCompany: res.data.data.cardInfo.company,
           usereMail: res.data.data.cardInfo.card_info.email,
           userIntro: res.data.data.cardInfo.card_info.intro,
         }) 
         that.data.cardData.card.company = res.data.data.cardInfo.company
+        that.data.cardData.card.companyProfile = res.data.data.cardInfo.companyProfile,
         that.data.cardData.card.position = res.data.data.cardInfo.position,
           that.data.cardData.card.industry_id = res.data.data.industry_id,
           that.data.cardData.info.mobile = res.data.data.cardInfo.card_info.mobile, 
@@ -102,9 +108,9 @@ Page({
     })
   },
   changePosition(e){
-    if (e.currentTarget.dataset.val == 'industry') {
-      this.data.cardData.card.position = e.detail.value
-    }
+    // if (e.currentTarget.dataset.val == 'industry') {
+    //   this.data.cardData.card.position = e.detail.value
+    // }
     if (e.currentTarget.dataset.val == 'phone') {
       this.data.cardData.info.mobile = e.detail.value
     }
@@ -113,6 +119,9 @@ Page({
     }
     if (e.currentTarget.dataset.val == 'company') {
       this.data.cardData.card.company = e.detail.value
+    }
+    if (e.currentTarget.dataset.val == 'companyProfile') {
+      this.data.cardData.card.companyProfile = e.detail.value
     }
     if (e.currentTarget.dataset.val == 'email') {
       this.data.cardData.info.email = e.detail.value
@@ -123,7 +132,7 @@ Page({
     this.setData({
       isChange: true
     })
-    this.submitUserInfo()
+    // this.submitUserInfo()
   },
   
   submitUserInfo(){
@@ -159,12 +168,15 @@ Page({
     },true)
   },
   selectIndtry(e){
-    console.log(e)
+    // console.log(e)
     var that = this;
     that.setData({
       isSelect: false
     })
-    this.data.cardData.card.position = e.currentTarget.dataset.name;
+    this.data.cardData.card.industry_id = e.currentTarget.dataset.id;
+    that.setData({
+      userIndustry: e.currentTarget.dataset.name
+    })
   },
   closeSlect(){
     var that = this;
@@ -181,18 +193,16 @@ Page({
   upImg(){
     var that = this;
     wx.chooseImage({
-      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
-      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
-      success: res => {
-        that.setData({
-          images: this.data.images.concat(res.tempFilePaths)
-        })
-        // 限制最多只能留下3张照片
-        
-        api.filePost('/uploadImg',{
-          file:that.data.images
-        },function(res){
-          console.log(res)
+      success(res) {
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: firlHost +'/uploadImg', //仅为示例，非真实的接口地址
+          filePath: tempFilePaths[0],
+          name: 'file',
+          success(res) {
+            const data = res.data
+            //do something
+          }
         })
       }
     })

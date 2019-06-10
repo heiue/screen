@@ -23,7 +23,9 @@
     "pages/exclusive_consultant/index",
     "pages/watching-detail/index",
     "pages/search/index",
-    "pages/friends/index"
+    "pages/friends/index",
+    "pages/out/index",
+    "pages/outLine/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

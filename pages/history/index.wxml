@@ -1,6 +1,6 @@
 <view class="container">
   <view class='title-top'>
-    <title title="我的收藏" isFirst="{{true}}"></title>
+    <title title="我的关注" isFirst="{{true}}"></title>
   </view>
   <view class="favorite-header">
     <view class="nav">
@@ -36,7 +36,7 @@
           <image wx-if="{{item.rid_info.cover}}" src="{{imgUrl}}{{item.rid_info.cover}}"></image>
         </view>
         <view class="favorite-cont">
-          <view class="name">{{item.rid_info.projectTitle}}11</view>
+          <view class="name">{{item.rid_info.projectTitle}}</view>
           <view class="intro">{{item.rid_info.introduction}}</view>
         </view>
       </view>

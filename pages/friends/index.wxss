@@ -345,7 +345,7 @@ page{
   height: 120rpx;
   border-radius: 120rpx;
   overflow: hidden ;
-  background-color: #8f44ec;
+  /* background-color: #8f44ec; */
 }
 .push-header-photo{
   width: 100%;

@@ -161,6 +161,8 @@ page{
   height: 54rpx;
   margin-right: 20rpx;
 }
+
+
 .my-item-left text{
   font-size: 24rpx;
   color: #3b3b3b;

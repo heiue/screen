@@ -53,6 +53,15 @@
       </view>
     </view>
     <view class="wechat">
+      <view class="wechat-icon"></view>
+      <view class="wechat-cont">
+        <view class="label">公司简介：</view> 
+        <view class="text">
+          <input class='intro-phone' placeholder='请输入公司简介' value='{{userCompany}}' bindblur='changePosition' data-val="companyProfile" ></input>
+        </view>
+      </view>
+    </view>
+    <view class="wechat">
       <view class="email-icon"></view>
       <view class="wechat-cont">
         <view class="label">邮箱：</view>
@@ -87,8 +96,8 @@
           </view>
         </view>
         <view>
-          <view wx:for="{{images}}">
-            <image src='{{item}}'></image>
+          <view >
+            <image src='{{imgUrl}}{{images}}'></image>
           </view>
         </view>
       </view>
@@ -98,6 +107,6 @@
 </view>
 <view class="instry-dialog {{isSelect?'show':''}}" bindtap='closeSlect'>
   <view class='instry-dialog-container'>
-    <text wx:for="{{instryList}}" wx:key="i" bindtap='selectIndtry' data-name="{{item.name}}">{{item.name}}</text>
+    <text wx:for="{{instryList}}" wx:key="i" bindtap='selectIndtry' data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</text>
   </view>
 </view>
