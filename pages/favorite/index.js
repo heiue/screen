@@ -26,7 +26,7 @@ Page({
       api.get('/collection/prolist?uid=' + wx.getStorageSync('user_id'), function (res) {
         // console.log(res.data.data.data)
         that.setData({
-          favoriteList: res.data.data.data
+          favoriteList: res.data.data
         })
       }, true)
       that.setData({
@@ -39,7 +39,7 @@ Page({
       api.get('/collection/peolist?uid=' + wx.getStorageSync('user_id'), function (res) {
         // console.log(res)
         that.setData({
-          favoriteList: res.data.data.data
+          favoriteList: res.data.data
         })
       }, true)
     }

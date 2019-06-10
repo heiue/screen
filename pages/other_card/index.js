@@ -27,7 +27,8 @@ Page({
   getUserInfo(){
     var that = this;
     api.post('/screenwriter/detail',{
-      sid: that.data.uid
+      sid: that.data.uid,
+      uid: wx.getStorageSync('user_id')
     },function(res) {
       that.setData({
         userInfo: res.data.data

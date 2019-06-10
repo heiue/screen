@@ -38,7 +38,6 @@ Page({
     userCompany: '',
     usereMail:'',
     userIntro: '',
-    isOther: false,
     isChange:false,
     changeText:'',
     showModel:false,
@@ -52,17 +51,6 @@ Page({
   onLoad: function (options) {
     this.data.uid = Number(options.uid);
     this.getUserInfo();
-    if (this.data.cardData.uid == this.data.uid){
-      this.setData({
-        isOther: false
-      })
-      return
-    }else{
-      this.setData({
-        isOther: true
-      })
-    }
-    
   },
 
   getUserInfo() {
@@ -70,31 +58,7 @@ Page({
     api.post('/user/getusercard',{
       uid: that.data.uid
     }, function (res) {
-      that.setData({
-        userInfo: JSON.parse(wx.getStorageSync('user_info'))
-      })
-      console.log(that.data.isOther)
-      // console.log(res)
-      if (res.data.data.cardInfo){
-        wx.setStorageSync('cardInfo', res.data.data.cardInfo)
-        that.data.cardData.cardid = res.data.data.cardInfo.id
-        that.setData({
-          userIndustry: res.data.data.cardInfo.industry_name,
-          userPhone: res.data.data.cardInfo.card_info.mobile,
-          userWechat: res.data.data.cardInfo.card_info.wechat,
-          userCompany: res.data.data.cardInfo.company,
-          usereMail: res.data.data.cardInfo.card_info.email,
-          userIntro: res.data.data.cardInfo.card_info.intro,
-        }) 
-        that.data.cardData.card.company = res.data.data.cardInfo.company
-        that.data.cardData.card.position = res.data.data.cardInfo.position,
-          that.data.cardData.card.industry_id = res.data.data.industry_id,
-          that.data.cardData.info.mobile = res.data.data.cardInfo.card_info.mobile, 
-          that.data.cardData.info.wechat = res.data.data.cardInfo.card_info.wechat,
-          that.data.cardData.info.email = res.data.data.cardInfo.card_info.email,
-          that.data.cardData.info.intro = res.data.data.cardInfo.card_info.intro
-        console.log(that.data.cardData)
-      }
+      console.log(res)
       that.setData({
         otherInfo: res.data.data.cardInfo
       })

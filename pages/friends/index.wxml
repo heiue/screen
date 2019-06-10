@@ -16,7 +16,7 @@
 				</navigator> -->
 		</view>
 		<view wx:if="{{friendsIndex == 0}}" class="friends-content">
-				<view class="header">
+				<view class="header" bindtap='userInfo'>
 						<view class="header-bg"></view>
 						<view class="header-card">
 								<view class="header-cont">

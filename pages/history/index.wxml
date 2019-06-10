@@ -30,14 +30,14 @@
 
   <view wx-if="{{activeIdex == 1}}">
 
-    <navigator url="/pages/project_detail/index?cardId={{item.rid}}" class="favorite-item" wx:for="{{favoriteList}}" wx:key="index">
+    <navigator url="/pages/script_detail/index?sid={{item.rid}}" class="favorite-item" wx:for="{{favoriteList}}" wx:key="index">
       <view class="favorite">
         <view class="header">
-          <image wx-if="{{item.rid_info.cover}}" src="{{imgUrl}}{{item.rid_info.cover}}"></image>
+          <image wx-if="{{item.rid_info.avatar}}" src="{{imgUrl}}{{item.rid_info.avatar}}"></image>
         </view>
         <view class="favorite-cont">
-          <view class="name">{{item.rid_info.projectTitle}}</view>
-          <view class="intro">{{item.rid_info.introduction}}</view>
+          <view class="name">{{item.rid_info.name}}</view>
+          <view class="intro">{{item.rid_info.rating_name}}</view>
         </view>
       </view>
       <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>

@@ -1,8 +1,8 @@
 <view class="container">
   <view class='title-top'>
-    <title title="我的名片" isFirst="{{true}}"></title>
+    <title title="{{otherInfo.name}}" isFirst="{{true}}"></title>
   </view>
-  <view class="header">
+  <view class="header" >
     <view class="header-bg"></view>
     <view class="header-card">
       <view class="header-cont">
@@ -73,9 +73,9 @@
     <view class="my-photo">
       <view class="my-intro-title">
         <view class="photo-title-icon"></view>
-        <view class="my-intro-name">我的相册</view>
+        <view class="my-intro-name">Ta的相册</view>
       </view>
-      <view class="photo-list">
+      <!-- <view class="photo-list">
         <view class="operation">
           <view>
             <image class="upload" src="http://api.gojbcs.com/images/my_card/icon_add.png"></image>
@@ -85,7 +85,7 @@
             <view class="share">分享名片</view>
           </view>
         </view>
-      </view>
+      </view> -->
     </view>
   </view>
 </view>
