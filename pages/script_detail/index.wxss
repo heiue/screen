@@ -1,0 +1,232 @@
+page{
+  background-color: #fff;
+}
+.container{
+  padding-bottom: 110rpx;
+}
+.header{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.header-bg{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10rpx;
+}
+.play{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play-btn{
+  width: 85rpx;
+  height: 85rpx;
+}
+
+.intro{
+  border-bottom: 1px solid #ebedfa
+}
+.intro-type{
+  padding: 20rpx;
+  font-family: MicrosoftYaHeiLight;
+	font-size: 22rpx;
+	letter-spacing: 1rpx;
+	color: #3e3e3e;
+}
+.intro-title{
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.intro-name{
+  font-family: MicrosoftYaHei;
+	font-size: 30rpx;
+	letter-spacing: 2rpx;
+	color: #3e3e3e;
+}
+.cretime{
+  display: flex;
+  align-items: center;
+}
+.icon-time{
+  width: 18rpx;
+  height: 18rpx;
+  margin-right: 10rpx;
+}
+.time{
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	letter-spacing: 1rpx;
+	color: #9c9c9c;
+}
+.intro-cont{
+  padding: 34rpx 20rpx 30rpx;
+}
+.intro-cont text:nth-of-type(1){
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	line-height: 34rpx;
+	letter-spacing: 2rpx;
+	color: #575757;
+}
+.intro-cont text:nth-of-type(2){
+  font-family: MicrosoftYaHei;
+  font-size: 24rpx;
+  line-height: 34rpx;
+	color: #858585;
+}
+.plan{
+  width: 100%;
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid #ebedfa
+}
+.plan-title{
+  font-family: MicrosoftYaHei;
+	font-size: 30rpx;
+	letter-spacing: 2rpx;
+  color: #3e3e3e;
+  margin-bottom: 20rpx
+}
+.plan-subheader{
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	letter-spacing: 2rpx;
+	color: #575757;
+}
+.describe {
+  padding: 10rpx 0;
+  border-bottom: 1px solid #ebedfa
+}
+.describe-title{
+  padding-left: 20rpx;
+  font-family: MicrosoftYaHei;
+  font-size: 30rpx;
+  line-height: 70rpx;
+	letter-spacing: 2rpx;
+	color: #3e3e3e;
+}
+.describe-img{
+  width: 100%;
+  height: 640rpx;
+}
+.describe-bg{
+  width: 100%;
+  height: 100%;
+}
+.describe-text{
+  padding: 20rpx;
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	line-height: 34rpx;
+	letter-spacing: 2rpx;
+	color: #919191;
+}
+.selling-points{
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid #ebedfa
+}
+.selling-points-title{
+  font-family: MicrosoftYaHei;
+	font-size: 30rpx;
+	letter-spacing: 2rpx;
+  color: #3e3e3e;
+  margin-bottom: 20rpx;
+}
+.selling-points-cont{
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	line-height: 34rpx;
+	letter-spacing: 2rpx;
+	color: #919191;
+}
+.foot{
+  width: 100%;
+  height: 98rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 40rpx;
+  background-color: #fff;
+}
+.nav{
+  flex: 1;
+  display: flex;
+}
+.nav-item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav-item:first-of-type image{
+  width: 38rpx;
+  height: 37rpx;
+  margin-bottom: 10rpx;
+}
+.nav-item:last-of-type image{
+  width: 40rpx;
+  height: 37rpx;
+  margin-bottom: 10rpx;
+}
+.nav-item:nth-of-type(2) image{
+  width: 28rpx;
+  height: 37rpx;
+  margin-bottom: 10rpx;
+}
+.nav-item text{
+  font-family: MicrosoftYaHei;
+	font-size: 20rpx;
+	letter-spacing: 2rpx;
+	color: #333333;
+  line-height: 1;
+}
+.chat{
+  width: 297rpx;
+	height: 69rpx;
+	background-color: #ffe147;
+  border-radius: 69rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-phone{
+  width: 20rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+.chat text{
+  font-family: MicrosoftYaHei;
+	font-size: 20rpx;
+	letter-spacing: 2rpx;
+	color: #fff;
+}
+.share-friends{
+  border:none;
+  background: transparent;
+  padding:0;
+  margin:0;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  flex: 1;
+  width: 50rpx;
+  position: none;
+  box-shadow: none;
+  outline: none;
+  background: #fff;
+}
+.share-friends::after{
+  border:none;
+}

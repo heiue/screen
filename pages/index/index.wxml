@@ -95,7 +95,7 @@
         <block wx:for="{{list}}" wx:key="{{item.id}}">
           <!-- 瀑布流内容卡片 -->
           <view class='fall-item' bind:tap="goDetail"  data-id="{{item.id}}">
-            <image src='http://api.gojbcs.com{{item.avatar}}' mode="widthFix"></image>
+            <image src='http://api.gojbcs.com{{item.cover}}' mode="widthFix"></image>
             <view class="fall-item-text">
               <view class="fall-item-name">{{item.scriptTitle}} </view>
               <view class="fall-item-work">{{item.script_theme_name}}{{item.script_type_name}}</view>

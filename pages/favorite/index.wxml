@@ -36,7 +36,7 @@
           <image wx-if="{{item.rid_info.cover}}" src="{{imgUrl}}{{item.rid_info.cover}}"></image>
         </view>
         <view class="favorite-cont">
-          <view class="name">{{item.rid_info.projectTitle}}11</view>
+          <view class="name">{{item.rid_info.projectTitle}}</view>
           <view class="intro">{{item.rid_info.introduction}}</view>
         </view>
       </view>

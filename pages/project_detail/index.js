@@ -10,26 +10,30 @@ Page({
     projectId:'',//项目id
     projectDetail: [],
     imgUrl: app.globalData.imgUrl,
-    phone: app.globalData.phone
+    phone: app.globalData.phone,
+    sid: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.sid)
     this.setData({
       projectId: options.projectId || 1
     })
     this.getProjectDetail();
   },
   getProjectDetail() {
+
     var that = this;
-    api.get('/project/detail?projectId=' + that.data.projectId,function(res) {
-      console.log(res)
-      that.setData({
-        projectDetail: res.data.data
-      })
-    },true)
+      api.get('/project/detail?projectId=' + that.data.projectId + '&uid=' + wx.getStorageSync('user_id'), function (res) {
+        console.log(res)
+        that.setData({
+          projectDetail: res.data.data
+        })
+      }, true)
+    
   },
   attention: function () {
     let id = this.data.projectId,

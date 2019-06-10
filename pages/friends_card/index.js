@@ -44,7 +44,6 @@ Page({
     showModel:false,
     instryList:[],
     isSelect:false,
-    images:'',//相册
   },
 
   /**
@@ -177,25 +176,6 @@ Page({
    */
   onReady: function () {
 
-  },
-  upImg(){
-    var that = this;
-    wx.chooseImage({
-      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
-      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
-      success: res => {
-        that.setData({
-          images: this.data.images.concat(res.tempFilePaths)
-        })
-        // 限制最多只能留下3张照片
-        
-        api.filePost('/uploadImg',{
-          file:that.data.images
-        },function(res){
-          console.log(res)
-        })
-      }
-    })
   },
 
   /**

@@ -151,11 +151,11 @@ Page({
     var that = this;
     if(that.data.currentTab == 0){
       wx.navigateTo({
-        url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name
+        url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id
       })
     }else{
       wx.navigateTo({
-        url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name
+        url: '/pages/script_detail/index?sid=' + e.currentTarget.dataset.id
       })
     }
 		

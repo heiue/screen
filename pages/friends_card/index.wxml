@@ -7,29 +7,29 @@
     <view class="header-card">
       <view class="header-cont">
         <view class="title">
-          <view class="name" >{{userInfo.nickName}}</view>
+          <view class="name">{{otherInfo.name}}</view>
           <view class="title-icon">
-            <image wx:if="{{userInfo.gender == 1 }}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
-            <image wx:if="{{userInfo.gender == 2 }}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
+            <image wx:if="{{userInfo.gender == 1}}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+            <image wx:if="{{userInfo.gender == 2}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
             <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
           </view>
-          <view class="title-text" wx-if="{{userCompany}}">{{userCompany}}</view>
+          <view class="title-text">{{otherInfo.company}}</view>
         </view>
         <view class="intro">
           <view>行业：</view>
-          <view bindtap='getInstryList'>{{userIndustry}}</view>
+          <view>{{otherInfo.position}}</view>
         </view>
         <view class="intro">
           <view>地址：</view>
-          <view >{{userInfo.province}}{{userInfo.city}}</view>
+          <view >{{otherInfo.province}}</view>
         </view>
         <view class="intro">
           <view>联系电话：</view>
-          <input class='intro-phone' placeholder='请输入手机号' value='{{userPhone}}' bindblur='changePosition' data-val="phone" wx-if="{{!isOther}}"></input>
+          <view wx-if="{{isOther}}">{{otherInfo.province}}</view>
         </view>
       </view>
       <view class="header-portrait">
-        <image src="{{userInfo.avatarUrl}}" class="" ></image>
+        <image src="{{otherInfo.pic}}" class="" ></image>
       </view>
     </view>
   </view>
@@ -39,7 +39,7 @@
       <view class="wechat-cont">
         <view class="label">微信：</view>
         <view class="text">
-          <input class='intro-phone' placeholder='请输入微信号' value='{{userWechat}}' bindblur='changePosition' data-val="wechat" ></input>
+          <view>微信号</view>
         </view>
       </view>
     </view>
@@ -48,7 +48,7 @@
       <view class="wechat-cont">
         <view class="label">公司：</view> 
         <view class="text">
-          <input class='intro-phone' placeholder='请输入公司名称' value='{{userCompany}}' bindblur='changePosition' data-val="company" ></input>
+          <view>公司名称</view>
         </view>
       </view>
     </view>
@@ -57,7 +57,7 @@
       <view class="wechat-cont">
         <view class="label">邮箱：</view>
         <view class="text">
-          <input class='intro-phone' placeholder='请输入邮箱' value='{{usereMail}}' bindblur='changePosition' data-val="email" ></input>
+          <view>邮箱</view>
         </view>
       </view>
     </view>
@@ -67,37 +67,25 @@
         <view class="my-intro-name">我的简介</view>
       </view>
       <view class="my-intro-cont">
-        <textarea placeholder='请编辑自己的简介' value='{{cardInfo.info.intro}}' value='{{userIntro}}' bindblur='changePosition' data-val="intro" ></textarea>
+        <view>简介</view>
       </view>
     </view>
-    <view wx-if="{{!isOther}}" bindtap='submitUserInfo' class='up-user-info {{isChange?"on":""}}'>保存</view>
     <view class="my-photo">
       <view class="my-intro-title">
         <view class="photo-title-icon"></view>
         <view class="my-intro-name">我的相册</view>
       </view>
       <view class="photo-list">
-        <view class="operation" bindtap='upImg'>
+        <view class="operation">
           <view>
             <image class="upload" src="http://api.gojbcs.com/images/my_card/icon_add.png"></image>
           </view>
           <view class="operation-btn">
-            <!-- <view class="edit-btn">编辑名片</view>
-            <view class="share">分享名片</view> -->
-          </view>
-        </view>
-        <view>
-          <view wx:for="{{images}}">
-            <image src='{{item}}'></image>
+            <view class="edit-btn">编辑名片</view>
+            <view class="share">分享名片</view>
           </view>
         </view>
       </view>
     </view>
-  </view>
-  <text wx-if="{{showModel}}" class='profile-model'>{{changeText}}</text>
-</view>
-<view class="instry-dialog {{isSelect?'show':''}}" bindtap='closeSlect'>
-  <view class='instry-dialog-container'>
-    <text wx:for="{{instryList}}" wx:key="i" bindtap='selectIndtry' data-name="{{item.name}}">{{item.name}}</text>
   </view>
 </view>

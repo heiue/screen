@@ -1,56 +1,66 @@
-// pages/other_card/index.js
-
+// pages/project_detail/index.js
+let app = getApp();
 const api = require('../../http.js');
-//获取应用实例
-const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title:'名片',
-    uid: '',
-    imgurl:'http://api.gojbcs.com',
-    userInfo:[]
+    projectId:'',//项目id
+    projectDetail: [],
+    imgUrl: app.globalData.imgUrl,
+    phone: app.globalData.phone,
+    sid: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.sid)
     this.setData({
-      title:options.name,
-      uid: options.id
+      projectId: options.projectId || 1,
+      sid: options.sid
     })
+    this.getProjectDetail();
   },
-  getUserInfo(){
+  getProjectDetail() {
+
     var that = this;
-    api.post('/screenwriter/detail',{
-      sid: that.data.uid
-    },function(res) {
-      that.setData({
-        userInfo: res.data.data
-      })
-    })
+      api.get('/script/detail?sid=' + that.data.sid, function (res) {
+        console.log(res)
+        that.setData({
+          projectDetail: res.data.data
+        })
+      }, true)
+    
   },
   attention: function () {
-    let id = this.data.uid,
-      uid = wx.getStorageSync('user_id');
-    api.post('/collection/save', {
+    let id = this.data.sid,
+    uid = wx.getStorageSync('user_id');
+    api.post('/collection/save',{
       rid: id,
-      rType: 4,
+      rType: 3,
       uid: uid
     }, (res) => {
       wx.showToast({
         title: '关注成功',
         icon: 'none',
-        duration: 1000
+        duration:1000
       })
     })
   },
-  
-
+  goHome () {
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
+	callPhone: function () {
+	  wx.makePhoneCall({
+	    phoneNumber: app.globalData.phone
+	  })
+	},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -62,7 +72,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getUserInfo()
+
   },
 
   /**

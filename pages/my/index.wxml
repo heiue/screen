@@ -30,7 +30,7 @@
     </view>
     <view class="nav-item" bind:tap="gohistory">
       <image src="http://api.gojbcs.com/images/my_icon_history.png"></image>
-      <view class="nav-item-name">查看历史</view>
+      <view class="nav-item-name">我的关注</view>
       <view class="new-hint">NEW</view>
     </view>
   </view>

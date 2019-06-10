@@ -46,8 +46,8 @@ page{
 }
 .detail-cont{
   font-family: MicrosoftYaHei;
-	font-size: 18rpx;
-	line-height: 29rpx;
+	font-size: 30rpx;
+	line-height: 50rpx;
 	letter-spacing: 1px;
   color: #6a6a6a;
   padding: 0 40rpx;
