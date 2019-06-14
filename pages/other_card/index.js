@@ -36,6 +36,7 @@ Page({
     })
   },
   attention: function () {
+    var that = this;
     let id = this.data.uid,
       uid = wx.getStorageSync('user_id');
     api.post('/collection/save', {
@@ -48,6 +49,12 @@ Page({
         icon: 'none',
         duration: 1000
       })
+      that.getUserInfo();
+    })
+  },
+  callPhone: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phone
     })
   },
   

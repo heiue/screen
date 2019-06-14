@@ -13,7 +13,7 @@
         <view class="title">{{item.position}}</view>
         <view class="subheader">
           <view class="sub-left">剧本超市</view>
-          <view class="sub-right">15K-30K</view>
+          <view class="sub-right" wx-if="{{item.price}}">{{item.price}}</view>
         </view>
         <view class="label-list">
           <view class="label">{{item.address}}</view>

@@ -50,7 +50,7 @@ Page({
    */
   onLoad: function (options) {
     this.data.uid = Number(options.uid);
-    this.getUserInfo();
+    
   },
 
   getUserInfo() {
@@ -151,6 +151,7 @@ Page({
         userInfo: JSON.parse(wx.getStorageSync('user_info'))
       })
     }
+    this.getUserInfo();
   },
 
   /**

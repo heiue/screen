@@ -27,20 +27,20 @@
                             <image wx:if="{{userInfo.gender == 2}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
                             <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
 												</view>
-												<view class="title-text">百度百科</view>
+												<!-- <view class="title-text">百度百科</view> -->
 										</view>
-										<view class="intro">
+										<!-- <view class="intro">
 												<view>行业：</view>
 												<view>策划</view>
-										</view>
+										</view> -->
 										<view class="intro">
 												<view>地址：</view>
                         <view>{{userInfo.province}}{{userInfo.city}}</view>
 										</view>
-										<view class="intro">
+										<!-- <view class="intro">
 												<view>联系电话：</view>
-												<!-- <view>{{userInfo.}}</view> -->
-										</view>
+												<view>{{userInfo.}}</view>
+										</view> -->
 								</view>
 								<view class="header-portrait">
 										<image src="{{userInfo.avatarUrl}}" class=""></image>

@@ -24,7 +24,7 @@
       <view>九妹</view>
       <view>剧本超市</view>
     </view> -->
-    <view class='header-link-num'>立即联系</view>
+    <view class='header-link-num' wx-if="{{userInfo.phone}}" bindtap='callPhone' data-phone="{{userInfo.phone}}">立即联系</view>
   </view>
   <view class="header">
     <view class="header-bg"></view>
@@ -40,15 +40,15 @@
         </view>
         <view class="intro">
           <view>行业：</view>
-          <view>策划</view>
+          <view>{{userInfo.rating_name}}</view>
         </view>
-        <view class="intro">
+        <view class="intro" >
           <view>地址：</view>
-          <view>策划</view>
+          <view>{{userInfo.residence}}</view>
         </view>
-        <view class="intro">
+        <view class="intro" wx-if="{{userInfo.phone}}">
           <view>联系电话：</view>
-          <view>策划</view>
+          <view>{{userInfo.phone}}</view>
         </view>
       </view>
       <view class='header-right'>
@@ -67,11 +67,11 @@
     </view>
   </view>
   <view class='intro-cont'>
-    <view class='introduce'>
+    <view class='introduce' wx-if="{{userInfo.introduction}}">
       <view>简介：</view>
-      <view>剧本超市签约编剧剧本超市签</view>
+      <view>{{userInfo.introduction}}</view>
     </view>
-    <view class='watch'>
+    <!-- <view class='watch'>
       <view class='watch-num'>
         <view class='number'>666人查看</view>
         <view class='watch-header'>
@@ -88,7 +88,7 @@
           <view class='watch-header-mask'>···</view>
         </view>
       </view>
-    </view>
+    </view> -->
   </view>
   <view class='history-cont'>
     <view class='history-item'>

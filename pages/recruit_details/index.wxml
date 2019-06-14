@@ -6,7 +6,7 @@
   <view class="header">
     <view class="title">
       <view class="name">{{recruitDetail.position}}</view>
-      <view class="pay">15k-30k</view>
+      <view class="pay">{{recruitDetail.price}}</view>
     </view>
     <view class="label-list">
       <view class="label">

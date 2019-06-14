@@ -25,7 +25,7 @@
         </view>
         <view class="intro">
           <view>联系电话：</view>
-          <view>{{otherInfo.mobile}}</view>
+          <view>{{otherInfo.card_info.mobile}}</view>
         </view>
       </view>
       <view class="header-portrait">

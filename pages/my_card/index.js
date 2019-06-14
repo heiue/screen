@@ -20,7 +20,7 @@ Page({
         company:'',
         position:'',
         industry_id: "",
-        pic: "",
+        pic: JSON.parse(wx.getStorageSync('user_info')).avatarUrl,
       },
       info: {
         mobile: "",
