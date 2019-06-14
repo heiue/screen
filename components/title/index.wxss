@@ -3,6 +3,7 @@
   position: relative;
   height: 140rpx;
   line-height: 200rpx;
+  overflow: visible;
 }
 .title-back{
   position: absolute;
