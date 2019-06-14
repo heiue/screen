@@ -2,5 +2,5 @@
   "usingComponents": {
     "title": "../../components/title/index"
   },
-  "navigationBarTitleText": "查看历史"
+  "navigationBarTitleText": "我的收藏"
 }

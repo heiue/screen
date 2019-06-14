@@ -4,25 +4,43 @@
   </view>
   <view class="favorite-header">
     <view class="nav">
-      <view class="nav-item {{activeIdex == 0?'active':''}}">人脉</view>
-      <view class="nav-item {{activeIdex == 1?'active':''}}">项目</view>
+      <view class="nav-item {{activeIdex == 0?'active':''}}" bindtap='getFavorite' data-index="0">人脉</view>
+      <view class="nav-item {{activeIdex == 1?'active':''}}" bindtap='getFavorite' data-index="1">项目</view>
     </view>
-    <navigator class='search' url="/pages/search/index">
+    <!-- <navigator class='search' url="/pages/search/index">
       <image src="http://api.gojbcs.com/images/favorite/favorite_icon_search.png"></image>
       <view class="search-hint">搜索我的关注</view>
+    </navigator> -->
+  </view>
+  <view wx-if="{{activeIdex == 0}}">
+
+    <navigator url="/pages/friends_card/index?uid={{item.rid_info.uid}}" class="favorite-item" wx:for="{{favoriteList}}" wx:key="index" wx-if="activeIdex == 0">
+      <view class="favorite">
+        <view class="header">
+          <image wx-if="{{item.rid_info.pic}}" src="{{item.rid_info.pic}}"></image>
+        </view>
+        <view class="favorite-cont">
+          <view class="name">{{item.rid_info.name}} {{position}}</view>
+          <view class="intro">{{item.rid_info.company}}</view>
+        </view>
+      </view>
+      <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>
     </navigator>
   </view>
-  
-  <view class="favorite-item">
-    <view class="favorite">
-      <view class="header">
-        <image src="http://api.gojbcs.com/images/history/history_img_header.png"></image>
+
+  <view wx-if="{{activeIdex == 1}}">
+
+    <navigator url="/pages/project_detail/index?projectId={{item.rid_info.id}}" class="favorite-item" wx:for="{{favoriteList}}" wx:key="index">
+      <view class="favorite">
+        <view class="header">
+          <image wx-if="{{item.rid_info.cover}}" src="{{imgUrl}}{{item.rid_info.cover}}"></image>
+        </view>
+        <view class="favorite-cont">
+          <view class="name">{{item.rid_info.projectTitle}}</view>
+          <view class="intro">{{item.rid_info.introduction}}</view>
+        </view>
       </view>
-      <view class="favorite-cont">
-        <view class="name">张三</view>
-        <view class="intro">编剧编剧编剧</view>
-      </view>
-    </view>
-    <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>
+      <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>
+    </navigator>
   </view>
 </view>

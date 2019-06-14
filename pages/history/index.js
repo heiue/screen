@@ -1,11 +1,16 @@
-// pages/history/index.js
+// pages/favorite/index.js
+const api = require('../../http.js');
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    activeIdex: 0,
+    favoriteList: [],
+    imgUrl: 'http://api.gojbcs.com',
   },
 
   /**
@@ -14,7 +19,37 @@ Page({
   onLoad: function (options) {
 
   },
-
+  getFavorite(e) {
+    // console.log(e)
+    var that = this;
+    if (e && e.currentTarget.dataset.index == 1 ){
+      api.get('/collection/scriptlist?uid=' + wx.getStorageSync('user_id'), function (res) {
+        // console.log(res.data.data.data)
+        that.setData({
+          favoriteList: res.data.data
+        })
+      }, true)
+      that.setData({
+        activeIdex: 1
+      })
+    } else{
+      that.setData({
+        activeIdex: 0
+      })
+      api.get('/collection/screenlist?uid=' + wx.getStorageSync('user_id'), function (res) {
+        // console.log(res)
+        that.setData({
+          favoriteList: res.data.data
+        })
+      }, true)
+    }
+    // console.log(that.data.favoriteList)
+  },
+  toOtherCard(e){
+    wx.navigateTo({
+      url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -26,7 +61,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getFavorite();
   },
 
   /**

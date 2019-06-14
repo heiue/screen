@@ -1,18 +1,21 @@
 // pages/about_us/index.js
+
+let app = getApp();
+const api = require('../../http.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    phone: app.globalData.phone
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	
   },
 
   /**
@@ -30,7 +33,7 @@ Page({
   },
   callPhone: function () {
     wx.makePhoneCall({
-      phoneNumber: '18888831235' //仅为示例，并非真实的电话号码
+      phoneNumber: app.globalData.phone //仅为示例，并非真实的电话号码
     })
   },
   /**

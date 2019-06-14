@@ -9,8 +9,8 @@ Page({
    */
   data: {
     activeIdex: 0,
-    favoritePoeList: [],
-    favoriteproList:[],
+    favoriteList: [],
+    imgUrl: 'http://api.gojbcs.com',
   },
 
   /**
@@ -19,14 +19,31 @@ Page({
   onLoad: function (options) {
 
   },
-  getFavorite() {
+  getFavorite(e) {
+    // console.log(e)
     var that = this;
-    api.get('/collection/peolist?uid=' + wx.getStorageSync('user_id'),function(res){
-      console.log(res)
+    if (e && e.currentTarget.dataset.index == 1 ){
+      api.get('/collection/prolist?uid=' + wx.getStorageSync('user_id'), function (res) {
+        // console.log(res.data.data.data)
+        that.setData({
+          favoriteList: res.data.data
+        })
+      }, true)
       that.setData({
-        favoritePoeList: res.data.data.data
+        activeIdex: 1
       })
-    },true)
+    } else{
+      that.setData({
+        activeIdex: 0
+      })
+      api.get('/collection/peolist?uid=' + wx.getStorageSync('user_id'), function (res) {
+        // console.log(res)
+        that.setData({
+          favoriteList: res.data.data
+        })
+      }, true)
+    }
+    // console.log(that.data.favoriteList)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,11 +1,18 @@
 // pages/other_card/index.js
+
+const api = require('../../http.js');
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title:'名片'
+    title:'名片',
+    uid: '',
+    imgurl:'http://api.gojbcs.com',
+    userInfo:[]
   },
 
   /**
@@ -13,9 +20,37 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      title:options.name
+      title:options.name,
+      uid: options.id
     })
   },
+  getUserInfo(){
+    var that = this;
+    api.post('/screenwriter/detail',{
+      sid: that.data.uid,
+      uid: wx.getStorageSync('user_id')
+    },function(res) {
+      that.setData({
+        userInfo: res.data.data
+      })
+    })
+  },
+  attention: function () {
+    let id = this.data.uid,
+      uid = wx.getStorageSync('user_id');
+    api.post('/collection/save', {
+      rid: id,
+      rType: 4,
+      uid: uid
+    }, (res) => {
+      wx.showToast({
+        title: '关注成功',
+        icon: 'none',
+        duration: 1000
+      })
+    })
+  },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -28,7 +63,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getUserInfo()
   },
 
   /**

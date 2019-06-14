@@ -1,4 +1,5 @@
 // pages/watching-detail/index.js
+var WxParse = require('../../wxParse/wxParse.js');
 let app = getApp()
 const api = require('../../http.js');
 Page({
@@ -9,7 +10,8 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,//图片路径前缀
     aId: "",
-    watching: null
+    watching: null,
+    content:''
   },
 
   /**
@@ -40,7 +42,8 @@ Page({
     _this = this
     api.get(`/article/detail?aid=${aid}`,(res) => {
       _this.setData({
-        watching: res.data.data
+        watching: res.data.data,
+        content: WxParse.wxParse('content', 'html', res.data.data.content, _this)
       })
     })
   },

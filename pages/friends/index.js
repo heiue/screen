@@ -18,7 +18,8 @@ Page({
     friendsList:[],
     friendsClassList:[],
     page:1,
-    industry_id:''
+    industry_id:'',
+    shareInfo:[],//分享的详情
   },
 
   /**
@@ -27,7 +28,7 @@ Page({
   onLoad: function (options) {
     this.getFriendsList(this.data.page);
     this.getFriendsClassify();
-    console.log(wx.getStorageSync('cardInfo'))
+    // console.log(wx.getStorageSync('cardInfo'))
   },
   getFriendsClassify() {
     var that = this;
@@ -95,7 +96,15 @@ Page({
 		this.setData({
 			friendsIndex: e.currentTarget.dataset.index
 		})
+    if (this.data.friendsIndex == 1) {
+      this.getShareInfo();
+    }
 	},
+  userInfo(){
+    wx.navigateTo({
+      url: '/pages/friends_card/index?uid='+wx.getStorageSync('user_id'),
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -107,6 +116,15 @@ Page({
       })
     }
     
+  },
+  getShareInfo(){
+    var that = this;
+    api.get('/card/help',function(res){
+      console.log(res)
+      that.setData({
+        shareInfo: res.data.data[0]
+      })
+    },true)
   },
 
   /**

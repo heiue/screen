@@ -1,18 +1,22 @@
 // pages/pay_knowledge/index.js
 let app = getApp()
+const api = require('../../http.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrl:app.globalData.imgUrl,
-    bannerLength:5,
+    imgUrl: app.globalData.imgUrl,
+    imgurl: app.globalData.imgurl,
+    bannerLength:0,
     active:1,
-    banner:[1,1,1,1,1],
     autoplay: true,
     interval: 3000,
-    circular: true
+    circular: true,
+    eliteList:[],//精英养成记列表
+    eliteClassList:[],//精品讲座
+    page:1
   },
 
   /**
@@ -25,9 +29,10 @@ Page({
       active: e.detail.current + 1
     })
   },
-  goDetail() {
+  goDetail(e) {
+    // console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '/pages/pay_know_detail/index'
+      url: '/pages/pay_know_detail/index?id=' + e.currentTarget.dataset.id
     })
   },
   /**
@@ -41,7 +46,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getPayPlist(this.data.page);
+    this.getPayPlistClass();
+  },
+  //精品讲座
+  getPayPlistClass() {
+    var that = this;
+    api.get('/knowledge/elite/list?cid=1', function (res) {
+      that.setData({
+        eliteClassList: res.data.data,
+        bannerLength: res.data.data.length
+      })
+    }, false)
+  },
+  // 精英养成记
+  getPayPlist(page) {
+    var that = this;
+    api.get('/knowledge/elite/list?cid=2&page='+page, function (res) {
+      that.setData({
+        eliteList: res.data.data.concat(that.data.eliteList)
+      })
+      // console.log(that.data.eliteList)
+    }, false)
   },
 
   /**
@@ -69,7 +95,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.getPayPlist(this.data.page++)
   },
 
   /**

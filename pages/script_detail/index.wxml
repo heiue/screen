@@ -1,0 +1,66 @@
+<view class="container">
+  <view class='title-top'>
+    <title title="项目详情" isFirst="{{true}}"></title>
+  </view>
+  <view class="header">
+    <image src="http://api.gojbcs.com/{{projectDetail.cover}}" class="header-bg" mode="widthFix" ></image>
+    <!-- <view class="play">
+      <image src="http://api.gojbcs.com/images/project_detail/project_img_play.png" class="play-btn"></image>
+    </view> -->
+  </view>
+  <view class="intro">
+    <view class="intro-type">{{projectDetail.project_type_name}}</view>
+    <view class="intro-title">
+      <view class="intro-name">{{projectDetail.projectTitle}}</view>
+      <view class="cretime">
+        <image class="icon-time"></image>
+        <view class="time">{{projectDetail.updated_at}}</view>
+      </view>
+    </view>
+    <view class="intro-cont">
+      <text class="intro-cont-title">简介：{{projectDetail.script_type_name}}</text>
+      <text>{{projectDetail.script_theme_name}}</text>
+    </view>
+  </view>
+  <view class="plan">
+    <view class="plan-title">投资计划</view>
+    <view class="plan-subheader">300万</view>
+  </view>
+  <view class="describe">
+    <view class="describe-title">剧本描述</view>
+    <view class="describe-img">
+      <image src="http://api.gojbcs.com/images/project_detail/img_header_bg.png" class="describe-bg"></image>
+    </view>
+    <view class="describe-text">描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。</view>
+  </view>
+  <view class="selling-points">
+    <view class="selling-points-title">卖点分析</view>
+    <view class="selling-points-cont">描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。</view>
+  </view>
+  <view class="selling-points">
+    <view class="selling-points-title">卖点分析</view>
+    <view class="selling-points-cont">描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。</view>
+  </view>
+  <view class="foot">
+    <view class="nav">
+      <view class="nav-item" bindtap="goHome">
+        <image src="{{imgUrl}}/navbar/index.png"></image>
+        <text>首页</text>
+      </view>
+      <view class="nav-item" >
+        <button open-type='share' hover-class="none" class="share-friends">
+          <image src="../../images/project-detail-share.png"></image>
+          <text>分享</text>
+        </button>
+      </view>
+      <view class="nav-item" bindtap="attention">
+        <image src="{{imgUrl}}/my_icon_collection.png"></image>
+        <text>关注</text>
+      </view>
+    </view>
+    <view class="chat" bindtap='callPhone'>
+      <image class="icon-phone" src='../../images/project-detail-phone.png'></image>
+      <text>项目洽谈</text>
+    </view>
+  </view>
+</view>

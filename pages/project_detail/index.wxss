@@ -114,7 +114,7 @@ page{
 }
 .describe-img{
   width: 100%;
-  height: 640rpx;
+  height: auto;
 }
 .describe-bg{
   width: 100%;
@@ -209,7 +209,7 @@ page{
   font-family: MicrosoftYaHei;
 	font-size: 20rpx;
 	letter-spacing: 2rpx;
-	color: #333333;
+	color: #fff;
 }
 .share-friends{
   border:none;

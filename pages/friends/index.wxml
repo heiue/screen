@@ -9,14 +9,14 @@
 				</view>
 				<view class='friends-menu-tap'>
 						<view class='{{friendsIndex==0?"on":""}}' bindtap="changeFriendsTap" data-index="0">人脉</view>
-						<view class='{{friendsIndex==1?"on":""}}' bindtap="changeFriendsTap" data-index="1">帮推</view>
+						<view class='{{friendsIndex==1?"on":""}}' bindtap="changeFriendsTap" data-index="1">分享</view>
 				</view>
 				<!-- <navigator url="/pages/search/index" class='friends-menu-search'>
 					<image src="http://api.gojbcs.com/images/project_icon_search.png"></image>
 				</navigator> -->
 		</view>
 		<view wx:if="{{friendsIndex == 0}}" class="friends-content">
-				<view class="header">
+				<view class="header" bindtap='userInfo'>
 						<view class="header-bg"></view>
 						<view class="header-card">
 								<view class="header-cont">
@@ -48,7 +48,7 @@
 						</view>
 				</view>
 				<view class='friends-list'>
-						<navigator url="/pages/my_card/index?uid={{item.card_info.uid}}" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}'>
+						<navigator url="/pages/friends_card/index?uid={{item.card_info.uid}}" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}'>
 								<view class="friends-item-img" >
 										<image src='{{imgUrl}}/icon_auth.png' wx-if="{{item.card_user.is_vip == 'true'}}"></image>
 								</view>
@@ -81,14 +81,14 @@
 		</view>
 		<view wx:if="{{friendsIndex == 1}}" class="friends-content help-push-container">
 				<view class="help-push-header">
-						<image class="help-push-headerbg" src="http://api.gojbcs.com/images/pay_knowledge/img_list_placeholder.png"></image>
+						<image class="help-push-headerbg" src="{{shareInfo.pic}}"></image>
 						<view class="help-push-card">
 								<view class="card-header">
-										<image class="push-header-photo" src="http://api.gojbcs.com/images/index/img_header.png"></image>
+										<image class="push-header-photo" src="{{shareInfo.pic}}"></image>
 								</view>
 								<view class="push-card-cont">
 										<view class="push-card-title">
-												<view class="push-card-name">九妹</view>
+												<view class="push-card-name">{{shareInfo.name}}</view>
 												<view class="push-card-icon">
 														<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
 														<image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
@@ -106,7 +106,7 @@
 								</view>
 								<view class="push-card-right">
 									<image class="in-batch-icon" src="../../images/change-frineds.png"></image>
-									<view class="in-batch-text">换一批</view>
+									<view class="in-batch-text" bindtap='getShareInfo'>换一批</view>
 								</view>
 						</view>
 

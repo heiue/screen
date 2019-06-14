@@ -5,7 +5,7 @@
   <view class="line"></view>
   <view class="about-list">
     <view class="about-item" bindtap="callPhone">
-      <view class="phone">18888831235</view>
+      <view class="phone">{{phone}}</view>
       <image src="http://api.gojbcs.com/images/aboutus_icon_phone.png"></image>
     </view>
     <view class="about-item">

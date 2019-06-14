@@ -1,19 +1,66 @@
-page{
+.favorite-header{
+  height: 56rpx;
   width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fff;
 }
-.container{
-  width: 100%;
-  height: 100%;
+.title-top{
   padding: 0 20rpx;
+  background: #fff;
 }
-.history-item{
-  width: 100%;
-  height: 153rpx;
+.nav{
+  height: 56rpx;
+  display: flex;
+}
+.nav-item{
+  margin: 0 25rpx;
+  height: 100%;
+  line-height: 56rpx;
+  font-family: MicrosoftYaHei;
+	font-size: 24rpx;
+	line-height: 56rpx;
+	letter-spacing: 2rpx;
+	color: #868686;
+}
+.active{
+  color: #3e3e3e;
+  border-bottom: 2px solid #333
+}
+.search{
+  width: 214rpx;
+  height: 36rpx;
+  border-radius: 36rpx;
+  padding-left:20rpx;
+  background-color: #e3e3e3;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #dbdbdb
+  margin-right: 20rpx;
+}
+.search image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}
+.search-hint{
+  font-family: MicrosoftYaHeiLight;
+	font-size: 18rpx;
+}
+.favorite-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  height: 140rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.favorite{
+  /* width: 100%; */
+  /* height: 153rpx; */
+  display: flex;
+  align-items: center;
 }
 .header{
   width: 89rpx;
@@ -26,7 +73,7 @@ page{
   width: 100%;
   height: 100%;
 }
-.history-cont{
+.favorite-cont{
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -43,4 +90,8 @@ page{
   font-family: MicrosoftYaHei;
 	font-size: 18rpx;
 	color: #7b7b7b;
+}
+.goDetails{
+  width: 18rpx;
+  height: 30rpx;
 }

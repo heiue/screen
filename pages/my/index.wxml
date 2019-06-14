@@ -9,7 +9,7 @@
       </view>
       <view class="name-cont">
         <view class="name">{{userInfo.nickName}}</view>
-        <view class="user-label">标签：制片</view>
+        <view class="user-label" wx-if="{{cardInfo.industry_name}}">标签：{{cardInfo.industry_name}}</view>
       </view>
     </view>
     <view class="my-card" bind:tap="goMyCard">
@@ -30,7 +30,7 @@
     </view>
     <view class="nav-item" bind:tap="gohistory">
       <image src="http://api.gojbcs.com/images/my_icon_history.png"></image>
-      <view class="nav-item-name">查看历史</view>
+      <view class="nav-item-name">我的关注</view>
       <view class="new-hint">NEW</view>
     </view>
   </view>
@@ -50,10 +50,10 @@
         <text>专属经纪顾问</text>
       </view>
       <view class="my-right-text">
-        18888831235
+        {{phone}}
       </view>
     </view>
-    <view class="my-item" bindtap='goBindphone'>
+    <!-- <view class="my-item" bindtap='goBindphone'>
       <view class="my-item-left">
         <image src="http://api.gojbcs.com/images/my_icon_setup.png"></image>
         <text>设置</text>
@@ -61,7 +61,25 @@
       <view class="my-item-right">
         <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
       </view>
-    </view>
+    </view> -->
+    <navigator class="my-item" url="/pages/out/index" hover-class="none">
+      <view class="my-item-left">
+        <image src="../../images/my-icon-write.png" style='width:45rpx;'></image>
+        <text>我要编剧</text>
+      </view>
+      <view class="my-item-right">
+        <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
+      </view>
+    </navigator>
+    <navigator class="my-item" url="/pages/outLine/index" hover-class="none">
+      <view class="my-item-left">
+        <image src="../../images/my-icon-script.png" style='width:45rpx;'></image>
+        <text>我要剧本</text>
+      </view>
+      <view class="my-item-right">
+        <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
+      </view>
+    </navigator>
     <navigator class="my-item" url="/pages/about_us/index" hover-class="none">
       <view class="my-item-left">
         <image src="http://api.gojbcs.com/images/my_icon_about.png"></image>

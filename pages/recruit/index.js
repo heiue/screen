@@ -1,11 +1,17 @@
 // pages/recruit/index.js
+var WxParse = require('../../wxParse/wxParse.js');
+let app = getApp()
+const api = require('../../http.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [1,1,1,1]
+    list: [],
+    page:1,
+    limit:"7",
+    intro:[]
   },
 
   /**
@@ -13,6 +19,24 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  getList(page){
+    var that = this;
+    api.get('/task/recruitment/list?page='+page+'&limit='+that.data.limit,function(res){
+      that.setData({
+        list: that.data.list.concat(res.data.data)
+      })
+      var _data = res.data.data;
+      var _len = _data.length;
+      for (var i = 0; i < _len; i++) {
+        WxParse.wxParse('comment' + i, 'html', _data[i].introduction, that);
+        if (i === _len - 1) {
+          WxParse.wxParseTemArray("askItemsArr", 'comment', _data.length, that)
+         
+        }
+      }
+      
+    },false)
   },
 
   /**
@@ -26,11 +50,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getList(this.data.page);
   },
-  goDetails() {
+  goDetails(e) {
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url:'/pages/recruit_details/index'
+      url: '/pages/recruit_details/index?rid='+e.currentTarget.dataset.id+'&uid='+wx.getStorageSync('user_id')
     })
   },
   /**
@@ -58,7 +83,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.getList(this.data.page++);
   },
 
   /**

@@ -3,15 +3,15 @@
     <title title="知识付费" isFirst="{{false}}"></title>
   </view>
   <view class="header">
-    <image src="{{imgUrl}}/pay_knowledge/img_headerbg.png"></image>
+    <image src="{{imgUrl}}/knowledge/banner/knowledge_banner.jpg"></image>
   </view>
   <view class="banner-cont">
     <view class="banner-header">
       <view class="banner-header-name">精品讲座</view>
-      <view class="banner-header-more">
+      <!-- <view class="banner-header-more">
         <view class="more-text">更多</view>
         <image class="icom-more" src="{{imgUrl}}/pay_knowledge/icon_more.png" />
-      </view>
+      </view> -->
     </view>
     <view class="banner-title">
       <view class="banner-title-name">后现代剧本编辑缔造者讲座特辑</view>
@@ -20,8 +20,8 @@
     <view class="banner">
       <view class="banner-container">
         <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" next-margin="40rpx" bindchange="swiperchange">
-          <block wx:for="{{banner}}" wx:key="index" wx:for-index="index">
-            <swiper-item class="banner-list" item-id="">
+          <block wx:for="{{eliteClassList}}" wx:key="index" wx:for-index="index">
+            <swiper-item class="banner-list" data-id="{{item.id}}" bindtap="goDetail">
               <image src="{{imgUrl}}/pay_knowledge/img_banner1.png"></image>
             </swiper-item>
           </block>
@@ -35,22 +35,13 @@
       <view class="section-subheader">影视圈最全面讲座</view>
       <view class="section-subheader">影视圈晋级必修之路，剧本超市带您深度挖掘</view>
     </view>
-    <view class="section">
-      <image src="{{imgUrl}}/pay_knowledge/img_list_placeholder.png"></image>
+    <view class="section" wx:for="{{eliteList}}" wx:key="index">
+      <image src="{{imgurl}}{{item.thumb}}"></image>
       <view class="section-text">
-        <view class="section-text-h">现代战争</view>
-        <view class="section-text-s">思维塑造者</view>
-        <view class="section-text-e">LOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUM</view>
-        <view class="section-btn" bind:tap="goDetail">了解详情</view>
-      </view>
-    </view>
-    <view class="section">
-      <image src="{{imgUrl}}/pay_knowledge/img_list_placeholder.png"></image>
-      <view class="section-text">
-        <view class="section-text-h">现代战争</view>
-        <view class="section-text-s">思维塑造者</view>
-        <view class="section-text-e">LOREM IPSUMLOREM IPSUMLOREM IPSUMLOREM IPSUM</view>
-        <view class="section-btn" bind:tap="goDetail">了解详情</view>
+        <view class="section-text-h">{{item.keywords}}</view>
+        <view class="section-text-s">{{item.title}}</view>
+        <view class="section-text-e">{{item.description}}</view>
+        <view class="section-btn" bind:tap="goDetail" data-id="{{item.id}}">了解详情</view>
       </view>
     </view>
   </view>

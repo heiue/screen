@@ -4,6 +4,7 @@
     "pages/member_center/index",
     "pages/favorite/index",
     "pages/project_detail/index",
+    "pages/script_detail/index",
     "pages/my/index",
     "pages/project/index",
     "pages/login/index",
@@ -15,13 +16,17 @@
     "pages/about_us/index",
     "pages/pay_know_detail/index",
     "pages/my_card/index",
+    "pages/edit_my_card/index",
+    "pages/friends_card/index",
     "pages/other_card/index",
     "pages/my_message/index",
     "pages/contract_broker/index",
     "pages/exclusive_consultant/index",
     "pages/watching-detail/index",
     "pages/search/index",
-    "pages/friends/index"
+    "pages/friends/index",
+    "pages/out/index",
+    "pages/outLine/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

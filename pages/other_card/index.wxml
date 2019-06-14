@@ -7,11 +7,11 @@
   <view class='header-link'>
     <view class='header-link-left'>
       <view class='header-photo'>
-        <image src='http://api.gojbcs.com/images/index/img_header.png'></image>
+        <image src='{{imgurl}}{{userInfo.avatar}}'></image>
       </view>
       <view class='header-name'>
         <view class='header-name-title'>
-          <view class='name-text'>张三李四王五</view>
+          <view class='name-text'>{{userInfo.name}}</view>
           <image src='../../images/icon_auth.png'></image>
         </view>
         <view class='header-intro'>剧本超市</view>
@@ -31,33 +31,37 @@
     <view class="header-card">
       <view class="header-cont">
         <view class="title">
-          <view class="name">九妹</view>
+          <view class="name">{{userInfo.name}}</view>
           <view class="title-icon">
             <image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
             <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
           </view>
-          <view class="title-text">百度百科</view>
+          <!-- <view class="title-text">百度百科</view> -->
         </view>
         <view class="intro">
           <view>行业：</view>
           <view>策划</view>
         </view>
         <view class="intro">
-          <view>行业：</view>
+          <view>地址：</view>
           <view>策划</view>
         </view>
         <view class="intro">
-          <view>行业：</view>
+          <view>联系电话：</view>
           <view>策划</view>
         </view>
       </view>
       <view class='header-right'>
         <view class="header-portrait">
-          <image src="http://api.gojbcs.com/images/my_card/img_header.png" class=""></image>
+          <image src="{{imgurl}}{{userInfo.avatar}}" class=""></image>
         </view>
-        <view class='header-follow'>
+        <view class='header-follow' bindtap='attention' wx-if="{{userInfo.isCollection == 0}}">
           <image src='http://api.gojbcs.com/images/my_icon_collection.png'></image>
           <text>关注</text>
+        </view>
+        <view class='header-follow'  wx-if="{{userInfo.isCollection == 1}}">
+          <image src='../../images/my_icon_collection-on.png'></image>
+          <text>已关注</text>
         </view>
       </view>
     </view>

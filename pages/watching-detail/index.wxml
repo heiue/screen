@@ -1,4 +1,6 @@
 
+
+<import src="../../wxParse/wxParse.wxml" />
 <view class="container">
   <view class='title-top'>
     <title title="大家都在看" isFirst="{{true}}"></title>
@@ -9,13 +11,15 @@
   <view class="cont">
     <view class="header">
       <view class="name">{{watching.title}}?</view>
-      <view class="like" bindtap="attention">
+      <!-- <view class="like" bindtap="attention">
         <image class="like-icon" src="{{imgUrl}}/my_icon_collection.png"></image>
-      </view>
+      </view> -->
     </view>
     <view class="watching-num">{{watching.click}}人阅读</view>
     <view class='watch-text'>
-      <text>{{watching.content}}</text>
+      <view>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+      </view>
       <image mode="aspectFit"  src='http://api.gojbcs.com{{watching.thumb}}'></image>
     </view>
   </view>

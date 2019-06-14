@@ -1,11 +1,29 @@
 'use strict';
 export const host = 'https://api.gojbcs.com/api';
+export const firlHost = 'https://api.gojbcs.com';
 const app = getApp();
 // var util = require('util.js');
 
 function _post_(url, params, callback) {
   wx.request({
     url: host + url,
+    method: 'POST',
+    data: params,
+    header: {
+      'content-type': 'application/json'
+    },
+    success: (res) => {
+      callback(res)
+    },
+    fail: (err) => {
+      console.log(err)
+    }
+  })
+}
+
+function _firlPost_(url, params, callback) {
+  wx.request({
+    url: firlHost + url,
     method: 'POST',
     data: params,
     header: {
@@ -62,6 +80,7 @@ function _del_(url,params, callback) {
 
 module.exports = {
   post: _post_,
+  filePost: _firlPost_,
   get: _get_,
   del: _del_
 }
