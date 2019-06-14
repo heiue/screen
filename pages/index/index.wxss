@@ -169,6 +169,7 @@ margin-top:40rpx;
 }
 .index-look-list{
   margin-right: 20rpx;
+  overflow: visible;
 }
 .index-look-item{
   box-shadow: 0px 0px 25rpx 0px 
