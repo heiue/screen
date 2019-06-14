@@ -1,11 +1,9 @@
 <view class="container">
   <title title="项目" isFirst="{{false}}"></title>
   <view>
-    <scroll-view scroll-x="true" >
-      <view class="scroll-x">
-        <view wx:for-items="{{nav}}" wx:key="name"  class="project-classify-item" bindtap='getSelectList' data-index="{{index}}">
-          <view class='nav-item {{currentIndex == index?"on":""}}'>{{item}}</view>
-        </view>
+    <scroll-view scroll-x="true"  class="project-classify-item" >
+      <view class="nav-item " wx:for-items="{{nav}}" wx:key="name" bindtap='getSelectList' data-index="{{index}}">
+        <view class='{{currentIndex == index?"on":""}}'>{{item}}</view>
       </view>
     </scroll-view>
   </view>

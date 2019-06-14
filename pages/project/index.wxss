@@ -11,13 +11,14 @@ page{
   overflow: visible;
 }
 .nav-item{
-  min-width: 80rpx;
+  /* min-width: 80rpx; */
   text-align: center;
-  padding: 0 32rpx;
   font-size: 24rpx;
   color:  #3e3e3e;
+  margin: 0 36rpx;
+  display: inline-block;
 }
-.nav-item.on{
+.nav-item .on{
   color:#ffe147;
 }
 .project-nav{
@@ -211,4 +212,14 @@ page{
   font-size: 24rpx;
   color: #393939;
  
+}
+.project-classify-item{
+    height: 80rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    /* background: #f7f7f7; */
+    font-size: 14px;
+    white-space: nowrap;
 }

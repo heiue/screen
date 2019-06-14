@@ -114,7 +114,7 @@ page{
 }
 .describe-img{
   width: 100%;
-  height: 640rpx;
+  height: auto;
 }
 .describe-bg{
   width: 100%;
