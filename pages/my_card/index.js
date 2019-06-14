@@ -16,7 +16,7 @@ Page({
       uid: wx.getStorageSync('user_id'),
       cardid:'',
       card:{
-        name:'',
+        name: JSON.parse(wx.getStorageSync('user_info')).nickName,
         company:'',
         position:'',
         industry_id: "",
@@ -26,9 +26,10 @@ Page({
         mobile: "",
         wechat: "",
         email: "",
-        address: "",
+        address: JSON.parse(wx.getStorageSync('user_info')).city,
         intro: "",
         top_pic: '',
+        user_intro: ''
       },
       images: {
         0: "url",
@@ -90,17 +91,18 @@ Page({
           companyProfile: res.data.data.cardInfo.card_info.intro,
           userCompany: res.data.data.cardInfo.company,
           usereMail: res.data.data.cardInfo.card_info.email,
-          userIntro: res.data.data.cardInfo.card_info.intro,
+          userIntro: res.data.data.cardInfo.card_info.user_intro,
           images: res.data.data.cardInfo.card_info.top_pic,
         }) 
         that.data.cardData.card.company = res.data.data.cardInfo.company
         that.data.cardData.info.intro = res.data.data.cardInfo.card_info.intro,
         that.data.cardData.card.position = res.data.data.cardInfo.position,
-          that.data.cardData.card.industry_id = res.data.data.industry_id,
-          that.data.cardData.info.mobile = res.data.data.cardInfo.card_info.mobile, 
-          that.data.cardData.info.wechat = res.data.data.cardInfo.card_info.wechat,
-          that.data.cardData.info.email = res.data.data.cardInfo.card_info.email,
-          that.data.cardData.info.intro = res.data.data.cardInfo.card_info.intro
+        that.data.cardData.card.industry_id = res.data.data.industry_id,
+        that.data.cardData.info.mobile = res.data.data.cardInfo.card_info.mobile, 
+        that.data.cardData.info.wechat = res.data.data.cardInfo.card_info.wechat,
+        that.data.cardData.info.email = res.data.data.cardInfo.card_info.email,
+        that.data.cardData.info.top_pic = res.data.data.cardInfo.card_info.top_pic,
+        that.data.cardData.info.user_intro = res.data.data.cardInfo.card_info.user_intro
         console.log(that.data.cardData)
       }
       that.setData({
@@ -128,7 +130,7 @@ Page({
       this.data.cardData.info.email = e.detail.value
     }
     if (e.currentTarget.dataset.val == 'intro') {
-      this.data.cardData.info.intro = e.detail.value
+      this.data.cardData.info.user_intro = e.detail.value
     }
     this.setData({
       isChange: true
