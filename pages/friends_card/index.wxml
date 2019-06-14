@@ -17,7 +17,7 @@
         </view>
         <view class="intro">
           <view>行业：</view>
-          <view>{{otherInfo.position}}</view>
+          <view>{{otherInfo.industry_name}}</view>
         </view>
         <view class="intro">
           <view>地址：</view>
@@ -25,7 +25,7 @@
         </view>
         <view class="intro">
           <view>联系电话：</view>
-          <view wx-if="{{isOther}}">{{otherInfo.province}}</view>
+          <view>{{otherInfo.mobile}}</view>
         </view>
       </view>
       <view class="header-portrait">
@@ -39,7 +39,7 @@
       <view class="wechat-cont">
         <view class="label">微信：</view>
         <view class="text">
-          <view>微信号</view>
+          <view>{{otherInfo.card_info.wechat}}</view>
         </view>
       </view>
     </view>
@@ -48,7 +48,7 @@
       <view class="wechat-cont">
         <view class="label">公司：</view> 
         <view class="text">
-          <view>公司名称</view>
+          <view>{{otherInfo.company}}</view>
         </view>
       </view>
     </view>
@@ -57,17 +57,18 @@
       <view class="wechat-cont">
         <view class="label">邮箱：</view>
         <view class="text">
-          <view>邮箱</view>
+          <view>{{otherInfo.card_info.email}}</view>
         </view>
       </view>
     </view>
     <view class="my-intro">
       <view class="my-intro-title">
         <view class="intro-title-icon"></view>
-        <view class="my-intro-name">我的简介</view>
+        <view class="my-intro-name">Ta的简介</view>
       </view>
       <view class="my-intro-cont">
-        <view>简介</view>
+        <view wx-if="{{otherInfo.card_info.intro}}">{{otherInfo.card_info.intro}}</view>
+        <view wx-else>ta很懒，什么都没留下</view>
       </view>
     </view>
     <view class="my-photo">

@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgurl: app.globalData.imgurl,
+    imgUrl: app.globalData.imgUrl,
     otherInfo:[],
     userInfo: [],
     uid:'',//url中的uid
@@ -21,14 +21,14 @@ Page({
         position:'',
         industry_id: "",
         pic: "",
+        companyProfile: ''
       },
       info: {
         mobile: "",
         wechat: "",
         email: "",
         address: "",
-        intro: "",
-        top_pic: '',
+        intro: ""
       },
       images: {
         0: "url",
@@ -87,14 +87,13 @@ Page({
           userIndustry: res.data.data.cardInfo.industry_name,
           userPhone: res.data.data.cardInfo.card_info.mobile,
           userWechat: res.data.data.cardInfo.card_info.wechat,
-          companyProfile: res.data.data.cardInfo.card_info.intro,
+          companyProfile: res.data.data.cardInfo.companyProfile,
           userCompany: res.data.data.cardInfo.company,
           usereMail: res.data.data.cardInfo.card_info.email,
           userIntro: res.data.data.cardInfo.card_info.intro,
-          images: res.data.data.cardInfo.card_info.top_pic,
         }) 
         that.data.cardData.card.company = res.data.data.cardInfo.company
-        that.data.cardData.info.intro = res.data.data.cardInfo.card_info.intro,
+        that.data.cardData.card.companyProfile = res.data.data.cardInfo.companyProfile,
         that.data.cardData.card.position = res.data.data.cardInfo.position,
           that.data.cardData.card.industry_id = res.data.data.industry_id,
           that.data.cardData.info.mobile = res.data.data.cardInfo.card_info.mobile, 
@@ -121,8 +120,8 @@ Page({
     if (e.currentTarget.dataset.val == 'company') {
       this.data.cardData.card.company = e.detail.value
     }
-    if (e.currentTarget.dataset.val == 'companyPro') {
-      this.data.cardData.info.intro = e.detail.value
+    if (e.currentTarget.dataset.val == 'companyProfile') {
+      this.data.cardData.card.companyProfile = e.detail.value
     }
     if (e.currentTarget.dataset.val == 'email') {
       this.data.cardData.info.email = e.detail.value
@@ -197,15 +196,12 @@ Page({
       success(res) {
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: firlHost +'/uploadImg',
+          url: firlHost +'/uploadImg', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success(res) {
-            console.log(JSON.parse(res.data))
-            that.setData({
-              images: JSON.parse(res.data).url
-            })
-            that.data.cardData.info.top_pic = JSON.parse(res.data).url;
+            const data = res.data
+            //do something
           }
         })
       }

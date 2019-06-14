@@ -11,7 +11,7 @@
   </view>
   <view class="project-header">
     <view class="header-img">
-      <image src="http://api.gojbcs.com/images/project_img_banner.png"></image>
+      <image src="https://api.gojbcs.com/images/material/project/banner/successle.jpg"></image>
     </view>
   </view>
   <view class="project-show">
@@ -66,7 +66,7 @@
           <image class="subhead-icon" src="http://api.gojbcs.com/images/icon-ding.png" wx:if="{{item.isTop>0}}"></image>
           <image class="subhead-icon" src="http://api.gojbcs.com/images/icon-jing.png" wx:if="{{item.isFine>0}}"></image>
           <text class="item-name">{{item.projectTitle}}</text>
-          <text class="item-financing">融资：300万</text>
+          <text class="item-financing" wx:if="{{item.financing}}">融资：{{item.financing}}</text>
         </view>
         <view class="subhead-right">
           <view class="item-see-num">
@@ -75,7 +75,7 @@
           </view>
           <view class="item-see-num">
             <image src="like-icon" src="http://api.gojbcs.com/images/project_icon_like.png"></image>
-            <text>1920</text>
+            <text>{{item.collection_user_count}}</text>
           </view>
         </view>
       </view>

@@ -14,7 +14,7 @@
   </view>
   <view wx-if="{{activeIdex == 0}}">
 
-    <navigator url="/pages/other_card/index?cardId={{item.rid}}" class="favorite-item" wx:for="{{favoriteList}}" wx:key="index" wx-if="activeIdex == 0">
+    <navigator url="/pages/friends_card/index?uid={{item.rid_info.uid}}" class="favorite-item" wx:for="{{favoriteList}}" wx:key="index" wx-if="activeIdex == 0">
       <view class="favorite">
         <view class="header">
           <image wx-if="{{item.rid_info.pic}}" src="{{item.rid_info.pic}}"></image>
@@ -30,7 +30,7 @@
 
   <view wx-if="{{activeIdex == 1}}">
 
-    <navigator url="/pages/project_detail/index?cardId={{item.rid}}" class="favorite-item" wx:for="{{favoriteList}}" wx:key="index">
+    <navigator url="/pages/project_detail/index?projectId={{item.rid_info.id}}" class="favorite-item" wx:for="{{favoriteList}}" wx:key="index">
       <view class="favorite">
         <view class="header">
           <image wx-if="{{item.rid_info.cover}}" src="{{imgUrl}}{{item.rid_info.cover}}"></image>

@@ -45,6 +45,11 @@ Page({
     }
     // console.log(that.data.favoriteList)
   },
+  toOtherCard(e){
+    wx.navigateTo({
+      url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

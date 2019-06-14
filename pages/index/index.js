@@ -11,9 +11,12 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     currentTab: 0,//当前选中编剧或剧本
     imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+      '/material/index/index_banner/700X400/1.jpg',
+      '/material/index/index_banner/700X400/2.jpg',
+      '/material/index/index_banner/700X400/3.jpg',
+      '/material/index/index_banner/700X400/4.jpg',
+      '/material/index/index_banner/700X400/12.jpg',
+      '/material/index/index_banner/700X400/13.jpg'
     ],
     autoplay: false,
     interval: 5000,
@@ -24,6 +27,8 @@ Page({
     list:[],//推荐编剧
     swiperHeight:380,
     signList:[],//签约编剧
+    page:1,
+		imgUrl:app.globalData.imgUrl
   },
   //事件处理函数
   bindViewTap: function() {
@@ -33,7 +38,7 @@ Page({
   },
   onLoad: function () {
     var that = this;
-    this.getWriterList();
+    this.getWriterList(that.data.page);
     this.getsignList();
     if (app.globalData.userInfo) {
       this.setData({
@@ -66,20 +71,20 @@ Page({
   onShow:function() {
     this.getWatchingList()
   },
-  getWriterList: function() {
+  getWriterList: function (page) {
     var that = this;
     if(that.data.currentTab == 0){
-      api.get('/screenwriter/list?position=0&limit=100', function (res) {
-        console.log(res.data)
+      api.get('/screenwriter/list?position=0&limit=10&page='+page, function (res) {
+        // console.log(res.data)
         that.setData({
-          list: res.data.data
+          list: res.data.data.concat(that.data.list)
         })
       }, false)
     }else{
-      api.get('/script/list?limit=100', function (res) {
-        console.log(res.data)
+      api.get('/script/list?limit=10&page='+page, function (res) {
+        // console.log(res.data)
         that.setData({
-          list: res.data.data
+          list: res.data.data.concat(that.data.list)
         })
       }, false)
     }
@@ -89,7 +94,7 @@ Page({
     var that = this;
     if (that.data.currentTab == 0){
       api.get('/screenwriter/list?position=1&limit=4', function (res) {
-        console.log(res.data)
+        // console.log(res.data)
         that.setData({
           signList: res.data.data
         })
@@ -164,5 +169,10 @@ Page({
 		wx.navigateTo({
 		  url: '/pages/recruit/index'
 		})
-	}
+	},
+  onReachBottom: function () {
+    console.log(11111)
+    console.log(this.data.currentTab)
+    this.getWriterList(this.data.page++)
+  },
 })

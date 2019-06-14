@@ -18,6 +18,7 @@ page{
   border-top-left-radius: 20rpx;
   background-color: #fff;
   padding-top: 170rpx;
+  overflow: visible;
 }
 .banner{
   position: absolute;

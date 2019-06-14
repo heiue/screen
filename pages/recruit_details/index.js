@@ -1,20 +1,38 @@
 // pages/recruit_details/index.js
+var WxParse = require('../../wxParse/wxParse.js');
+let app = getApp()
+const api = require('../../http.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    rid:'',
+    recruitDetail:[],
+    recruitIntro:'',
+    recruitposition:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      rid: options.rid
+    })
   },
-
+  getRecruitDetail(){
+    var that = this;
+    api.get('/task/recruitment/detail?rid=' + that.data.rid + '&uid=' + wx.getStorageSync('user_id'),function(res){
+      
+      that.setData({
+        recruitDetail:res.data.data,
+        recruitIntro: WxParse.wxParse('recruitIntro', 'html', res.data.data.introduction, that),
+        recruitposition: WxParse.wxParse('recruitposition', 'html', res.data.data.positionClaim, that),
+      })
+    },true)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -26,7 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getRecruitDetail();
   },
 
   /**

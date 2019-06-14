@@ -27,7 +27,7 @@ page{
 }
 .pay{
   font-family: MicrosoftYaHei;
-	font-size: 24rpx;
+	font-size: 28rpx;
 	letter-spacing: 2px;
 	color: #47abf6;
 }
@@ -46,7 +46,7 @@ page{
 }
 .label-name{
   font-family: MicrosoftYaHei;
-	font-size: 24rpx;
+	font-size: 28rpx;
 	letter-spacing: 2rpx;
 	color: #3e3e3e;
 }
@@ -61,7 +61,7 @@ page{
   position: relative;
   line-height: 92rpx;
   font-family: MicrosoftYaHei;
-	font-size: 24rpx;
+	font-size: 28rpx;
 	letter-spacing: 2px;
 	color: #3e3e3e;
 }
@@ -77,7 +77,7 @@ page{
 }
 .referral-details{
   font-family: MicrosoftYaHei;
-	font-size: 18rpx;
+	font-size: 26rpx;
 	line-height: 32rpx;
 	letter-spacing: 1px;
 	color: #5f5f5f;
@@ -93,7 +93,7 @@ page{
   background-color: #47abf6;
   border-radius: 10px;
   font-family: MicrosoftYaHei;
-	font-size: 24rpx;
+	font-size: 28rpx;
 	letter-spacing: 2rpx;
 	color: #ffffff;
 }

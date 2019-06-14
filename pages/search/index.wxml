@@ -28,7 +28,7 @@
       </view>
     </view>
     <view class="search-list-title">人脉</view>
-    <view class="search-project-item" wx:for="{{searchList.card}}" wx:key="index">
+    <view class="search-project-item" wx:for="{{searchList.card}}" wx:key="index" bindtap='goCard' data-uid="{{item.uid}}">
       <image class="item-img" src="{{item.pic}}"></image>
       <view class="search-project-cont">
         <view class="search-item-title">{{item.name}}</view>

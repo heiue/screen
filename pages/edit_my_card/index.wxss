@@ -181,14 +181,13 @@ page{
 }
 .operation{
   width: 100%;
-	min-height: 300rpx;
+	height: 300rpx;
 	background-color: #ffe459;
   border-radius: 10rpx;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: visible;
 }
 .upload{
   width: 37rpx;
@@ -250,7 +249,7 @@ textarea{
   top:0;
   left:0;
   background: rgba(0,0,0,.3);
-  z-index:100;
+  z-index:10;
   display:none;
 }
 .instry-dialog.show{

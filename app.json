@@ -16,6 +16,7 @@
     "pages/about_us/index",
     "pages/pay_know_detail/index",
     "pages/my_card/index",
+    "pages/edit_my_card/index",
     "pages/friends_card/index",
     "pages/other_card/index",
     "pages/my_message/index",
