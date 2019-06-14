@@ -124,7 +124,7 @@ margin-bottom: 10rpx;
 .screen-writer-title{font-size: 24rpx;color:#373737;border-left:2px solid #ffe147;padding-left: 25rpx;}
 .screen-writer-list{
 display: flex;
-justify-content: space-around;
+justify-content: flex-start;
 align-items: center;
 text-align: center;
 font-size: 24rpx;
