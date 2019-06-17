@@ -39,7 +39,7 @@
     <!-- 求职广告 -->
     <!-- 签约编剧 -->
     <view class='index-screen-writer'>
-      <view class='screen-writer-title'>签约编剧</view>
+      <view class='screen-writer-title'>经纪人</view>
       <view class='screen-writer-list'>
         <view class='screen-writer-item' wx:for="{{signList}}" wx:key="{{item.id}}">
           <view class='screen-writer-head' bind:tap="goDetail" data-name="{{item.name}}" data-id="{{item.id}}">

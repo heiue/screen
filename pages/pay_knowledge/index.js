@@ -32,7 +32,7 @@ Page({
   goDetail(e) {
     // console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '/pages/pay_know_detail/index?id=' + e.currentTarget.dataset.id
+      url: '/pages/pay_know_detail/index?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name
     })
   },
   /**
@@ -46,6 +46,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      page:1,
+      eliteList:[]
+    })
     this.getPayPlist(this.data.page);
     this.getPayPlistClass();
   },
@@ -95,7 +99,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getPayPlist(this.data.page++)
+    this.getPayPlist(this.data.page+=1)
   },
 
   /**

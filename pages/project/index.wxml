@@ -2,7 +2,7 @@
   <title title="项目" isFirst="{{false}}"></title>
   <view>
     <scroll-view scroll-x="true"  class="project-classify-item" >
-      <view class="nav-item " wx:for-items="{{nav}}" wx:key="name" bindtap='getSelectList' data-index="{{index}}">
+      <view class="nav-item " wx:for-items="{{nav.type1}}" wx:key="name" bindtap='getSelectList' data-index="{{index}}">
         <view class='{{currentIndex == index?"on":""}}'>{{item}}</view>
       </view>
     </scroll-view>
@@ -14,18 +14,18 @@
   </view>
   <view class="project-show">
     <view class="show-header">
-      <view class="show-title">
+      <view class="show-title" bindtap='showTitle'>
         <view class="show-header-text">项目展示</view>
-        <!-- <view class="get-more" bindtap='showTitle'>
+        <view class="get-more" >
           <image class="" src="{{moreTitleShow? 'http://api.gojbcs.com/images/project_icon_right.png':'http://api.gojbcs.com/images/project_icon_down.png'}}"></image>
-        </view> -->
+        </view>
       </view>
       <view class="more-title" animation="{{animationData}}" >
         <view class="more-title-list">
-          <view class="more-title-item" wx:for="{{moreTitle}}" wx:key="index">{{item}}</view>
-          <view class="search">
+          <view class="more-title-item" class='{{currentIndexType2 == index?"on":""}}' wx:for="{{nav.type2}}" wx:key="index" data-id="{{index}}" bindtap='getSelectListType2'>{{item}}</view>
+          <!-- <view class="search">
             <image src="http://api.gojbcs.com/images/project_icon_search.png"></image>
-          </view>
+          </view> -->
         </view>
       </view>
     </view>
@@ -77,6 +77,10 @@
           </view>
         </view>
       </view>
+    </view>
+    <view wx:if="{{isNone}}" style='text-align:center;'>
+      <image src='../../images/none-icon.png' style='width:300rpx;height:185rpx;margin-top:50rpx;'></image>
+      <view style='color:#ffe147;font-size:30rpx;margin-top:30rpx;'>呜～什么都没有~</view>
     </view>
   </view>
 </view>

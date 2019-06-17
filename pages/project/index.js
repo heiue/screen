@@ -15,7 +15,11 @@ Page({
     moreTitleShow: true,
     animationData: {},
     moreTitle: [],
-    currentIndex:0
+    currentIndex:0,
+    currentIndexType2:0,
+    page:1,
+    type:'',
+    isNone: false,
   },
 
   /**
@@ -23,15 +27,23 @@ Page({
    */
   onLoad: function (options) {
   },
-  getProjectList(type) {
+  getProjectList(type,type2,page) {
     if (type == undefined){
       type = ''
     }
+    if (type2 == undefined) {
+      type2 = ''
+    }
     var that = this;
-    api.get('/project/list?type=' + type,function(res){
+    api.get('/project/list?type=' + type+'&type2='+type2+'&page='+page,function(res){
       that.setData({
-        project:res.data.data
+        project: that.data.project.concat(res.data.data)
       })
+      if (that.data.project.length < 1) {
+        that.setData({
+          isNone: true
+        })
+      }
     },false)
   },
   getClassifyList() {
@@ -52,10 +64,21 @@ Page({
   getSelectList(e) {
     var that = this;
     that.setData({
-      currentIndex: e.currentTarget.dataset.index
+      currentIndex: e.currentTarget.dataset.index,
+      project:[],
+      page: 1
     })
-    console.log(e.currentTarget.dataset.index)
-    that.getProjectList(e.currentTarget.dataset.index)
+    that.getProjectList(this.data.currentIndex, this.data.currentIndexType2,this.data.page)
+  },
+  getSelectListType2(e){
+    var that = this;
+    that.setData({
+      currentIndexType2: e.currentTarget.dataset.id,
+      page:1,
+      project: []
+    })
+    that.showTitle();
+    that.getProjectList(this.data.currentIndex, this.data.currentIndexType2, this.data.page)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -68,7 +91,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getProjectList();
+    this.getProjectList('','', this.data.page);
     this.getClassifyList();
   },
   showTitle: function () {
@@ -113,7 +136,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.getProjectList(this.data.currentIndex, this.data.currentIndexType2, this.data.page+=1)
   },
 
   /**

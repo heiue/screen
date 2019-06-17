@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    projectId:'',//项目id
+    projectId: '',//项目id
     projectDetail: [],
     imgUrl: app.globalData.imgUrl,
     phone: app.globalData.phone,
@@ -20,47 +20,46 @@ Page({
   onLoad: function (options) {
     console.log(options.sid)
     this.setData({
-      projectId: options.projectId || 1,
-      sid: options.sid
+      projectId: options.projectId || 1
     })
     this.getProjectDetail();
   },
   getProjectDetail() {
 
     var that = this;
-      api.get('/script/detail?sid=' + that.data.sid, function (res) {
-        console.log(res)
-        that.setData({
-          projectDetail: res.data.data
-        })
-      }, true)
-    
+    api.get('/project/detail?projectId=' + that.data.projectId + '&uid=' + wx.getStorageSync('user_id'), function (res) {
+      console.log(res)
+      that.setData({
+        projectDetail: res.data.data
+      })
+    }, true)
+
   },
   attention: function () {
-    let id = this.data.sid,
-    uid = wx.getStorageSync('user_id');
-    api.post('/collection/save',{
+    let id = this.data.projectId,
+      uid = wx.getStorageSync('user_id');
+    api.post('/collection/save', {
       rid: id,
-      rType: 3,
+      rType: 2,
       uid: uid
     }, (res) => {
       wx.showToast({
         title: '关注成功',
         icon: 'none',
-        duration:1000
+        duration: 1000
       })
     })
   },
-  goHome () {
+  goHome() {
     wx.switchTab({
       url: '/pages/index/index'
     })
   },
-	callPhone: function () {
-	  wx.makePhoneCall({
-	    phoneNumber: app.globalData.phone
-	  })
-	},
+  callPhone: function () {
+    wx.makePhoneCall({
+      phoneNumber: app.globalData.phone
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -176,6 +176,10 @@ page{
 	letter-spacing: 2rpx;
 	color: #7f7f7f;
 }
+.my-intro-cont textarea{
+  position: initial;
+  z-index: 0;
+}
 .my-photo{
   padding: 34rpx 0 30rpx;
   border-bottom: 1px solid #e1e1e1;
@@ -258,7 +262,7 @@ textarea{
   top:0;
   left:0;
   background: rgba(0,0,0,.3);
-  z-index:100;
+  z-index:1000;
   display:none;
 }
 .instry-dialog.show{

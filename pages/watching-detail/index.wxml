@@ -10,7 +10,7 @@
   </view>
   <view class="cont">
     <view class="header">
-      <view class="name">{{watching.title}}?</view>
+      <view class="name">{{watching.title}}</view>
       <!-- <view class="like" bindtap="attention">
         <image class="like-icon" src="{{imgUrl}}/my_icon_collection.png"></image>
       </view> -->

@@ -3,7 +3,7 @@
     <title title="项目详情" isFirst="{{true}}"></title>
   </view>
   <view class="header">
-    <image src="http://api.gojbcs.com/{{projectDetail.cover}}" class="header-bg" mode="widthFix" ></image>
+    <image src="http://api.gojbcs.com/{{projectDetail.img[0].path}}" class="header-bg" mode="widthFix" ></image>
     <!-- <view class="play">
       <image src="http://api.gojbcs.com/images/project_detail/project_img_play.png" class="play-btn"></image>
     </view> -->
@@ -17,30 +17,30 @@
         <view class="time">{{projectDetail.updated_at}}</view>
       </view>
     </view>
-    <view class="intro-cont">
-      <text class="intro-cont-title">简介：{{projectDetail.script_type_name}}</text>
-      <text>{{projectDetail.script_theme_name}}</text>
+    <view class="intro-cont" wx:if="{{projectDetail.introduction}}">
+      <text class="intro-cont-title">简介：</text>
+      <text>{{projectDetail.introduction}}</text>
     </view>
   </view>
-  <view class="plan">
+  <view class="plan" wx:if="{{projectDetail.financing}}">
     <view class="plan-title">投资计划</view>
-    <view class="plan-subheader">300万</view>
+    <view class="plan-subheader" >{{projectDetail.financing}}</view>
   </view>
   <view class="describe">
-    <view class="describe-title">剧本描述</view>
-    <view class="describe-img">
-      <image src="http://api.gojbcs.com/images/project_detail/img_header_bg.png" class="describe-bg"></image>
+    <view class="describe-title" wx:if="{{projectDetail.img.length>0}}">项目描述</view>
+    <view class="describe-img" wx:for="{{projectDetail.img}}" wx:key="i">
+      <image src="http://api.gojbcs.com{{item.path}}" class="describe-bg" mode="widthFix"></image>
     </view>
-    <view class="describe-text">描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。</view>
+    <!-- <view class="describe-text">描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。</view> -->
   </view>
   <view class="selling-points">
     <view class="selling-points-title">卖点分析</view>
-    <view class="selling-points-cont">描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。</view>
+    <view class="selling-points-cont">{{projectDetail.remark}}</view>
   </view>
-  <view class="selling-points">
+  <!-- <view class="selling-points">
     <view class="selling-points-title">卖点分析</view>
     <view class="selling-points-cont">描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述占位描述。</view>
-  </view>
+  </view> -->
   <view class="foot">
     <view class="nav">
       <view class="nav-item" bindtap="goHome">
@@ -52,6 +52,14 @@
           <image src="../../images/project-detail-share.png"></image>
           <text>分享</text>
         </button>
+      </view>
+      <view class="nav-item" bindtap="attention" wx:if="{{projectDetail.isCollection<1}}">
+        <image src="{{imgUrl}}/my_icon_collection.png"></image>
+        <text>关注</text>
+      </view>
+      <view class="nav-item" wx:if="{{projectDetail.isCollection>=1}}">
+        <image src="{{imgUrl}}/my_icon_collection.png"></image>
+        <text>已关注</text>
       </view>
       <view class="nav-item" bindtap="attention">
         <image src="{{imgUrl}}/my_icon_collection.png"></image>

@@ -13,7 +13,10 @@ Page({
     id:'',
     isVip: false,//是否为VIP用户
     detail:[],
-    content:''
+    content:'',
+    showModel:false,
+    changeText:'',
+    title:''
   },
 
   /**
@@ -22,7 +25,8 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.id
+      id: options.id,
+      title:options.name
     })
     this.getdetail();
   },
@@ -36,9 +40,13 @@ Page({
     var that = this;
     api.get('/knowledge/elite/detail?eid='+that.data.id,function(res){
       // console.log(res.data.data.content )
+      if (res.data.data.content){
+        that.setData({
+          content: WxParse.wxParse('content', 'html', res.data.data.content, that)
+        })
+      }
       that.setData({
-        detail: res.data.data,
-        content: WxParse.wxParse('content', 'html', res.data.data.content,that)
+        detail: res.data.data
       })
       
     },false)
@@ -47,10 +55,29 @@ Page({
   getUserInfo(){
     var that = this;
     api.get('/user/getuserinfo?token=' + wx.getStorageSync('token'),function(res){
+      console.log(res.data.data.userinfo.is_vip)
       that.setData({
         isVip: res.data.data.userinfo.is_vip
       })
     },true)
+  },
+  play(){
+    var that = this;
+    if (that.data.isVip == 'true'){
+      this.videoContext = wx.createVideoContext('payVideo');
+      this.videoContext.play();
+    }else{
+      that.setData({
+        showModel:true,
+        changeText:'您不是会员，没有播放的权利哦'
+      })
+      setTimeout(function () {
+        that.setData({
+          showModel: false,
+          isChange: false
+        })
+      }, 2000)
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

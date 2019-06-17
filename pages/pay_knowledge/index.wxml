@@ -3,7 +3,7 @@
     <title title="知识付费" isFirst="{{false}}"></title>
   </view>
   <view class="header">
-    <image src="{{imgUrl}}/knowledge/banner/knowledge_banner.jpg"></image>
+    <image src="{{imgUrl}}/material/knowledge/banner/knowledge_banner.jpg"></image>
   </view>
   <view class="banner-cont">
     <view class="banner-header">
@@ -21,8 +21,8 @@
       <view class="banner-container">
         <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" next-margin="40rpx" bindchange="swiperchange">
           <block wx:for="{{eliteClassList}}" wx:key="index" wx:for-index="index">
-            <swiper-item class="banner-list" data-id="{{item.id}}" bindtap="goDetail">
-              <image src="{{imgUrl}}/pay_knowledge/img_banner1.png"></image>
+            <swiper-item class="banner-list" data-id="{{item.id}}" data-name="{{item.title}}" bindtap="goDetail">
+              <image src="{{imgurl}}{{item.thumb}}" mode='widthFix'></image>
             </swiper-item>
           </block>
         </swiper>
@@ -36,12 +36,12 @@
       <view class="section-subheader">影视圈晋级必修之路，剧本超市带您深度挖掘</view>
     </view>
     <view class="section" wx:for="{{eliteList}}" wx:key="index">
-      <image src="{{imgurl}}{{item.thumb}}"></image>
+      <image mode='widthFix' src="{{imgurl}}{{item.thumb}}"></image>
       <view class="section-text">
         <view class="section-text-h">{{item.keywords}}</view>
         <view class="section-text-s">{{item.title}}</view>
         <view class="section-text-e">{{item.description}}</view>
-        <view class="section-btn" bind:tap="goDetail" data-id="{{item.id}}">了解详情</view>
+        <view class="section-btn" bind:tap="goDetail" data-name="{{item.title}}" data-id="{{item.id}}">了解详情</view>
       </view>
     </view>
   </view>

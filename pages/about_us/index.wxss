@@ -29,7 +29,6 @@ page{
   height: 51rpx;
 }
 .qr-code{
-  padding-top: 100rpx;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -45,4 +44,9 @@ page{
 	font-size: 24rpx;
 	letter-spacing: 2px;
 	color: #333333;
+}
+.about_intro{
+  font-size: 26rpx;
+  text-align: left;
+  padding:20rpx;
 }

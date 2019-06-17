@@ -20,6 +20,7 @@ Page({
     page:1,
     industry_id:'',
     shareInfo:[],//分享的详情
+    isNone:false,
   },
 
   /**
@@ -57,7 +58,12 @@ Page({
           friendsList:res.data.data
         })
       }
-      console.log(that.data.friendsList)
+      if (that.data.friendsList.length<1){
+        that.setData({
+          isNone:true
+        })
+      }
+      // console.log(that.data.friendsList)
       
     },true)
   },
@@ -71,6 +77,10 @@ Page({
   },
   searchFriendsList(e){
     var that = this;
+    that.setData({
+      isNone: false,
+      page:1
+    })
     that.getFriendsList(1, e.currentTarget.dataset.id,false)
     this.showMenu();
   },
@@ -152,7 +162,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getFriendsList(this.data.page++, this.data.industry_id,true)
+    this.getFriendsList(this.data.page += 1, this.data.industry_id,true)
   },
 
   /**

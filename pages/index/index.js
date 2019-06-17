@@ -171,8 +171,6 @@ Page({
 		})
 	},
   onReachBottom: function () {
-    console.log(11111)
-    console.log(this.data.currentTab)
-    this.getWriterList(this.data.page++)
+    this.getWriterList(this.data.page+=1)
   },
 })

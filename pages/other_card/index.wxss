@@ -196,7 +196,7 @@
 	font-size: 24rpx;
 	letter-spacing: 2rpx;
 	color: #4f4f4f;
-  width: 150rpx;
+  /* width: 150rpx; */
 }
 .intro view:nth-of-type(2){
   font-family: MicrosoftYaHei;
@@ -311,7 +311,7 @@
   text-align: center;
   line-height: 72rpx;
   font-family: MicrosoftYaHei;
-	font-size: 20rpx;
+	font-size: 22rpx;
 	letter-spacing: 2rpx;
 	color: #4f4f4f;
 }
@@ -323,16 +323,21 @@
   padding: 10rpx 20rpx;
 }
 .introduce{
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 30rpx;
+  padding:0 30rpx;
+  /* display: flex;
+  align-items: flex-end; */
+  /* margin-bottom: 30rpx; */
+}
+.introduce view{
+  margin-top: 15rpx;
+  margin-bottom: 20rpx;
 }
 .introduce view:nth-of-type(1){
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: #373737;
 }
 .introduce view:nth-of-type(2){
-  font-size: 18rpx;
+  font-size: 22rpx;
   color: #757575;
 }
 .watch{
@@ -397,7 +402,8 @@
 }
 .history-cont{
   padding: 32rpx 20rpx 40rpx 42rpx;
-  background-color: #f1f2fb
+  background-color: #f1f2fb;
+  font-size: 26rpx;
 }
 .item-title{
   display: flex;

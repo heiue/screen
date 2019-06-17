@@ -66,10 +66,14 @@
       </view>
     </view>
   </view>
-  <view class='intro-cont'>
     <view class='introduce' wx-if="{{userInfo.introduction}}">
-      <view>简介：</view>
+      <view>{{title}}简介：</view>
       <view>{{userInfo.introduction}}</view>
+    </view>
+  <view class='intro-cont'>
+    <view class='introduce' wx-if="{{userInfo.works}}">
+      <view>代表作品：</view>
+      <view>{{userInfo.works}}</view>
     </view>
     <!-- <view class='watch'>
       <view class='watch-num'>
@@ -91,7 +95,8 @@
     </view> -->
   </view>
   <view class='history-cont'>
-    <view class='history-item'>
+    {{userInfo.introduction}}
+    <!-- <view class='history-item'>
       <view class='item-title'>
         <image src='../../images/icon_history.png' class='icon-history'></image>
         <view class='item-name'>《hello,树先生》</view>
@@ -108,6 +113,6 @@
       <view class='item-show'>
         <image src='../../images/watching_detail/img_banner.png'></image>
       </view>
-    </view>
+    </view> -->
   </view>
 </view>

@@ -83,7 +83,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getList(this.data.page++);
+    this.getList(this.data.page+=1);
   },
 
   /**

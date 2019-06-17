@@ -64,6 +64,10 @@
 								</view>
 						</navigator>
 				</view>
+        <view wx:if="{{isNone}}" style='text-align:center;'>
+          <image src='../../images/none-icon.png' style='width:300rpx;height:185rpx;margin-top:50rpx;'></image>
+          <view style='color:#ffe147;font-size:30rpx;margin-top:30rpx;'>呜～什么都没有~</view>
+        </view>
 		</view>
 		<view class='friends-menu-list' animation="{{animationData}}">
 			<view class="mask" bindtap='showMenu'></view>

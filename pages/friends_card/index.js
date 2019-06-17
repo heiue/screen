@@ -8,6 +8,7 @@ Page({
    */
   data: {
     otherInfo:[],
+    imgurl:app.globalData.imgurl,
     userInfo: [],
     uid:'',//url中的uid
     cardData:{

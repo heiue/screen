@@ -24,6 +24,7 @@ page{
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 .header-play image{
   width: 90rpx;
@@ -59,12 +60,25 @@ page{
   border-radius: 72rpx;
   text-align: center;
   background-color: #ffe147;
-  position: fixed;
+  /* position: fixed;
   bottom: 100rpx;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50%; */
+  /* transform: translateX(-50%); */
+  margin: 40rpx auto;
   font-family: MicrosoftYaHei;
 	font-size: 24rpx;
 	letter-spacing: 2px;
 	color: #484848;
+}
+.profile-model{
+  position: fixed;
+  top:50%;
+  left:50%;
+  background: rgba(0,0,0,.3);
+  transform: translate(-50%,-50%);
+  border-radius: 100rpx;
+  color:#fff;
+  padding:10rpx 15rpx;
+  font-size: 24rpx;
+  z-index: 101;
 }

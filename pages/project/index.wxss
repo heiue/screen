@@ -47,6 +47,7 @@ page{
 }
 .show-header{
   position: relative;
+  overflow: initial;
 }
 .show-title{
   position: relative;
@@ -91,6 +92,15 @@ page{
   background-color: #fff;
   box-shadow: 0px 4px 15px 0px 
 		rgba(85, 85, 85, 0.25);
+    padding:0 40rpx;
+    font-size: 24rpx;
+}
+.more-title-list view{
+  float: left;
+  margin:20rpx;
+}
+.more-title-list .on{
+  color:#ffe147;
 }
 .more-title-item{
   width: 16.66%;
@@ -101,8 +111,9 @@ page{
   text-align: center;
 }
 .more-title-list{
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
+  overflow: hidden;
 }
 .item-img-show{
   width: 100%;

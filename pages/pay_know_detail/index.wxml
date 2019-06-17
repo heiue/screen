@@ -1,7 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
 <view class="container">
   <view class='title-top'>
-    <title title="查看历史" isFirst="{{true}}"></title>
+    <title title="{{title}}" isFirst="{{true}}"></title>
   </view>
   <view class="header">
     <image src="{{imgurl}}{{detail.thumb}}" class="header-bg"></image>
@@ -11,11 +11,17 @@
   </view>
   <view class="detail-header">
     <text>{{detail.title}} </text>
-    <text>剧本时代下的产物 </text>
   </view>
-  <view class="detail-cont" wx-if='{{!isVip}}'>{{detail.description}}</view>
-  <view class="detail-cont " wx:if='{{isVip}}'>
+  <view class="header" wx-if="{{detail.video}}">
+    <video src="{{imgurl}}{{detail.video}}" id="payVideo" show-center-play-btn="false" show-fullscreen-btn="true" class="header-bg"></video>
+    <view class="header-play" bindtap='play' wx-if="{{!isVip}}">
+      <!-- <image src="{{imgUrl}}/pay_know_detail/icon_play.png"></image> -->
+    </view>
+  </view>
+  <view class="detail-cont" wx:if="{{isVip== 'false'}}">{{detail.description}}</view>
+  <view class="detail-cont " wx:if="{{isVip=='true'}}">
     <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
   </view>
-  <view class="getVip" bind:tap="getVip" wx-if="{{!isVip}}">开通VIP阅读完整</view>
+  <view class="getVip" bind:tap="getVip" wx:if="{{isVip == 'false'}}">开通VIP阅读完整</view>
+  <text wx:if="{{showModel}}" class='profile-model'>{{changeText}}</text>
 </view>

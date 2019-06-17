@@ -16,7 +16,7 @@ page{
   background-color: #fff;
 }
 .index-title{
-  padding-top:71rpx;
+  padding-top:90rpx;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -70,7 +70,7 @@ page{
 }
 .index-swiper{
   height:416rpx;
-  padding:186rpx 20rpx 20rpx;
+  padding:200rpx 20rpx 20rpx;
   /* padding-top: 186rpx; */
   /* padding-bottom: 20rpx; */
   box-sizing: border-box;
