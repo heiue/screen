@@ -76,7 +76,8 @@
         <view class="my-intro-name">我的简介</view>
       </view>
       <view class="my-intro-cont">
-        <textarea placeholder='请编辑自己的简介' value='{{userIntro}}' bindblur='changePosition' data-val="intro" ></textarea>
+        <textarea wx:if="{{!isSelect}}" placeholder='请编辑自己的简介' value='{{userIntro}}' bindblur='changePosition' data-val="intro" ></textarea>
+        <view class="textarea" wx:else>{{textareaHoder}}</view>
       </view>
     </view>
     
@@ -87,14 +88,14 @@
       </view>
       <view class="photo-list">
         <view class="operation" bindtap='upImg'>
-          <view wx:if="{{images.length<=0}}">
+          <view wx:if="{{images.length<=0}}" class="upimg-icon">
             <image class="upload" src="http://api.gojbcs.com/images/my_card/icon_add.png" ></image>
           </view>
-          <view class="operation-btn">
+          <!-- <view class="operation-btn"> -->
             <!-- <view class="edit-btn">编辑名片</view>
             <view class="share">分享名片</view> -->
-          </view>
-          <view style="width:100%">
+          <!-- </view> -->
+          <view style="width:100%" wx:else>
             <image style="width:100%" src='{{imgurl}}{{images}}' mode="widthFix"></image>
           </view>
         </view>

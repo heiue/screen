@@ -54,5 +54,6 @@ page{
   background-color: #f2f4f5
 }
 view{
-  box-sizing: border-box
+  box-sizing: border-box;
+  /* overflow: visible; */
 }

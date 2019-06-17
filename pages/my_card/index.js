@@ -50,6 +50,7 @@ Page({
     instryList:[],
     isSelect:false,
     images:'',//相册
+    textareaHoder: '请编辑自己的简介'
   },
 
   /**
@@ -131,6 +132,9 @@ Page({
     }
     if (e.currentTarget.dataset.val == 'intro') {
       this.data.cardData.info.user_intro = e.detail.value
+      this.setData({
+        textareaHoder: e.detail.value
+      })
     }
     this.setData({
       isChange: true
