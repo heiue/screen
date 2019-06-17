@@ -41,6 +41,11 @@ Page({
         that.setData({
           favoriteList: res.data.data
         })
+        if (that.data.favoriteList[0].rid_info != ''){
+          console.log('uuu')
+        }else{
+          console.log('hhh')
+        }
       }, true)
     }
     // console.log(that.data.favoriteList)

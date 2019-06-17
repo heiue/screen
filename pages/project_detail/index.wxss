@@ -169,6 +169,9 @@ page{
   justify-content: center;
   align-items: center;
 }
+.nav-item.hidden{
+  display: none;
+}
 .nav-item:first-of-type image{
   width: 38rpx;
   height: 37rpx;

@@ -125,9 +125,10 @@ Page({
       return false;
     } else {
       that.setData({
-        currentTab: e.target.dataset.current
+        currentTab: e.target.dataset.current,
+        list:[]
       })
-      that.getWriterList();
+      that.getWriterList(1);
     }
   },
   //轮播
