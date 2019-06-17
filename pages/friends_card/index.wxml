@@ -80,8 +80,8 @@
         <view class="my-intro-name">Ta的简介</view>
       </view>
       <view class="my-intro-cont">
-        <view wx-if="{{otherInfo.card_info.intro}}">{{otherInfo.card_info.intro}}</view>
-        <view wx-else>ta很懒，什么都没留下</view>
+        <view wx-if="{{otherInfo.card_info.intro !='null'}}">{{otherInfo.card_info.intro}}</view>
+        <view wx-if="{{otherInfo.card_info.intro =='null'}}">ta很懒，什么都没留下</view>
       </view>
     </view>
     <view class="my-photo" w:if="{{otherInfo.card_info.top_pic}}">
