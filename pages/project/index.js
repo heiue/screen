@@ -43,6 +43,10 @@ Page({
         that.setData({
           isNone: true
         })
+      }else{
+        that.setData({
+          isNone: false
+        })
       }
     },false)
   },

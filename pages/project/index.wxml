@@ -46,12 +46,12 @@
               <text>{{item.project_type_name}}</text>
             </view>
             <view class="introduce-item">
-              <text>类型：</text>
-              <text>影视公司</text>
+              <text>名称：</text>
+              <text>{{item.projectTitle}}</text>
             </view>
             <view class="introduce-item">
               <image src="http://api.gojbcs.com/images/time.png"></image>
-              <text>2018·09·22</text>
+              <text>{{item.created_at}}</text>
             </view>
           </view>
         </view>
