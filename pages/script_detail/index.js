@@ -38,18 +38,28 @@ Page({
 
   },
   attention: function () {
-    let id = this.data.projectId,
+    var that = this;
+    let id = this.data.sid,
       uid = wx.getStorageSync('user_id');
     api.post('/collection/save', {
       rid: id,
-      rType: 2,
+      rType: 3,
       uid: uid
     }, (res) => {
-      wx.showToast({
-        title: '关注成功',
-        icon: 'none',
-        duration: 1000
-      })
+      if(res.data.success){
+        wx.showToast({
+          title: '关注成功',
+          icon: 'none',
+          duration: 1000
+        })
+      }else{
+        wx.showToast({
+          title: '已取消关注',
+          icon: 'none',
+          duration: 1000
+        })
+      }
+      that.getProjectDetail();
     })
   },
   goHome() {

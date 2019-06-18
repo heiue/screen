@@ -29,7 +29,8 @@ Page({
   onLoad: function (options) {
     this.getFriendsList(this.data.page);
     this.getFriendsClassify();
-    // console.log(wx.getStorageSync('cardInfo'))
+    console.log(this.data.userInfo)
+    console.log(this.data.cardInfo)
   },
   getFriendsClassify() {
     var that = this;

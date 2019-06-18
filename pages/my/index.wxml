@@ -65,7 +65,7 @@
     <navigator class="my-item" url="/pages/out/index" hover-class="none">
       <view class="my-item-left">
         <image src="../../images/my-icon-write.png" style='width:45rpx;'></image>
-        <text>我要编剧</text>
+        <text>我要投简历</text>
       </view>
       <view class="my-item-right">
         <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
@@ -74,7 +74,7 @@
     <navigator class="my-item" url="/pages/outLine/index" hover-class="none">
       <view class="my-item-left">
         <image src="../../images/my-icon-script.png" style='width:45rpx;'></image>
-        <text>我要剧本</text>
+        <text>我要投稿</text>
       </view>
       <view class="my-item-right">
         <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>

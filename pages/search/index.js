@@ -8,6 +8,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,//图片路径前缀
+    imgurl: app.globalData.imgurl,//图片路径前缀
     searchQurey: '',
     search: true,
     searchList: []
@@ -29,6 +30,11 @@ Page({
   goCard(e){
     wx.navigateTo({
       url: '/pages/friends_card/index?uid=' + e.currentTarget.dataset.uid 
+    })
+  },
+  goProject(e) {
+    wx.navigateTo({
+      url: '/pages/project_detail/index?projectId=' + e.currentTarget.dataset.projectid
     })
   },
   /**

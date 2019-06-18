@@ -20,8 +20,8 @@
   </view>
   <view class="search-list" wx:else>
     <view class="search-list-title">项目</view>
-    <view class="search-project-item" wx:for="{{searchList.project}}" wx:key="index">
-      <image class="item-img" src=""></image>
+    <view class="search-project-item" wx:for="{{searchList.project}}" wx:key="index" bindtap='goProject' data-projectid="{{item.id}}">
+      <image class="item-img" src="{{imgurl}}{{item.cover}}"></image>
       <view class="search-project-cont">
         <view class="search-item-title">{{item.projectTitle}}</view>
         <view class="search-item-subheader">{{item.introduction}}</view>

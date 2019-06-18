@@ -13,15 +13,14 @@
             <image wx:if="{{userInfo.gender == 2}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
             <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
           </view>
-          <view class="title-text">{{otherInfo.company}}</view>
         </view>
         <view class="intro">
           <view>行业：</view>
           <view>{{otherInfo.industry_name}}</view>
         </view>
         <view class="intro">
-          <view>地址：</view>
-          <view >{{otherInfo.province}}</view>
+          <view>公司：</view>
+          <view class="title-text">{{otherInfo.company}}</view>
         </view>
         <view class="intro">
           <view>联系电话：</view>
@@ -66,6 +65,15 @@
       </view>
     </view>
     <view class="wechat">
+      <view class="wechat-icon"></view>
+      <view class="wechat-cont">
+        <view class="label">公司简介：</view> 
+        <view class="text">
+          <view>{{otherInfo.card_info.intro}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="wechat">
       <view class="email-icon"></view>
       <view class="wechat-cont">
         <view class="label">邮箱：</view>
@@ -80,7 +88,7 @@
         <view class="my-intro-name">Ta的简介</view>
       </view>
       <view class="my-intro-cont">
-        <view wx-if="{{otherInfo.card_info.intro !='null'}}">{{otherInfo.card_info.intro}}</view>
+        <view wx-if="{{otherInfo.card_info.intro !='null'}}">{{otherInfo.card_info.user_intro}}</view>
         <view wx-if="{{otherInfo.card_info.intro =='null'}}">ta很懒，什么都没留下</view>
       </view>
     </view>

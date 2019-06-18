@@ -77,6 +77,7 @@ page{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  max-width: 610rpx;
 }
 .search-item-title{
   font-size: 26rpx;
@@ -84,5 +85,9 @@ page{
 }
 .search-item-subheader{
   font-size: 24rpx;
-  color: #999
+  color: #999;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }

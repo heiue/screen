@@ -97,6 +97,7 @@ page{
   color: #3e3e3e;
 }
 .new-hint{
+  display: none;
   position: absolute;
   top: 60rpx;
   right: 46rpx;

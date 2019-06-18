@@ -17,15 +17,15 @@ Page({
     },
     {
       chargeName: '三个月',
-      chargePrice: 39
+      chargePrice: 19.9
     },
     {
       chargeName: '六个月',
-      chargePrice: 69
+      chargePrice: 39.9 
     },
     {
       chargeName: '一年',
-      chargePrice: 99
+      chargePrice: 79.9
     }],
     animationData: {}
   },

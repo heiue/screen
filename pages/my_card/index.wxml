@@ -57,7 +57,7 @@
       <view class="wechat-cont">
         <view class="label">公司简介：</view> 
         <view class="text">
-          <input class='intro-phone' placeholder='请输入公司简介' value='{{userCompany}}' bindblur='changePosition' data-val="companyPro" ></input>
+          <input class='intro-phone' placeholder='请输入公司简介' value='{{companyProfile}}' bindblur='changePosition' data-val="companyPro" maxlength='12'></input>
         </view>
       </view>
     </view>

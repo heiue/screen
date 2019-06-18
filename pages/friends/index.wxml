@@ -6,6 +6,7 @@
 		<view class="friends-menu">
 				<view class='friends-menu-btn' bind:tap="showMenu" wx-if="{{friendsIndex == 0}}">
 					<image class="" src="../../images/icon_menu.png"></image>
+          <text>更多</text>
 				</view>
 				<view class='friends-menu-tap'>
 						<view class='{{friendsIndex==0?"on":""}}' bindtap="changeFriendsTap" data-index="0">人脉</view>
@@ -79,39 +80,41 @@
 								</view>
 						</view>
 						<view class='friends-menu-item' >
-								<text wx:for="{{friendsClassList}}" wx:index="index" bindtap='searchFriendsList' data-id="{{item.id}}">{{item.name}}</text>
+              <text bindtap='searchFriendsList' data-id="0">全部</text>
+              <text wx:for="{{friendsClassList}}" wx:index="index" bindtap='searchFriendsList' data-id="{{item.id}}">{{item.name}}</text>
 						</view>
 				</view>
 		</view>
 		<view wx:if="{{friendsIndex == 1}}" class="friends-content help-push-container">
 				<view class="help-push-header">
-						<image class="help-push-headerbg" src="{{shareInfo.pic}}"></image>
+						<image class="help-push-headerbg" src="{{userInfo.avatarUrl}}"></image>
+            <text class='share-intro' wx:if="{{cardInfo.card_info.user_intro}}">{{cardInfo.card_info.user_intro}}</text>
 						<view class="help-push-card">
 								<view class="card-header">
-										<image class="push-header-photo" src="{{shareInfo.pic}}"></image>
+										<image class="push-header-photo" src="{{userInfo.avatarUrl}}"></image>
 								</view>
 								<view class="push-card-cont">
 										<view class="push-card-title">
-												<view class="push-card-name">{{shareInfo.name}}</view>
+												<view class="push-card-name">{{userInfo.nickName}}</view>
 												<view class="push-card-icon">
-														<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
-														<image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
+														<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class="" wx:if="{{userInfo.gender == 1}}"></image>
+                            <image src="http://api.gojbcs.com/images/my_card/icon_girl.png" class="" wx:if="{{userInfo.gender == 2}}"></image>
 												</view>
-												<view class="push-cardtext">百度百科</view>
+												<view wx:if="{{cardInfo.company}}" class="push-cardtext">{{cardInfo.company}}</view>
 										</view>
-										<view class="push-cardintro">
-												<view>行业：</view>
-												<view>策划</view>
+										<view class="push-cardintro" wx:if="{{cardInfo.industry_name}}">
+												<view>职业：</view>
+												<view>{{cardInfo.industry_name}}</view>
 										</view>
-										<view class="push-cardintro">
-												<view>行业：</view>
-												<view>策划</view>
+										<view class="push-cardintro" wx:if="{{userInfo.province}}">
+												<view>地址：</view>
+												<view>{{userInfo.province}}{{userInfo.city}}</view>
 										</view>
 								</view>
-								<view class="push-card-right">
+								<!-- <view class="push-card-right">
 									<image class="in-batch-icon" src="../../images/change-frineds.png"></image>
 									<view class="in-batch-text" bindtap='getShareInfo'>换一批</view>
-								</view>
+								</view> -->
 						</view>
 
 				</view>

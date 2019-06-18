@@ -1,7 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
 <view class="container">
   <view class='title-top'>
-    <title title="{{projectDetail.title}}" isFirst="{{true}}"></title>
+    <title title="{{projectDetail.scriptTitle}}" isFirst="{{true}}"></title>
   </view>
   <view class="header">
     <image src="http://api.gojbcs.com/{{projectDetail.img[0].path}}" class="header-bg" mode="widthFix" ></image>
@@ -57,15 +57,11 @@
           <text>分享</text>
         </button>
       </view>
-      <view class="nav-item" bindtap="attention" wx:if="{{projectDetail.isCollection<1}}">
-        <image src="{{imgUrl}}/my_icon_collection.png"></image>
-        <text>关注</text>
-      </view>
-      <view class="nav-item" wx:if="{{projectDetail.isCollection>=1}}">
-        <image src="{{imgUrl}}/my_icon_collection.png"></image>
+      <view bindtap="attention" class="nav-item" wx:if="{{projectDetail.isCollection==1}}">
+        <image src="../../images/my_icon_collection-on.png"></image>
         <text>已关注</text>
       </view>
-      <view class="nav-item" bindtap="attention">
+      <view class="nav-item" bindtap="attention"  wx:if="{{projectDetail.isCollection==0}}">
         <image src="{{imgUrl}}/my_icon_collection.png"></image>
         <text>关注</text>
       </view>

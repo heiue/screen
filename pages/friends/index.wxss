@@ -21,13 +21,15 @@ page{
   position: absolute;
   top:50%;
   left:20rpx;
-  width: 26rpx;
   height: 50rpx;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
+  font-size:24rpx;
 }
+
 .friends-menu-btn image{
   width: 25rpx;
   height: 25rpx;
+  margin-right: 10rpx;
 }
 .friends-menu-search{
   position: absolute;
@@ -299,8 +301,8 @@ page{
 .friends-menu-close{
   float: right;
   margin-right: 20rpx;
-  width: 22rpx;
-  height: 13rpx;
+  width: 35rpx;
+  height: 35rpx;
 }
 .friends-menu-close image{
   width: 100%;
@@ -324,6 +326,7 @@ page{
 .help-push-headerbg{
   width: 100%;
   height: 100%;
+  filter: blur(30px);
 }
 .help-push-card{
   position: absolute;
@@ -441,3 +444,4 @@ page{
   background-color: #ffe459;
   outline: none
 }
+.share-intro{position: absolute;top:40%;left: 50%;transform: translate(-50%,-50%);color:#ffe147;transform: rotate(30deg)}
