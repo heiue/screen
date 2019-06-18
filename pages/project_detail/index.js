@@ -43,11 +43,21 @@ Page({
       rType: 2,
       uid: uid
     }, (res) => {
-      wx.showToast({
-        title: '关注成功',
-        icon: 'none',
-        duration:1000
-      })
+      console.log(res)
+      if(res.data.success) {
+        wx.showToast({
+          title: '关注成功',
+          icon: 'none',
+          duration: 1000
+        })
+      } else {
+        wx.showToast({
+          title: '已取消关注',
+          icon: 'none',
+          duration: 1000
+        })
+      }
+      
       this.getProjectDetail();
     })
   },

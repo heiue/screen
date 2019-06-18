@@ -54,7 +54,7 @@
         </button>
       </view>
       
-      <view class="nav-item {{projectDetail.isCollection==0?'hidden':''}}" wx:if="{{projectDetail.isCollection==1}}">
+      <view class="nav-item {{projectDetail.isCollection==0?'hidden':''}}" bindtap="attention" wx:if="{{projectDetail.isCollection==1}}">
         <image src="../../images/my_icon_collection-on.png"></image>
         <text>已关注</text>
       </view>

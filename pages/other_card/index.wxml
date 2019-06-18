@@ -59,7 +59,7 @@
           <image src='http://api.gojbcs.com/images/my_icon_collection.png'></image>
           <text>关注</text>
         </view>
-        <view class='header-follow'  wx-if="{{userInfo.isCollection == 1}}">
+        <view class='header-follow' bindtap='attention'  wx-if="{{userInfo.isCollection == 1}}">
           <image src='../../images/my_icon_collection-on.png'></image>
           <text>已关注</text>
         </view>

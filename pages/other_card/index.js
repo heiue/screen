@@ -44,11 +44,20 @@ Page({
       rType: 4,
       uid: uid
     }, (res) => {
-      wx.showToast({
-        title: '关注成功',
-        icon: 'none',
-        duration: 1000
-      })
+      if (that.data.userInfo.isCollection == 0){
+        wx.showToast({
+          title: '关注成功',
+          icon: 'none',
+          duration: 1000
+        })
+      }else {
+        wx.showToast({
+          title: '已取消关注',
+          icon: 'none',
+          duration: 1000
+        })
+      }
+      
       that.getUserInfo();
     })
   },

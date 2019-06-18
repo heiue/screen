@@ -12,7 +12,7 @@
       <view class="recruit-item" wx:for="{{list}}" bind:tap="goDetails" wx:key="i" data-id="{{item.id}}">
         <view class="title">{{item.position}}</view>
         <view class="subheader">
-          <view class="sub-left">剧本超市</view>
+          <view class="sub-left">{{item.company|| ''}}</view>
           <view class="sub-right" wx-if="{{item.price}}">{{item.price}}</view>
         </view>
         <view class="label-list">
