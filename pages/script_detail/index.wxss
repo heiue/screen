@@ -67,7 +67,7 @@ page{
 	color: #9c9c9c;
 }
 .intro-cont{
-  padding: 34rpx 20rpx 30rpx;
+  padding: 0 20rpx 30rpx;
 }
 .intro-cont text:nth-of-type(1){
   font-family: MicrosoftYaHei;
@@ -102,7 +102,7 @@ page{
 }
 .describe {
   padding: 10rpx 0;
-  border-bottom: 1px solid #ebedfa
+  /* border-bottom: 1px solid #ebedfa */
 }
 .describe-title{
   padding-left: 20rpx;
@@ -230,3 +230,4 @@ page{
 .share-friends::after{
   border:none;
 }
+.intro-intro{font-size: 26rpx;}

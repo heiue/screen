@@ -1,4 +1,5 @@
 // pages/project_detail/index.js
+var WxParse = require('../../wxParse/wxParse.js');
 let app = getApp();
 const api = require('../../http.js');
 Page({
@@ -7,11 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    projectId: '',//项目id
+    sid: '',//项目id
     projectDetail: [],
     imgUrl: app.globalData.imgUrl,
     phone: app.globalData.phone,
-    sid: ''
+    content:''
   },
 
   /**
@@ -20,17 +21,18 @@ Page({
   onLoad: function (options) {
     console.log(options.sid)
     this.setData({
-      projectId: options.projectId || 1
+      sid: options.sid || 1
     })
     this.getProjectDetail();
   },
   getProjectDetail() {
 
     var that = this;
-    api.get('/project/detail?projectId=' + that.data.projectId + '&uid=' + wx.getStorageSync('user_id'), function (res) {
+    api.get('/script/detail?sid=' + that.data.sid + '&uid=' + wx.getStorageSync('user_id'), function (res) {
       console.log(res)
       that.setData({
-        projectDetail: res.data.data
+        projectDetail: res.data.data,
+        content: WxParse.wxParse('content', 'html', res.data.data.introduction, that)
       })
     }, true)
 
