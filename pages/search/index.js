@@ -28,7 +28,7 @@ Page({
   },
   goCard(e){
     wx.navigateTo({
-      url: '/pages/friends_card/index?uid=' + e.currentTarget.dataset.uid + '&uid=' + wx.getStorageSync('user_id')
+      url: '/pages/friends_card/index?uid=' + e.currentTarget.dataset.uid 
     })
   },
   /**
