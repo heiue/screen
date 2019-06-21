@@ -136,6 +136,16 @@ Page({
       isSelect: false
     })
   },
+  chat(e){
+    var nameList = {
+      myName: 'juben' +JSON.parse(wx.getStorageSync('user_id')),
+      your: 'juben'+(e.currentTarget.dataset.id),
+      yourName: e.currentTarget.dataset.name
+    };
+    wx.navigateTo({
+      url: "/pages/chatroom/chatroom?username=" + JSON.stringify(nameList)
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

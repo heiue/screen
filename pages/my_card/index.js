@@ -16,17 +16,17 @@ Page({
       uid: wx.getStorageSync('user_id'),
       cardid:'',
       card:{
-        name: JSON.parse(wx.getStorageSync('user_info')).nickName,
+        name: '',
         company:'',
         position:'',
         industry_id: "",
-        pic: JSON.parse(wx.getStorageSync('user_info')).avatarUrl,
+        pic: '',
       },
       info: {
         mobile: "",
         wechat: "",
         email: "",
-        address: JSON.parse(wx.getStorageSync('user_info')).city,
+        address: '',
         intro: "",
         top_pic: '',
         user_intro: ''
@@ -57,6 +57,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (wx.getStorageSync('user_info')){
+      this.setData({
+       name: JSON.parse(wx.getStorageSync('user_info')).nickName
+      })
+      this.cardData.card.pic = JSON.parse(wx.getStorageSync('user_info')).avatarUrl;
+      this.cardData.info.address = JSON.parse(wx.getStorageSync('user_info')).city;
+    }
     this.data.uid = Number(options.uid);
     this.getUserInfo();
     if (this.data.cardData.uid == this.data.uid){

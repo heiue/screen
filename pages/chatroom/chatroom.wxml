@@ -1,0 +1,8 @@
+<view class='title-top'>
+  <title title="{{yourName}}" isFirst="{{true}}"></title>
+</view>
+<chat
+	id="chat"
+	username="{{ username }}"
+	chatType="singleChat"></chat>
+
