@@ -28,9 +28,9 @@
       <view class="nav-item-name">剧本超市会员</view>
       <view class="new-hint">NEW</view>
     </view>
-    <view class="nav-item" bind:tap="gohistory">
+    <view class="nav-item" bind:tap="goMyMessage">
       <image src="http://api.gojbcs.com/images/my_icon_history.png"></image>
-      <view class="nav-item-name">我的关注</view>
+      <view class="nav-item-name">我的消息</view>
       <view class="new-hint">NEW</view>
     </view>
   </view>

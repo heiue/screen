@@ -36,7 +36,7 @@ Page({
   },
   goMyMessage: function () {
     wx.navigateTo({
-      url: '/pages/my_message/index'
+      url: '/pages/chat/chat'
     })
   },
   goMember: function () {
