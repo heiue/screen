@@ -18,12 +18,12 @@ Page({
 	onLoad(){
 		let me = this;
 		//监听加好友申请
-		disp.on("em.xmpp.subscribe", function(){
-			me.setData({
-				messageNum: getApp().globalData.saveFriendList.length,
-				unReadTotalNotNum: getApp().globalData.saveFriendList.length + getApp().globalData.saveGroupInvitedList.length
-			});
-		});
+		// disp.on("em.xmpp.subscribe", function(){
+		// 	me.setData({
+		// 		messageNum: getApp().globalData.saveFriendList.length,
+		// 		unReadTotalNotNum: getApp().globalData.saveFriendList.length + getApp().globalData.saveGroupInvitedList.length
+		// 	});
+		// });
 
 		//监听未读消息数
 		disp.on("em.xmpp.unreadspot", function(message){
@@ -31,23 +31,24 @@ Page({
 				arr: me.getChatList(),
 				unReadSpotNum: getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum,
 			});
+			console.log(me.data.arr)
 		});
 
-		//监听未读加群“通知”
-		disp.on("em.xmpp.invite.joingroup", function(){
-			me.setData({
-				unReadNoticeNum: getApp().globalData.saveGroupInvitedList.length,
-				unReadTotalNotNum: getApp().globalData.saveFriendList.length + getApp().globalData.saveGroupInvitedList.length
-			});
-		});
-
-		disp.on("em.xmpp.contacts.remove", function(){
-			me.getRoster();
-			// me.setData({
-			// 	arr: me.getChatList(),
-			// 	unReadSpotNum: getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum,
-			// });
-		});
+// 		//监听未读加群“通知”
+// 		disp.on("em.xmpp.invite.joingroup", function(){
+// 			me.setData({
+// 				unReadNoticeNum: getApp().globalData.saveGroupInvitedList.length,
+// 				unReadTotalNotNum: getApp().globalData.saveFriendList.length + getApp().globalData.saveGroupInvitedList.length
+// 			});
+// 		});
+// 
+		// disp.on("em.xmpp.contacts.remove", function(){
+		// 	me.getRoster();
+		// 	// me.setData({
+		// 	// 	arr: me.getChatList(),
+		// 	// 	unReadSpotNum: getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum,
+		// 	// });
+		// });
 
 		this.getRoster();
 	},
@@ -72,6 +73,7 @@ Page({
 		let me = this;
 		let rosters = {
 			success(roster){
+				console.log(roster)
 				var member = [];
 				for(let i = 0; i < roster.length; i++){
 					if(roster[i].subscription == "both"){
@@ -104,6 +106,8 @@ Page({
 		var array = [];
 		var member = wx.getStorageSync("member");
 		var myName = wx.getStorageSync("myUsername");
+		console.log(member)
+		console.log(myName)
 		var listGroups = wx.getStorageSync('listGroup')|| [];
 		for(let i = 0; i < member.length; i++){
 			let newChatMsgs = wx.getStorageSync(member[i].name + myName) || [];

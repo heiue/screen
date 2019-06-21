@@ -93,7 +93,11 @@ App({
     imgUrl: 'http://api.gojbcs.com/images',
     imgurl: 'http://api.gojbcs.com',
     phone: '01056257208',
-    isIPX: false //是否为iphone X
+    isIPX: false, //是否为iphone X
+		unReadMessageNum: 0,
+		userInfo: null,
+		saveFriendList: [],
+		saveGroupInvitedList: [],
   },
   conn: {
     closed: false,

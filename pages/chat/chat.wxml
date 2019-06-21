@@ -1,18 +1,18 @@
 <view class="chat_title {{gotop? 'main_title_hide':'main_title_show'}}">
-	<text>聊天</text>
+	<title title="我的消息" isFirst="{{true}}"></title>
 </view>
 
 <!-- <view class="chat_list_wraper" > -->
 <scroll-view scroll-y="true" class="chat_list_wraper {{gotop? (isIPX? 'goTopX': 'goTop'): 'goback'}}" style="padding-bottom: {{isIPX?'270rpx':'226rpx'}}">
 
-	<view class="search" wx:if="{{ search_btn }}">
+	<!-- <view class="search" wx:if="{{ search_btn }}">
 		<view bindtap="openSearch">
 			<icon type="search" size="12"></icon>
 			<text>搜索</text>
 		</view>
-	</view>
+	</view> -->
 
-	<view class="search_input" wx:if="{{ search_chats }}">
+	<!-- <view class="search_input" wx:if="{{ search_chats }}">
 		<view>
 			<icon type="search" size="12"></icon>
 			<input placeholder="搜索" 
@@ -28,7 +28,7 @@
 
 		</view>
 		<text bindtap="cancel">取消</text>
-	</view>
+	</view> -->
 
 <view wx:for="{{ arr }}" wx:key="index" class="chat_list" data-item="{{ item }}" catchtap='del_chat'>
 	<swipe-delete >
@@ -62,7 +62,7 @@
 </scroll-view>
 <!-- bug: margin-bottom 不生效 需要加一个空标签-->
 <view style="height: 1px;"></view>
-
+<!-- 
 
 <view class="mask" bindtap="close_mask" wx:if="{{show_mask}}"></view>
 
@@ -88,4 +88,4 @@
 		<image src="../../images/setting@2x.png"></image>
 		<text>设置</text>
 	</view>
-</view>
+</view> -->
