@@ -61,8 +61,8 @@ Page({
       this.setData({
        name: JSON.parse(wx.getStorageSync('user_info')).nickName
       })
-      this.cardData.card.pic = JSON.parse(wx.getStorageSync('user_info')).avatarUrl;
-      this.cardData.info.address = JSON.parse(wx.getStorageSync('user_info')).city;
+			this.data.cardData.card.pic = wx.getStorageSync('user_info').avatarUrl;
+      this.data.cardData.info.address = JSON.parse(wx.getStorageSync('user_info')).city;
     }
     this.data.uid = Number(options.uid);
     this.getUserInfo();
@@ -87,7 +87,7 @@ Page({
       that.setData({
         userInfo: JSON.parse(wx.getStorageSync('user_info'))
       })
-      console.log(that.data.isOther)
+      // console.log(that.data.isOther)
       // console.log(res)
       if (res.data.data.cardInfo){
         wx.setStorageSync('cardInfo', res.data.data.cardInfo)
@@ -111,7 +111,7 @@ Page({
         that.data.cardData.info.email = res.data.data.cardInfo.card_info.email,
         that.data.cardData.info.top_pic = res.data.data.cardInfo.card_info.top_pic,
         that.data.cardData.info.user_intro = res.data.data.cardInfo.card_info.user_intro
-        console.log(that.data.cardData)
+        // console.log(that.data.cardData)
       }
       that.setData({
         otherInfo: res.data.data.cardInfo

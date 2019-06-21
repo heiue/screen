@@ -11,6 +11,7 @@
     "pages/chatroom/chatroom",
     "pages/project/index",
     "pages/login/index",
+    "pages/login_token/login_token",
     "pages/pay_knowledge/index",
     "pages/recruit_details/index",
     "pages/history/index",

@@ -9,7 +9,7 @@
 		<!-- <view class="open_emoji" bind:tap="openEmoji">
 			<image src="../../../images/Emoji.png"/>
 		</view> -->
-		<view class="v-record" bind:tap="toggleRecordModal">
+		<!-- <view class="v-record" bind:tap="toggleRecordModal">
 			<image
 				class="icon-record"
 				src="{{ recordStatus != RecordStatus.HIDE ? '../../../images/iconAudioActive@2x.png' : '../../../images/voice.png' }}" style="width:16px; height: 24px"/>
@@ -19,7 +19,7 @@
 		</view>
 		<view class="send_image" bind:tap="sendImage">
 			<image src="../../../images/pic.png" style="height:20px; width: 20px"/>
-		</view>
+		</view> -->
 		<!-- <view class="send_image" bind:tap="sendLocation">
 			<image src="../../../images/iconLocation@2x.png" style="height:18px;"/>
 		</view> -->

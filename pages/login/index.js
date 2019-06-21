@@ -50,6 +50,8 @@ Page({
               password: '123456',
 							nickName: JSON.parse(wx.getStorageSync('user_info')).nickName
             });
+						 wx.setStorageSync('username', _this.data.username);
+						 wx.setStorageSync('password', _this.data.password);
             var options = {
               apiUrl: WebIM.config.apiURL,
               username: _this.data.username.toLowerCase(),
