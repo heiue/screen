@@ -13,7 +13,7 @@ Page({
 		let username = JSON.parse(options.username);
 		this.setData({
        username: username,
-        yourName: username.yourName
+       yourName: username.yourName
     });
 	},
 

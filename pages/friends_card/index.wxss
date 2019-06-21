@@ -272,3 +272,12 @@ textarea{
   padding:10rpx 25rpx;
   display: inline-block;
 }
+.chat-btn{
+	width: 600rpx;
+	line-height: 90rpx;
+	border-radius: 50rpx;
+	background: #ffe147;
+	color:#fff;
+	text-align: center;
+	margin:50rpx auto;
+}

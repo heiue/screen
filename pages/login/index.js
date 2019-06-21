@@ -11,7 +11,8 @@ Page({
   data: {
     username: "",
     password: "",
-    grant_type: "password"
+    grant_type: "password",
+		nickName:''
   },
 
   /**
@@ -46,19 +47,19 @@ Page({
             wx.setStorageSync('user_id', result.data.data.user_id);
             _this.setData({
               username: 'juben' + result.data.data.user_id,
-              password: '123456'
+              password: '123456',
+							nickName: JSON.parse(wx.getStorageSync('user_info')).nickName
             });
             var options = {
               apiUrl: WebIM.config.apiURL,
               username: _this.data.username.toLowerCase(),
               password: _this.data.password,
-              nickname: "",
+              nickname: _this.data.nickName,
               appKey: WebIM.config.appkey,
               success: function (res) {
                 console.log('res', res)
                 if (res.statusCode == "200") {
                   console.log('成功')
-                  // that.toastSuccess('注册成功');
                   var data = {
                     apiUrl: WebIM.config.apiURL,
                     user: _this.data.username.toLowerCase(),
@@ -68,7 +69,7 @@ Page({
                   };
                   wx.setStorage({
                     key: "myUsername",
-                    data: _that.data.username.toLowerCase()
+                    data: _this.data.username.toLowerCase()
                   });
                   getApp().conn.open({
                     apiUrl: WebIM.config.apiURL,
