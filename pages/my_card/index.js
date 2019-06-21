@@ -21,6 +21,7 @@ Page({
         position:'',
         industry_id: "",
         pic: '',
+        is_aut: '' //判断隐私是否公开 'true'为公开 'false'为不公开
       },
       info: {
         mobile: "",
