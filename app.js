@@ -53,6 +53,35 @@ function calcUnReadSpot(message) {
 
 //app.js
 App({
+	
+	conn: {
+		closed: false,
+		curOpenOpt: {},
+		open(opt){
+			wx.showLoading({
+			  	title: '正在初始化客户端...',
+			  	mask: true
+			})
+			this.curOpenOpt = opt;
+			WebIM.conn.open(opt);
+			this.closed = false;
+		},
+		reopen(){
+			if(this.closed){
+				//this.open(this.curOpenOpt);
+				WebIM.conn.open(this.curOpenOpt);
+				this.closed = false;
+			}
+		}
+	},
+	
+	// getPage(pageName){
+	// 	var pages = getCurrentPages();
+	// 	return pages.find(function(page){
+	// 		return page.__route__ == pageName;
+	// 	});
+	// },
+	
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -90,6 +119,7 @@ App({
 			// 
 			WebIM.conn.listen({
 				onOpened(message){
+					console.log(message)
 					WebIM.conn.setPresence();
 					if(getCurrentRoute() == "pages/login/login" || getCurrentRoute() == "pages/login_token/login_token"){
 						me.onLoginSuccess(wx.getStorageSync("myUsername").toLowerCase());
@@ -336,6 +366,9 @@ App({
 			});
 			this.checkIsIPhoneX();
   },
+	onShow(){
+		this.conn.reopen();
+	},
   /**
   * 执行用户登录
   */
@@ -396,6 +429,40 @@ App({
       }
     }
   },
+	onUnload(){
+		WebIM.conn.close();
+		WebIM.conn.stopHeartBeat();
+		wx.redirectTo({
+			url: "../login/login?myName=" + myName
+		});
+	},
+	
+	onLoginSuccess: function(myName){
+		wx.hideLoading()
+		wx.redirectTo({
+			url: "../chat/chat?myName=" + myName
+		});
+	},
+	
+	getUserInfo(cb){
+		var me = this;
+		if(this.globalData.userInfo){
+			typeof cb == "function" && cb(this.globalData.userInfo);
+		}
+		else{
+			// 调用登录接口
+			wx.login({
+				success(){
+					wx.getUserInfo({
+						success(res){
+							me.globalData.userInfo = res.userInfo;
+							typeof cb == "function" && cb(me.globalData.userInfo);
+						}
+					});
+				}
+			});
+		}
+	},
 	checkIsIPhoneX: function() {
 	    const me = this
 	    wx.getSystemInfo({

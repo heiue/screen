@@ -35,7 +35,7 @@
        <template is="wxParse" data="{{wxParseData:recruitposition.nodes}}"/>
     </view>
   </view>
-  <view class="submit-resume">
-    邮箱投递：gojubenchaoshi@163.com
-  </view>
+  <navigator class="submit-resume" url="/pages/outCase/index">
+    领取任务
+  </navigator>
 </view>
