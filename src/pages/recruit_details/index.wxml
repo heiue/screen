@@ -1,0 +1,41 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="container">
+  <view class='title-top'>
+    <title title="任务详情" isFirst="{{true}}"></title>
+  </view>
+  <view class="header">
+    <view class="title">
+      <view class="name">{{recruitDetail.position}}</view>
+      <view class="pay" wx-if="{{recruitDetail.price}}">{{recruitDetail.price}}</view>
+    </view>
+    <view class="label-list">
+      <view class="label">
+        <image src="http://api.gojbcs.com/images/recruit_details/recruit_details_icon_location.png"></image>
+        <view class="label-name">{{recruitDetail.address}}</view>
+      </view>
+      <view class="label">
+        <image src="http://api.gojbcs.com/images/recruit_details/recruit_details_icon_education.png"></image>
+        <view class="label-name">{{recruitDetail.education}}</view>
+      </view>
+      <view class="label">
+        <image src="http://api.gojbcs.com/images/recruit_details/recruit_details_icon_experience.png"></image>
+        <view class="label-name">{{recruitDetail.experience}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="referral">
+    <view class="referral-title">公司简介</view>
+    <view class="referral-details">
+      <template is="wxParse" data="{{wxParseData:recruitIntro.nodes}}"/>
+    </view>
+  </view>
+  <view class="referral">
+    <view class="referral-title">职位要求</view>
+    <view class="referral-details">
+       <template is="wxParse" data="{{wxParseData:recruitposition.nodes}}"/>
+    </view>
+  </view>
+  <navigator class="submit-resume" url="/pages/outCase/index">
+    领取任务
+  </navigator>
+</view>

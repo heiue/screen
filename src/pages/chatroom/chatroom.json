@@ -1,0 +1,7 @@
+{
+
+	"usingComponents": {
+		"chat": "../../comps/chat/chat",
+    "title": "../../components/title/index"
+	}
+}

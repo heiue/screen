@@ -1,0 +1,6 @@
+{
+	"usingComponents": {
+      "swipe-delete": "../../comps/swipedelete/swipedelete",
+      "title": "../../components/title/index"
+    }
+}
