@@ -68,7 +68,7 @@ globalData:
     |-register 注册页
     |-login 登录页
     |-login_token token登录页
-    |-chat 最近联系人页（通话）
+    |-chat 最近联系人页（通话） 
         |-chatroom 聊天室页
     |-main 联系人页
         |-add_new 加好友页
