@@ -22,26 +22,33 @@ Page({
   getFavorite(e) {
     // console.log(e)
     var that = this;
-    if (e && e.currentTarget.dataset.index == 1 ){
+    if (e && e.currentTarget.dataset.index){
+      that.setData({
+        activeIdex: e.currentTarget.dataset.index
+      })
+    }
+    if ( that.data.activeIdex == 1 ){
       api.get('/collection/prolist?uid=' + wx.getStorageSync('user_id'), function (res) {
         // console.log(res.data.data.data)
         that.setData({
           favoriteList: res.data.data
         })
       }, true)
-      that.setData({
-        activeIdex: 1
-      })
-    } else{
-      that.setData({
-        activeIdex: 0
-      })
+    } else if (that.data.activeIdex == 2 ){
+      api.get('/collection/scriptlist?uid=' + wx.getStorageSync('user_id'), function (res) {
+        // console.log(res.data.data.data)
+        that.setData({
+          favoriteList: res.data.data
+        })
+      }, true)
+    } else {
       api.get('/collection/screenlist?uid=' + wx.getStorageSync('user_id'), function (res) {
         // console.log(res)
         that.setData({
           favoriteList: res.data.data
         })
       }, true)
+      
     }
     // console.log(that.data.favoriteList)
   },

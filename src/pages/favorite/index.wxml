@@ -1,11 +1,12 @@
 <view class="container">
   <view class='title-top'>
-    <title title="我的收藏" isFirst="{{true}}"></title>
+    <title title="我的关注" isFirst="{{true}}"></title>
   </view>
   <view class="favorite-header">
     <view class="nav">
       <view class="nav-item {{activeIdex == 0?'active':''}}" bindtap='getFavorite' data-index="0">编剧</view>
       <view class="nav-item {{activeIdex == 1?'active':''}}" bindtap='getFavorite' data-index="1">项目</view>
+      <view class="nav-item {{activeIdex == 2?'active':''}}" bindtap='getFavorite' data-index="2">剧本</view>
     </view>
     <!-- <navigator class='search' url="/pages/search/index">
       <image src="http://api.gojbcs.com/images/favorite/favorite_icon_search.png"></image>
@@ -17,11 +18,11 @@
     <navigator url="/pages/friends_card/index?uid={{item.rid_info.uid}}" class="favorite-item {{item.rid_info == ''?'hidden':''}}" wx:for="{{favoriteList}}" wx:key="index" wx-if="activeIdex == 0">
       <view class="favorite">
         <view class="header">
-          <image wx-if="{{item.rid_info.pic}}" src="{{item.rid_info.pic}}"></image>
+          <image wx-if="{{item.rid_info.avatar}}" src="{{imgUrl}}{{item.rid_info.avatar}}"></image>
         </view>
         <view class="favorite-cont">
           <view class="name">{{item.rid_info.name}} {{position}}</view>
-          <view class="intro">{{item.rid_info.company}}</view>
+          <view class="intro">{{item.rid_info.rating_name}}</view>
         </view>
       </view>
       <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>
@@ -43,4 +44,19 @@
       <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>
     </navigator>
   </view>
+</view>
+<view wx-if="{{activeIdex == 2}}">
+
+  <navigator url="/pages/script_detail/index?sid={{item.rid}}" class="favorite-item {{item.rid_info == ''?'hidden':''}}" wx:for="{{favoriteList}}" wx:key="index">
+    <view class="favorite">
+      <view class="header">
+        <image wx-if="{{item.rid_info.cover}}" src="{{imgUrl}}{{item.rid_info.cover}}"></image>
+      </view>
+      <view class="favorite-cont">
+        <view class="name">{{item.rid_info.scriptTitle}}</view>
+        <view class="intro">{{item.rid_info.script_type_name}}{{item.rid_info.script_theme_name}}</view>
+      </view>
+    </view>
+    <image class="goDetails" src="http://api.gojbcs.com/images/favorite/favorite_icon_more.png"></image>
+  </navigator>
 </view>
