@@ -83,7 +83,7 @@
             <image src='http://api.gojbcs.com{{item.avatar}}' mode="widthFix"></image>
             <view class="fall-item-text">
               <view class="fall-item-name">{{item.name}} {{item.rating_name}}</view>
-              <view class="fall-item-work">代表作：{{item.residence}}</view>
+              <view class="fall-item-work">居住地：{{item.residence}}</view>
             </view>
           </view>
         </block>

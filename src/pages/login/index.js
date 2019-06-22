@@ -45,67 +45,8 @@ Page({
             wx.setStorageSync('user_info', e.detail.rawData);
             wx.setStorageSync('token', result.data.data.token);
             wx.setStorageSync('user_id', result.data.data.user_id);
-            _this.setData({
-              username: 'juben' + result.data.data.user_id,
-              password: '123456',
-							nickName: JSON.parse(wx.getStorageSync('user_info')).nickName
-            });
-						 wx.setStorageSync('username', _this.data.username);
-						 wx.setStorageSync('password', _this.data.password);
-            var options = {
-              apiUrl: WebIM.config.apiURL,
-              username: _this.data.username.toLowerCase(),
-              password: _this.data.password,
-              nickname: _this.data.nickName,
-              appKey: WebIM.config.appkey,
-              success: function (res) {
-                console.log('res', res)
-                if (res.statusCode == "200") {
-                  console.log('成功')
-                  var data = {
-                    apiUrl: WebIM.config.apiURL,
-                    user: _this.data.username.toLowerCase(),
-                    pwd: _this.data.password,
-                    grant_type: "password",
-                    appKey: WebIM.config.appkey
-                  };
-                  wx.setStorage({
-                    key: "myUsername",
-                    data: _this.data.username.toLowerCase()
-                  });
-                  getApp().conn.open({
-                    apiUrl: WebIM.config.apiURL,
-                    user: _this.data.username.toLowerCase(),
-                    pwd: _this.data.password,
-                    grant_type: _this.data.grant_type,
-                    appKey: WebIM.config.appkey
-                  });
-                  // 跳转回原页面
-                  _this.getCardInfo();
-                  _this.navigateBack();
-                }
-              },
-              error: function (res) {
-                getApp().conn.open({
-                  apiUrl: WebIM.config.apiURL,
-                  user: _this.data.username.toLowerCase(),
-                  pwd: _this.data.password,
-                  grant_type: _this.data.grant_type,
-                  appKey: WebIM.config.appkey
-                });
-                wx.setStorage({
-                  key: "myUsername",
-                  data: _this.data.username.toLowerCase()
-                });
-                // 跳转回原页面
-                _this.getCardInfo();
-                _this.navigateBack();
-              }
-            };
-            WebIM.utils.registerUser(options);
-
+            
           });
-
       }
     });
   },

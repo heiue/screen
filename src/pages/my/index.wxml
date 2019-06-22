@@ -20,7 +20,7 @@
   <view class="my-nav">
     <view class="nav-item" bind:tap="goFavorite">
       <image src="http://api.gojbcs.com/images/my_icon_collection.png"></image>
-      <view class="nav-item-name">我的收藏</view>
+      <view class="nav-item-name">我的关注</view>
       <view class="new-hint">NEW</view>
     </view>
     <view class="nav-item" bind:tap="goMember">

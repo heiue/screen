@@ -4,7 +4,7 @@
   </view>
   <view class="favorite-header">
     <view class="nav">
-      <view class="nav-item {{activeIdex == 0?'active':''}}" bindtap='getFavorite' data-index="0">人脉</view>
+      <view class="nav-item {{activeIdex == 0?'active':''}}" bindtap='getFavorite' data-index="0">编剧</view>
       <view class="nav-item {{activeIdex == 1?'active':''}}" bindtap='getFavorite' data-index="1">项目</view>
     </view>
     <!-- <navigator class='search' url="/pages/search/index">

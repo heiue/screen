@@ -36,7 +36,7 @@ Page({
       that.setData({
         activeIdex: 0
       })
-      api.get('/collection/peolist?uid=' + wx.getStorageSync('user_id'), function (res) {
+      api.get('/collection/screenlist?uid=' + wx.getStorageSync('user_id'), function (res) {
         // console.log(res)
         that.setData({
           favoriteList: res.data.data

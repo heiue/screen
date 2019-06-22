@@ -166,7 +166,7 @@ Page({
     }
 		
 	},
-  go_friends_detail() {
+  go_friends_detail(e) {
     wx.navigateTo({
       url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id
     })
