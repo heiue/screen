@@ -42,7 +42,7 @@
       <view class='screen-writer-title'>经纪人</view>
       <view class='screen-writer-list'>
         <view class='screen-writer-item' wx:for="{{signList}}" wx:key="{{item.id}}">
-          <view class='screen-writer-head' bind:tap="goDetail" data-name="{{item.name}}" data-id="{{item.id}}">
+          <view class='screen-writer-head' bind:tap="go_friends_detail" data-name="{{item.name}}" data-id="{{item.id}}">
             <image src='http://api.gojbcs.com{{item.avatar}}'></image>
           </view>
           <view class='screen-writer-name'>{{item.name}}</view>

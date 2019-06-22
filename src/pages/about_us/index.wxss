@@ -49,4 +49,5 @@ page{
   font-size: 26rpx;
   text-align: left;
   padding:20rpx;
+  padding-bottom: 0;
 }

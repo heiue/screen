@@ -10,10 +10,17 @@
     </view>
     <view class="about-item">
       <view class="web">hty1212121</view>
-      <image src="http://api.gojbcs.com/images/aboutus_icon_web.png"></image>
+      <image mode='widthFix' src="http://api.gojbcs.com/images/contract_broker/icon_wechat.png"></image>
     </view>
   </view>
-  <view class='about_intro'>北京尚世星影文化传播有限公司打造的剧本超市品牌，主营业务:影视投资.影视版校交易.影视制作，.一站式影视 项目服务.公司成立于2015年12月，由著名演员王鶴嗚先生创立</view>
+  <view class='about_intro'>剧本超市是北京尚世星影文化传播有限公司打造的行业品牌，是一家以内容创新为核心驱动 的伟大影视公司。公司成立于2015年12月，由著名演员王鹤鸣先生创立。致力于整合影视行业资源。
+</view>
+<view class='about_intro'>
+  公司秉承着以创新意识、互联网思维、平台化运营、服务理念、科技支撑的企业文化发展公司。公司创立初期发现影视行业“找编剧难”“找剧本难”的行业痛点，以“编剧经纪”和“剧 本交易”入手 ，搭建了解决行业信息不对称的影视项目交易平台——剧本超市。录制《剧本堂》 栏目，并建立一整套线上、线下的“影视项目交易体系”，撬动中国每年400亿影视项目闲置资 产。目前公司已签约430多位编剧、合作数千家影视公司，成功案例超百例。
+</view>
+<view class='about_intro'>
+  公司的科技产品有：“剧本超市OA管理系统”“编剧直聘”APP、“影视项目线上路演平 台”小程序、“剧本众筹”小程序、“剧本智能化评估软件”等。
+</view>
   <view class="qr-code">
     <image src="http://api.gojbcs.com/images/aboutus_img_code.jpg" class="code"></image>
     <view class="qr-text">扫码关注官方微信公众号</view>

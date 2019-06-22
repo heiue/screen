@@ -34,6 +34,7 @@ function getCurrentRoute() {
 }
 
 function calcUnReadSpot(message) {
+  console.log(message,'--------')
   let myName = wx.getStorageSync("myUsername");
   let members = wx.getStorageSync("member") || []; //好友
   var listGroups = wx.getStorageSync('listGroup') || []; //群组

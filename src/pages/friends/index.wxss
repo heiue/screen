@@ -391,6 +391,7 @@ page{
 	letter-spacing: 2rpx;
   color: #5b5b5b;
   padding-bottom: 4rpx;
+  max-width: 400rpx;
 }
 .push-cardintro{
   /* margin-bottom: 36rpx; */
@@ -444,4 +445,4 @@ page{
   background-color: #ffe459;
   outline: none
 }
-.share-intro{position: absolute;top:40%;left: 50%;transform: translate(-50%,-50%);color:#ffe147;transform: rotate(30deg)}
+.share-intro{position: absolute;top:40%;left: 50%;transform: translate(-50%,-50%);color:#ffe147;max-width: 400rpx;}

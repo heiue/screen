@@ -166,6 +166,11 @@ Page({
     }
 		
 	},
+  go_friends_detail() {
+    wx.navigateTo({
+      url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id
+    })
+  },
 	goRecruit:function() {
 		wx.navigateTo({
 		  url: '/pages/recruit/index'

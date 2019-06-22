@@ -37,9 +37,9 @@
         </view>
         <view class="item-introduce" bind:tap="goDetail" data-id="{{item.id}}">
           <view class="introduce">
-            <view class="introduce-item">
+            <view class="introduce-item" wx:if="{{item.fCompany}}">
               <text>发布：</text>
-              <text>影视公司</text>
+              <text>{{item.fCompany}}</text>
             </view>
             <view class="introduce-item">
               <text>类型：</text>

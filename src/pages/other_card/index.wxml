@@ -94,8 +94,8 @@
       </view>
     </view> -->
   </view>
-  <view class='history-cont'>
-    {{userInfo.introduction}}
+  <view class='history-cont' wx:if="{{userInfo.description}}">
+    {{userInfo.description}}
     <!-- <view class='history-item'>
       <view class='item-title'>
         <image src='../../images/icon_history.png' class='icon-history'></image>
