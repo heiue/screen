@@ -49,7 +49,7 @@ Page({
     that.setData({
       industry_id: industry_id
     })
-    api.get('/card/list?page=' + page + '&limit=10' + '&industry_id=' + industry_id,function(res){
+    api.get('/card/list?page=' + page + '&limit=10' + '&industry_id=' + industry_id + '&uid=' + wx.getStorageSync('user_id'),function(res){
       if(flag){
         that.setData({
           friendsList: that.data.friendsList.concat(res.data.data)
