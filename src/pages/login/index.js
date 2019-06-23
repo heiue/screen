@@ -45,7 +45,10 @@ Page({
             wx.setStorageSync('user_info', e.detail.rawData);
             wx.setStorageSync('token', result.data.data.token);
             wx.setStorageSync('user_id', result.data.data.user_id);
-            
+            // 跳转回原页面
+            _this.getUserId();
+            _this.getCardInfo();
+            _this.navigateBack(); 
           });
       }
     });
@@ -58,6 +61,17 @@ Page({
     },function(res){
       console.log(res)
     },true)
+  },
+
+  getUserId() {
+    api.post('/user/getuserinfo', {
+      token: wx.getStorageSync('token')
+    }, function (res) {
+      wx.setStorageSync('user_id', res.data.data.userinfo.id);
+      wx.setStorageSync('userInfoSign', res.data.data.userinfo);
+      app.globalData.userInfoSign = wx.getStorageSync('userInfoSign');
+      console.log(wx.getStorageSync('userInfoSign'))
+    })
   },
 
   /**

@@ -1,0 +1,100 @@
+<!--pages/chat/chat.wxml-->
+<view class='chat-header' wx:if="{{is_house}}">
+  <view class='tip'>
+    <view>对这套房源感兴趣，和经纪人聊聊吧</view>
+  </view>
+  <view  class='house-item flex-wrap' data-id="{{item.id}}"  >
+        <view class='flex-item2' >
+          <image wx:if='{{house.img != "" }}' style="width:90px;height:65px;" mode= "aspectFill" src="{{house.img}}"></image>
+        <view wx:else>
+          <image style="width:90px;height:65px;" mode= "scaleToFill" src="{{unitDefaultImg}}"></image>
+        </view>
+        </view>
+        <view class='flex-item3 item-info' >
+          <view class='item-house-title ellipsis1'>{{house.name}}</view>
+          <view class='price'><text >{{house.content}}</text></view>
+          <view class='fz32 e9' style='margin-top:10rpx;'><text >{{house.price}}</text></view>
+        </view>
+        <view class='flex-item2 tr'>
+          <button type='default' hover-class='none' bindtap='sendCustoms'>发送链接</button>
+        </view>
+  </view>
+</view>
+<scroll-view class='chat' id="chat" style="height:{{height}}px;" scroll-y style='padding-bottom:90px;margin-top:{{marginTop}}rpx;' >
+  <block  wx:for="{{myMessages}}" wx:key="{{index}}">
+    <view class='chat-time' wx:if="{{item.time != ''}}">{{item.msgTime}}</view>
+    <view class="chat-item flex-wrap {{item.isSelfSend ? 'house' : ''}}" wx:if='{{item.type != ""}}' bindtap='linkDetail'  data-id="{{item.id}}" data-type="{{item.type}}" data-usage="{{item.usage}}" >
+        <view class='avatar'>
+          <image style="width:40px;height:40px;border-radius:50%;" mode= "scaleToFill" src="{{item.avatar}}"></image>
+        </view>
+        <view class='content flex-wrap' style="width:520rpx;height:auto;">
+          <view class='flex-item'>
+            <image class='img' style="width:140rpx;height:100rpx;margin:10rpx auto 8rpx;" mode= "scaleToFill"  src="{{item.img == '' ? houseDefault : item.img}}"></image>
+          </view>
+          <view class='info flex-item2'>
+            <view class='info-name ellipsis1'>{{item.name}}</view>
+            <view class='info-title'>{{item.content}}</view>
+            <view class='flex-wrap'>
+              <view class='flex-item3'>
+                <view class='info-price'>{{item.price}}</view>
+              </view>
+             
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="chat-item flex-wrap {{item.isSelfSend ? 's' : ''}}" wx:if='{{item.type == ""}}'>
+        <view class='avatar'>
+          <image style="width:40px;height:40px;border-radius:50%;" mode= "scaleToFill" src="{{item.avatar}}"></image>
+        </view>
+        <view class='content '>{{item.msgContent}}</view>
+    </view>
+  </block>
+  <view class='nullBox' wx:if="{{isEmoji}}"></view>
+</scroll-view>
+
+<view class='footer-h'></view>
+<view class='chat-footer '>
+  <view class='chat-footericon flex-wrap'>
+    <view class='flex-item tc' bindtap='linkCard'>
+      <view class='iconfont icon-kanmingpian' ></view>
+      <view>看名片</view>
+    </view>
+    <view class='flex-item tc'>
+      <view class='iconfont icon-tuixinpan' bindtap='filterHouse' data-type="0"></view>
+      <view>推新盘</view>
+    </view>
+    <view class='flex-item tc'>
+      <view class='iconfont icon-tuishoupan' bindtap='filterHouse' data-type="2"></view>
+      <view><text wx:if="{{user_co_pattern_type == '1'}}">推商铺</text><text wx:else>推售盘</text> </view>
+    </view>
+    <view class='flex-item tc'>
+      <view class='iconfont icon-tuizupan' bindtap='filterHouse' data-type="3"></view>
+      <view><text wx:if="{{user_co_pattern_type == '1'}}">推写字楼</text><text wx:else>推租盘</text></view>
+    </view>
+    <view class='flex-item tc' wx:if="{{user_co_pattern_type != '1'}}">
+      <view class='iconfont icon-tuihaiwai' bindtap='filterHouse' data-type="1"></view>
+      <view>推海外</view>
+    </view>
+    
+  </view>
+  <view class='flex-wrap' style='border-bottom:1px solid #f5f5f5;'>
+    <view class='flex-item5'>
+      <input class='input'  bindinput="bindKeyInput"  cursor-spacing="20" confirm-hold="true" adjust-position value="{{inputValue}}" placeholder="请输入您的问题..."/>
+    </view>
+    <view class='flex-item tc' style="line-height:110rpx;" bindtap='showEmoji'>
+      <text class='iconfont icon-biaoqing'></text>
+    </view>
+    <view class='flex-item tc' bindtap='bindConfirm' >
+      <text class='send'>发送</text>
+    </view>
+  </view>
+  <!-- 表情 -->
+   <view class='emoji-con' wx:if="{{isEmoji}}">
+      <block wx:for="{{emojiChar}}" wx:key="{{index}}">
+        <view  class='emoji' bindtap="selectEmoji" data-text="{{item}}">
+           <text>{{item}}</text>
+        </view>
+      </block>
+   </view>
+</view>

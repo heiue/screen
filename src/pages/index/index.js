@@ -69,6 +69,7 @@ Page({
     
   },
   onShow:function() {
+    console.log(app.globalData.userInfo,'用户信息')
     this.getWatchingList()
   },
   getWriterList: function (page) {

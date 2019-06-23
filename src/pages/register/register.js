@@ -1,4 +1,3 @@
-let WebIM = require("../../utils/WebIM")["default"];
 
 Page({
 	data: {

@@ -1,4 +1,4 @@
-var WebIM = require("../../utils/WebIM")["default"];
+
 let disp = require("../../utils/broadcast");
 
 // 好友邀请提醒

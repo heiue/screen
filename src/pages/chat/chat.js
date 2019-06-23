@@ -1,334 +1,231 @@
 let disp = require("../../utils/broadcast");
-var WebIM = require("../../utils/WebIM")["default"];
+var util = require('../../utils/tutil.js');
+var webim = require('../../utils/twebim.js');
+var webimhandler = require('../../utils/txywebim_handler.js');
+
 let isfirstTime = true
+const app = getApp()
+
 Page({
 	data: {
-		search_btn: true,
-		search_chats: false,
-		show_mask: false,
-		yourname: "",
-		unReadSpotNum: 0,
-		unReadNoticeNum: 0,
-		messageNum: 0,
-		unReadTotalNotNum: 0,
-		arr: [],
-		show_clear: false
+    isNoData: true,
+    contactList: [],//会话列表
+    sqType: true,//获取用户信息弹窗显示
+    component: false,
+    subscribe: '1',
+    selected: true,
+    selected1: false,
+    page: '1',//页数
+    count: 0,//总条数
+    signList: [],//拓展的用户列表
+    placeValue: '搜索用户名称或电话',
+    title: '累计发展',
+    keyword: '',
+    is_open: true,
 	},
 
-	onLoad(){
-		let me = this;
-		//监听加好友申请
-		disp.on("em.xmpp.subscribe", function(){
-			me.setData({
-				messageNum: getApp().globalData.saveFriendList.length,
-				unReadTotalNotNum: getApp().globalData.saveFriendList.length + getApp().globalData.saveGroupInvitedList.length
-			});
-		});
+  onLoad: function (options) {
 
-		//监听未读消息数
-		disp.on("em.xmpp.unreadspot", function(message){
-			me.setData({
-				arr: me.getChatList(),
-				unReadSpotNum: getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum,
-			});
-		});
+  },
+  onShow: function () {
+    this.initTim();
+  },
+  onLoadData: function () {
+    // 如果是在消息列表页触发登录的则在登录成功后会触发这个方法
+    this.initTim();
+  },
+  // 获取搜索字段
+  searchName: function (e) {
+    this.setData({
+      keyword: e.detail.value
+    })
+  },
+  search: function (e) {
+    this.setData({
+      signList: [],
+      page: 1,
+      title: '搜索到'
+    })
+    this.loadSign()
+  },
+  
+  selected: function () {
+    this.setData({
+      selected: true,
+      selected1: false
 
-		//监听未读加群“通知”
-		disp.on("em.xmpp.invite.joingroup", function(){
-			me.setData({
-				unReadNoticeNum: getApp().globalData.saveGroupInvitedList.length,
-				unReadTotalNotNum: getApp().globalData.saveFriendList.length + getApp().globalData.saveGroupInvitedList.length
-			});
-		});
+    })
+  },
+  selected1: function () {
+    this.setData({
+      selected: false,
+      selected1: true
+    })
+  },
+  /**
+   * 登录腾讯云或者初始化会话列表
+   */
+  initTim: function () {
+    if (app.globalData.userInfo) {
+      wx.showLoading()
+      var that = this;
+      var selToID = '';//会话列表不设置对方私聊账号
+      webimhandler.init({
+        accountMode: app.globalData.Config.accountMode
+        , accountType: app.globalData.Config.accountType
+        , sdkAppID: app.globalData.Config.sdkappid
+        , selType: webim.SESSION_TYPE.C2C//私聊
+        , id: app.globalData.userInfo.identifier
+        , name: app.globalData.userInfo.agent_name
+        , icon: app.globalData.userInfo.agent_pic,
+        that: that
+      });
+      console.log(app.globalData.userInfo,1111)
 
-		disp.on("em.xmpp.contacts.remove", function(){
-			me.getRoster();
-			// me.setData({
-			// 	arr: me.getChatList(),
-			// 	unReadSpotNum: getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum,
-			// });
-		});
+      if (app.globalData.is_login_webim) {
+        console.log(app.globalData.is_login_webim,'我不用再登录了')
+        // 登录成功了再去检测更新用户信息
+        that.initRecentContactList();
+        wx.hideLoading()
+      } else {
+        console.log(app.globalData.is_login_webim,'我要登录')
 
-		this.getRoster();
-	},
+        webimhandler.sdkLogin(that, app, selToID, function () {
+          // 登录成功了再去检测更新用户信息
+          that.initRecentContactList();
+          wx.hideLoading()
+        }, function () {
+          
+        });
+      }
+    }
+  },
 
-	listGroups(){
-		var me = this;
-		return WebIM.conn.listRooms({
-			success: function(rooms){
-				wx.setStorage({
-					key: "listGroup",
-					data: rooms
-				});
-				me.getChatList()
-			},
-			error: function(err){
-				console.log(err)
-			}
-		});
-	},
+  //初始化聊天界面最近会话列表
+  initRecentContactList: function () {
 
-	getRoster(){
-		let me = this;
-		let rosters = {
-			success(roster){
-				var member = [];
-				for(let i = 0; i < roster.length; i++){
-					if(roster[i].subscription == "both"){
-						member.push(roster[i]);
-					}
-				}
-				wx.setStorage({
-					key: "member",
-					data: member
-				});
-				me.setData({member: member});
-				me.listGroups()
-				//if(!systemReady){
-					disp.fire("em.main.ready");
-					//systemReady = true;
-				//}
-				me.setData({
-					arr: me.getChatList(),
-					unReadSpotNum: getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum,
-				});
-			},
-			error(err){
-				console.log(err);
-			}
-		};
-		WebIM.conn.getRoster(rosters);
-	},
+    var that = this;
+    webim.getRecentContactList({
+      'Count': 10 //最近的会话数 ,最大为 100
+    }, function (resp) {
+      console.log(resp.SessionItem,'会话列表')
+      if (resp.SessionItem) {
+        if (resp.SessionItem.length == 0) {
+          that.setData({
+            isNoData: false,
+          })
 
-	getChatList(){
-		var array = [];
-		var member = wx.getStorageSync("member");
-		var myName = wx.getStorageSync("myUsername");
-		var listGroups = wx.getStorageSync('listGroup')|| [];
-		for(let i = 0; i < member.length; i++){
-			let newChatMsgs = wx.getStorageSync(member[i].name + myName) || [];
-			let historyChatMsgs = wx.getStorageSync("rendered_" + member[i].name + myName) || [];
-			let curChatMsgs = historyChatMsgs.concat(newChatMsgs);
+        } else if (resp.SessionItem.length > 0) {
+          that.setData({
+            contactList: resp.SessionItem,
+            isNoData: true
+          })
+          var data = that.data.contactList.map((item, index) => {
+            if (item.MsgShow == '[其他]') {
+              item.MsgShow = '[房源信息]'
+            }
+            var MsgTimeStamp = util.getDateDiff(item.MsgTimeStamp * 1000)
+            item.MsgTimeStamp = MsgTimeStamp;
+            return item;
+          })
+          that.setData({
+            contactList: data
+          })
+          // 初始化最近会话的消息未读数(这里直接监听新消息事件)
+          webim.syncMsgs(webimhandler.onMsgNotify());
+        } else {
+          return;
+        }
+      } else {
+        var param = {
+          app_token: app.globalData.userInfo.app_token,
+        }
+        //腾讯云会话列表接口
+        // app.request('get', 'contact', that, param,
+        //   (data) => {
+        //     var data = data.map((item, index) => {
 
-			if(curChatMsgs.length){
-				let lastChatMsg = curChatMsgs[curChatMsgs.length - 1];
-				lastChatMsg.unReadCount = newChatMsgs.length;
-				if(lastChatMsg.unReadCount > 99) {
-					lastChatMsg.unReadCount = "99+";
-				}
-				let dateArr = lastChatMsg.time.split(' ')[0].split('-')
-				let timeArr = lastChatMsg.time.split(' ')[1].split(':')
-				let month = dateArr[2] < 10 ? '0' + dateArr[2] : dateArr[2]
-				lastChatMsg.dateTimeNum = `${dateArr[1]}${month}${timeArr[0]}${timeArr[1]}${timeArr[2]}`
-				lastChatMsg.time = `${dateArr[1]}月${dateArr[2]}日 ${timeArr[0]}时${timeArr[1]}分`
-				array.push(lastChatMsg);
-			}
-		}
-		for(let i = 0; i < listGroups.length; i++){
-			let newChatMsgs = wx.getStorageSync(listGroups[i].roomId + myName) || [];
-			let historyChatMsgs = wx.getStorageSync("rendered_" + listGroups[i].roomId + myName) || [];
-			let curChatMsgs = historyChatMsgs.concat(newChatMsgs);
-			if(curChatMsgs.length){
-				let lastChatMsg = curChatMsgs[curChatMsgs.length - 1];
-				lastChatMsg.unReadCount = newChatMsgs.length;
-				if(lastChatMsg.unReadCount > 99) {
-					lastChatMsg.unReadCount = "99+";
-				}
-				let dateArr = lastChatMsg.time.split(' ')[0].split('-')
-				let timeArr = lastChatMsg.time.split(' ')[1].split(':')
-				let month = dateArr[2] < 10 ? '0' + dateArr[2] : dateArr[2]
-				lastChatMsg.time = `${dateArr[1]}月${dateArr[2]}日 ${timeArr[0]}时${timeArr[1]}分`
-				lastChatMsg.dateTimeNum = `${dateArr[1]}${month}${timeArr[0]}${timeArr[1]}${timeArr[2]}`
-				lastChatMsg.groupName = listGroups[i].name
-				array.push(lastChatMsg);
-			}
-		}
-		//	测试列表
+        //       item.C2cNick = item.nickname;
+        //       item.To_Account = item.member_id;
+        //       item.MsgTimeStamp = item.msgtimestamp;
+        //       item.MsgShow = item.msgtxt;
+        //       return item;
+        //     })
+        //     that.setData({
+        //       contactList:data
+        //     })
+        //     // //获取所有用户id(用来获取头像)
+        //     var userId = data.map((item, index) => {
+        //       return item.To_Account
+        //     })
+        //     //获取头像
+        //     that.getAvatar(userId, that.data.contactList, function (data) {
+        //       data = data.map((item, index) => {
+        //         item.C2cImage = item.pic
+        //         if (item.MsgShow == '[其他]') {
+        //           item.MsgShow = '[房源信息]'
+        //         }
+        //         return item;
+        //       })
+        //       that.setData({
+        //         contactList: data
+        //       })
 
-		// for (let i = 0; i < 12; i++) {
-		// 	let newSESSION = {
-		// 		info: {from: "zdtest", to: "zdtest2"},
-		// 		mid: "txtWEBIM_427ab8b10c",
-		// 		msg: {type: "txt", data: [{data: "丢晚高峰阿精高峰阿精神焕高峰阿精神焕高峰阿精神焕神焕发丢完", type: "txt"}]},
-		// 		style: "self",
-		// 		time: "2019-2-18 16:59:25",
-		// 		username: "zdtest" + i,
-		// 		yourname: "zdtest"
-		// 	}
-		// 	let dateArr = newSESSION.time.split(' ')[0].split('-')
-		// 	let timeArr = newSESSION.time.split(' ')[1].split(':')
-		// 	newSESSION.time = `${dateArr[1]}月${dateArr[2]}日 ${timeArr[0]}时${timeArr[1]}分`
-		// 	array.push(newSESSION)
-		// }
-		
-		array.sort((a, b) => {
-			return b.dateTimeNum - a.dateTimeNum
-		})
-		return array;
-	},
+        //     })
 
-	onShow: function(){
-		this.setData({
-			arr: this.getChatList(),
-			unReadSpotNum: getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum,
-			messageNum: getApp().globalData.saveFriendList.length,
-			unReadNoticeNum: getApp().globalData.saveGroupInvitedList.length,
-			unReadTotalNotNum: getApp().globalData.saveFriendList.length + getApp().globalData.saveGroupInvitedList.length
-		});
+        //   }, () => {
 
-		if (getApp().globalData.isIPX) {
-			this.setData({
-				isIPX: true
-			})
-		}
-	},
+        //   }, () => {
 
-	openSearch: function(){
-		this.setData({
-			search_btn: false,
-			search_chats: true,
-			gotop: true
-		});
-	},
-
-	onSearch: function(val){
-		let searchValue = val.detail.value
-		let chartList = this.getChatList();
-		let serchList = [];
-		chartList.forEach((item, index)=>{
-			if(String(item.username).indexOf(searchValue) != -1){
-				serchList.push(item)
-			}
-		})
-		this.setData({
-			arr: serchList,
-		})
-	},
-
-	cancel: function(){
-		this.setData({
-			search_btn: true,
-			search_chats: false,
-			arr: this.getChatList(),
-			unReadSpotNum: getApp().globalData.unReadMessageNum > 99 ? '99+' : getApp().globalData.unReadMessageNum,
-			gotop: false
-		});
-	},
-
-	clearInput: function(){
-		this.setData({
-			input_code: '',
-			show_clear: false
-		})
-	},
-
-	onInput: function(e){
-		let inputValue = e.detail.value
-		if (inputValue) {
-			this.setData({
-				show_clear: true
-			})
-		} else {
-			this.setData({
-				show_clear: false
-			})
-		}
-	},
-
-	tab_contacts: function(){
-		wx.redirectTo({
-			url: "../main/main?myName=" + wx.getStorageSync("myUsername")
-		});
-	},
-
-	close_mask: function(){
-		this.setData({
-			search_btn: true,
-			search_chats: false,
-			show_mask: false
-		});
-	},
-
-	tab_setting: function(){
-		wx.redirectTo({
-			url: "../setting/setting"
-		});
-	},
-
-	tab_notification: function(){
-		wx.redirectTo({
-			url: "../notification/notification"
-		});
-	},
-
-	into_chatRoom: function(event){
-		let detail = event.currentTarget.dataset.item;
-		//群聊的chatType居然是singlechat？脏数据？ 等sdk重写后整理一下字段
-		if (detail.chatType == 'groupchat' || detail.chatType == 'chatRoom' || detail.groupName) {
-			this.into_groupChatRoom(detail)
-		} else {
-			this.into_singleChatRoom(detail)
-		}
-	},
-
-	//	单聊
-	into_singleChatRoom: function(detail){
-		var my = wx.getStorageSync("myUsername");
-		var nameList = {
-			myName: my,
-			your: detail.username
-		};
-		wx.navigateTo({
-			url: "../chatroom/chatroom?username=" + JSON.stringify(nameList)
-		});
-	},
-
-	//	群聊 和 聊天室 （两个概念）
-	into_groupChatRoom: function(detail){
-		var my = wx.getStorageSync("myUsername");
-		var nameList = {
-			myName: my,
-			your: detail.groupName,
-			groupId: detail.info.to
-		};
-		wx.navigateTo({
-			url: "../groupChatRoom/groupChatRoom?username=" + JSON.stringify(nameList)
-		});
-	},
+        //   })
+      }
 
 
-	del_chat: function(event){
-		let detail = event.currentTarget.dataset.item;
-		let nameList;
-		if (detail.chatType == 'groupchat' || detail.chatType == 'chatRoom') {
-			nameList = {
-				your: detail.info.to
-			};
-		} else {
-			nameList = {
-				your: detail.username
-			};
-		}
+    }, function (resp) {
+      //错误回调
+    });
 
-		var myName = wx.getStorageSync("myUsername");
-		var currentPage = getCurrentPages();
-		
-		wx.showModal({
-			title: "删除该聊天记录",
-			confirmText: "删除",
-			success: function(res){
-				if(res.confirm){
-					wx.setStorageSync(nameList.your + myName, "");
-					wx.setStorageSync("rendered_" + nameList.your + myName, "");
-					if(currentPage[0]){
-						currentPage[0].onShow();
-					}
-					disp.fire("em.chat.session.remove");
-				}
-			},
-			fail: function(err){
-			}
-		});
-	},
+
+  },
+
+
+  /**
+   * 聊天
+   */
+  linkChat: function (e) {
+    wx.navigateTo({
+      url: '/pages/chatroom/chatroom?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name,
+    })
+  },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    var that = this;
+    if (this.data.count > 10) {
+      if (this.data.signList.length < this.data.count) {
+        setTimeout(() => {
+          var that = this;
+          that.data.page++;
+          that.loadSign()
+        }, 50)
+
+      } else {
+        this.setData({
+          loadTip: '加载完成！',
+          isHideLoadMore: true,
+        })
+      }
+    } else {
+      this.setData({
+        isHideLoadMore: true,
+        loadTip: '加载完成！'
+      })
+    }
+
+  },
+
+
+	
 
 });

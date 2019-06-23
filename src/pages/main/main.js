@@ -1,4 +1,3 @@
-let WebIM = require("../../utils/WebIM")["default"];
 let disp = require("../../utils/broadcast");
 let systemReady = false;
 let canPullDownreffesh = true;

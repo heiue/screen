@@ -1,8 +1,5 @@
-
+let WebIM = require("./utils/WebIM")["default"];
 require("sdk/libs/strophe");
-let WebIM = require("utils/WebIM")["default"];
-let msgStorage = require("comps/chat/msgstorage");
-let msgType = require("comps/chat/msgtype");
 let ToastPannel = require("./comps/toast/toast");
 let disp = require("utils/broadcast");
 let logout = false;
@@ -86,6 +83,7 @@ App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
+    
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 			// 调用 API 从本地缓存中获取数据
@@ -93,6 +91,7 @@ App({
 			var logs = wx.getStorageSync("logs") || [];
 			logs.unshift(Date.now());
 			wx.setStorageSync("logs", logs);
+
   },
 	onShow(){
 		
@@ -128,8 +127,16 @@ App({
   },
   globalData: {
     userInfo: wx.getStorageSync('user_info') || null,
+    userInfoSign: wx.getStorageSync('userInfoSign') || null,
     imgUrl: 'http://api.gojbcs.com/images',
     imgurl: 'http://api.gojbcs.com',
     phone: '01056257208',
+    is_login_webim:false,
+    unread: '',//消息总数
+    Config: {
+      sdkappid: 1400222815,
+      accountType: 1,
+      accountMode: 0 
+    },
   }
 })

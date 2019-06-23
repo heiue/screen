@@ -27,6 +27,8 @@ Page({
       token: wx.getStorageSync('token')
     },function(res) {
       wx.setStorageSync('user_id', res.data.data.userinfo.id);
+      wx.setStorageSync('userInfoSign', res.data.data.userinfo);
+      console.log(wx.getStorageSync('userInfoSign'))
     })
   },
   goMyCard: function () {

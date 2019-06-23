@@ -51,6 +51,7 @@ Page({
    */
   onLoad: function (options) {
     this.data.uid = Number(options.uid);
+    console.log(app.globalData.userInfoSign.pic)
     
   },
 
@@ -59,7 +60,6 @@ Page({
     api.post('/user/getusercard',{
       uid: that.data.uid
     }, function (res) {
-      console.log(res)
       that.setData({
         otherInfo: res.data.data.cardInfo
       })
@@ -143,7 +143,7 @@ Page({
       yourName: e.currentTarget.dataset.name
     };
     wx.navigateTo({
-      url: "/pages/chatroom/chatroom?username=" + JSON.stringify(nameList)
+      url: "/pages/chatroom/chatroom?id=ju35001686" 
     });
   },
   /**

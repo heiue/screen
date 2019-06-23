@@ -1,6 +1,14 @@
 page{
 	width: 100%;
 	overflow: hidden;
+  background: #ffffff;
+}
+.msg-item{
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.msg-text{
+  border-bottom: 1px solid #f5f5f5;
 }
 .chat_title{
 	position: fixed;
@@ -222,4 +230,17 @@ page{
 .goback{
 	top: 128rpx;
 	transition: top 0.5s;
+}
+.count{
+  background:red;
+color:#ffffff;
+border-radius:20rpx;
+font-size:24rpx;
+width:25px;
+height:20px;
+display:inline-block;
+text-align:center;
+line-height:20px;
+padding:0px 2rpx;
+
 }
