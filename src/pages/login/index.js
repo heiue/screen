@@ -70,7 +70,7 @@ Page({
       wx.setStorageSync('user_id', res.data.data.userinfo.id);
       wx.setStorageSync('userInfoSign', res.data.data.userinfo);
       app.globalData.userInfoSign = wx.getStorageSync('userInfoSign');
-      console.log(wx.getStorageSync('userInfoSign'))
+      app.globalData.userInfo = wx.getStorageSync('user_info');
     })
   },
 
