@@ -129,12 +129,12 @@ function getUnread(){
   app.globalData.unread = unread
   if (unread != '0') {
     wx.setTabBarBadge({
-      index: 1,
+      index: 4,
       text:unread
     })
   } else {
     wx.removeTabBarBadge({
-      index: 1
+      index: 4
     })
   }
 }

@@ -94,7 +94,7 @@ Page({
         wx.setStorageSync('cardInfo', res.data.data.cardInfo)
         that.data.cardData.cardid = res.data.data.cardInfo.id
         that.setData({
-          userIndustry: res.data.data.cardInfo.industry_name,
+          userIndustry: res.data.data.cardInfo.industry_name || '请选择行业',
           userPhone: res.data.data.cardInfo.card_info.mobile,
           userWechat: res.data.data.cardInfo.card_info.wechat,
           companyProfile: res.data.data.cardInfo.card_info.intro,

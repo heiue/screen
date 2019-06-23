@@ -51,7 +51,6 @@ Page({
    */
   onLoad: function (options) {
     this.data.uid = Number(options.uid);
-    console.log(app.globalData.userInfoSign.pic)
     
   },
 
@@ -137,14 +136,9 @@ Page({
     })
   },
   chat(e){
-    var nameList = {
-      myName: 'juben' +JSON.parse(wx.getStorageSync('user_id')),
-      your: 'juben'+(e.currentTarget.dataset.id),
-      yourName: e.currentTarget.dataset.name
-    };
     wx.navigateTo({
-      url: "/pages/chatroom/chatroom?id=ju35001686" 
-    });
+      url: '/pages/chatroom/chatroom?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

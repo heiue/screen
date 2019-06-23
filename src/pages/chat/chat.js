@@ -66,6 +66,7 @@ Page({
    * 登录腾讯云或者初始化会话列表
    */
   initTim: function () {
+    console.log(app.globalData.userInfo)
     if (app.globalData.userInfo) {
       wx.showLoading()
       var that = this;
@@ -80,8 +81,7 @@ Page({
         , icon: app.globalData.userInfo.agent_pic,
         that: that
       });
-      console.log(app.globalData.userInfo,1111)
-
+      app.globalData.is_login_webim = wx.getStorageSync('is_login_webim')
       if (app.globalData.is_login_webim) {
         console.log(app.globalData.is_login_webim,'我不用再登录了')
         // 登录成功了再去检测更新用户信息
@@ -89,7 +89,7 @@ Page({
         wx.hideLoading()
       } else {
         console.log(app.globalData.is_login_webim,'我要登录')
-
+        
         webimhandler.sdkLogin(that, app, selToID, function () {
           // 登录成功了再去检测更新用户信息
           that.initRecentContactList();
@@ -98,6 +98,8 @@ Page({
           
         });
       }
+    }else{
+      app.doLogin();
     }
   },
 

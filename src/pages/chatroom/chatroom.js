@@ -41,6 +41,7 @@ Page({
       that.setData({
         selToID: options.id,
       })
+      console.log(this.data.selToID)
     }
 
 
@@ -68,6 +69,7 @@ Page({
         , icon: '',
         that: that
       });
+      app.globalData.is_login_webim = wx.getStorageSync('is_login_webim')
       if (app.globalData.is_login_webim) {
         //获取聊天历史记录
         webimhandler.getC2CHistoryMsgs();

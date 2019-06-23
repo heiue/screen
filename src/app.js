@@ -91,6 +91,17 @@ App({
 			var logs = wx.getStorageSync("logs") || [];
 			logs.unshift(Date.now());
 			wx.setStorageSync("logs", logs);
+    if (wx.getStorageSync('unread') > 0) {
+      wx.setTabBarBadge({
+        index: 4,
+        text: wx.getStorageSync('unread')
+      })
+    } else {
+      wx.removeTabBarBadge({
+        index: 4,
+        text: ''
+      })
+    }
 
   },
 	onShow(){

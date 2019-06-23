@@ -71,6 +71,17 @@ Page({
     }else{
       app.doLogin()
     }
+    if (wx.getStorageSync('unread') > 0) {
+      wx.setTabBarBadge({
+        index: 4,
+        text: wx.getStorageSync('unread')
+      })
+    } else {
+      wx.removeTabBarBadge({
+        index: 4,
+        text: ''
+      })
+    }
    
   },
   gohistory() {

@@ -13,9 +13,10 @@
     <text>{{detail.title}} </text>
   </view>
   <view class="header" wx-if="{{detail.video}}">
-    <video src="{{imgurl}}{{detail.video}}" id="payVideo" show-center-play-btn="false" show-fullscreen-btn="true" class="header-bg"></video>
-    <view class="header-play" bindtap='play' wx-if="{{!isVip}}">
-      <!-- <image src="{{imgUrl}}/pay_know_detail/icon_play.png"></image> -->
+    <video src="" id="payVideo" show-center-play-btn="false" show-fullscreen-btn="true" class="header-bg" wx-if="{{isVip == 'false'}}"></video>
+    <video src="{{imgurl}}{{detail.video}}" id="payVideo" show-center-play-btn="false" show-fullscreen-btn="true" class="header-bg" wx-if="{{isVip == 'true'}}"></video>
+    <view class="header-play" bindtap='play' wx-if="{{isVip == 'false'}}">
+      <image src="{{imgUrl}}/pay_know_detail/icon_play.png"></image>
     </view>
   </view>
   <view class="detail-cont" wx:if="{{isVip== 'false'}}">{{detail.description}}</view>

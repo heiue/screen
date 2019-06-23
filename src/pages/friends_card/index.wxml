@@ -108,5 +108,5 @@
       </view>
     </view>
   </view>
-  <view class="chat-btn" bindtap='chat' data-id="{{otherInfo.uid}}" data-name="{{otherInfo.name}}">立即联系</view>
+  <view class="chat-btn" bindtap='chat' data-id="{{otherInfo.identifier}}" data-name="{{otherInfo.name}}">立即联系</view>
 </view>
