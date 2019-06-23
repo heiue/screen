@@ -37,6 +37,16 @@ Page({
       url: '/pages/project_detail/index?projectId=' + e.currentTarget.dataset.projectid
     })
   },
+  goWiter(e) {
+    wx.navigateTo({
+      url: '/pages/other_card/index?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name
+    })
+  },
+  goScript(e) {
+    wx.navigateTo({
+      url: '/pages/script_detail/index?sid=' + e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
