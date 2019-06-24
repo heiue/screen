@@ -90,20 +90,22 @@ Page({
       })
       // console.log(that.data.isOther)
       // console.log(res)
-      if (res.data.data.cardInfo){
+      if (res.data.data.cardInfo.id){
         wx.setStorageSync('cardInfo', res.data.data.cardInfo)
         that.data.cardData.cardid = res.data.data.cardInfo.id
         that.setData({
           userIndustry: res.data.data.cardInfo.industry_name || '请选择行业',
-          userPhone: res.data.data.cardInfo.card_info.mobile,
-          userWechat: res.data.data.cardInfo.card_info.wechat,
-          companyProfile: res.data.data.cardInfo.card_info.intro,
-          userCompany: res.data.data.cardInfo.company,
-          usereMail: res.data.data.cardInfo.card_info.email,
-          userIntro: res.data.data.cardInfo.card_info.user_intro,
-          images: res.data.data.cardInfo.card_info.top_pic,
+          userPhone: res.data.data.cardInfo.card_info.mobile || '请输入手机号',
+          userWechat: res.data.data.cardInfo.card_info.wechat || '请输入微信号',
+          companyProfile: res.data.data.cardInfo.card_info.intro || '请输入公司简介',
+          userCompany: res.data.data.cardInfo.company || '请输入公司名称',
+          usereMail: res.data.data.cardInfo.card_info.email || '请输入邮箱',
+          userIntro: res.data.data.cardInfo.card_info.user_intro || '请编辑自己的简介',
+          images: res.data.data.cardInfo.card_info.top_pic || '',
         }) 
-        that.data.cardData.card.company = res.data.data.cardInfo.company
+        that.data.cardData.card.company = res.data.data.cardInfo.company,
+          that.data.cardData.card.pic = JSON.parse(wx.getStorageSync('user_info')).avatarUrl,
+        that.data.cardData.card.name = JSON.parse(wx.getStorageSync('user_info')).nickName,
         that.data.cardData.info.intro = res.data.data.cardInfo.card_info.intro,
         that.data.cardData.card.position = res.data.data.cardInfo.position,
         that.data.cardData.card.industry_id = res.data.data.industry_id,

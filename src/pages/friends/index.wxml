@@ -100,7 +100,7 @@
 														<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class="" wx:if="{{userInfo.gender == 1}}"></image>
                             <image src="http://api.gojbcs.com/images/my_card/icon_girl.png" class="" wx:if="{{userInfo.gender == 2}}"></image>
 												</view>
-												<view wx:if="{{cardInfo.company}}" class="push-cardtext">{{cardInfo.company}}</view>
+												<!-- <view wx:if="{{cardInfo.company}}" class="push-cardtext">{{cardInfo.company}}</view> -->
 										</view>
 										<view class="push-cardintro" wx:if="{{cardInfo.industry_name}}">
 												<view>职业：</view>

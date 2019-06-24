@@ -43,7 +43,7 @@
         <view class="search-item-subheader">{{item.rating_name}}</view>
       </view>
     </view>
-    <view class="search-list-title">人脉</view>
+    <view class="search-list-title">剧本</view>
     <view class="search-project-item" wx:for="{{searchList.script}}" wx:key="index" bindtap='goScript' data-id="{{item.id}}">
       <image class="item-img" src="{{imgurl}}{{item.cover}}"></image>
       <view class="search-project-cont">
