@@ -51,6 +51,12 @@ Page({
       url: '/pages/exclusive_consultant/index'
     })
   },
+	//清理缓存
+	clearSet(){
+		wx.clearStorage();
+		app.doLogin();
+		// console.log(wx.getStorageSync('userInfoSign'))
+	},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

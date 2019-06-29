@@ -53,15 +53,15 @@
         {{phone}}
       </view>
     </view>
-    <!-- <view class="my-item" bindtap='goBindphone'>
+    <view class="my-item" bindtap='clearSet'>
       <view class="my-item-left">
         <image src="http://api.gojbcs.com/images/my_icon_setup.png"></image>
-        <text>设置</text>
+        <text>清理缓存</text>
       </view>
       <view class="my-item-right">
         <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
       </view>
-    </view> -->
+    </view>
     <navigator class="my-item" url="/pages/out/index" hover-class="none">
       <view class="my-item-left">
         <image src="../../images/my-icon-write.png" style='width:45rpx;'></image>
