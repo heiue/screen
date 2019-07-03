@@ -139,7 +139,9 @@ Page({
   },
   // 获取formid
   submitInfo: function (e) {
-    // console.log(e.detail.formId);
+    console.log(e.detail.formId);
+    console.log(e.currentTarget.dataset.uid);
+    console.log(wx.getStorageSync('user_id'));
     wx.navigateTo({
       url: '/pages/friends_card/index?uid=' + e.currentTarget.dataset.uid + '&formId=' + e.detail.formId + '&userId='+wx.getStorageSync('user_id'),
     })

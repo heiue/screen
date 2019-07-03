@@ -64,6 +64,7 @@ Page({
       formId: that.data.formId,
       userId: that.data.userId
     }, function (res) {
+      console.log(res)
       that.setData({
         otherInfo: res.data.data.cardInfo
       })
@@ -96,7 +97,6 @@ Page({
   
   submitUserInfo(){
     var that = this;
-    
     console.log(that.data.cardData)
     var cardData = that.data.cardData
     api.post('/user/updateusercard',{
