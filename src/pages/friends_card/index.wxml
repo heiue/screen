@@ -34,14 +34,14 @@
         <view class="header-portrait">
           <image src="{{otherInfo.pic}}" class=""></image>
         </view>
-        <view class='header-follow' bindtap='attention' wx-if="{{otherInfo.isCollection == 0}}">
+        <!-- <view class='header-follow' bindtap='attention' wx-if="{{otherInfo.isCollection == 0}}">
           <image src='http://api.gojbcs.com/images/my_icon_collection.png'></image>
           <text>关注</text>
         </view>
         <view class='header-follow'  wx-if="{{otherInfo.isCollection == 1}}">
           <image src='../../images/my_icon_collection-on.png'></image>
           <text>已关注</text>
-        </view>
+        </view> -->
       </view>
     </view>
   </view>

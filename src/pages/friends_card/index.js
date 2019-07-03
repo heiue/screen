@@ -11,6 +11,7 @@ Page({
     imgurl:app.globalData.imgurl,
     userInfo: [],
     uid:'',//url中的uid
+    formId:'',
     cardData:{
       uid: wx.getStorageSync('user_id'),
       cardid:'',
@@ -51,13 +52,14 @@ Page({
    */
   onLoad: function (options) {
     this.data.uid = Number(options.uid);
-    
+    this.data.formId = options.formId;  
   },
 
   getUserInfo() {
     var that = this;
     api.post('/user/getusercard',{
-      uid: that.data.uid
+      uid: that.data.uid,
+      formId: that.data.formId
     }, function (res) {
       that.setData({
         otherInfo: res.data.data.cardInfo

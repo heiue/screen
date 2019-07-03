@@ -1,125 +1,127 @@
 <!-- pages/friends/index.wxml -->
 <view class="container">
-		<view class='title-top'>
-				<title title="人脉圈" isFirst="{{false}}"></title>
-		</view>
-		<view class="friends-menu">
-				<view class='friends-menu-btn' bind:tap="showMenu" wx-if="{{friendsIndex == 0}}">
-					<image class="" src="../../images/icon_menu.png"></image>
-          <text>更多</text>
-				</view>
-				<view class='friends-menu-tap'>
-						<view class='{{friendsIndex==0?"on":""}}' bindtap="changeFriendsTap" data-index="0">人脉</view>
-						<view class='{{friendsIndex==1?"on":""}}' bindtap="changeFriendsTap" data-index="1">分享</view>
-				</view>
-				<!-- <navigator url="/pages/search/index" class='friends-menu-search'>
+  <view class='title-top'>
+    <title title="人脉圈" isFirst="{{false}}"></title>
+  </view>
+  <view class="friends-menu">
+    <view class='friends-menu-btn' bind:tap="showMenu" wx-if="{{friendsIndex == 0}}">
+      <image class="" src="../../images/icon_menu.png"></image>
+      <text>更多</text>
+    </view>
+    <view class='friends-menu-tap'>
+      <view class='{{friendsIndex==0?"on":""}}' bindtap="changeFriendsTap" data-index="0">人脉</view>
+      <view class='{{friendsIndex==1?"on":""}}' bindtap="changeFriendsTap" data-index="1">分享</view>
+    </view>
+    <!-- <navigator url="/pages/search/index" class='friends-menu-search'>
 					<image src="http://api.gojbcs.com/images/project_icon_search.png"></image>
 				</navigator> -->
-		</view>
-		<view wx:if="{{friendsIndex == 0}}" class="friends-content">
-				<view class="header" bindtap='userInfo'>
-						<view class="header-bg"></view>
-						<view class="header-card">
-								<view class="header-cont">
-										<view class="title">
-												<view class="name">{{userInfo.nickName}}</view>
-												<view class="title-icon">
-														<image wx:if="{{userInfo.gender == 1}}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
-                            <image wx:if="{{userInfo.gender == 2}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
-                            <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
-												</view>
-												<!-- <view class="title-text">百度百科</view> -->
-										</view>
-										<!-- <view class="intro">
+  </view>
+  <view wx:if="{{friendsIndex == 0}}" class="friends-content">
+    <view class="header" bindtap='userInfo'>
+      <view class="header-bg"></view>
+      <view class="header-card">
+        <view class="header-cont">
+          <view class="title">
+            <view class="name">{{userInfo.nickName}}</view>
+            <view class="title-icon">
+              <image wx:if="{{userInfo.gender == 1}}" src="http://api.gojbcs.com/images/my_card/icon_sex.png" class=""></image>
+              <image wx:if="{{userInfo.gender == 2}}" src="http://api.gojbcs.com/images/my_card/icon_girl.png" class=""></image>
+              <image src="http://api.gojbcs.com/images/my_card/icon_vip.png" class=""></image>
+            </view>
+            <!-- <view class="title-text">百度百科</view> -->
+          </view>
+          <!-- <view class="intro">
 												<view>行业：</view>
 												<view>策划</view>
 										</view> -->
-										<view class="intro">
-												<view>地址：</view>
-                        <view>{{userInfo.province}}{{userInfo.city}}</view>
-										</view>
-										<!-- <view class="intro">
+          <view class="intro">
+            <view>地址：</view>
+            <view>{{userInfo.province}}{{userInfo.city}}</view>
+          </view>
+          <!-- <view class="intro">
 												<view>联系电话：</view>
 												<view>{{userInfo.}}</view>
 										</view> -->
-								</view>
-								<view class="header-portrait">
-										<image src="{{userInfo.avatarUrl}}" class=""></image>
-								</view>
-						</view>
-				</view>
-				<view class='friends-list'>
-						<navigator url="/pages/friends_card/index?uid={{item.card_info.uid}}" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}'>
-								<view class="friends-item-img" >
-										<image src='{{imgUrl}}/icon_auth.png' wx-if="{{item.card_user.is_vip == 'true'}}"></image>
-								</view>
-								<view class='friends-item-text'>
-										<view class='friends-item-job'>
-												<text class='friends-item-name'>{{item.name}}</text>
-												<text wx-if="{{item.industry_name}}">{{item.industry_name}}</text>
-										</view>
-										<view wx-if="item.company">{{item.company}}</view>
-								</view>
-								<view class='friends-item-head'>
-										<image src='{{item.pic}}'></image>
-								</view>
-						</navigator>
-				</view>
-        <view wx:if="{{isNone}}" style='text-align:center;'>
-          <image src='../../images/none-icon.png' style='width:300rpx;height:185rpx;margin-top:50rpx;'></image>
-          <view style='color:#ffe147;font-size:30rpx;margin-top:30rpx;'>呜～什么都没有~</view>
         </view>
-		</view>
-		<view class='friends-menu-list' animation="{{animationData}}">
-			<view class="mask" bindtap='showMenu'></view>
-				<view class='friends-menu-list-container'>
-						<view class='friends-menu-title'>
-								人脉分类
-								<view class="friends-menu-close" bindtap='showMenu'>
-									<image src='http://api.gojbcs.com/images/project_icon_down.png'></image>
-								</view>
-						</view>
-						<view class='friends-menu-item' >
-              <text bindtap='searchFriendsList' data-id="0">全部</text>
-              <text wx:for="{{friendsClassList}}" wx:index="index" bindtap='searchFriendsList' data-id="{{item.id}}">{{item.name}}</text>
-						</view>
-				</view>
-		</view>
-		<view wx:if="{{friendsIndex == 1}}" class="friends-content help-push-container">
-				<view class="help-push-header">
-						<image class="help-push-headerbg" src="{{userInfo.avatarUrl}}"></image>
-            <text class='share-intro' wx:if="{{cardInfo.card_info.user_intro}}">{{cardInfo.card_info.user_intro}}</text>
-						<view class="help-push-card">
-								<view class="card-header">
-										<image class="push-header-photo" src="{{userInfo.avatarUrl}}"></image>
-								</view>
-								<view class="push-card-cont">
-										<view class="push-card-title">
-												<view class="push-card-name">{{userInfo.nickName}}</view>
-												<view class="push-card-icon">
-														<image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class="" wx:if="{{userInfo.gender == 1}}"></image>
-                            <image src="http://api.gojbcs.com/images/my_card/icon_girl.png" class="" wx:if="{{userInfo.gender == 2}}"></image>
-												</view>
-												<!-- <view wx:if="{{cardInfo.company}}" class="push-cardtext">{{cardInfo.company}}</view> -->
-										</view>
-										<view class="push-cardintro" wx:if="{{cardInfo.industry_name}}">
-												<view>职业：</view>
-												<view>{{cardInfo.industry_name}}</view>
-										</view>
-										<view class="push-cardintro" wx:if="{{userInfo.province}}">
-												<view>地址：</view>
-												<view>{{userInfo.province}}{{userInfo.city}}</view>
-										</view>
-								</view>
-								<!-- <view class="push-card-right">
+        <view class="header-portrait">
+          <image src="{{userInfo.avatarUrl}}" class=""></image>
+        </view>
+      </view>
+    </view>
+    <view class='friends-list'>
+      <form bindsubmit="submitInfo" report-submit='true' url="/pages/friends_card/index?uid={{item.card_info.uid}}" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}' data-uid="{{item.card_info.uid}}">
+          <button class='friends-button' form-type="submit"></button>
+          <view class="friends-item-img">
+            <image src='{{imgUrl}}/icon_auth.png' wx-if="{{item.card_user.is_vip == 'true'}}"></image>
+          </view>
+          <view class='friends-item-text'>
+            <view class='friends-item-job'>
+              <text class='friends-item-name'>{{item.name}}</text>
+              <text wx-if="{{item.industry_name}}">{{item.industry_name}}</text>
+            </view>
+            <view wx-if="item.company">{{item.company}}</view>
+          </view>
+          <view class='friends-item-head'>
+            <image src='{{item.pic}}'></image>
+          </view>
+       
+      </form>
+    </view>
+    <view wx:if="{{isNone}}" style='text-align:center;'>
+      <image src='../../images/none-icon.png' style='width:300rpx;height:185rpx;margin-top:50rpx;'></image>
+      <view style='color:#ffe147;font-size:30rpx;margin-top:30rpx;'>呜～什么都没有~</view>
+    </view>
+  </view>
+  <view class='friends-menu-list' animation="{{animationData}}">
+    <view class="mask" bindtap='showMenu'></view>
+    <view class='friends-menu-list-container'>
+      <view class='friends-menu-title'>
+        人脉分类
+        <view class="friends-menu-close" bindtap='showMenu'>
+          <image src='http://api.gojbcs.com/images/project_icon_down.png'></image>
+        </view>
+      </view>
+      <view class='friends-menu-item'>
+        <text bindtap='searchFriendsList' data-id="0">全部</text>
+        <text wx:for="{{friendsClassList}}" wx:index="index" bindtap='searchFriendsList' data-id="{{item.id}}">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{friendsIndex == 1}}" class="friends-content help-push-container">
+    <view class="help-push-header">
+      <image class="help-push-headerbg" src="{{userInfo.avatarUrl}}"></image>
+      <text class='share-intro' wx:if="{{cardInfo.card_info.user_intro}}">{{cardInfo.card_info.user_intro}}</text>
+      <view class="help-push-card">
+        <view class="card-header">
+          <image class="push-header-photo" src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="push-card-cont">
+          <view class="push-card-title">
+            <view class="push-card-name">{{userInfo.nickName}}</view>
+            <view class="push-card-icon">
+              <image src="http://api.gojbcs.com/images/my_card/icon_sex.png" class="" wx:if="{{userInfo.gender == 1}}"></image>
+              <image src="http://api.gojbcs.com/images/my_card/icon_girl.png" class="" wx:if="{{userInfo.gender == 2}}"></image>
+            </view>
+            <!-- <view wx:if="{{cardInfo.company}}" class="push-cardtext">{{cardInfo.company}}</view> -->
+          </view>
+          <view class="push-cardintro" wx:if="{{cardInfo.industry_name}}">
+            <view>职业：</view>
+            <view>{{cardInfo.industry_name}}</view>
+          </view>
+          <view class="push-cardintro" wx:if="{{userInfo.province}}">
+            <view>地址：</view>
+            <view>{{userInfo.province}}{{userInfo.city}}</view>
+          </view>
+        </view>
+        <!-- <view class="push-card-right">
 									<image class="in-batch-icon" src="../../images/change-frineds.png"></image>
 									<view class="in-batch-text" bindtap='getShareInfo'>换一批</view>
 								</view> -->
-						</view>
+      </view>
 
-				</view>
-				<view class="share-btn">
-					<button open-type='share' hover-class="none" class="share-friends">分享给朋友</button>
-				</view>
-		</view>
+    </view>
+    <view class="share-btn">
+      <button open-type='share' hover-class="none" class="share-friends">分享给朋友</button>
+    </view>
+  </view>
 </view>

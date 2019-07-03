@@ -137,7 +137,14 @@ Page({
       })
     },true)
   },
+  // 获取formid
+  submitInfo: function (e) {
+    // console.log(e.detail.formId);
+    wx.navigateTo({
+      url: '/pages/friends_card/index?uid=' + e.currentTarget.dataset.uid + '&formId=' + e.detail.formId ,
+    })
 
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -7,12 +7,12 @@
   <view class='header-link'>
     <view class='header-link-left'>
       <view class='header-photo'>
-        <image src='{{imgurl}}{{userInfo.avatar}}'></image>
+        <image mode='aspectFill' src='{{imgurl}}{{userInfo.avatar}}'></image>
       </view>
       <view class='header-name'>
         <view class='header-name-title'>
           <view class='name-text'>{{userInfo.name}}</view>
-          <image src='../../images/icon_auth.png'></image>
+          <image mode='aspectFill' src='../../images/icon_auth.png'></image>
         </view>
         <view class='header-intro'>剧本超市</view>
       </view>

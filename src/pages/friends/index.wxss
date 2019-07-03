@@ -25,7 +25,14 @@ page{
   transform: translateY(-50%);
   font-size:24rpx;
 }
-
+.friends-button{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
 .friends-menu-btn image{
   width: 25rpx;
   height: 25rpx;
