@@ -141,7 +141,7 @@ Page({
   submitInfo: function (e) {
     // console.log(e.detail.formId);
     wx.navigateTo({
-      url: '/pages/friends_card/index?uid=' + e.currentTarget.dataset.uid + '&formId=' + e.detail.formId ,
+      url: '/pages/friends_card/index?uid=' + e.currentTarget.dataset.uid + '&formId=' + e.detail.formId + '&userId='+wx.getStorageSync('user_id'),
     })
 
   },

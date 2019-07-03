@@ -12,6 +12,7 @@ Page({
     userInfo: [],
     uid:'',//url中的uid
     formId:'',
+    userId:'',
     cardData:{
       uid: wx.getStorageSync('user_id'),
       cardid:'',
@@ -53,13 +54,15 @@ Page({
   onLoad: function (options) {
     this.data.uid = Number(options.uid);
     this.data.formId = options.formId;  
+    this.data.userId = options.userId;  
   },
 
   getUserInfo() {
     var that = this;
     api.post('/user/getusercard',{
       uid: that.data.uid,
-      formId: that.data.formId
+      formId: that.data.formId,
+      userId: that.data.userId
     }, function (res) {
       that.setData({
         otherInfo: res.data.data.cardInfo
