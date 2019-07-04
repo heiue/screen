@@ -24,6 +24,9 @@
       <view>九妹</view>
       <view>剧本超市</view>
     </view> -->
+    <button class="header-link-num" wx-if="{{userInfo.phone == null}}" open-type="contact" session-from="weapp">
+      对接经纪人
+    </button>
     <view class='header-link-num' wx-if="{{userInfo.phone}}" bindtap='callPhone' data-phone="{{userInfo.phone}}">立即联系</view>
   </view>
   <view class="header">
@@ -42,7 +45,7 @@
           <view>级别：</view>
           <view>{{userInfo.rating_name}}</view>
         </view>
-        <view class="intro" >
+        <view class="intro">
           <view>地址：</view>
           <view>{{userInfo.residence}}</view>
         </view>
@@ -53,23 +56,23 @@
       </view>
       <view class='header-right'>
         <view class="header-portrait">
-          <image src="{{imgurl}}{{userInfo.avatar}}" class=""></image>
+          <image mode='aspectFill' src="{{imgurl}}{{userInfo.avatar}}" class=""></image>
         </view>
         <view class='header-follow' bindtap='attention' wx-if="{{userInfo.isCollection == 0}}">
           <image src='http://api.gojbcs.com/images/my_icon_collection.png'></image>
           <text>关注</text>
         </view>
-        <view class='header-follow' bindtap='attention'  wx-if="{{userInfo.isCollection == 1}}">
+        <view class='header-follow' bindtap='attention' wx-if="{{userInfo.isCollection == 1}}">
           <image src='../../images/my_icon_collection-on.png'></image>
           <text>已关注</text>
         </view>
       </view>
     </view>
   </view>
-    <view class='introduce' wx-if="{{userInfo.introduction}}">
-      <view>{{title}}简介：</view>
-      <view>{{userInfo.introduction}}</view>
-    </view>
+  <view class='introduce' wx-if="{{userInfo.introduction}}">
+    <view>{{title}}简介：</view>
+    <view>{{userInfo.introduction}}</view>
+  </view>
   <view class='intro-cont'>
     <view class='introduce' wx-if="{{userInfo.works}}">
       <view>代表作品：</view>

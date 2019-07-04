@@ -65,6 +65,8 @@
   text-align: center;
 	letter-spacing: 2rpx;
 	color: #ffffff;
+  padding: 0;
+  margin: 0;
 }
 /* .header-link-head{
   width: 100rpx;

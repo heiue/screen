@@ -29,6 +29,7 @@
       <view class="new-hint">NEW</view>
     </view>
     <view class="nav-item" bind:tap="goMyMessage">
+      <view class="hint-icon" wx-if="{{unread}}"></view>
       <image src="http://api.gojbcs.com/images/my_icon_history.png"></image>
       <view class="nav-item-name">我的消息</view>
       <view class="new-hint">NEW</view>
@@ -80,15 +81,15 @@
         <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
       </view>
     </navigator>
-		<navigator class="my-item" url="/pages/advise/index" hover-class="none">
-		  <view class="my-item-left">
-		    <image src="../../images/icon-my-device.png"></image>
-		    <text>建议</text>
-		  </view>
-		  <view class="my-item-right">
-		    <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
-		  </view>
-		</navigator>
+    <navigator class="my-item" url="/pages/advise/index" hover-class="none">
+      <view class="my-item-left">
+        <image src="../../images/icon-my-device.png"></image>
+        <text>建议</text>
+      </view>
+      <view class="my-item-right">
+        <image src="http://api.gojbcs.com/images/icon-right-arrow.png"></image>
+      </view>
+    </navigator>
     <navigator class="my-item" url="/pages/about_us/index" hover-class="none">
       <view class="my-item-left">
         <image src="http://api.gojbcs.com/images/my_icon_about.png"></image>

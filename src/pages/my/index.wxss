@@ -1,53 +1,63 @@
-page{
-  background-color: #f1f2fb
+page {
+  background-color: #f1f2fb;
 }
-.title-top{
+
+.title-top {
   padding: 0 20rpx;
   background: #fff;
 }
-.container{
+
+.container {
   border-top: 1px solid #efefef;
 }
-.userinfo{
+
+.userinfo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:40rpx 40rpx 20rpx;
+  padding: 40rpx 40rpx 20rpx;
   height: 160rpx;
   background-color: #fff;
   margin-bottom: 10rpx;
 }
-.user{
+
+.user {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.user-header{
+
+.user-header {
   width: 100rpx;
   height: 100rpx;
   border-radius: 10rpx;
   overflow: hidden;
   margin-right: 20rpx;
 }
-.user-header image{
+
+.user-header image {
   width: 100%;
   height: 100%;
 }
-.name-cont{
+
+.name-cont {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.name{
+
+.name {
   margin-bottom: 20rpx;
   font-size: 24rpx;
   color: #3e3e3e;
 }
-.user-label{
+
+.user-label {
   font-size: 18rpx;
-  color: #7f7f7f
+  color: #7f7f7f;
 }
-.my-card{
+
+.my-card {
   width: 196rpx;
   height: 64rpx;
   border-radius: 64rpx;
@@ -56,19 +66,22 @@ page{
   justify-content: center;
   align-items: center;
 }
-.my-card text{
+
+.my-card text {
   font-size: 24rpx;
   color: #3e3e3e;
   margin-right: 10rpx;
 }
-.hint-icon{
+
+.hint-icon {
   width: 8rpx;
   height: 8rpx;
   border-radius: 8rpx;
-  background-color: #ff0000;
-  transform: translateY(-8rpx)
+  background-color: #f00;
+  transform: translateY(-8rpx);
 }
-.my-nav{
+
+.my-nav {
   padding: 20rpx 0;
   height: 292rpx;
   width: 100%;
@@ -76,7 +89,8 @@ page{
   display: flex;
   margin-bottom: 10rpx;
 }
-.nav-item{
+
+.nav-item {
   position: relative;
   display: flex;
   flex: 1;
@@ -84,19 +98,31 @@ page{
   justify-content: center;
   align-items: center;
 }
-.my-nav .nav-item:not(:last-child){
-  border-right: 1px solid #e4e4e4
+
+.nav-item .hint-icon {
+  position: absolute;
+  width: 15rpx;
+  height: 15rpx;
+  right: 66rpx;
+  top: 61rpx;
 }
-.nav-item image{
+
+.my-nav .nav-item:not(:last-child) {
+  border-right: 1px solid #e4e4e4;
+}
+
+.nav-item image {
   width: 58rpx;
   height: 47rpx;
-  margin-bottom:22rpx; 
+  margin-bottom: 22rpx;
 }
-.nav-item-name{
+
+.nav-item-name {
   font-size: 24rpx;
   color: #3e3e3e;
 }
-.new-hint{
+
+.new-hint {
   display: none;
   position: absolute;
   top: 60rpx;
@@ -106,11 +132,12 @@ page{
   line-height: 20rpx;
   text-align: center;
   border-radius: 20rpx;
-  background-color: #ff0000;
+  background-color: #f00;
   color: #fff;
   font-size: 14rpx;
 }
-.my-message{
+
+.my-message {
   width: 100%;
   height: 100rpx;
   display: flex;
@@ -120,65 +147,76 @@ page{
   background-color: #fff;
   margin-bottom: 10rpx;
 }
-.message-left{
+
+.message-left {
   display: flex;
   align-items: center;
 }
-.message-left image{
+
+.message-left image {
   width: 54rpx;
   height: 54rpx;
   margin-right: 20rpx;
 }
-.message-left text{
+
+.message-left text {
   font-size: 24rpx;
-  color: #3b3b3b
+  color: #3b3b3b;
 }
-.message-right{
+
+.message-right {
   padding: 0 12rpx;
   height: 30rpx;
   line-height: 30rpx;
   border-radius: 30rpx;
-  background-color: #ff0000;
+  background-color: #f00;
   color: #fff;
   font-size: 18rpx;
 }
-.my-list{
+
+.my-list {
   background-color: #fff;
   padding: 0 40rpx;
 }
-.my-item{
+
+.my-item {
   height: 114rpx;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.my-item-left{
+
+.my-item-left {
   display: flex;
-  align-items: center
+  align-items: center;
 }
-.my-item-left image{
+
+.my-item-left image {
   width: 54rpx;
   height: 54rpx;
   margin-right: 20rpx;
 }
 
-
-.my-item-left text{
+.my-item-left text {
   font-size: 24rpx;
   color: #3b3b3b;
 }
-.my-item-right{
+
+.my-item-right {
   padding: 10rpx 0 10rpx 20rpx;
 }
-.my-item-right image{
+
+.my-item-right image {
   width: 12rpx;
   height: 20rpx;
 }
-.my-right-text{
+
+.my-right-text {
   color: #555;
   font-size: 20rpx;
 }
+
 .my-list .my-item:not(:last-child) {
-  border-bottom: 1px solid #f1f2fb
+  border-bottom: 1px solid #f1f2fb;
 }
