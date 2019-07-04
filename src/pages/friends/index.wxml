@@ -89,7 +89,7 @@
   </view>
   <view wx:if="{{friendsIndex == 1}}" class="friends-content help-push-container">
     <view class="help-push-header">
-      <image class="help-push-headerbg" src="{{userInfo.avatarUrl}}"></image>
+      <image class="help-push-headerbg" src="https://api.gojbcs.com/images/card_cover/card-cover-1.jpg"></image>
       <text class='share-intro' wx:if="{{cardInfo.card_info.user_intro}}">{{cardInfo.card_info.user_intro}}</text>
       <view class="help-push-card">
         <view class="card-header">

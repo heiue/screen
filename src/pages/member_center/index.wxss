@@ -1,35 +1,40 @@
-page{
+page {
   height: 100%;
 }
-.container{
+
+.container {
   min-height: 100%;
   /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
-.title-top{
+.title-top {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 10;
 }
-.cont{
+
+.cont {
   width: 100%;
 }
-.header{
+
+.header {
   width: 100%;
   height: 347rpx;
   position: relative;
   margin-bottom: 25rpx;
 }
-.header-bg{
+
+.header-bg {
   width: 100%;
   height: 347rpx;
 }
-.title{
+
+.title {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,49 +42,58 @@ page{
   height: 100%;
   padding: 145rpx 0 0 73rpx;
 }
-.emblem{
+
+.emblem {
   width: 176rpx;
   height: 82rpx;
   position: absolute;
   right: 0;
-  top: 110rpx;
+  top: 180rpx;
 }
-.emblem image{
+
+.emblem image {
   width: 100%;
   height: 100%;
 }
-.head{
+
+.head {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.head-portrait{
+
+.head-portrait {
   width: 155rpx;
   height: 155rpx;
   border-radius: 155rpx;
   overflow: hidden;
   margin-right: 17rpx;
 }
-.head-portrait image{
+
+.head-portrait image {
   width: 100%;
   height: 100%;
 }
-.name{
+
+.name {
   font-family: MicrosoftYaHei;
-	font-size: 30rpx;
-	color: #434343;
+  font-size: 30rpx;
+  color: #434343;
 }
-.subheader-cont{
+
+.subheader-cont {
   width: 100%;
   height: 156rpx;
   position: relative;
-  padding:0 28rpx;
+  padding: 0 28rpx;
 }
-.subheader-bg{
+
+.subheader-bg {
   width: 100%;
   height: 100%;
 }
-.subheader{
+
+.subheader {
   position: absolute;
   top: 0;
   left: 0;
@@ -89,33 +103,40 @@ page{
   flex-direction: column;
   align-items: center;
 }
-.subheader text:nth-of-type(1){
+
+.subheader text:nth-of-type(1) {
   font-family: AdobeHeitiStd-Regular;
-	font-size: 23rpx;
-	line-height: 48rpx;
-	color: #ffffff;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #fff;
 }
-.subheader text:nth-of-type(2){
+
+.subheader text:nth-of-type(2) {
   font-family: AdobeHeitiStd-Regular;
-	font-size: 38rpx;
-  color: #ffffff;
+  font-size: 38rpx;
+  color: #fff;
 }
-.subheader-btn{
+
+.subheader-btn {
   width: 141rpx;
   height: 39rpx;
   margin-top: 10rpx;
 }
-.subheader-btn image{
+
+.subheader-btn image {
   width: 100%;
   height: 100%;
 }
-.center-list{
+
+.center-list {
   padding: 0 58rpx;
 }
-.center-list .center-item:not(:last-child){
+
+.center-list .center-item:not(:last-child) {
   border-bottom: 1px solid #ddd;
 }
-.center-item{
+
+.center-item {
   height: 122rpx;
   width: 100%;
   display: flex;
@@ -123,33 +144,39 @@ page{
   align-items: center;
   padding-right: 36rpx;
 }
-.item-left{
+
+.item-left {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.item-left image{
+
+.item-left image {
   width: 43rpx;
   height: 43rpx;
   margin-right: 19rpx;
 }
-.item-left text{
+
+.item-left text {
   font-family: AdobeHeitiStd-Regular;
-	font-size: 32rpx;
-	line-height: 48rpx;
-	color: #282828;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #282828;
 }
-.item-right{
+
+.item-right {
   font-family: AdobeHeitiStd-Regular;
-	font-size: 25rpx;
-	line-height: 48rpx;
-	color: #999999;
+  font-size: 25rpx;
+  line-height: 48rpx;
+  color: #999;
 }
-.open-btn{
+
+.open-btn {
   width: 100%;
   padding: 0 75rpx 100rpx;
 }
-.btn{
+
+.btn {
   width: 100%;
   height: 90rpx;
   border-radius: 90rpx;
@@ -157,23 +184,25 @@ page{
   text-align: center;
   background-color: #ffe147;
   font-family: MicrosoftYaHei;
-	font-size: 30rpx;
-	color: #ffffff;
+  font-size: 30rpx;
+  color: #fff;
 }
-.popup{
+
+.popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
 }
-.mask{
+
+.mask {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0,0.6)
+  background-color: rgba(0, 0, 0, 0.6);
 }
-.popup-cont{
+
+.popup-cont {
   position: absolute;
   left: 0;
   bottom: -1000rpx;
@@ -181,36 +210,40 @@ page{
   background-color: #fff;
   border-radius: 15px 15px 0px 0px;
 }
-.popup-header{
+
+.popup-header {
   height: 136rpx;
-  padding:0 30rpx 16rpx;
+  padding: 0 30rpx 16rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.popup-title{
+
+.popup-title {
   font-size: 24rpx;
   font-weight: bold;
   color: #383838;
   margin-bottom: 20rpx;
 }
-.popup-subheader{
+
+.popup-subheader {
   font-family: MicrosoftYaHei;
-	font-size: 18rpx;
-	color: #717171;
+  font-size: 18rpx;
+  color: #717171;
 }
-.card-list{
+
+.card-list {
   padding: 0 79rpx 36rpx;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
 }
-.card{
+
+.card {
   width: 281rpx;
-	height: 180rpx;
-	border-radius: 10rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
   /* border: solid 2rpx #ffe147; */
   border: solid 2rpx #e1e1e1;
   margin-bottom: 23rpx;
@@ -220,34 +253,85 @@ page{
   align-items: center;
   background-color: #f7f6fb;
 }
-.active{
+
+.active {
   border: solid 2rpx #ffe147;
 }
-.card-name{
+
+.card-name {
   font-family: MicrosoftYaHei;
-	font-size: 24rpx;
-	line-height: 48rpx;
-	color: #363636;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #363636;
 }
-.card-piece{
+
+.card-piece {
   font-weight: bold;
-	font-size: 36rpx;
-	line-height: 48rpx;
-	color: #ffe147;
+  font-size: 36rpx;
+  line-height: 48rpx;
+  color: #ffe147;
 }
-.card-text{
+
+.card-text {
   font-family: MicrosoftYaHei;
-	font-size: 24rpx;
-	line-height: 48rpx;
-	color: #969696;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #969696;
 }
-.pay-btn{
+
+.pay-btn {
   width: 100%;
   height: 100rpx;
   background-color: #ffe147;
   text-align: center;
   line-height: 100rpx;
   font-family: MicrosoftYaHei;
-	font-size: 30rpx;
-	color: #353535;
+  font-size: 30rpx;
+  color: #353535;
+}
+
+.modal-box {
+  position: fixed;
+  width: 95%;
+  height: 66%;
+  top: 17%;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  margin: 0 auto;
+  left: 2.5%;
+  border-radius: 5%;
+}
+
+.modal-body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.modal-body .knowBtn{
+  position: absolute;
+width: 200rpx;
+height: 90rpx;
+bottom: 20rpx;
+left: 50%;
+margin-left: -100rpx;
+
+}
+
+.modal-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 78%;
+  text-align: center;
+}
+
+.modal-content view {
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 62rpx;
+}
+
+.modal-content .fenxiang {
+  width: 100%;
+  height: 40%;
 }

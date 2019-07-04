@@ -15,7 +15,7 @@
           </view>
         </view>
         <view class="intro">
-          <view>行业：</view>
+          <view>职业：</view>
           <view>{{otherInfo.industry_name}}</view>
         </view>
         <view class="intro">

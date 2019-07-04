@@ -1,10 +1,10 @@
 <view class="container">
-	<view class='title-top'>
-	  <title title="" isFirst="{{true}}"></title>
-	</view>
+  <view class='title-top'>
+    <title title="" isFirst="{{true}}"></title>
+  </view>
   <view class="cont">
     <view class="header">
-      <image class="header-bg" src="http://api.gojbcs.com/images/member_img_header.png"></image>
+      <image mode='aspectFill' class="header-bg" src="http://api.gojbcs.com/images/member_img_header.png"></image>
       <view class="title">
         <view class="head">
           <view class="head-portrait">
@@ -20,10 +20,10 @@
     <view class="subheader-cont">
       <image src="http://api.gojbcs.com/images/member_img_subheader.png" class="subheader-bg" />
       <view class="subheader">
-        <text>尊享8项专属权益    新加某某特权</text>
+        <text>尊享8项专属权益</text>
         <text>尊享VIP等你来购</text>
-        <view class="subheader-btn">
-          <image src="http://api.gojbcs.com/images/member_img_button.png" />
+        <view class="subheader-btn" bindtap="show">
+          <image mode='aspectFill' src="http://api.gojbcs.com/images/member_img_button.png" />
         </view>
       </view>
     </view>
@@ -55,17 +55,26 @@
         <view class="popup-subheader">一个月会员=31天</view>
       </view>
       <view class="card-list">
-        <view wx:for="{{cardList}}" wx:key="index"
-          class="card {{cardActive == index? 'active': ''}}" 
-          bind:tap="cardChage" 
-          data-index="{{index}}"
-          >
+        <view wx:for="{{cardList}}" wx:key="index" class="card {{cardActive == index? 'active': ''}}" bind:tap="cardChage" data-index="{{index}}">
           <view class="card-name">{{item.chargeName}}</view>
           <view class="card-piece">{{item.chargePrice}}</view>
           <view class="card-text">{{item.chargePrice}}/{{item.chargeName}}</view>
         </view>
       </view>
       <view class="pay-btn" bindtap='pay'>立即开通</view>
+    </view>
+  </view>
+  <view class="modal-box" hidden="{{flag}}" bindtap="hide">
+    <view class="modal-body">
+      <view class="modal-content">
+        <view>项目订制  影视项目优先洽谈与投资</view>
+        <view>付费知识  免费获取培训课程</view>
+        <view>发布需求  任务广场优先推荐位等你来</view>
+        <view>活动福利  线上线下活动提前了解，优先报名</view>
+        <view>大V权限  专享尊贵标识</view>
+        <view>联系客服  VIP专属客服24小时在线</view>
+      </view>
+      <button class="knowBtn" bindtap="hide">关闭</button>
     </view>
   </view>
 </view>

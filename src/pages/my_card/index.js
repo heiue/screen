@@ -24,6 +24,7 @@ Page({
         is_aut: '' //判断隐私是否公开 'true'为公开 'false'为不公开
       },
       info: {
+        address: "",
         mobile: "",
         wechat: "",
         email: "",
@@ -37,7 +38,8 @@ Page({
         1: "url"
       }
     },//名片内可修改的用户信息
-    userIndustry:'请选择行业',
+    userIndustry:'',
+    userAddress:'',
     userPhone:'',
     userWechat:'',
     userCompany: '',
@@ -51,7 +53,7 @@ Page({
     instryList:[],
     isSelect:false,
     images:'',//相册
-    textareaHoder: '请编辑自己的简介'
+    textareaHoder: ''
   },
 
   /**
@@ -94,13 +96,14 @@ Page({
         wx.setStorageSync('cardInfo', res.data.data.cardInfo)
         that.data.cardData.cardid = res.data.data.cardInfo.id
         that.setData({
-          userIndustry: res.data.data.cardInfo.industry_name || '请选择行业',
-          userPhone: res.data.data.cardInfo.card_info.mobile || '请输入手机号',
-          userWechat: res.data.data.cardInfo.card_info.wechat || '请输入微信号',
-          companyProfile: res.data.data.cardInfo.card_info.intro || '请输入公司简介',
-          userCompany: res.data.data.cardInfo.company || '请输入公司名称',
-          usereMail: res.data.data.cardInfo.card_info.email || '请输入邮箱',
-          userIntro: res.data.data.cardInfo.card_info.user_intro || '请编辑自己的简介',
+          userIndustry: res.data.data.cardInfo.industry_name || '',
+          userAddress: res.data.data.cardInfo.card_info.address || '',
+          userPhone: res.data.data.cardInfo.card_info.mobile || '',
+          userWechat: res.data.data.cardInfo.card_info.wechat || '',
+          companyProfile: res.data.data.cardInfo.card_info.intro || '',
+          userCompany: res.data.data.cardInfo.company || '',
+          usereMail: res.data.data.cardInfo.card_info.email || '',
+          userIntro: res.data.data.cardInfo.card_info.user_intro || '',
           images: res.data.data.cardInfo.card_info.top_pic || '',
         }) 
         that.data.cardData.card.company = res.data.data.cardInfo.company,
@@ -109,6 +112,7 @@ Page({
         that.data.cardData.info.intro = res.data.data.cardInfo.card_info.intro,
         that.data.cardData.card.position = res.data.data.cardInfo.position,
         that.data.cardData.card.industry_id = res.data.data.industry_id,
+          that.data.cardData.info.address = res.data.data.cardInfo.card_info.addre, 
         that.data.cardData.info.mobile = res.data.data.cardInfo.card_info.mobile, 
         that.data.cardData.info.wechat = res.data.data.cardInfo.card_info.wechat,
         that.data.cardData.info.email = res.data.data.cardInfo.card_info.email,
@@ -125,6 +129,9 @@ Page({
     // if (e.currentTarget.dataset.val == 'industry') {
     //   this.data.cardData.card.position = e.detail.value
     // }
+    if (e.currentTarget.dataset.val == 'addre') {
+      this.data.cardData.info.address = e.detail.value
+    }
     if (e.currentTarget.dataset.val == 'phone') {
       this.data.cardData.info.mobile = e.detail.value
     }

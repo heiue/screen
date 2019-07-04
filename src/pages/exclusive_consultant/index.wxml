@@ -4,14 +4,18 @@
   </view>
   <view class="line"></view>
   <view class="contact">
-    <view class="contact-item" bindtap="callPhone">
+    <button class="contact-item" bindtap="callPhone">
       <view class="contact-text">{{phone}}</view>
       <image class="contact-icon" src="http://api.gojbcs.com/images/contract_broker/icon_phone.png"></image>
-    </view>
-    <view class="contact-item">
+    </button>
+    <button class="contact-item">
       <view class="contact-text">hty1212121</view>
       <image class="contact-icon" src="http://api.gojbcs.com/images/contract_broker/icon_wechat.png"></image>
-    </view>
+    </button>
+    <button class="contact-item" wx-if="{{userInfo.phone == null}}" open-type="contact" session-from="weapp">
+      <view class="contact-text">在线客服</view>
+      <image class="contact-icon" src="https://api.gojbcs.com/images/jiantou.png"></image>
+    </button>
   </view>
   <view class="hint">
     <view class="hint-text">HI！我是您的专属顾问，这是我的联系方式</view>

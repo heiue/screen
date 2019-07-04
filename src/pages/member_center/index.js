@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    flag: true,
     userInfo: JSON.parse(app.globalData.userInfo),
     popupShow: false,
     cardActive: 0,
@@ -30,6 +31,20 @@ Page({
     animationData: {}
   },
 
+  /**
+   * 弹出层函数
+   */
+  //出现
+  show: function () {
+
+    this.setData({ flag: false })
+
+  },
+  //消失
+  hide: function () {
+
+    this.setData({ flag: true })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
