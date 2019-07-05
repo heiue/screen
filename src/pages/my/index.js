@@ -10,7 +10,8 @@ Page({
   data: {
     userInfo: '',
     cardInfo: wx.getStorageSync('cardInfo') || '',
-		phone:app.globalData.phone
+		phone:app.globalData.phone,
+    unread:0,
   },
 
   /**
@@ -68,6 +69,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
     // console.log(wx.getStorageSync('user_info'))
     if (wx.getStorageSync('user_info')){
       this.getUserId();
@@ -81,6 +83,9 @@ Page({
       wx.setTabBarBadge({
         index: 4,
         text: wx.getStorageSync('unread')
+      })
+      this.setData({
+        unread: wx.getStorageSync('unread')
       })
     } else {
       wx.removeTabBarBadge({

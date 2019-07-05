@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -58,6 +58,12 @@
 					"name": "详情进入聊天窗口",
 					"pathName": "pages/friends_card/index",
 					"query": "uid=35001696",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/my/index",
 					"scene": null
 				}
 			]

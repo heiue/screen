@@ -2,6 +2,16 @@ page {
   background-color: #f1f2fb;
 }
 
+.unread {
+  background: red;
+  padding: 2rpx 10rpx;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  top: 47rpx;
+  right: 40rpx;
+}
+
 .title-top {
   padding: 0 20rpx;
   background: #fff;
