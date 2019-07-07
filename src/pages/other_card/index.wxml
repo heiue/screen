@@ -73,10 +73,25 @@
     <view>{{title}}简介：</view>
     <view>{{userInfo.introduction}}</view>
   </view>
+  <view class='introduce' wx-if="{{userInfo.birthday}}">
+    <view>出生日期：</view>
+    <view>{{userInfo.birthday}}</view>
+  </view>
+  <view class='introduce' wx-if="{{userInfo.school}}">
+    <view>毕业院校：</view>
+    <view>{{userInfo.school}}</view>
+  </view>
+  <view class='introduce' wx-if="{{userInfo.professional}}">
+    <view>专业：</view>
+    <view>{{userInfo.professional}}</view>
+  </view>
   <view class='intro-cont'>
     <view class='introduce' wx-if="{{userInfo.works}}">
       <view>代表作品：</view>
       <view>{{userInfo.works}}</view>
+      <view class="introduce-img" wx:for="{{userInfo.img}}" wx:key="i">
+        <image src="http://api.gojbcs.com{{item.path}}" class="describe-bg" mode="widthFix"></image>
+      </view>
     </view>
     <!-- <view class='watch'>
       <view class='watch-num'>

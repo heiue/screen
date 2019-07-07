@@ -322,13 +322,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10rpx 20rpx;
 }
 .introduce{
   padding:0 30rpx;
   /* display: flex;
   align-items: flex-end; */
   /* margin-bottom: 30rpx; */
+}
+.introduce-img{
+  text-align: center;
 }
 .introduce view{
   margin-top: 15rpx;

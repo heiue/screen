@@ -4,12 +4,13 @@ page {
 
 .unread {
   background: red;
-  padding: 2rpx 10rpx;
   border-radius: 50%;
   color: #fff;
   position: absolute;
   top: 47rpx;
   right: 40rpx;
+  width: 30rpx;
+  text-align: center;
 }
 
 .title-top {

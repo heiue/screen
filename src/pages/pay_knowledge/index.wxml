@@ -2,9 +2,9 @@
   <view class='title-top'>
     <title title="知识付费" isFirst="{{false}}"></title>
   </view>
-  <view class="header">
+  <!-- <view class="header">
     <image src="{{imgUrl}}/material/knowledge/banner/knowledge_banner.jpg"></image>
-  </view>
+  </view> -->
   <view class="banner-cont">
     <view class="banner-header">
       <view class="banner-header-name">精品讲座</view>
@@ -35,13 +35,13 @@
       <view class="section-subheader">影视圈最全面讲座</view>
       <view class="section-subheader">影视圈晋级必修之路，剧本超市带您深度挖掘</view>
     </view>
-    <view class="section" wx:for="{{eliteList}}" wx:key="index">
+    <view class="section" wx:for="{{eliteList}}" wx:key="index" data-id="{{item.id}}" bind:tap="goDetail">
       <image mode='widthFix' src="{{imgurl}}{{item.thumb}}"></image>
       <view class="section-text">
         <view class="section-text-h">{{item.keywords}}</view>
         <view class="section-text-s">{{item.title}}</view>
         <view class="section-text-e">{{item.description}}</view>
-        <view class="section-btn" bind:tap="goDetail" data-name="{{item.title}}" data-id="{{item.id}}">了解详情</view>
+        <view class="section-btn" data-name="{{item.title}}">了解详情</view>
       </view>
     </view>
   </view>
