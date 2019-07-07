@@ -9,6 +9,15 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     imgurl: app.globalData.imgurl,
+    imgs: [
+      {
+        "url": "https://api.gojbcs.com/images/pay_knowledge/01.jpg"
+      }, {
+        "url": "https://api.gojbcs.com/images/pay_knowledge/02.jpg"
+      }, {
+        "url": "https://api.gojbcs.com/images/pay_knowledge/03.jpg"
+      }
+    ],
     bannerLength:0,
     active:1,
     autoplay: true,

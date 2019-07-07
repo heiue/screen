@@ -330,10 +330,13 @@ page{
   position: relative;
   overflow: hidden;
 }
-.help-push-headerbg{
+swiper{
   width: 100%;
-  height: 89%;
-  /* filter: blur(1px); */
+  height: 100%;
+}
+swiper .slide-image{
+  width: 100%;
+  height: 100%;
 }
 .help-push-card{
   position: absolute;

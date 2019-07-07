@@ -30,7 +30,17 @@
         </view>
       </view>
       <view class="header-portrait">
-        <image src="{{userInfo.avatarUrl}}" class="" ></image>
+        <image bindtap='userImg' style="height:100%" src="{{userInfo.avatarUrl}}" wx:if="{{userInfo.avatarUrl}}"></image>
+        <!-- <view class="photo-list" bindtap='userImg'>
+          <view class="operation">
+            <view wx:if="{{images.length<=0}}" class="upimg-icon">
+              <image class="upload" src="http://api.gojbcs.com/images/my_card/icon_add.png"></image>
+            </view>
+            <view style="width:100%" wx:else>
+              <image style="width:100%" src='{{imgurl}}{{images}}' mode="aspectFill"></image>
+            </view>
+          </view>
+        </view> -->
       </view>
       <!-- <view class="header-portrait" bindtap='upImg'>
         <view wx:if="{{images.length<=0}}" class="upimg-icon">
@@ -95,7 +105,7 @@
         <view class="photo-title-icon"></view>
         <view class="my-intro-name">我的相册</view>
       </view>
-      <view class="photo-list">
+      <view class="photo-list" bindtap='upImg'>
         <view class="operation">
           <view wx:if="{{images.length<=0}}" class="upimg-icon">
             <image class="upload" src="http://api.gojbcs.com/images/my_card/icon_add.png"></image>
@@ -107,7 +117,6 @@
           <view style="width:100%" wx:else>
             <image style="width:100%" src='{{imgurl}}{{images}}' mode="widthFix"></image>
           </view>
-          <button bindtap='upImg'>上传图片</button>
         </view>
       </view>
     </view>

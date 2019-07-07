@@ -105,6 +105,7 @@ Page({
           usereMail: res.data.data.cardInfo.card_info.email || '',
           userIntro: res.data.data.cardInfo.card_info.user_intro || '',
           images: res.data.data.cardInfo.card_info.top_pic || '',
+          images: res.data.data.cardInfo.images || '',
         }) 
         that.data.cardData.card.company = res.data.data.cardInfo.company,
           that.data.cardData.card.pic = JSON.parse(wx.getStorageSync('user_info')).avatarUrl,
@@ -117,6 +118,7 @@ Page({
         that.data.cardData.info.wechat = res.data.data.cardInfo.card_info.wechat,
         that.data.cardData.info.email = res.data.data.cardInfo.card_info.email,
         that.data.cardData.info.top_pic = res.data.data.cardInfo.card_info.top_pic,
+          that.data.cardData.images = res.data.data.cardInfo.images,
         that.data.cardData.info.user_intro = res.data.data.cardInfo.card_info.user_intro
         // console.log(that.data.cardData)
       }
@@ -215,6 +217,26 @@ Page({
 
   },
   upImg(){
+    var that = this;
+    wx.chooseImage({
+      success(res) {
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: firlHost +'/uploadImg',
+          filePath: tempFilePaths[0],
+          name: 'file',
+          success(res) {
+            console.log(JSON.parse(res.data))
+            that.setData({
+              images: JSON.parse(res.data).url
+            })
+            that.data.cardData.images = JSON.parse(res.data).url;
+          }
+        })
+      }
+    })
+  },
+  userImg(){
     var that = this;
     wx.chooseImage({
       success(res) {

@@ -11,6 +11,17 @@ Page({
     userInfo: JSON.parse(app.globalData.userInfo),
     cardInfo: wx.getStorageSync('cardInfo'),
     imgUrl: app.globalData.imgUrl,
+    imgUrls: [
+      {
+        "url": "https://api.gojbcs.com/images/card_cover/card-cover-1.jpg"
+      }, {
+        "url": "https://api.gojbcs.com/images/card_cover/card-cover-2.jpg"
+      }, {
+        "url": "https://api.gojbcs.com/images/card_cover/card-cover-3.jpg"
+      }, {
+        "url": "https://api.gojbcs.com/images/card_cover/card-cover-4.jpg"
+      }
+    ],
     friendsIndex:0,
     moreTitleShow: true,
     animationData: {},
@@ -145,7 +156,6 @@ Page({
     wx.navigateTo({
       url: '/pages/friends_card/index?uid=' + e.currentTarget.dataset.uid + '&formId=' + e.detail.formId + '&userId='+wx.getStorageSync('user_id'),
     })
-
   },
   /**
    * 生命周期函数--监听页面隐藏

@@ -19,7 +19,7 @@
   <view class="scriptwriter">
     <!-- 轮播 -->
     <view class='index-swiper' style="height:605rpx">
-      <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <swiper indicator-dots="true" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" autoplay="{{autoplay}}" interval='{{interval}}' duration='1000'>
         <block wx:for="{{imgUrls}}">
           <swiper-item>
             <image src="{{imgUrl}}{{item}}" class="slide-image" mode="widthFix" />
@@ -79,7 +79,10 @@
       <view class='fall-container'>
         <block wx:for="{{list}}" wx:key="{{item.id}}">
           <!-- 瀑布流内容卡片 -->
-          <view class='fall-item' bind:tap="goDetail"  data-name="{{item.name}}" data-id="{{item.id}}">
+          <view class='fall-item' bind:tap="goDetail" data-name="{{item.name}}" data-id="{{item.id}}">
+            <form report-submit='true'>
+              <button class='friends-button' form-type="submit"></button>
+            </form>
             <image src='http://api.gojbcs.com{{item.avatar}}' mode="widthFix"></image>
             <view class="fall-item-text">
               <view class="fall-item-name">{{item.name}} {{item.rating_name}}</view>
@@ -94,7 +97,7 @@
       <view class='fall-container'>
         <block wx:for="{{list}}" wx:key="{{item.id}}">
           <!-- 瀑布流内容卡片 -->
-          <view class='fall-item' bind:tap="goDetail"  data-id="{{item.id}}">
+          <view class='fall-item' bind:tap="goDetail" data-id="{{item.id}}">
             <image src='http://api.gojbcs.com{{item.cover}}' mode="widthFix"></image>
             <view class="fall-item-text">
               <view class="fall-item-name">{{item.scriptTitle}} </view>

@@ -2,9 +2,15 @@
   <view class='title-top'>
     <title title="知识付费" isFirst="{{false}}"></title>
   </view>
-  <!-- <view class="header">
-    <image src="{{imgUrl}}/material/knowledge/banner/knowledge_banner.jpg"></image>
-  </view> -->
+  <view class="header">
+    <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" autoplay="{{autoplay}}" interval='{{interval}}' duration='1000' circular='true'>
+      <block wx:for="{{imgs}}">
+        <swiper-item>
+          <image src="{{item.url}}" class="slide-image" mode="center" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
   <view class="banner-cont">
     <view class="banner-header">
       <view class="banner-header-name">精品讲座</view>
@@ -19,7 +25,7 @@
     </view>
     <view class="banner">
       <view class="banner-container">
-        <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" next-margin="40rpx" bindchange="swiperchange">
+        <swiper class="swiper_box" interval="{{interval}}" circular="{{circular}}" next-margin="20rpx" bindchange="swiperchange">
           <block wx:for="{{eliteClassList}}" wx:key="index" wx:for-index="index">
             <swiper-item class="banner-list" data-id="{{item.id}}" data-name="{{item.title}}" bindtap="goDetail">
               <image src="{{imgurl}}{{item.thumb}}" mode='widthFix'></image>

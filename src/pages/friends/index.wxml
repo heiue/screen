@@ -50,21 +50,20 @@
     </view>
     <view class='friends-list'>
       <form bindsubmit="submitInfo" report-submit='true' url="/pages/friends_card/index" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}' data-uid="{{item.card_info.uid}}">
-          <button class='friends-button' form-type="submit"></button>
-          <view class="friends-item-img">
-            <image src='{{imgUrl}}/icon_auth.png' wx-if="{{item.card_user.is_vip == 'true'}}"></image>
+        <button class='friends-button' form-type="submit"></button>
+        <view class="friends-item-img">
+          <image src='{{imgUrl}}/icon_auth.png' wx-if="{{item.card_user.is_vip == 'true'}}"></image>
+        </view>
+        <view class='friends-item-text'>
+          <view class='friends-item-job'>
+            <text class='friends-item-name'>{{item.name}}</text>
+            <text wx-if="{{item.industry_name}}">{{item.industry_name}}</text>
           </view>
-          <view class='friends-item-text'>
-            <view class='friends-item-job'>
-              <text class='friends-item-name'>{{item.name}}</text>
-              <text wx-if="{{item.industry_name}}">{{item.industry_name}}</text>
-            </view>
-            <view wx-if="item.company">{{item.company}}</view>
-          </view>
-          <view class='friends-item-head'>
-            <image src='{{item.pic}}'></image>
-          </view>
-       
+          <view wx-if="item.company">{{item.company}}</view>
+        </view>
+        <view class='friends-item-head'>
+          <image src='{{item.pic}}'></image>
+        </view>
       </form>
     </view>
     <view wx:if="{{isNone}}" style='text-align:center;'>
@@ -89,8 +88,15 @@
   </view>
   <view wx:if="{{friendsIndex == 1}}" class="friends-content help-push-container">
     <view class="help-push-header">
-      <image class="help-push-headerbg" src="https://api.gojbcs.com/images/card_cover/card-cover-1.jpg"></image>
-      <text class='share-intro' wx:if="{{cardInfo.card_info.user_intro}}">{{cardInfo.card_info.user_intro}}</text>
+      <!-- <image class="help-push-headerbg" src="https://api.gojbcs.com/images/card_cover/card-cover-1.jpg"></image> -->
+      <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" autoplay='true' interval='10000' duration='1000' circular='true'>
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item.url}}" class="slide-image" mode="widthFix" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <!-- <text class='share-intro' wx:if="{{cardInfo.card_info.user_intro}}">{{cardInfo.card_info.user_intro}}</text> -->
       <view class="help-push-card">
         <view class="card-header">
           <image class="push-header-photo" src="{{userInfo.avatarUrl}}"></image>

@@ -9,7 +9,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    currentTab: 0,//当前选中编剧或剧本
+    currentTab: 0, //当前选中编剧或剧本
     imgUrls: [
       '/material/index/index_banner/700X400/1.jpg',
       '/material/index/index_banner/700X400/2.jpg',
@@ -18,17 +18,17 @@ Page({
       '/material/index/index_banner/700X400/12.jpg',
       '/material/index/index_banner/700X400/13.jpg'
     ],
-    autoplay: false,
+    autoplay: true,
     interval: 5000,
     duration: 1000,
     toView: 'yellow',
     scrollLeft: 0,
     watchingList: [],
-    list:[],//推荐编剧
-    swiperHeight:380,
-    signList:[],//签约编剧
-    page:1,
-		imgUrl:app.globalData.imgUrl
+    list: [], //推荐编剧
+    swiperHeight: 380,
+    signList: [], //签约编剧
+    page: 1,
+    imgUrl: app.globalData.imgUrl
   },
   //事件处理函数
   bindViewTap: function() {
@@ -36,7 +36,7 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function() {
     var that = this;
     this.getWriterList(that.data.page);
     this.getsignList();
@@ -45,7 +45,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -66,53 +66,53 @@ Page({
         }
       })
     }
-    
+
   },
-  onShow:function() {
-    console.log(app.globalData.userInfo,'用户信息')
+  onShow: function() {
+    console.log(app.globalData.userInfo, '用户信息')
     this.getWatchingList()
   },
-  getWriterList: function (page) {
+  getWriterList: function(page) {
     var that = this;
-    if(that.data.currentTab == 0){
-      api.get('/screenwriter/list?position=0&limit=10&page='+page, function (res) {
+    if (that.data.currentTab == 0) {
+      api.get('/screenwriter/list?position=0&limit=10&page=' + page, function(res) {
         // console.log(res.data)
         that.setData({
           list: res.data.data.concat(that.data.list)
         })
       }, false)
-    }else{
-      api.get('/script/list?limit=10&page='+page, function (res) {
+    } else {
+      api.get('/script/list?limit=10&page=' + page, function(res) {
         // console.log(res.data)
         that.setData({
           list: res.data.data.concat(that.data.list)
         })
       }, false)
     }
-    
+
   },
-  getsignList: function () {
+  getsignList: function() {
     var that = this;
-    if (that.data.currentTab == 0){
-      api.get('/screenwriter/list?position=1&limit=4', function (res) {
+    if (that.data.currentTab == 0) {
+      api.get('/screenwriter/list?position=1&limit=4', function(res) {
         // console.log(res.data)
         that.setData({
           signList: res.data.data
         })
       }, false)
     }
-    
+
   },
   getWatchingList() {
     let _this = this
-    api.get(`/article/list?page=1&limit=6`,(res) => {
+    api.get(`/article/list?page=1&limit=6`, (res) => {
       _this.setData({
         watchingList: res.data.data
       })
     }, false)
   },
   //滑动切换
-  swiperTab: function (e) {
+  swiperTab: function(e) {
     console.log(e.detail.current)
     var that = this;
     that.setData({
@@ -120,14 +120,14 @@ Page({
     });
   },
   //点击切换
-  clickTab: function (e) {
+  clickTab: function(e) {
     var that = this;
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
       that.setData({
         currentTab: e.target.dataset.current,
-        list:[]
+        list: []
       })
       that.getWriterList(1);
     }
@@ -153,31 +153,37 @@ Page({
       duration: e.detail.value
     })
   },
-  
-	goDetail:function(e) {
+
+  goDetail: function(e) {
     var that = this;
-    if(that.data.currentTab == 0){
+    if (that.data.currentTab == 0) {
       wx.navigateTo({
-        url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id
+        url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id + '&formId=' + e.detail.formId
       })
-    }else{
+    } else {
       wx.navigateTo({
-        url: '/pages/script_detail/index?sid=' + e.currentTarget.dataset.id
+        url: '/pages/script_detail/index?sid=' + e.currentTarget.dataset.id + '&formId=' + e.detail.formId
       })
     }
-		
-	},
+
+  },
+  // submitInfo: function(e) {
+  //   console.log(e.detail.formId);
+  //   wx.navigateTo({
+  //     url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id + '&formId=' + e.detail.formId
+  //   })
+  // },
   go_friends_detail(e) {
     wx.navigateTo({
       url: '/pages/other_card/index?name=' + e.currentTarget.dataset.name + '&id=' + e.currentTarget.dataset.id
     })
   },
-	goRecruit:function() {
-		wx.navigateTo({
-		  url: '/pages/recruit/index'
-		})
-	},
-  onReachBottom: function () {
-    this.getWriterList(this.data.page+=1)
+  goRecruit: function() {
+    wx.navigateTo({
+      url: '/pages/recruit/index'
+    })
+  },
+  onReachBottom: function() {
+    this.getWriterList(this.data.page += 1)
   },
 })
