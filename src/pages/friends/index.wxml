@@ -49,7 +49,7 @@
       </view>
     </view>
     <view class='friends-list'>
-      <form bindsubmit="submitInfo" report-submit='true' url="/pages/friends_card/index?uid={{item.card_info.uid}}" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}' data-uid="{{item.card_info.uid}}">
+      <form bindsubmit="submitInfo" report-submit='true' url="/pages/friends_card/index" class='friends-item' wx:for="{{friendsList}}" wx:key='{{index}}' data-uid="{{item.card_info.uid}}">
           <button class='friends-button' form-type="submit"></button>
           <view class="friends-item-img">
             <image src='{{imgUrl}}/icon_auth.png' wx-if="{{item.card_user.is_vip == 'true'}}"></image>
