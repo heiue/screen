@@ -65,7 +65,7 @@
                   <view class="look-item-sub">{{item.description}}</view>
                 </view>
                 <view class='look-item-img'>
-                  <image src='http://api.gojbcs.com/{{item.thumb}}'></image>
+                  <image  mode='aspectFill' src='http://api.gojbcs.com/{{item.thumb}}'></image>
                 </view>
               </navigator>
             </view>
