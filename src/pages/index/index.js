@@ -78,14 +78,14 @@ Page({
       api.get('/screenwriter/list?position=0&limit=10&page=' + page, function(res) {
         // console.log(res.data)
         that.setData({
-          list: res.data.data.concat(that.data.list)
+          list: that.data.list.concat(res.data.data)
         })
       }, false)
     } else {
       api.get('/script/list?limit=10&page=' + page, function(res) {
         // console.log(res.data)
         that.setData({
-          list: res.data.data.concat(that.data.list)
+          list: that.data.list.concat(res.data.data)
         })
       }, false)
     }
